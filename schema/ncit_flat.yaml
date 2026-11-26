@@ -1,0 +1,57 @@
+# The NCIt base graph: Thesaurus.txt of the NCI EVS FLAT release, as published, for the concepts in scope.
+# Hand-kept. The CSVW table description and the structural SHACL are generated from it (cfa.rule, gen-shacl).
+# Class = the table, named by the file name without extension. The file has no header row: the nine column
+# names are those the NCI EVS ReadMe of the pinned release gives for Thesaurus.txt
+# (https://evs.nci.nih.gov/ftp1/NCI_Thesaurus/archive/26.09d_Release/ReadMe.txt). Row node = NCI's concept IRI, by the aboutUrl template on the code; the
+# reader checks it equals the published concept IRI cell (in angle brackets).
+# dialect: tab-separated, no header, no quote handling.
+id: https://kerfors.github.io/cdisc-for-all/def/ncit-flat
+name: ncit-flat
+title: NCI Thesaurus FLAT file, as published (scoped)
+prefixes:
+  linkml: https://w3id.org/linkml/
+imports:
+  - linkml:types
+default_range: string
+annotations:
+  source: ncit-flat
+classes:
+  "Thesaurus":
+    class_uri: https://kerfors.github.io/cdisc-for-all/def/ncit-flat#Thesaurus
+    annotations:
+      aboutUrl: "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#{code}"
+      dialect: '{"delimiter": "\t", "quoteChar": null, "header": false}'
+      scope: "The concepts of the SDTM CT rows in scope (sdtm-ct graph, column Code, codelist and term rows), the COSMoS Biomedical Concepts (cosmos graph, column ncit_code of cdisc_biomedical_concepts_latest), the COSMoS data element concepts (column ncit_dec_code of the same table) and the SDTM v2.0 Model variable C-codes (sdtm-model graph, column Variable C-Code), with all their ancestors by the column parents (codes separated by \"|\"). A concept of the scope without a row in this file is listed, not an error; a parent without a row stops the reader."
+    unique_keys:
+      row_key:
+        unique_key_name: row_key
+        unique_key_slots:
+          - "code"
+    attributes:
+      "code":
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/ncit-flat/Thesaurus#code
+        range: string
+      "concept IRI":
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/ncit-flat/Thesaurus#concept%20IRI
+        range: string
+      "parents":
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/ncit-flat/Thesaurus#parents
+        range: string
+      "synonyms":
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/ncit-flat/Thesaurus#synonyms
+        range: string
+      "definition":
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/ncit-flat/Thesaurus#definition
+        range: string
+      "display name":
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/ncit-flat/Thesaurus#display%20name
+        range: string
+      "concept status":
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/ncit-flat/Thesaurus#concept%20status
+        range: string
+      "semantic type":
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/ncit-flat/Thesaurus#semantic%20type
+        range: string
+      "concept in subset":
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/ncit-flat/Thesaurus#concept%20in%20subset
+        range: string

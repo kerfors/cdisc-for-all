@@ -10,6 +10,8 @@ The subset: every column a string; aboutUrl from the key columns (RFC 6570 simpl
 so an empty key component gives an empty path segment); a literal propertyUrl per column;
 null "" (the default: an empty cell gives no triple); no separator (a multi-valued cell is
 one literal); trim false (surrounding whitespace is kept); one virtual column for rdf:type.
+A class annotation aboutUrl replaces the row IRI template (NCIt rows keep NCI's IRI); a class
+annotation dialect (JSON) adds CSVW dialect properties.
 
 For an xlsx source, CSVW describes the table as cfa.read.read_xlsx_table reads it (CSVW
 defines parsing for CSV/TSV only); its url is then '<table>.csv'.
@@ -113,6 +115,8 @@ def csvw_metadata(sv, table, url):
     cols.append({'virtual': True, 'propertyUrl': RDF_TYPE, 'valueUrl': class_iri(source, table)})
     keys = key_columns(sv, table)
     about = row_iri_prefix(source, table) + '/'.join('{' + csvw_name(k) + '}' for k in keys)
+    if 'aboutUrl' in ann:
+        about = ann['aboutUrl']
     return {
         '@context': CSVW_CONTEXT,
         'url': url,

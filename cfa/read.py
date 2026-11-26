@@ -2,6 +2,7 @@
 str, an empty cell ''. Nothing is converted, trimmed or read as missing."""
 
 import csv
+import io
 import re
 
 import pandas as pd
@@ -57,11 +58,17 @@ def read_csv_table(path):
 
 
 def read_tsv_table(path):
-    """A tab-separated file with a header row, without quote handling (quoting=3), UTF-8.
-    (Header-less FLAT comes with its own step.)"""
+    """A tab-separated file with a header row, without quote handling (quoting=3), UTF-8."""
     with open(path, encoding='utf-8', newline='') as f:
         rows = list(csv.reader(f, delimiter='\t', quoting=csv.QUOTE_NONE))
     return _frame(path, rows)
+
+
+def read_delimited_text(text, delimiter, names, label):
+    """Delimited text without a header row and without quote handling (quoting=3); the column
+    names come from the schema. label names the source in error messages."""
+    rows = list(csv.reader(io.StringIO(text, newline=''), delimiter=delimiter, quoting=csv.QUOTE_NONE))
+    return _frame(label, [list(names)] + rows)
 
 
 def _frame(path, rows):

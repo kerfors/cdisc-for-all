@@ -11,4 +11,6 @@ imports:
   - sdtmig
   - sdtm_model
   - sdtm_ct
+  - ncit_flat
+  - nci_code_cui_map
 default_range: string

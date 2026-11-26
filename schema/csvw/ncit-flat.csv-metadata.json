@@ -1,0 +1,68 @@
+{
+ "@context": "http://www.w3.org/ns/csvw",
+ "url": "Thesaurus.csv",
+ "dialect": {
+  "trim": false,
+  "delimiter": "\t",
+  "quoteChar": null,
+  "header": false
+ },
+ "tableSchema": {
+  "columns": [
+   {
+    "titles": "code",
+    "name": "code",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/ncit-flat/Thesaurus#code"
+   },
+   {
+    "titles": "concept IRI",
+    "name": "concept%20IRI",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/ncit-flat/Thesaurus#concept%20IRI"
+   },
+   {
+    "titles": "parents",
+    "name": "parents",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/ncit-flat/Thesaurus#parents"
+   },
+   {
+    "titles": "synonyms",
+    "name": "synonyms",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/ncit-flat/Thesaurus#synonyms"
+   },
+   {
+    "titles": "definition",
+    "name": "definition",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/ncit-flat/Thesaurus#definition"
+   },
+   {
+    "titles": "display name",
+    "name": "display%20name",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/ncit-flat/Thesaurus#display%20name"
+   },
+   {
+    "titles": "concept status",
+    "name": "concept%20status",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/ncit-flat/Thesaurus#concept%20status"
+   },
+   {
+    "titles": "semantic type",
+    "name": "semantic%20type",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/ncit-flat/Thesaurus#semantic%20type"
+   },
+   {
+    "titles": "concept in subset",
+    "name": "concept%20in%20subset",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/ncit-flat/Thesaurus#concept%20in%20subset"
+   },
+   {
+    "virtual": true,
+    "propertyUrl": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+    "valueUrl": "https://kerfors.github.io/cdisc-for-all/def/ncit-flat#Thesaurus"
+   }
+  ],
+  "primaryKey": [
+   "code"
+  ],
+  "aboutUrl": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#{code}"
+ }
+}

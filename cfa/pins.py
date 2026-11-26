@@ -2,6 +2,7 @@
 
 import hashlib
 import json
+import zipfile
 from pathlib import PurePosixPath
 
 from cfa import REPO_ROOT
@@ -48,3 +49,18 @@ def checked_source_file(source, name):
     if found != entry['sha256']:
         raise ValueError(f'{source}/{name}: SHA-256 {found} differs from the pin {entry["sha256"]}')
     return path
+
+
+def checked_source_bytes(source, name):
+    """The bytes of a pinned source file. A file pinned 'in' a zip is read from the zip in
+    base/<source>/downloads/; the zip and the member are both checked against their pins."""
+    files = reference_versions()[source]['files']
+    entry = files[name]
+    if 'in' not in entry:
+        return checked_source_file(source, name).read_bytes()
+    with zipfile.ZipFile(checked_source_file(source, entry['in'])) as zf:
+        data = zf.read(name)
+    found = hashlib.sha256(data).hexdigest()
+    if found != entry['sha256']:
+        raise ValueError(f'{source}/{entry["in"]}/{name}: SHA-256 {found} differs from the pin {entry["sha256"]}')
+    return data

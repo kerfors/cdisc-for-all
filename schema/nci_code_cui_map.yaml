@@ -1,0 +1,45 @@
+# The NCIt code to CUI map base graph: nci_code_cui_map.dat of NCI EVS, as published, for the codes in scope.
+# Hand-kept. The CSVW table description and the structural SHACL are generated from it (cfa.rule, gen-shacl).
+# Class = the table, named by the file name without extension. The file has no header row. The NCI EVS ReadMe
+# (https://evs.nci.nih.gov/ftp1/NCI_Thesaurus/archive/26.09d_Release/ReadMe.txt) gives the format as
+# "code <pipe> CUI <pipe>": the first two fields are named code and CUI from it. The file has two more fields
+# that the ReadMe does not describe; they are named by position (field 3, field 4). Each line ends with "|",
+# so a fifth, always empty, field is read (field 5).
+# dialect: "|"-separated, no header, no quote handling.
+id: https://kerfors.github.io/cdisc-for-all/def/nci-code-cui-map
+name: nci-code-cui-map
+title: NCIt code to CUI map, as published (scoped)
+prefixes:
+  linkml: https://w3id.org/linkml/
+imports:
+  - linkml:types
+default_range: string
+annotations:
+  source: nci-code-cui-map
+classes:
+  "nci_code_cui_map":
+    class_uri: https://kerfors.github.io/cdisc-for-all/def/nci-code-cui-map#nci_code_cui_map
+    annotations:
+      dialect: '{"delimiter": "|", "quoteChar": null, "header": false}'
+      scope: "The NCIt codes of the ncit-flat graph (its column code)."
+    unique_keys:
+      row_key:
+        unique_key_name: row_key
+        unique_key_slots:
+          - "code"
+    attributes:
+      "code":
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/nci-code-cui-map/nci_code_cui_map#code
+        range: string
+      "CUI":
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/nci-code-cui-map/nci_code_cui_map#CUI
+        range: string
+      "field 3":
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/nci-code-cui-map/nci_code_cui_map#field%203
+        range: string
+      "field 4":
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/nci-code-cui-map/nci_code_cui_map#field%204
+        range: string
+      "field 5":
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/nci-code-cui-map/nci_code_cui_map#field%205
+        range: string

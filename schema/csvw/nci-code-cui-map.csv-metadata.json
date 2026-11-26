@@ -1,0 +1,48 @@
+{
+ "@context": "http://www.w3.org/ns/csvw",
+ "url": "nci_code_cui_map.csv",
+ "dialect": {
+  "trim": false,
+  "delimiter": "|",
+  "quoteChar": null,
+  "header": false
+ },
+ "tableSchema": {
+  "columns": [
+   {
+    "titles": "code",
+    "name": "code",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/nci-code-cui-map/nci_code_cui_map#code"
+   },
+   {
+    "titles": "CUI",
+    "name": "CUI",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/nci-code-cui-map/nci_code_cui_map#CUI"
+   },
+   {
+    "titles": "field 3",
+    "name": "field%203",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/nci-code-cui-map/nci_code_cui_map#field%203"
+   },
+   {
+    "titles": "field 4",
+    "name": "field%204",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/nci-code-cui-map/nci_code_cui_map#field%204"
+   },
+   {
+    "titles": "field 5",
+    "name": "field%205",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/nci-code-cui-map/nci_code_cui_map#field%205"
+   },
+   {
+    "virtual": true,
+    "propertyUrl": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+    "valueUrl": "https://kerfors.github.io/cdisc-for-all/def/nci-code-cui-map#nci_code_cui_map"
+   }
+  ],
+  "primaryKey": [
+   "code"
+  ],
+  "aboutUrl": "https://kerfors.github.io/cdisc-for-all/id/nci-code-cui-map/nci_code_cui_map/{code}"
+ }
+}
