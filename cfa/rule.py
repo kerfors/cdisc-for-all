@@ -15,6 +15,7 @@ For an xlsx source, CSVW describes the table as cfa.read.read_xlsx_table reads i
 defines parsing for CSV/TSV only); its url is then '<table>.csv'.
 """
 
+import json
 import re
 from urllib.parse import quote
 
@@ -105,6 +106,8 @@ def csvw_metadata(sv, table, url):
     for k in ('delimiter', 'quoteChar', 'skipRows', 'header'):
         if k in ann:
             dialect[k] = ann[k]
+    if 'dialect' in ann:
+        dialect.update(json.loads(ann['dialect']))
     cols = [{'titles': c, 'name': csvw_name(c), 'propertyUrl': property_iri(source, table, c)}
             for c in columns(sv, table)]
     cols.append({'virtual': True, 'propertyUrl': RDF_TYPE, 'valueUrl': class_iri(source, table)})

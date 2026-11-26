@@ -1,0 +1,63 @@
+{
+ "@context": "http://www.w3.org/ns/csvw",
+ "url": "SDTM%20Terminology.csv",
+ "dialect": {
+  "trim": false,
+  "delimiter": "\t",
+  "quoteChar": null
+ },
+ "tableSchema": {
+  "columns": [
+   {
+    "titles": "Code",
+    "name": "Code",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/sdtm-ct/SDTM%20Terminology#Code"
+   },
+   {
+    "titles": "Codelist Code",
+    "name": "Codelist%20Code",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/sdtm-ct/SDTM%20Terminology#Codelist%20Code"
+   },
+   {
+    "titles": "Codelist Extensible (Yes/No)",
+    "name": "Codelist%20Extensible%20%28Yes%2FNo%29",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/sdtm-ct/SDTM%20Terminology#Codelist%20Extensible%20%28Yes%2FNo%29"
+   },
+   {
+    "titles": "Codelist Name",
+    "name": "Codelist%20Name",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/sdtm-ct/SDTM%20Terminology#Codelist%20Name"
+   },
+   {
+    "titles": "CDISC Submission Value",
+    "name": "CDISC%20Submission%20Value",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/sdtm-ct/SDTM%20Terminology#CDISC%20Submission%20Value"
+   },
+   {
+    "titles": "CDISC Synonym(s)",
+    "name": "CDISC%20Synonym%28s%29",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/sdtm-ct/SDTM%20Terminology#CDISC%20Synonym%28s%29"
+   },
+   {
+    "titles": "CDISC Definition",
+    "name": "CDISC%20Definition",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/sdtm-ct/SDTM%20Terminology#CDISC%20Definition"
+   },
+   {
+    "titles": "NCI Preferred Term",
+    "name": "NCI%20Preferred%20Term",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/sdtm-ct/SDTM%20Terminology#NCI%20Preferred%20Term"
+   },
+   {
+    "virtual": true,
+    "propertyUrl": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+    "valueUrl": "https://kerfors.github.io/cdisc-for-all/def/sdtm-ct#SDTM%20Terminology"
+   }
+  ],
+  "primaryKey": [
+   "Codelist%20Code",
+   "Code"
+  ],
+  "aboutUrl": "https://kerfors.github.io/cdisc-for-all/id/sdtm-ct/SDTM%20Terminology/{Codelist%20Code}/{Code}"
+ }
+}

@@ -10,4 +10,5 @@ imports:
   - cosmos
   - sdtmig
   - sdtm_model
+  - sdtm_ct
 default_range: string

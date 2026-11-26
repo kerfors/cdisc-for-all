@@ -17,3 +17,9 @@
 **Code.** LinkML modules for the SDTMIG v3.4 and SDTM v2.0 variable tables: one class per table, named by the file name without version and extension (`SDTMIG`, `SDTM`), one attribute per published column. The tables publish no key; the row key is the smallest column set that identifies every row (SDTMIG: Dataset Name + Variable Name; SDTM: Class + Dataset Name + Variable Name, with Dataset Name empty for class-level variables). Generated CSVW descriptions and SHACL. One reader notebook per CSV source, from one template. The CSVW cross-check covers every CSV source. The CSVW check confirms that a quoted empty value and an unquoted empty value both give no triple, also in rdf-tabular.
 
 **Content.** None published: the SDTMIG and SDTM Model graphs, views and Provenance are sign-in content, built locally (`.gitignore`).
+
+## Step 4 — the SDTM CT base graph, scoped (2026-11-26)
+
+**Code.** The SDTM CT LinkML module: the table of `SDTM Terminology.txt`, one attribute per published column, row key Codelist Code + Code (a codelist row has no Codelist Code, so its node has an empty path segment). The CSVW dialect is tab-separated without quote handling (`quoteChar: null`), given as the class annotation `dialect`. The scope, as the class annotation `scope`: the codelists COSMoS refers to or SDTMIG v3.4 binds, read from the COSMoS and SDTMIG base graphs, with the codelist row and every term row of each. Codelists that are referred to but have no codelist row in the file are listed in Provenance. The reader notebook. The CSVW cross-check compares the rdf-tabular graph of the whole file on the scoped graph's nodes; rdf-tabular does not honour `quoteChar: null`, so the check uses a quote character that does not occur in the file.
+
+**Content.** The SDTM CT base graph for the codelists in scope, its Excel view and Provenance. The view rebuilt from the graph has the text hash of the source rows in scope.

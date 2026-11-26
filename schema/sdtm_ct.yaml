@@ -1,0 +1,54 @@
+# The SDTM CT base graph: the NCI EVS SDTM Terminology file, as published, for the codelists in scope.
+# Hand-kept. The CSVW table description and the structural SHACL are generated from it (cfa.rule, gen-shacl).
+# Class = the table, named by the file name without extension; one attribute per published column (name =
+# header verbatim, in published order), slot_uri by the mapping rule; row key = unique key row_key
+# (Codelist Code, Code; a codelist row has no Codelist Code, so its node has an empty segment).
+# dialect: tab-separated, no quote handling (CSVW quoteChar null = quoting=3).
+# scope: which rows the graph carries (the only selection of a base reader); the reader implements it.
+id: https://kerfors.github.io/cdisc-for-all/def/sdtm-ct
+name: sdtm-ct
+title: SDTM Controlled Terminology, as published (scoped)
+prefixes:
+  linkml: https://w3id.org/linkml/
+imports:
+  - linkml:types
+default_range: string
+annotations:
+  source: sdtm-ct
+classes:
+  "SDTM Terminology":
+    class_uri: https://kerfors.github.io/cdisc-for-all/def/sdtm-ct#SDTM%20Terminology
+    annotations:
+      dialect: '{"delimiter": "\t", "quoteChar": null}'
+      scope: "The codelists COSMoS refers to (cosmos graph, column codelist of cdisc_sdtm_dataset_specializations_latest) or SDTMIG v3.4 binds to a variable (sdtmig graph, column CDISC CT Codelist Code(s), codes separated by \";\" with surrounding spaces), as far as this file has a codelist row for them: the codelist row and every term row of each."
+    unique_keys:
+      row_key:
+        unique_key_name: row_key
+        unique_key_slots:
+          - "Codelist Code"
+          - "Code"
+    attributes:
+      "Code":
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/sdtm-ct/SDTM%20Terminology#Code
+        range: string
+      "Codelist Code":
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/sdtm-ct/SDTM%20Terminology#Codelist%20Code
+        range: string
+      "Codelist Extensible (Yes/No)":
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/sdtm-ct/SDTM%20Terminology#Codelist%20Extensible%20%28Yes%2FNo%29
+        range: string
+      "Codelist Name":
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/sdtm-ct/SDTM%20Terminology#Codelist%20Name
+        range: string
+      "CDISC Submission Value":
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/sdtm-ct/SDTM%20Terminology#CDISC%20Submission%20Value
+        range: string
+      "CDISC Synonym(s)":
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/sdtm-ct/SDTM%20Terminology#CDISC%20Synonym%28s%29
+        range: string
+      "CDISC Definition":
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/sdtm-ct/SDTM%20Terminology#CDISC%20Definition
+        range: string
+      "NCI Preferred Term":
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/sdtm-ct/SDTM%20Terminology#NCI%20Preferred%20Term
+        range: string
