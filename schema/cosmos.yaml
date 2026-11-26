@@ -1,0 +1,224 @@
+# The COSMoS base graph: the three tables of the public export (cdisc-org/COSMoS, export/), read from the CSV files.
+# Hand-kept. The CSVW table group and the structural SHACL are generated from it (cfa.rule, gen-shacl).
+# Class = a table, named by its file name without extension (as published, "_latest" included);
+# one attribute per published column (name = header verbatim, in published order), slot_uri by the
+# mapping rule; row key = unique key row_key (its slot order is the IRI order).
+# The files are not named here: Reference_Versions.json pins them; a table is found by its file name.
+id: https://kerfors.github.io/cdisc-for-all/def/cosmos
+name: cosmos
+title: COSMoS public export, as published
+prefixes:
+  linkml: https://w3id.org/linkml/
+imports:
+  - linkml:types
+default_range: string
+annotations:
+  source: cosmos
+classes:
+  cdisc_biomedical_concepts_latest:
+    class_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos#cdisc_biomedical_concepts_latest
+    unique_keys:
+      row_key:
+        unique_key_name: row_key
+        unique_key_slots:
+          - bc_id
+          - dec_id
+    attributes:
+      package_date:
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_latest#package_date
+        range: string
+      short_name:
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_latest#short_name
+        range: string
+      bc_id:
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_latest#bc_id
+        range: string
+      ncit_code:
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_latest#ncit_code
+        range: string
+      parent_bc_id:
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_latest#parent_bc_id
+        range: string
+      bc_categories:
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_latest#bc_categories
+        range: string
+      synonyms:
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_latest#synonyms
+        range: string
+      result_scales:
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_latest#result_scales
+        range: string
+      definition:
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_latest#definition
+        range: string
+      system:
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_latest#system
+        range: string
+      system_name:
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_latest#system_name
+        range: string
+      code:
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_latest#code
+        range: string
+      dec_id:
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_latest#dec_id
+        range: string
+      ncit_dec_code:
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_latest#ncit_dec_code
+        range: string
+      dec_label:
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_latest#dec_label
+        range: string
+      data_type:
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_latest#data_type
+        range: string
+      example_set:
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_latest#example_set
+        range: string
+  cdisc_biomedical_concepts_hierarchy_latest:
+    class_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos#cdisc_biomedical_concepts_hierarchy_latest
+    unique_keys:
+      row_key:
+        unique_key_name: row_key
+        unique_key_slots:
+          - bc_id
+    attributes:
+      bc_short_name:
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_hierarchy_latest#bc_short_name
+        range: string
+      bc_id:
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_hierarchy_latest#bc_id
+        range: string
+      bc_short_name_id:
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_hierarchy_latest#bc_short_name_id
+        range: string
+      parent_bc_id:
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_hierarchy_latest#parent_bc_id
+        range: string
+      bc_categories:
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_hierarchy_latest#bc_categories
+        range: string
+      bc_synonyms:
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_hierarchy_latest#bc_synonyms
+        range: string
+      result_scales:
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_hierarchy_latest#result_scales
+        range: string
+      bc_definition:
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_hierarchy_latest#bc_definition
+        range: string
+      bc_hierarchy_level:
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_hierarchy_latest#bc_hierarchy_level
+        range: string
+      bc_hierarchy_full:
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_hierarchy_latest#bc_hierarchy_full
+        range: string
+      dec_n:
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_hierarchy_latest#dec_n
+        range: string
+  cdisc_sdtm_dataset_specializations_latest:
+    class_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos#cdisc_sdtm_dataset_specializations_latest
+    unique_keys:
+      row_key:
+        unique_key_name: row_key
+        unique_key_slots:
+          - domain
+          - vlm_group_id
+          - sdtm_variable
+    attributes:
+      package_date:
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#package_date
+        range: string
+      bc_id:
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#bc_id
+        range: string
+      sdtmig_start_version:
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#sdtmig_start_version
+        range: string
+      sdtmig_end_version:
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#sdtmig_end_version
+        range: string
+      domain:
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#domain
+        range: string
+      vlm_source:
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#vlm_source
+        range: string
+      vlm_group_id:
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#vlm_group_id
+        range: string
+      short_name:
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#short_name
+        range: string
+      sdtm_variable:
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#sdtm_variable
+        range: string
+      dec_id:
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#dec_id
+        range: string
+      nsv_flag:
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#nsv_flag
+        range: string
+      codelist:
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#codelist
+        range: string
+      codelist_submission_value:
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#codelist_submission_value
+        range: string
+      subset_codelist:
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#subset_codelist
+        range: string
+      value_list:
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#value_list
+        range: string
+      assigned_term:
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#assigned_term
+        range: string
+      assigned_value:
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#assigned_value
+        range: string
+      role:
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#role
+        range: string
+      subject:
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#subject
+        range: string
+      linking_phrase:
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#linking_phrase
+        range: string
+      predicate_term:
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#predicate_term
+        range: string
+      object:
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#object
+        range: string
+      data_type:
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#data_type
+        range: string
+      length:
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#length
+        range: string
+      format:
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#format
+        range: string
+      significant_digits:
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#significant_digits
+        range: string
+      mandatory_variable:
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#mandatory_variable
+        range: string
+      mandatory_value:
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#mandatory_value
+        range: string
+      origin_type:
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#origin_type
+        range: string
+      origin_source:
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#origin_source
+        range: string
+      comparator:
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#comparator
+        range: string
+      vlm_target:
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#vlm_target
+        range: string

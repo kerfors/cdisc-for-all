@@ -1,0 +1,365 @@
+{
+ "@context": "http://www.w3.org/ns/csvw",
+ "tables": [
+  {
+   "url": "cdisc_biomedical_concepts_latest.csv",
+   "dialect": {
+    "trim": false
+   },
+   "tableSchema": {
+    "columns": [
+     {
+      "titles": "package_date",
+      "name": "package_date",
+      "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_latest#package_date"
+     },
+     {
+      "titles": "short_name",
+      "name": "short_name",
+      "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_latest#short_name"
+     },
+     {
+      "titles": "bc_id",
+      "name": "bc_id",
+      "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_latest#bc_id"
+     },
+     {
+      "titles": "ncit_code",
+      "name": "ncit_code",
+      "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_latest#ncit_code"
+     },
+     {
+      "titles": "parent_bc_id",
+      "name": "parent_bc_id",
+      "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_latest#parent_bc_id"
+     },
+     {
+      "titles": "bc_categories",
+      "name": "bc_categories",
+      "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_latest#bc_categories"
+     },
+     {
+      "titles": "synonyms",
+      "name": "synonyms",
+      "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_latest#synonyms"
+     },
+     {
+      "titles": "result_scales",
+      "name": "result_scales",
+      "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_latest#result_scales"
+     },
+     {
+      "titles": "definition",
+      "name": "definition",
+      "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_latest#definition"
+     },
+     {
+      "titles": "system",
+      "name": "system",
+      "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_latest#system"
+     },
+     {
+      "titles": "system_name",
+      "name": "system_name",
+      "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_latest#system_name"
+     },
+     {
+      "titles": "code",
+      "name": "code",
+      "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_latest#code"
+     },
+     {
+      "titles": "dec_id",
+      "name": "dec_id",
+      "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_latest#dec_id"
+     },
+     {
+      "titles": "ncit_dec_code",
+      "name": "ncit_dec_code",
+      "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_latest#ncit_dec_code"
+     },
+     {
+      "titles": "dec_label",
+      "name": "dec_label",
+      "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_latest#dec_label"
+     },
+     {
+      "titles": "data_type",
+      "name": "data_type",
+      "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_latest#data_type"
+     },
+     {
+      "titles": "example_set",
+      "name": "example_set",
+      "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_latest#example_set"
+     },
+     {
+      "virtual": true,
+      "propertyUrl": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+      "valueUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos#cdisc_biomedical_concepts_latest"
+     }
+    ],
+    "primaryKey": [
+     "bc_id",
+     "dec_id"
+    ],
+    "aboutUrl": "https://kerfors.github.io/cdisc-for-all/id/cosmos/cdisc_biomedical_concepts_latest/{bc_id}/{dec_id}"
+   }
+  },
+  {
+   "url": "cdisc_biomedical_concepts_hierarchy_latest.csv",
+   "dialect": {
+    "trim": false
+   },
+   "tableSchema": {
+    "columns": [
+     {
+      "titles": "bc_short_name",
+      "name": "bc_short_name",
+      "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_hierarchy_latest#bc_short_name"
+     },
+     {
+      "titles": "bc_id",
+      "name": "bc_id",
+      "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_hierarchy_latest#bc_id"
+     },
+     {
+      "titles": "bc_short_name_id",
+      "name": "bc_short_name_id",
+      "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_hierarchy_latest#bc_short_name_id"
+     },
+     {
+      "titles": "parent_bc_id",
+      "name": "parent_bc_id",
+      "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_hierarchy_latest#parent_bc_id"
+     },
+     {
+      "titles": "bc_categories",
+      "name": "bc_categories",
+      "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_hierarchy_latest#bc_categories"
+     },
+     {
+      "titles": "bc_synonyms",
+      "name": "bc_synonyms",
+      "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_hierarchy_latest#bc_synonyms"
+     },
+     {
+      "titles": "result_scales",
+      "name": "result_scales",
+      "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_hierarchy_latest#result_scales"
+     },
+     {
+      "titles": "bc_definition",
+      "name": "bc_definition",
+      "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_hierarchy_latest#bc_definition"
+     },
+     {
+      "titles": "bc_hierarchy_level",
+      "name": "bc_hierarchy_level",
+      "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_hierarchy_latest#bc_hierarchy_level"
+     },
+     {
+      "titles": "bc_hierarchy_full",
+      "name": "bc_hierarchy_full",
+      "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_hierarchy_latest#bc_hierarchy_full"
+     },
+     {
+      "titles": "dec_n",
+      "name": "dec_n",
+      "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_hierarchy_latest#dec_n"
+     },
+     {
+      "virtual": true,
+      "propertyUrl": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+      "valueUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos#cdisc_biomedical_concepts_hierarchy_latest"
+     }
+    ],
+    "primaryKey": [
+     "bc_id"
+    ],
+    "aboutUrl": "https://kerfors.github.io/cdisc-for-all/id/cosmos/cdisc_biomedical_concepts_hierarchy_latest/{bc_id}"
+   }
+  },
+  {
+   "url": "cdisc_sdtm_dataset_specializations_latest.csv",
+   "dialect": {
+    "trim": false
+   },
+   "tableSchema": {
+    "columns": [
+     {
+      "titles": "package_date",
+      "name": "package_date",
+      "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#package_date"
+     },
+     {
+      "titles": "bc_id",
+      "name": "bc_id",
+      "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#bc_id"
+     },
+     {
+      "titles": "sdtmig_start_version",
+      "name": "sdtmig_start_version",
+      "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#sdtmig_start_version"
+     },
+     {
+      "titles": "sdtmig_end_version",
+      "name": "sdtmig_end_version",
+      "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#sdtmig_end_version"
+     },
+     {
+      "titles": "domain",
+      "name": "domain",
+      "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#domain"
+     },
+     {
+      "titles": "vlm_source",
+      "name": "vlm_source",
+      "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#vlm_source"
+     },
+     {
+      "titles": "vlm_group_id",
+      "name": "vlm_group_id",
+      "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#vlm_group_id"
+     },
+     {
+      "titles": "short_name",
+      "name": "short_name",
+      "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#short_name"
+     },
+     {
+      "titles": "sdtm_variable",
+      "name": "sdtm_variable",
+      "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#sdtm_variable"
+     },
+     {
+      "titles": "dec_id",
+      "name": "dec_id",
+      "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#dec_id"
+     },
+     {
+      "titles": "nsv_flag",
+      "name": "nsv_flag",
+      "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#nsv_flag"
+     },
+     {
+      "titles": "codelist",
+      "name": "codelist",
+      "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#codelist"
+     },
+     {
+      "titles": "codelist_submission_value",
+      "name": "codelist_submission_value",
+      "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#codelist_submission_value"
+     },
+     {
+      "titles": "subset_codelist",
+      "name": "subset_codelist",
+      "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#subset_codelist"
+     },
+     {
+      "titles": "value_list",
+      "name": "value_list",
+      "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#value_list"
+     },
+     {
+      "titles": "assigned_term",
+      "name": "assigned_term",
+      "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#assigned_term"
+     },
+     {
+      "titles": "assigned_value",
+      "name": "assigned_value",
+      "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#assigned_value"
+     },
+     {
+      "titles": "role",
+      "name": "role",
+      "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#role"
+     },
+     {
+      "titles": "subject",
+      "name": "subject",
+      "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#subject"
+     },
+     {
+      "titles": "linking_phrase",
+      "name": "linking_phrase",
+      "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#linking_phrase"
+     },
+     {
+      "titles": "predicate_term",
+      "name": "predicate_term",
+      "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#predicate_term"
+     },
+     {
+      "titles": "object",
+      "name": "object",
+      "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#object"
+     },
+     {
+      "titles": "data_type",
+      "name": "data_type",
+      "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#data_type"
+     },
+     {
+      "titles": "length",
+      "name": "length",
+      "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#length"
+     },
+     {
+      "titles": "format",
+      "name": "format",
+      "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#format"
+     },
+     {
+      "titles": "significant_digits",
+      "name": "significant_digits",
+      "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#significant_digits"
+     },
+     {
+      "titles": "mandatory_variable",
+      "name": "mandatory_variable",
+      "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#mandatory_variable"
+     },
+     {
+      "titles": "mandatory_value",
+      "name": "mandatory_value",
+      "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#mandatory_value"
+     },
+     {
+      "titles": "origin_type",
+      "name": "origin_type",
+      "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#origin_type"
+     },
+     {
+      "titles": "origin_source",
+      "name": "origin_source",
+      "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#origin_source"
+     },
+     {
+      "titles": "comparator",
+      "name": "comparator",
+      "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#comparator"
+     },
+     {
+      "titles": "vlm_target",
+      "name": "vlm_target",
+      "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#vlm_target"
+     },
+     {
+      "virtual": true,
+      "propertyUrl": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+      "valueUrl": "https://kerfors.github.io/cdisc-for-all/def/cosmos#cdisc_sdtm_dataset_specializations_latest"
+     }
+    ],
+    "primaryKey": [
+     "domain",
+     "vlm_group_id",
+     "sdtm_variable"
+    ],
+    "aboutUrl": "https://kerfors.github.io/cdisc-for-all/id/cosmos/cdisc_sdtm_dataset_specializations_latest/{domain}/{vlm_group_id}/{sdtm_variable}"
+   }
+  }
+ ]
+}

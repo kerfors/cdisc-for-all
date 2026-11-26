@@ -7,4 +7,5 @@ prefixes:
 imports:
   - linkml:types
   - nsv_registry
+  - cosmos
 default_range: string
