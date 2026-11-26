@@ -1,0 +1,8 @@
+# Python packages used by cfa, the readers and the checks (the versions the builds were run with).
+# checks/CSVW_Crosscheck also needs Ruby with the gems rdf-tabular and rdf-turtle.
+pandas==3.1.1
+openpyxl==3.1.5
+rdflib==7.6.0
+linkml==1.12.1
+pyshacl==0.40.2
+pyld==3.3.0
