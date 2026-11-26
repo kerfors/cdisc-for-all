@@ -1,0 +1,58 @@
+{
+ "source": "ncit-flat",
+ "graph": "https://kerfors.github.io/cdisc-for-all/graph/ncit-flat",
+ "pin": {
+  "publisher": "NCI EVS",
+  "title": "NCI Thesaurus, FLAT file",
+  "version": "26.09d",
+  "access": "public",
+  "url": "https://evs.nci.nih.gov/ftp1/NCI_Thesaurus/Thesaurus_26.09d.FLAT.zip",
+  "files": {
+   "Thesaurus_26.09d.FLAT.zip": {
+    "sha256": "3c2743ffb33302226f6f4df3ee683d2812d2c8726f4094237b80a496cf48411b"
+   },
+   "Thesaurus.txt": {
+    "sha256": "b27ca135beadd46c343d248135377c5077c5447fe11b93803bfab866b84fcd38",
+    "in": "Thesaurus_26.09d.FLAT.zip"
+   }
+  },
+  "build_date": "2026-09-29"
+ },
+ "inputs": {},
+ "schema": {
+  "schema/ncit_flat.yaml": "ad4e03f124da0270599bdaf3c365d182015dd03029bd63e3f7db2046a8c14329",
+  "schema/csvw/ncit-flat.csv-metadata.json": "95188a88ed0896f3089c86d5202e93bd78a85f294f6fbab650ff258791c5accc",
+  "schema/shacl/ncit-flat.shacl.ttl": "2518540684903d11b571abbd8d33348f22e5e4b49756ef5836fbdf495b667793"
+ },
+ "triples": 147732,
+ "graph_sha256": "8df3ed1d5ee7931019bc490e8e37c2c179453671a8e62c04e4b30c4965b61f84",
+ "graph_sha256_method": "SHA-256 of the canonical N-Triples (RDFC-1.0; no blank nodes)",
+ "source_text_sha256": "876cf8129300165a15b49ae25e0367830f6072fd9e0485c052d8562e6499e550",
+ "view_text_sha256": "876cf8129300165a15b49ae25e0367830f6072fd9e0485c052d8562e6499e550",
+ "text_sha256_method": "SHA-256 (UTF-8) of the JSON array [header, row, ...], each an array of strings (empty cell \"\"), rows sorted by the key columns in code point order, json.dumps(ensure_ascii=False, separators=(\",\", \":\")).",
+ "tools": {
+  "rdflib": "7.6.0",
+  "linkml": "1.12.1",
+  "pyshacl": "0.40.2",
+  "openpyxl": "3.1.5",
+  "pandas": "3.1.1"
+ },
+ "scope": {
+  "rule": "The concepts of the SDTM CT rows in scope (sdtm-ct graph, column Code, codelist and term rows), the COSMoS Biomedical Concepts (cosmos graph, column ncit_code of cdisc_biomedical_concepts_latest), the COSMoS data element concepts (column ncit_dec_code of the same table) and the SDTM v2.0 Model variable C-codes (sdtm-model graph, column Variable C-Code), with all their ancestors by the column parents (codes separated by \"|\"). A concept of the scope without a row in this file is listed, not an error; a parent without a row stops the reader.",
+  "graphs_read": {
+   "sdtm-ct": "131ed66e4ee68681882c8b82e544e6082fbccff69a49a7f3b4c6dcec840128b9",
+   "cosmos": "daec8206d5bf617e6a0492882c2c2bd3a9f2721c7e986477d42ecc282dd1ceab",
+   "sdtm-model": "9ab685c419ab17ed9d4be0a3af972b5a2c8abb3015ec292c7915a55478984fd9"
+  },
+  "without_row": {
+   "sdtm-ct Code": [],
+   "cosmos ncit_code": [
+    "C229123",
+    "C229124",
+    "C229125"
+   ],
+   "cosmos ncit_dec_code": [],
+   "sdtm-model Variable C-Code": []
+  }
+ }
+}
