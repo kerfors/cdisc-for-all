@@ -29,3 +29,7 @@
 **Code.** LinkML modules for the NCIt FLAT file (`Thesaurus.txt` in the pinned release zip) and the NCIt code–CUI map. Neither file has a header row: the FLAT column names are the nine the NCI EVS ReadMe of the pinned release gives; the map's first two fields are `code` and `CUI` as the same ReadMe gives them ("code <pipe> CUI <pipe>"), and the further fields, which the ReadMe does not describe, are named by position. FLAT rows keep NCI's concept IRI as their node (a CSVW `aboutUrl` template on the code), checked against the published `concept IRI` cell. The scopes, as class annotations: for NCIt, the concepts of the SDTM CT rows in scope, the COSMoS BC and DEC concepts and the SDTM v2.0 Model variable C-codes, with all their ancestors; for the map, the codes of the NCIt graph. `cfa.read` reads delimited text without a header; `cfa.pins` reads a file pinned inside a zip, with both pins checked; `cfa.rule` takes an `aboutUrl` from a class annotation. Reader notebooks for both. The CSVW cross-check converts the published lines of the codes in scope.
 
 **Content.** The NCIt FLAT base graph and the code–CUI map base graph for their scopes, their Excel views and Provenance. Each view rebuilt from its graph has the text hash of the source rows in scope.
+
+## The layer after base is named "linked" (2026-11-27)
+
+**Docs.** The layer after base, earlier called "pure", is named "linked" in the README and the index schema comment. The README states that it holds only published content, nothing derived.

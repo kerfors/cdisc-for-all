@@ -1,4 +1,4 @@
-# The index schema: imports every module. Base modules first; links.yaml and pure.yaml follow in later steps.
+# The index schema: imports every module. Base modules first; links.yaml and linked.yaml follow in later steps.
 id: https://kerfors.github.io/cdisc-for-all/def
 name: cdisc-for-all
 title: cdisc-for-all, the contract

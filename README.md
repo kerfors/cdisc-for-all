@@ -9,7 +9,7 @@ The CDISC standards and the NCI Thesaurus are published as separate files, in di
 ## Two layers
 
 - **base** — one reader per source. It writes the source as an RDF graph in the shape the source publishes: one class per table, one property per published column, one node per row, every non-empty cell as a literal with its text unchanged. Its only selection is the scope (below). Each graph comes with an Excel view of the same table, generated from the graph.
-- **pure** — reads only the base graphs. It makes the links between the sources and generates the Excel files a consumer opens: one combined file per SDTM observation class, and Link_Check.
+- **linked** — reads only the base graphs. It makes the links between the sources and generates the Excel files a consumer opens: one combined file per SDTM observation class, and Link_Check. Only published content, nothing derived: every value comes from a base graph unchanged, a link rests on a published key or on a stated rule, and a view only reshapes published facts losslessly.
 
 ## The rules
 
@@ -23,7 +23,7 @@ Content and shape are different things. A view that shows the same published fac
 
 ## How it is checked
 
-- One LinkML schema describes the base graphs, the links and the pure sheets. SHACL shapes are generated from it: structural shapes must pass; link shapes report every reference that does not resolve, and that report is Link_Check.
+- One LinkML schema describes the base graphs, the links and the linked sheets. SHACL shapes are generated from it: structural shapes must pass; link shapes report every reference that does not resolve, and that report is Link_Check.
 - Each graph has a content hash: SHA-256 of its canonical N-Triples (RDFC-1.0; the graphs have no blank nodes). Each Excel sheet has a text hash of the sheet read back as text.
 - A base graph is lossless when its Excel view, sorted by key, has the same text hash as the source table read as text.
 - The release check reads the source files again and compares.
@@ -51,10 +51,10 @@ IRIs are in the namespace `https://kerfors.github.io/cdisc-for-all/` and are mad
 ## Layout
 
 ```
-schema/          the LinkML schema (one module per source, links, pure) and the generated SHACL
+schema/          the LinkML schema (one module per source, links, linked) and the generated SHACL
 cfa/             the shared helper: reading, writing, IRIs, hashes, Schema sheets, Provenance
 base/<source>/   reader notebook, downloads/ (not in git), the graph (.ttl), its Excel view, Provenance
-pure/            the link graphs, the class files, Link_Check
+linked/          the link graphs, the class files, Link_Check
 checks/          the schema check and the release check
 ```
 
@@ -65,4 +65,4 @@ The code, the schema and the documentation written for this repository are under
 - NCI Thesaurus: Creative Commons Attribution 4.0 International (CC BY 4.0), [NCI Thesaurus Terms of Use](https://evs.nci.nih.gov/ftp1/NCI_Thesaurus/ThesaurusTermsofUse.htm). The NCIt content here is derived from the NCI Thesaurus, produced by NCI Enterprise Vocabulary Services; "NCI Thesaurus" is a trademark of the National Cancer Institute.
 - COSMoS: MIT licence, Copyright CDISC ([cdisc-org/COSMoS](https://github.com/cdisc-org/COSMoS)).
 - SDTM Controlled Terminology and the Non-Standard Variable Registry: the terms of CDISC and NCI EVS.
-- SDTMIG and SDTM Model variable tables: downloaded with a cdisc.org sign-in. The files, and the graphs and views that would reproduce them whole, are not in this repository; each user downloads them. What the pure files take from them is published.
+- SDTMIG and SDTM Model variable tables: downloaded with a cdisc.org sign-in. The files, and the graphs and views that would reproduce them whole, are not in this repository; each user downloads them. What the linked files take from them is published.
