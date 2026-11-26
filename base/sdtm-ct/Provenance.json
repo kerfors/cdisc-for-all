@@ -1,0 +1,56 @@
+{
+ "source": "sdtm-ct",
+ "graph": "https://kerfors.github.io/cdisc-for-all/graph/sdtm-ct",
+ "pin": {
+  "publisher": "CDISC, distributed by NCI EVS",
+  "title": "SDTM Controlled Terminology",
+  "version": "2026-09-25",
+  "access": "public",
+  "url": "https://evs.nci.nih.gov/ftp1/CDISC/SDTM/SDTM%20Terminology.txt",
+  "files": {
+   "SDTM Terminology.txt": {
+    "sha256": "9e8117a90e28e5aade3ac2d52fe1b60adfcccc92a8894891f04ad05c7cf1f88d"
+   }
+  }
+ },
+ "inputs": {
+  "base/sdtm-ct/downloads/SDTM Terminology.txt": "9e8117a90e28e5aade3ac2d52fe1b60adfcccc92a8894891f04ad05c7cf1f88d"
+ },
+ "schema": {
+  "schema/sdtm_ct.yaml": "02c325f44a82ccd749a098c891c23af828c643a1758f78f5a6a4e9649631b1e8",
+  "schema/csvw/sdtm-ct.csv-metadata.json": "b7138d6c2c1d27158e1f3412008547aaae91364bb5b4a77ab0857eae9f3345cb",
+  "schema/shacl/sdtm-ct.shacl.ttl": "ae2edfb0b5261dcc4b634174550a141bfe471296c8c4eef8f33807b349b4c336"
+ },
+ "triples": 186596,
+ "graph_sha256": "131ed66e4ee68681882c8b82e544e6082fbccff69a49a7f3b4c6dcec840128b9",
+ "graph_sha256_method": "SHA-256 of the canonical N-Triples (RDFC-1.0; no blank nodes)",
+ "source_text_sha256": "175cdf9eaa4e4d607a0347fa9405dfb9922c21d30fe183477b4f0f0b60fff1b1",
+ "view_text_sha256": "175cdf9eaa4e4d607a0347fa9405dfb9922c21d30fe183477b4f0f0b60fff1b1",
+ "text_sha256_method": "SHA-256 (UTF-8) of the JSON array [header, row, ...], each an array of strings (empty cell \"\"), rows sorted by the key columns in code point order, json.dumps(ensure_ascii=False, separators=(\",\", \":\")).",
+ "tools": {
+  "rdflib": "7.6.0",
+  "linkml": "1.12.1",
+  "pyshacl": "0.40.2",
+  "openpyxl": "3.1.5",
+  "pandas": "3.1.1"
+ },
+ "scope": {
+  "rule": "The codelists COSMoS refers to (cosmos graph, column codelist of cdisc_sdtm_dataset_specializations_latest) or SDTMIG v3.4 binds to a variable (sdtmig graph, column CDISC CT Codelist Code(s), codes separated by \";\" with surrounding spaces), as far as this file has a codelist row for them: the codelist row and every term row of each.",
+  "graphs_read": {
+   "cosmos": "daec8206d5bf617e6a0492882c2c2bd3a9f2721c7e986477d42ecc282dd1ceab",
+   "sdtmig": "979d8b4558a81614ac4e79dabb6427fdc32b05445fffc8d249568fe7a395db77"
+  },
+  "referred_to_without_codelist_row": {
+   "cosmos": [
+    "C66790",
+    "C74457"
+   ],
+   "sdtmig": [
+    "C102580",
+    "C66790",
+    "C74457",
+    "C85495"
+   ]
+  }
+ }
+}
