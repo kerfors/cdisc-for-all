@@ -1,0 +1,38 @@
+{
+ "source": "nsv-registry",
+ "graph": "https://kerfors.github.io/cdisc-for-all/graph/nsv-registry",
+ "pin": {
+  "publisher": "CDISC",
+  "title": "Approved Non-Standard Variable Registry",
+  "version": "2026-04-03",
+  "access": "public",
+  "url": "https://www.cdisc.org/sites/default/files/2026-07/Approved-Non-Standard-Variable-Registry_2026-04-03_0.xlsx",
+  "files": {
+   "Approved-Non-Standard-Variable-Registry_2026-04-03_0.xlsx": {
+    "sha256": "b18ba0e01e649fb63e63ac69c3a900b1367f7d2050bc1d50ad2d8660300429c0",
+    "sheet": "Approved NSVs-alpha"
+   }
+  }
+ },
+ "inputs": {
+  "base/nsv-registry/downloads/Approved-Non-Standard-Variable-Registry_2026-04-03_0.xlsx": "b18ba0e01e649fb63e63ac69c3a900b1367f7d2050bc1d50ad2d8660300429c0"
+ },
+ "schema": {
+  "schema/nsv_registry.yaml": "615d21be49be40a4b42c75693ad4507d35bf4589a96dc44c09f3ff01a5645aa3",
+  "schema/csvw/nsv-registry.csv-metadata.json": "2cee28d18cc057fb88216e6f5e943f149e2e735e15d45e7f444ba35e96202fb7",
+  "schema/shacl/nsv-registry.shacl.ttl": "fd58ea5abd0134a659f1574b0443ee058653bf9c0f482fc20efc84cf25e6c6b4"
+ },
+ "triples": 2428,
+ "graph_sha256": "9bf44cae0aae56621511c9dde41be93f296248e4b82f7edae8d8dcf17317e65d",
+ "graph_sha256_method": "SHA-256 of the canonical N-Triples (RDFC-1.0; no blank nodes)",
+ "source_text_sha256": "465abd9d187c9ed418797f715e6a7c81412deb36900fda7a6404126b00eae326",
+ "view_text_sha256": "465abd9d187c9ed418797f715e6a7c81412deb36900fda7a6404126b00eae326",
+ "text_sha256_method": "SHA-256 (UTF-8) of the JSON array [header, row, ...], each an array of strings (empty cell \"\"), rows sorted by the key columns in code point order, json.dumps(ensure_ascii=False, separators=(\",\", \":\")).",
+ "tools": {
+  "rdflib": "7.6.0",
+  "linkml": "1.12.1",
+  "pyshacl": "0.40.2",
+  "openpyxl": "3.1.5",
+  "pandas": "3.1.1"
+ }
+}

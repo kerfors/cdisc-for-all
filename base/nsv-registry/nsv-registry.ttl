@@ -1,0 +1,2999 @@
+PREFIX nsv: <https://kerfors.github.io/cdisc-for-all/def/nsv-registry/Approved%20NSVs-alpha#>
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/ABTRG/SDTMIG%20v4.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "A description of the antigen(s) an antibody recognizes and targets." ;
+    nsv:Label "Antibody Target	" ;
+    nsv:Limited%20to%20Class%28es%29 "Findings" ;
+    nsv:Limited%20to%20Domain%28s%29 "IS (Immunogenicity Specimen Assessments)" ;
+    nsv:Qualifying%20Variable%28s%29 "--BDAGNT" ;
+    nsv:Role "Non-Standard Variable Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "SDTMIG v4.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "In-Development" ;
+    nsv:Used%20in%20Domain%28s%29 "IS (Immunogenicity Specimen Assessments)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "136086556" ;
+    nsv:Variable%20Name "ABTRG" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/ACIGD/CDASHIG%20v2.3>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Curator%20Remarks """If going to SDTM may need to have one active ingredient record per variable. This will allow space for the number so that each ingredient for the NSV/SUPPQUAL will have number (e.g. --ACIGD1, --ACIGD2, etc.).\r
+\r
+The variable was reviewed for CDASHIG v2.2 after publication. During NSV review, the variable was updated and metadata updated including the variable name from INGRD to ACIGRD. The start date for the transition to the new NSV is yet to be determined by the CDASH team.""" ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "The name(s) of the active ingredients used in the medication taken or administered." ;
+    nsv:Label "Active Ingredients" ;
+    nsv:Limited%20to%20Class%28es%29 "Interventions" ;
+    nsv:Notes "This may be collected in addition to the medication/therapy name. Collecting this provides more detailed information when coding to a dictionary; Typically a sponsor would collect the ingredients with commas between the ingredients." ;
+    nsv:Role "Non-Standard Variable Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "CDASHIG v2.3" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Variable%20Name "ACIGD" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/ADMDEV/QRS%3A%20ADCS-ADL%20MCI%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "Response value of device used for data collection, either in the protocol, or study documents" ;
+    nsv:Label "Administration Device" ;
+    nsv:Limited%20to%20Class%28es%29 "Findings" ;
+    nsv:Limited%20to%20Domain%28s%29 "FT (Functional Tests) QS (Questionnaires) RS (Disease Response and Clin Classification)" ;
+    nsv:Notes "Used in QRS domains" ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "QRS: ADCS-ADL MCI v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Internal Review" ;
+    nsv:Variable%20Name "ADMDEV" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/ADMODP/QRS%3A%20ADCS-ADL%20MCI%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "Response value for how the instrument was presented to the subject as defined in a protocol, or study documents" ;
+    nsv:Label "Administration Mode of Presentation" ;
+    nsv:Limited%20to%20Class%28es%29 "Findings" ;
+    nsv:Limited%20to%20Domain%28s%29 "FT (Functional Tests) QS (Questionnaires) RS (Disease Response and Clin Classification)" ;
+    nsv:Notes "Used in QRS domains" ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "QRS: ADCS-ADL MCI v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Internal Review" ;
+    nsv:Variable%20Name "ADMODP" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/AFFPER/QRS%3A%20NHPT%20v1.0%20QRS%3A%20PASAT%20v1.0%20QRS%3A%20T25FW%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Curator%20Remarks "NSV updated to remove the domain name, now it meets the character requirements.  Moved to \"Under Review\" status on1-Mar-2022." ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "For a complete trial, record any circumstances that affected the patient’s performance:" ;
+    nsv:Label "Affected Performance" ;
+    nsv:Limited%20to%20Class%28es%29 "Findings" ;
+    nsv:Limited%20to%20Domain%28s%29 "FT (Functional Tests)" ;
+    nsv:Notes "QRS:NHPT, PASAT, T25FW " ;
+    nsv:Role "Non-Standard Result Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "QRS: NHPT v1.0 QRS: PASAT v1.0 QRS: T25FW v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Used%20in%20Domain%28s%29 "FT (Functional Tests)" ;
+    nsv:Variable%20Name "AFFPER" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/AFIJDS/TAUG-T1D-Exercise%26Nutrition%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Codelist%20Reference "(<a href=\"http://evs.nci.nih.gov/ftp1/CDISC/SDTM/SDTM%20Terminology.html#CL.C66742.NY\" target=\"_blank\">NY</a>)" ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "Indicates the result was affected by an injury or disability" ;
+    nsv:Label "Result Affected by Injury/Disability" ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "TAUG-T1D-Exercise&Nutrition v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Review for Publication" ;
+    nsv:Used%20in%20Domain%28s%29 "MK (Musculoskeletal System Findings)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "92793022" ;
+    nsv:Variable%20Name "AFIJDS" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/ALGREG/SDTMIG%20v4.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "A description of the geographic area or region where the allergens for testing originate." ;
+    nsv:Label "Allergen Mixture Region	" ;
+    nsv:Limited%20to%20Class%28es%29 "Findings" ;
+    nsv:Limited%20to%20Domain%28s%29 "IS (Immunogenicity Specimen Assessments)" ;
+    nsv:Qualifying%20Variable%28s%29 "--BDAGNT" ;
+    nsv:Role "Non-Standard Variable Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "SDTMIG v4.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "In-Development" ;
+    nsv:Used%20in%20Domain%28s%29 "IS (Immunogenicity Specimen Assessments)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "136086556" ;
+    nsv:Variable%20Name "ALGREG" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/ANTPLN/QRS%3A%20RECIST%20V1.1%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "The position and orientation of the image slice relative to the patient-based coordinate system." ;
+    nsv:Label "Anatomical Plane" ;
+    nsv:Limited%20to%20Domain%28s%29 "TU (Tumor/Lesion Identification)" ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "QRS: RECIST V1.1 v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Public Review" ;
+    nsv:Used%20in%20Domain%28s%29 "TU (Tumor/Lesion Identification)" ;
+    nsv:Variable%20Name "ANTPLN" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/ANTXHI/QRS%3A%20PI%20v2.0%20TAUG-COVID-19%20v2.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Codelist%20Reference "Instrument Specific" ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "The text value of the highest anchor value along a continuum of values, as in the visual analog scales (VAS) and numeric rating scales (NRS)." ;
+    nsv:Label "Anchor Text High" ;
+    nsv:Qualifying%20Variable%28s%29 "--TESTCD" ;
+    nsv:Role "Non-Standard Variable Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "QRS: PI v2.0 TAUG-COVID-19 v2.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "In-Development" ;
+    nsv:Used%20in%20Domain%28s%29 "FA (Findings About Events or Interventions)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "153062747 153062750" ;
+    nsv:Variable%20Name "ANTXHI" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/ANTXLO/QRS%3A%20PI%20v2.0%20TAUG-COVID-19%20v2.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Codelist%20Reference "Instrument Specific" ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "The text value of the lowest anchor value along a continuum of values, as in the visual analog scales (VAS) and numeric rating scales (NRS)." ;
+    nsv:Label "Anchor Text Low" ;
+    nsv:Qualifying%20Variable%28s%29 "--TESTCD" ;
+    nsv:Role "Non-Standard Variable Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "QRS: PI v2.0 TAUG-COVID-19 v2.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "In-Development" ;
+    nsv:Used%20in%20Domain%28s%29 "FA (Findings About Events or Interventions)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "153062747 153062750" ;
+    nsv:Variable%20Name "ANTXLO" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/ANVLHI/TAUG-COVID-19%20v2.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Codelist%20Reference "Instrument Specific" ;
+    nsv:Define-XML%20Datatype "float" ;
+    nsv:Description "The numeric value of the highest anchor value along a continuum of values, as in the visual analog scales (VAS) and numeric rating scales (NRS)." ;
+    nsv:Label "Anchor Numeric Value High" ;
+    nsv:Limited%20to%20Class%28es%29 "Findings" ;
+    nsv:Qualifying%20Variable%28s%29 "--TESTCD" ;
+    nsv:Role "Non-Standard Variable Qualifier" ;
+    nsv:Simple%20Datatype "Num" ;
+    nsv:Source%28s%29 "TAUG-COVID-19 v2.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "In-Development" ;
+    nsv:Used%20in%20Domain%28s%29 "FA (Findings About Events or Interventions)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "153062747 153062750" ;
+    nsv:Variable%20Name "ANVLHI" ;
+    nsv:XML%20Datatype "float" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/ANVLHI/UG-Pediatrics%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Curator%20Remarks "The qualifying variable is --TESTCD as this is the topic variable. The --TEST is a synonym of --TESTCD." ;
+    nsv:Define-XML%20Datatype "float" ;
+    nsv:Description "The numeric value of the highest anchor value along a continuum of values, as in the visual analog scales (VAS) and numeric rating scales (NRS)." ;
+    nsv:Label "Anchor Value High" ;
+    nsv:Limited%20to%20Class%28es%29 "Findings" ;
+    nsv:Qualifying%20Variable%28s%29 "--TESTCD" ;
+    nsv:Role "Non-Standard Variable Qualifier" ;
+    nsv:Simple%20Datatype "Num" ;
+    nsv:Source%28s%29 "UG-Pediatrics v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Internal Review" ;
+    nsv:Used%20in%20Domain%28s%29 "FA (Findings About Events or Interventions)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "144539666" ;
+    nsv:Variable%20Name "ANVLHI" ;
+    nsv:XML%20Datatype "float" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/ANVLLO/TAUG-COVID-19%20v2.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Codelist%20Reference "Instrument Specific" ;
+    nsv:Define-XML%20Datatype "float" ;
+    nsv:Description "The numeric value of the lowest anchor value along a continuum of values, as in the visual analog scales (VAS) and numeric rating scales (NRS). 	" ;
+    nsv:Label "Anchor Numeric Value Low" ;
+    nsv:Limited%20to%20Class%28es%29 "Findings" ;
+    nsv:Qualifying%20Variable%28s%29 "--TESTCD" ;
+    nsv:Role "Non-Standard Variable Qualifier" ;
+    nsv:Simple%20Datatype "Num" ;
+    nsv:Source%28s%29 "TAUG-COVID-19 v2.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "In-Development" ;
+    nsv:Used%20in%20Domain%28s%29 "FA (Findings About Events or Interventions)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "153062747 153062750" ;
+    nsv:Variable%20Name "ANVLLO" ;
+    nsv:XML%20Datatype "float" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/ANVLLO/UG-Pediatrics%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Curator%20Remarks "The qualifying variable is --TESTCD as this is the topic variable. The --TEST is a synonym of --TESTCD." ;
+    nsv:Define-XML%20Datatype "float" ;
+    nsv:Description "The numeric value of the lowest anchor value along a continuum of values, as in the visual analog scales (VAS) and numeric rating scales (NRS)." ;
+    nsv:Label "Anchor Value Low" ;
+    nsv:Limited%20to%20Class%28es%29 "Findings" ;
+    nsv:Qualifying%20Variable%28s%29 "--TESTCD" ;
+    nsv:Role "Non-Standard Variable Qualifier" ;
+    nsv:Simple%20Datatype "Num" ;
+    nsv:Source%28s%29 "UG-Pediatrics v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Internal Review" ;
+    nsv:Used%20in%20Domain%28s%29 "FA (Findings About Events or Interventions)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "144539666" ;
+    nsv:Variable%20Name "ANVLLO" ;
+    nsv:XML%20Datatype "float" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/APPDST%20/QRS%3A%20CDRS-R%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "Response values on the CRF indicating the type of appetite disturbance" ;
+    nsv:Label "Appetite Disturbance Type" ;
+    nsv:Limited%20to%20Class%28es%29 "Findings" ;
+    nsv:Limited%20to%20Domain%28s%29 "RS (Disease Response and Clin Classification)" ;
+    nsv:Notes "QRS supplement specific NSV" ;
+    nsv:Requester%20Remarks "Response values for the type of appetite disturbance listed on the CRF" ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "QRS: CDRS-R v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Review for Publication" ;
+    nsv:Used%20in%20Domain%28s%29 "RS (Disease Response and Clin Classification)" ;
+    nsv:Variable%20Name "APPDST " ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/ASLTTY/QRS%3A%20T25FW%20v1.0%20QRS%3A%20SIX%20MINUTE%20WALK%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Curator%20Remarks """NSV updated to remove the domain name, now it meets the character requirements.  Moved to "Under Review" status on1-Mar-2022.\r
+\r
+Choices: Unilateral Assistance or Bilateral Assistance""" ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "Type of assisted laterality used." ;
+    nsv:Label "Assistance Laterality Type" ;
+    nsv:Limited%20to%20Class%28es%29 "Findings" ;
+    nsv:Limited%20to%20Domain%28s%29 "FT (Functional Tests)" ;
+    nsv:Notes "QRS: T25FW" ;
+    nsv:Role "Non-Standard Result Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "QRS: T25FW v1.0 QRS: SIX MINUTE WALK v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Published" ;
+    nsv:Used%20in%20Domain%28s%29 "FT (Functional Tests)" ;
+    nsv:Variable%20Name "ASLTTY" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/ASTDEV/QRS%3A%20T25FW%20v1.0%20QRS%3A%20SIX%20MINUTE%20WALK%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Curator%20Remarks "NSV updated to remove the domain name, now it meets the character requirements.  Moved to \"Under Review\" status on1-Mar-2022." ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "Assistive device used in the performance test." ;
+    nsv:Label "Assistance Device" ;
+    nsv:Limited%20to%20Class%28es%29 "Findings" ;
+    nsv:Limited%20to%20Domain%28s%29 "FT (Functional Tests)" ;
+    nsv:Notes "QRS: SIX MINUTE WALK, T25FW" ;
+    nsv:Publication%20Date%20of%20the%20Source%20Document "2022-08-09" ;
+    nsv:Role "Non-Standard Result Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "QRS: T25FW v1.0 QRS: SIX MINUTE WALK v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Published" ;
+    nsv:Used%20in%20Domain%28s%29 "FT (Functional Tests)" ;
+    nsv:Variable%20Name "ASTDEV" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/ASYDTC/TAUG-PanCan%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Codelist%20Reference "ISO 8601" ;
+    nsv:Curator%20Remarks "GF added to the \"Used in Domains\".  Added GF to the list of allowable domains.  PF will be retired starting with SDTMIG v3.4.  Follow the domain according to the version of the SDTM and SDTMIG is being used." ;
+    nsv:Define-XML%20Datatype "datetime" ;
+    nsv:Description "Date and time assay was performed." ;
+    nsv:Label "Assay Date/Time" ;
+    nsv:Limited%20to%20Class%28es%29 "Findings" ;
+    nsv:Limited%20to%20Domain%28s%29 "BS (Biospecimen Findings) GF (Genomics Findings) IS (Immunogenicity Specimen Assessments) LB (Laboratory Test Results) MB (Microbiology Specimen) MI (Microscopic Findings) MS (Microbiology Susceptibility) PC (Pharmacokinetics Concentrations) PF (Pharmacogenomics/Genetics Findings)" ;
+    nsv:Notes "Used only for specimen domains" ;
+    nsv:Requester%20Remarks "For GF domain." ;
+    nsv:Role "Non-Standard Timing" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "TAUG-PanCan v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Review for Publication" ;
+    nsv:Used%20in%20Domain%28s%29 "GF (Genomics Findings)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "110376720 103763818" ;
+    nsv:Variable%20Name "ASYDTC" ;
+    nsv:XML%20Datatype "datetime" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/ATC1%20/CDASHIG%20%20v2.2>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Curator%20Remarks "Making a new NSV for each ATC code." ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "The first level of grouping from the Anatomical Therapeutic Chemical (ATC) Classification System" ;
+    nsv:External%20Dictionary "Anatomical Therapeutic Chemical (ATC) classification system" ;
+    nsv:Label "ATC Level 1 Name" ;
+    nsv:Limited%20to%20Class%28es%29 "Interventions" ;
+    nsv:Notes "Indicates the anatomical main group. " ;
+    nsv:Qualifying%20Variable%28s%29 "TRT" ;
+    nsv:Requester%20Remarks "This has codes for ATC1-5 and then ATCnCD  were n is 1-5. " ;
+    nsv:Role "Non-Standard Variable Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "CDASHIG  v2.2" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Published" ;
+    nsv:Variable%20Name "ATC1 " ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/ATC1CD/CDASHIG%20%20v2.2>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Curator%20Remarks "https://www.whocc.no/atc/structure_and_principles/" ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "The assigned dictionary code denoting the first level grouping from the ATC Classification System." ;
+    nsv:External%20Dictionary "Anatomical Therapeutic Chemical (ATC) classification system," ;
+    nsv:Label "ATC Level 1 Code" ;
+    nsv:Limited%20to%20Class%28es%29 "Interventions" ;
+    nsv:Notes "The ATC Level 1 Code indicates the anatomical main group." ;
+    nsv:Qualifying%20Variable%28s%29 "ATC1" ;
+    nsv:Role "Non-Standard Variable Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "CDASHIG  v2.2" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Published" ;
+    nsv:Variable%20Name "ATC1CD" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/ATC2/CDASHIG%20%20v2.2>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "The second level grouping from the Anatomical Therapeutic Chemical (ATC) Classification System." ;
+    nsv:External%20Dictionary "Anatomical Therapeutic Chemical (ATC) classification system" ;
+    nsv:Label "ATC Level 2 Name" ;
+    nsv:Limited%20to%20Class%28es%29 "Interventions" ;
+    nsv:Notes "Indicates the therapeutic subgroup." ;
+    nsv:Qualifying%20Variable%28s%29 "TRT" ;
+    nsv:Requester%20Remarks "This has codes for ATC1-5. This is ATC2" ;
+    nsv:Role "Non-Standard Variable Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "CDASHIG  v2.2" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Variable%20Name "ATC2" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/ATC2CD/CDASHIG%20%20v2.2>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Curator%20Remarks "https://www.whocc.no/atc/structure_and_principles/" ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "The assigned dictionary code denoting the second level grouping from the ATC Classification System." ;
+    nsv:External%20Dictionary " 	Anatomical Therapeutic Chemical (ATC) classification system" ;
+    nsv:Label "ATC Level 2 Code" ;
+    nsv:Limited%20to%20Class%28es%29 "Interventions" ;
+    nsv:Notes "The ATC Level 2 Code indicates the therapeutic subgroup." ;
+    nsv:Qualifying%20Variable%28s%29 "ATC2" ;
+    nsv:Role "Non-Standard Variable Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "CDASHIG  v2.2" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Variable%20Name "ATC2CD" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/ATC3/CDASHIG%20%20v2.2>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "The third level grouping from the Anatomical Therapeutic Chemical (ATC) Classification System." ;
+    nsv:External%20Dictionary "Anatomical Therapeutic Chemical (ATC) classification system" ;
+    nsv:Label "ATC Level 3 Name" ;
+    nsv:Limited%20to%20Class%28es%29 "Interventions" ;
+    nsv:Notes "Indicates the therapeutic/pharmacological subgroup. " ;
+    nsv:Qualifying%20Variable%28s%29 "TRT" ;
+    nsv:Requester%20Remarks "This has codes for ATC1-5. This is ATC3 and then ATC3CD. " ;
+    nsv:Role "Non-Standard Variable Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "CDASHIG  v2.2" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Variable%20Name "ATC3" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/ATC3CD/CDASHIG%20%20v2.2>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "The assigned dictionary code denoting the third level grouping from the ATC Classification System." ;
+    nsv:External%20Dictionary "Anatomical Therapeutic Chemical (ATC) classification system" ;
+    nsv:Label "ATC Level 3 Code" ;
+    nsv:Limited%20to%20Class%28es%29 "Interventions" ;
+    nsv:Notes "The ATC Level 3 Code indicates the therapeutic/pharmacological subgroup. " ;
+    nsv:Qualifying%20Variable%28s%29 "ATC3" ;
+    nsv:Role "Non-Standard Variable Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "CDASHIG  v2.2" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Variable%20Name "ATC3CD" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/ATC4/CDASHIG%20%20v2.2>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "The fourth level grouping from the Anatomical Therapeutic Chemical (ATC) Classification System" ;
+    nsv:External%20Dictionary "Anatomical Therapeutic Chemical (ATC) classification system" ;
+    nsv:Label "ATC Level 4 Name" ;
+    nsv:Limited%20to%20Class%28es%29 "Interventions" ;
+    nsv:Notes "Indicates the chemical/therapeutic/pharmacological subgroup." ;
+    nsv:Qualifying%20Variable%28s%29 "TRT" ;
+    nsv:Requester%20Remarks """This has codes for ATC1-5 and then ATCnCD were n is 1-5. \r
+This is ATC4 and ATC4CD.""" ;
+    nsv:Role "Non-Standard Variable Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "CDASHIG  v2.2" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Variable%20Name "ATC4" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/ATC4CD/CDASHIG%20%20v2.2>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Codelist%20Reference "https://www.whocc.no/atc/structure_and_principles/" ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "The assigned dictionary code denoting the fourth level grouping from the ATC Classification System." ;
+    nsv:External%20Dictionary "Anatomical Therapeutic Chemical (ATC) classification system" ;
+    nsv:Label "ATC Level 4 Code 	" ;
+    nsv:Notes "The ATC Level 4 Code indicates the chemical/therapeutic/pharmacological subgroup." ;
+    nsv:Qualifying%20Variable%28s%29 "ATC4" ;
+    nsv:Role "Non-Standard Variable Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "CDASHIG  v2.2" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Variable%20Name "ATC4CD" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/ATC5/CDASHIG%20%20v2.2>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "The fifth level grouping from the Anatomical Therapeutic Chemical (ATC) Classification System" ;
+    nsv:External%20Dictionary "Anatomical Therapeutic Chemical (ATC) classification system" ;
+    nsv:Label "ATC Level 5 Name" ;
+    nsv:Limited%20to%20Class%28es%29 "Interventions" ;
+    nsv:Notes "Indicates the chemical substance. 	" ;
+    nsv:Qualifying%20Variable%28s%29 "TRT" ;
+    nsv:Role "Non-Standard Variable Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "CDASHIG  v2.2" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Variable%20Name "ATC5" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/ATC5CD/CDASHIG%20%20v2.2>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Curator%20Remarks "https://www.whocc.no/atc/structure_and_principles/" ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "The assigned dictionary code denoting the fifth level grouping from the ATC Classification System." ;
+    nsv:External%20Dictionary "Anatomical Therapeutic Chemical (ATC) classification system" ;
+    nsv:Label "ATC Level 5 Code" ;
+    nsv:Limited%20to%20Class%28es%29 "Interventions" ;
+    nsv:Notes "The ATC Level 5 Code indicates the chemical substance." ;
+    nsv:Qualifying%20Variable%28s%29 "ATC5" ;
+    nsv:Role "Non-Standard Variable Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "CDASHIG  v2.2" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Variable%20Name "ATC5CD" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/CAGETXT/CDASHIG%20%20v2.2>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "The age of the subject at study start, expressed as descriptive text and not a range." ;
+    nsv:Label "Collected Age Text" ;
+    nsv:Limited%20to%20Class%28es%29 "Special Purpose" ;
+    nsv:Limited%20to%20Domain%28s%29 "DM (Demographics)" ;
+    nsv:Publication%20Date%20of%20the%20Source%20Document "2021-09-28" ;
+    nsv:Requester%20Remarks "This is defined in CDASHIG. Used if collecting age descriptions (e.g., neonate, adolescent, adult), If only collected age ranges (e.g., 0-3, 18-25, >65) are expected, those should be collected using AGETXT" ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "CDASHIG  v2.2" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Published" ;
+    nsv:Used%20in%20Domain%28s%29 "DM (Demographics)" ;
+    nsv:Variable%20Name "CAGETXT" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/CBRFL/QRS%3A%20PRO-CTCAE%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Curator%20Remarks """Removed the "QS" from the variable name since it is the domain name.\r
+\r
+Response values will be "Yes" or Null. Anticipate the creation of a Codelist in the future.\r
+\r
+Planned to be promoted with SDTMIG v4.0. (2022-06-15)""" ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "An indication that the QRS instrument directs the subject to another item of the instrument based on a given condition." ;
+    nsv:Label "Conditionally Branched Item Flag" ;
+    nsv:Limited%20to%20Domain%28s%29 "FT (Functional Tests) QS (Questionnaires) RS (Disease Response and Clin Classification)" ;
+    nsv:Notes "This is a general QRS NSV that applies to all QRS domains." ;
+    nsv:Requester%20Remarks " The QRS conditional branched item indicator replaces the concept of QRS logically Skipped Items." ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "QRS: PRO-CTCAE v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved - Flagged for Promotion to SDTM" ;
+    nsv:Status%20of%20the%20Source%20Document "Public Review" ;
+    nsv:Used%20in%20Domain%28s%29 "FT (Functional Tests) QS (Questionnaires) RS (Disease Response and Clin Classification)" ;
+    nsv:Variable%20Name "CBRFL" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/CIRPD/CDASHIG%20v2.3>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Curator%20Remarks "The variable was reviewed for CDASHIG v2.2 after publication. During NSV review, the variable was updated and metadata updated including the variable name from CINTD to CIRPD. The start date for the transition to the new NSV is yet to be determined by the CDASH team." ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "The collected length of time of the intervention interruption." ;
+    nsv:Label "Collected Interruption Duration" ;
+    nsv:Limited%20to%20Class%28es%29 "Interventions" ;
+    nsv:Requester%20Remarks "Also needs the unit variable. Note CDASH indicates Char but maybe should be a numeric. . " ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "CDASHIG v2.3" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Variable%20Name "CIRPD" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/CIRPDU/CDASHIG%20v2.3>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Codelist%20Reference "(<a href=\"http://evs.nci.nih.gov/ftp1/CDISC/SDTM/SDTM%20Terminology.html#CL.C71620.UNIT\" target=\"_blank\">UNIT</a>)" ;
+    nsv:Curator%20Remarks "The variable was reviewed for CDASHIG v2.2 after publication. During NSV review, the variable was updated and metadata updated including the variable name from CINTDU to CIRPDU. The start date for the transition to the new NSV is yet to be determined by the CDASH team." ;
+    nsv:Define-XML%20Datatype "float" ;
+    nsv:Description "The unit for the collected length of time of the intervention interruption. 	" ;
+    nsv:Label "Collected Interruption Duration Unit" ;
+    nsv:Limited%20to%20Class%28es%29 "Interventions" ;
+    nsv:Qualifying%20Variable%28s%29 "CIRPD" ;
+    nsv:Role "Non-Standard Variable Qualifier" ;
+    nsv:Simple%20Datatype "Num" ;
+    nsv:Source%28s%29 "CDASHIG v2.3" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Variable%20Name "CIRPDU" ;
+    nsv:XML%20Datatype "float" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/CLSDTP/TAUG-COVID-19%20v2.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Codelist%20Reference "(<a href=\"http://evs.nci.nih.gov/ftp1/CDISC/SDTM/SDTM%20Terminology.html#CL.C177908.COLSTYP\" target=\"_blank\">COLSTYP</a>)" ;
+    nsv:Curator%20Remarks "2023-03-22" ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "Used to indicate the type of a collected summary dose. This is used for summary results collected. on a CRF or provided by an external vendor." ;
+    nsv:Label "Collected Summary Dose Type" ;
+    nsv:Limited%20to%20Class%28es%29 "Interventions" ;
+    nsv:Limited%20to%20Domain%28s%29 "CM (Concomitant/Prior Medications) EC (Exposure as Collected) EX (Exposure)" ;
+    nsv:Qualifying%20Variable%28s%29 "--DOSE; --DOSTXT; --DOSTOT" ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "TAUG-COVID-19 v2.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Internal Review" ;
+    nsv:Used%20in%20Domain%28s%29 "CM (Concomitant/Prior Medications)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "159328178 159328140" ;
+    nsv:Variable%20Name "CLSDTP" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/CMPTRT/CDASHIG%20v2.3>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Codelist%20Reference "(<a href=\"http://evs.nci.nih.gov/ftp1/CDISC/SDTM/SDTM%20Terminology.html#CL.C66742.NY\" target=\"_blank\">NY</a>)" ;
+    nsv:Curator%20Remarks "The variable was reviewed for CDASHIG v2.2 after publication. During NSV review, the variable was updated and metadata updated including the variable name from TRTCMP to CMPTRT. The start date for the transition to the new NSV is yet to be determined by the CDASH team." ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "An indication of whether or not the subject completed the intended regimen." ;
+    nsv:Label "Completed Treatment" ;
+    nsv:Limited%20to%20Class%28es%29 "Interventions" ;
+    nsv:Qualifying%20Variable%28s%29 "TRT" ;
+    nsv:Role "Non-Standard Variable Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "CDASHIG v2.3" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Variable%20Name "CMPTRT" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/CNTMOD/TAUG-CVD19-Ongo%20Stud%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Codelist%20Reference "C171445/CNTMODE" ;
+    nsv:Curator%20Remarks "This is from the COVID-19 ongoing studies and QRS ADCS-ADL MCI v1.0 instrument.  When an update occurs, this is the variable to use." ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "Mode of subject contact." ;
+    nsv:Label "Contact Mode" ;
+    nsv:Notes "Examples: IN PERSON IVRS REMOTE AUDIO REMOTE AUDIO VIDEO SHIPMENT CONFIRMED BY SIGNATURE TELEPHONE CALL" ;
+    nsv:Requester%20Remarks """This is from the COVID-19 Ongoing Studies TAUG and QRS ADCS-ADL MCI v1.0 instrument.  When an update occurs, this is the variable to use. \r
+\r
+This was also used in a custom domain - Visit Events (VE) which was proposed for missed visits that were performed remotely.  Eventually, people determined it was best to use Subject Visits (SV) domain.""" ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "TAUG-CVD19-Ongo Stud v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Used%20in%20Domain%28s%29 "DA (Drug Accountability)" ;
+    nsv:Variable%20Name "CNTMOD" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/CNTRY/TAUG-COVID-19%20v2.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "The country in which the event or activity occurred." ;
+    nsv:External%20Dictionary "ISO 3166-1 Alpha-3" ;
+    nsv:Label "Country" ;
+    nsv:Limited%20to%20Class%28es%29 "Events Interventions" ;
+    nsv:Notes "Generally represented using ISO 3166-2. Note that regulatory agency specific requirements (e.g., US FDA) may require other terminologies; in such cases, follow regulatory requirements." ;
+    nsv:Qualifying%20Variable%28s%29 "--TERM; --TRT" ;
+    nsv:Role "Non-Standard Variable Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "TAUG-COVID-19 v2.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Used%20in%20Domain%28s%29 "ER (Environmental and Social Factors)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "153062730" ;
+    nsv:Variable%20Name "CNTRY" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/COLAID/QRS%3A%20DAD%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "Response value to preprinted administrator identifier information on CRF" ;
+    nsv:Label "Collected Administrator Identifier " ;
+    nsv:Limited%20to%20Class%28es%29 "Findings" ;
+    nsv:Limited%20to%20Domain%28s%29 "FT (Functional Tests) QS (Questionnaires) RS (Disease Response and Clin Classification)" ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "QRS: DAD v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Internal Review" ;
+    nsv:Variable%20Name "COLAID" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/COLRID/QRS%3A%20DAD%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "Respondent response identifier entered on a CRF for the  preprinted Respondent item on CRF" ;
+    nsv:Label "Collected Respondent Identifier" ;
+    nsv:Limited%20to%20Class%28es%29 "Findings" ;
+    nsv:Notes "Used in QRS domains" ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "QRS: DAD v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "In-Development" ;
+    nsv:Variable%20Name "COLRID" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/COLRRL/QRS%3A%20DAD%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "Collected Respondent Relationship entered on a CRF for the preprinted Respondent Relationship identifier." ;
+    nsv:Label "Collected Respondent Relationship " ;
+    nsv:Limited%20to%20Class%28es%29 "Findings" ;
+    nsv:Notes "Used in QRS domains" ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "QRS: DAD v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "In-Development" ;
+    nsv:Variable%20Name "COLRRL" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/COND/CDASHIG%20%20v2.2>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Codelist%20Reference "(<a href=\"http://evs.nci.nih.gov/ftp1/CDISC/SDTM/SDTM%20Terminology.html#CL.C66742.NY\" target=\"_blank\">NY</a>)" ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "An indication whether the testing conditions defined in the protocol were met (e.g., low-fat diet)." ;
+    nsv:Label "Test Condition Met" ;
+    nsv:Limited%20to%20Class%28es%29 "Findings" ;
+    nsv:Publication%20Date%20of%20the%20Source%20Document "2021-09-28" ;
+    nsv:Requester%20Remarks " SEE CDASHIG" ;
+    nsv:Role "Non-Standard Result Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "CDASHIG  v2.2" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Published" ;
+    nsv:Variable%20Name "COND" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/CRNORD/TAUG-T1D-Exercise%26Nutrition%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "Specifies one of a group of like events by its chronological order within the evaluation interval." ;
+    nsv:Label "Chronological Order" ;
+    nsv:Notes "Examples: \"FIRST\", \"MOST RECENT\"" ;
+    nsv:Role "Non-Standard Timing" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "TAUG-T1D-Exercise&Nutrition v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Review for Publication" ;
+    nsv:Used%20in%20Domain%28s%29 "ML (Meal Data)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "92793015" ;
+    nsv:Variable%20Name "CRNORD" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/CSEV/UG-Pediatrics%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Codelist%20Reference "(<a href=\"http://evs.nci.nih.gov/ftp1/CDISC/SDTM/SDTM%20Terminology.html#CL.C165643.SEVRS\" target=\"_blank\">SEVRS</a>)" ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "The quality or degree of harm associated with a finding or event, as collected." ;
+    nsv:Label "Collected Severity/Intensity" ;
+    nsv:Limited%20to%20Class%28es%29 "Events" ;
+    nsv:Limited%20to%20Domain%28s%29 "AE (Adverse Events)" ;
+    nsv:Notes "To be used when the severity/intensity is not expressed as mild/moderate/severe. If sponsors choose to map the extended severity/intensity codelist values to AESEV CT (i.e., MILD, MODERATE, SEVERE), then this mapped value would be reported using the SDTMIG variable AESEV." ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "UG-Pediatrics v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Internal Review" ;
+    nsv:Used%20in%20Domain%28s%29 "AE (Adverse Events)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "144540892 144541169" ;
+    nsv:Variable%20Name "CSEV" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/CSTDIS/CDASHIG%20v2.3>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Codelist%20Reference "(<a href=\"http://evs.nci.nih.gov/ftp1/CDISC/SDTM/SDTM%20Terminology.html#CL.C66742.NY\" target=\"_blank\">NY</a>)" ;
+    nsv:Curator%20Remarks "he variable was reviewed for CDASHIG v2.2 after publication. During NSV review, the variable was updated and metadata updated including the variable name from DIS to CSTDIS. The start date for the transition to the new NSV is yet to be determined by the CDASH team." ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "An indication as to whether the event caused the subject to discontinue from the study." ;
+    nsv:Label "Caused Study Discontinuation" ;
+    nsv:Limited%20to%20Class%28es%29 "Events" ;
+    nsv:Notes "May be used to create a RELREC to link the record to a Disposition record. " ;
+    nsv:Qualifying%20Variable%28s%29 "--TERM" ;
+    nsv:Role "Non-Standard Variable Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "CDASHIG v2.3" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Variable%20Name "CSTDIS" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/CTRYSD/TAUG-COVID-19%20v2.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Curator%20Remarks "Discussed at ISMT the COUNTRY variable is for investigational site (pre-coordinated for DM). It is okay to keep these generic and post-coordinated to qualify the topic variable in the interventions and events domains. For Findings domain, it could get tricky as in \"was the test sample taken in this country?\" or \"was the test analyzed in this country?\" Limited to Interventions and Events Class." ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "The administrative divisions and/or dependent territories of a country in which the event or activity occurred." ;
+    nsv:External%20Dictionary "ISO 3166-2" ;
+    nsv:Label "Country Sub-Division" ;
+    nsv:Limited%20to%20Class%28es%29 "Events Interventions" ;
+    nsv:Notes "Generally represented using ISO 3166-2. Note that regulatory agency specific requirements (e.g., US FDA) may require other terminologies; in such cases, follow regulatory requirements." ;
+    nsv:Qualifying%20Variable%28s%29 "--TERM; --TRT" ;
+    nsv:Requester%20Remarks "Check COUNTRY nsv in the example against the SDTMIG v3.4. In DM, the variable is a standard variable." ;
+    nsv:Role "Non-Standard Variable Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "TAUG-COVID-19 v2.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Internal Review" ;
+    nsv:Used%20in%20Domain%28s%29 "ER (Environmental and Social Factors)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "153062730" ;
+    nsv:Variable%20Name "CTRYSD" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/DCGDSP/CDMH%20SDTM%20NSVs%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Codelist%20Reference "(<a href=\"http://evs.nci.nih.gov/ftp1/CDISC/SDTM/SDTM%20Terminology.html#CL.C101863.DISCHDX\" target=\"_blank\">DISCHDX</a>)" ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "The physical location of the subject (or status of the subject i.e., the subject has expired) at discharge from a healthcare facility." ;
+    nsv:Label "Discharge Disposition" ;
+    nsv:Limited%20to%20Domain%28s%29 "HO (Healthcare Encounters)" ;
+    nsv:Requester%20Remarks "For mapping the discharge disposition at discharge of the healthcare encounter." ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "CDMH SDTM NSVs v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Used%20in%20Domain%28s%29 "HO (Healthcare Encounters)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "169413557 153062731" ;
+    nsv:Variable%20Name "DCGDSP" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/DCLANG/QRS%3A%20PRO-CTCAE%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "The language in which the data collection was conducted." ;
+    nsv:Label "Data Collection Language" ;
+    nsv:Notes "Generic CRF Adminstration information" ;
+    nsv:Requester%20Remarks "This is a generic NSV that could apply to any SDTMIG domain. It can be represented in many of the QRS instrument language translations. It is referenced in the SDTMIG V3.4 sections: 4.1.7.1 and 8.4.3." ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "QRS: PRO-CTCAE v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "In-Development" ;
+    nsv:Variable%20Name "DCLANG" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/DNAMVR/TAUG-T1D-Exercise%26Nutrition%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "The name and version of the dictionary used for coding of information on the record." ;
+    nsv:Label "Dictionary Name and Version" ;
+    nsv:Notes "The value will usually be referenced in a Define-XML Value Level Metadata definition to define the codelist (typically a specific version of an external dictionary) which contains the values of coding variables such as --DECOD and --DECDCD." ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "TAUG-T1D-Exercise&Nutrition v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Review for Publication" ;
+    nsv:Used%20in%20Domain%28s%29 "ML (Meal Data)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "92793031" ;
+    nsv:Variable%20Name "DNAMVR" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/DSCONT/CDASHIG%20%20v2.2>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Codelist%20Reference "(<a href=\"http://evs.nci.nih.gov/ftp1/CDISC/SDTM/SDTM%20Terminology.html#CL.C66742.NY\" target=\"_blank\">NY</a>)" ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "The plan for subject continuation to the next phase of the study or another study at the time of completion of the CRF." ;
+    nsv:Label "Subject Continue" ;
+    nsv:Limited%20to%20Domain%28s%29 "DS (Disposition)" ;
+    nsv:Publication%20Date%20of%20the%20Source%20Document "2021-09-28" ;
+    nsv:Requester%20Remarks "This is used in CDASHIG. Allows tracking of subject be enrolled into another study- Extension.  " ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "CDASHIG  v2.2" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Published" ;
+    nsv:Used%20in%20Domain%28s%29 "DS (Disposition)" ;
+    nsv:Variable%20Name "DSCONT" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/DURADJ/TAUG-TCM-Acupuncture%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Description "The explanation for why the duration of a single administration or session was changed." ;
+    nsv:Label "Duration Adjustment Reason" ;
+    nsv:Notes "Used to explain why the treatment duration was changed from the planned duration." ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "TAUG-TCM-Acupuncture v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Public Review" ;
+    nsv:Used%20in%20Domain%28s%29 "DX (Device Exposure)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "124202946" ;
+    nsv:Variable%20Name "DURADJ" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/DZCTRL/CDASHIG%20v2.3>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Codelist%20Reference "(<a href=\"http://evs.nci.nih.gov/ftp1/CDISC/SDTM/SDTM%20Terminology.html#CL.C66742.NY\" target=\"_blank\">NY</a>)" ;
+    nsv:Curator%20Remarks "The variable was reviewed for CDASHIG v2.2 after publication. During NSV review, the variable was updated and metadata updated including the variable name from CTRL to DZCTRL. The start date for the transition to the new NSV is yet to be determined by the CDASH team." ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "An indication as to whether the disease, symptom, or other event is under control or stable at the time of data collection." ;
+    nsv:Label "Disease, Symptom or Event Under Control" ;
+    nsv:Limited%20to%20Class%28es%29 "Events" ;
+    nsv:Notes "The conditions (disease, symptom,or event) would typically be defined in the protocol. For example, a sponsor may ask the site to indicate whether a subject's hypertension is under control at the time of enrollment in the study." ;
+    nsv:Qualifying%20Variable%28s%29 "--TERM" ;
+    nsv:Role "Non-Standard Variable Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "CDASHIG v2.3" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Variable%20Name "DZCTRL" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/EVAL/TAUG-T1D-Prevention%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Codelist%20Reference "(<a href=\"http://evs.nci.nih.gov/ftp1/CDISC/SDTM/SDTM%20Terminology.html#CL.C78735.EVAL\" target=\"_blank\">EVAL</a>)" ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "The role of the person(s) providing an evaluation, appraisal, or interpretation." ;
+    nsv:Label "Evaluator" ;
+    nsv:Notes "In an Events domain, indicates the role of the person(s) who identified/diagnosed the event. Used only for results that are subjective (e.g., assigned by a person or a group). Examples include \"ADJUDICATION COMMITTEE\", \"INDEPENDENT ASSESSOR\"." ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "TAUG-T1D-Prevention v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Review for Publication" ;
+    nsv:Used%20in%20Domain%28s%29 "CE (Clinical Events)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "92793122" ;
+    nsv:Variable%20Name "EVAL" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/EVMETH/TAUG-Rare%20Diseases%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Codelist%20Reference "(<a href=\"http://evs.nci.nih.gov/ftp1/CDISC/SDTM/SDTM%20Terminology.html#CL.C132314.CLMETH\" target=\"_blank\">CLMETH</a>)" ;
+    nsv:Curator%20Remarks """Please note that there will likely be more CodeLists for the Method of Events for the BE domain.  For this use case, this codelist is appropriate.  Check CT for updates.\r
+\r
+This variable will be promoted with the next version of SDTMIG (2023-02-08)""" ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "A means, manner of procedure, or systematic course of actions that are performed in order to collect, change the physical state, or change accountability for a biospecimen." ;
+    nsv:Label "Method of Event" ;
+    nsv:Qualifying%20Variable%28s%29 "TERM" ;
+    nsv:Role "Non-Standard Variable Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "TAUG-Rare Diseases v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Internal Review" ;
+    nsv:Used%20in%20Domain%28s%29 "BE (Biospecimen Events)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "159336529" ;
+    nsv:Variable%20Name "EVMETH" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/EVNUM/TAUG-Rare%20Diseases%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Curator%20Remarks """Removed the two letter domain code from the request. Database includes the NSVs without the two letter domain codes and has a six character limit. The NSV now meets the six character limit.\r
+\r
+For this use case: Count of daily seizures for that record (by type).""" ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "Specifies the number of times an event of interest occurs over a defined period of time (e.g., days, lifetime, etc.)" ;
+    nsv:Label "Number of Events" ;
+    nsv:Limited%20to%20Class%28es%29 "Events" ;
+    nsv:Qualifying%20Variable%28s%29 "TERM" ;
+    nsv:Role "Non-Standard Variable Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "TAUG-Rare Diseases v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Internal Review" ;
+    nsv:Used%20in%20Domain%28s%29 "CE (Clinical Events)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "194845032" ;
+    nsv:Variable%20Name "EVNUM" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/EVOTH/TAUG-Rare%20Diseases%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Curator%20Remarks "Removed the two letter domain code from the request. Database includes the NSVs without the two letter domain codes and has a six character limit. The NSV now meets the six character limit." ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "Description of the other event, different from the one(s) previously specified or mentioned. " ;
+    nsv:Label "Description of Other Event" ;
+    nsv:Limited%20to%20Class%28es%29 "Events" ;
+    nsv:Notes "Such as 'Other Seizures'. May include multiple event details. Note free-text field is max of 200 characters." ;
+    nsv:Qualifying%20Variable%28s%29 "TERM" ;
+    nsv:Role "Non-Standard Variable Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "TAUG-Rare Diseases v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Internal Review" ;
+    nsv:Used%20in%20Domain%28s%29 "CE (Clinical Events)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "194845032" ;
+    nsv:Variable%20Name "EVOTH" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/FCTNAM/CDMH%20SDTM%20NSVs%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "The name of the physical place associated with the event or intervention." ;
+    nsv:Label "Facility Name" ;
+    nsv:Limited%20to%20Class%28es%29 "Events Interventions" ;
+    nsv:Requester%20Remarks " The name of the vendor for the healthcare encounter (e.g., hospital, clinic, etc.). The Findings domain has --NAM/ Laboratory/Vendor Name (C117200) The name of the vendor performing the assessment. Tried to keep it generic." ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "CDMH SDTM NSVs v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Variable%20Name "FCTNAM" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/FETNUM/UG-Pediatrics%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Curator%20Remarks """Team discussion resulted in the example changing to use the RP domain and the RPTESTCD.\r
+The variable was Retired-Rejected.\r
+The "float" option fits the best for the XML database option.\r
+\r
+ISMT discussion in progress. Team has approved if the ISMT team determines this is not RP domain but NSV.\r
+\r
+ISMT agreed on NSV approach.  Further discussion and approved.""" ;
+    nsv:Define-XML%20Datatype "integer" ;
+    nsv:Description "The number of fetuses or infants involved in a pregnancy." ;
+    nsv:Label "Number of Fetuses/Infants in Pregnancy" ;
+    nsv:Requester%20Remarks " Copied from the HIV TAUG. XML datatype has been left blank because none of the options seems correct for \"integer\". " ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Num" ;
+    nsv:Source%28s%29 "UG-Pediatrics v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Internal Review" ;
+    nsv:Used%20in%20Domain%28s%29 "CE (Clinical Events) MH (Medical History)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "142085288 142089096 142089090 176168031" ;
+    nsv:Variable%20Name "FETNUM" ;
+    nsv:XML%20Datatype "float" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/FNAMID/CDMH%20SDTM%20NSVs%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Curator%20Remarks "Made it specific to facility and general across event or intervention. Discussed whether this should be specific to the HO domain (and FCTNAM). " ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "A sequence of characters used to uniquely identify the specific name of the physical place associated with the event or intervention.." ;
+    nsv:Label "Facility Name Identifier" ;
+    nsv:Requester%20Remarks " The identifier to accompany the name of the vendor for the healthcare encounter (e.g., hospital, clinic, etc.). The Findings domain has --NAM/ Laboratory/Vendor Name (C117200) The name of the vendor performing the assessment. Tried to keep it generic." ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "CDMH SDTM NSVs v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Variable%20Name "FNAMID" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/FOIIND/TAUG-COVID-19%20v2.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "An indication as to whether a foreign object is present on the image." ;
+    nsv:Label "Foreign Object on Image Indicator" ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "TAUG-COVID-19 v2.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Internal Review" ;
+    nsv:Used%20in%20Domain%28s%29 "RE (Respiratory System Findings)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "159327898 159327893" ;
+    nsv:Variable%20Name "FOIIND" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/FORM/QRS%3A%20PASAT%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Curator%20Remarks "NSV updated to remove the domain name, now it meets the character requirements.  Moved to \"Under Review\" status on1-Mar-2022." ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "Form used for the performance test." ;
+    nsv:Label "Form used" ;
+    nsv:Limited%20to%20Class%28es%29 "Findings" ;
+    nsv:Limited%20to%20Domain%28s%29 "FT (Functional Tests)" ;
+    nsv:Notes "QRS: PASAT choices include: Form A or Form B" ;
+    nsv:Publication%20Date%20of%20the%20Source%20Document "2014-04-09" ;
+    nsv:Role "Non-Standard Result Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "QRS: PASAT v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Published" ;
+    nsv:Used%20in%20Domain%28s%29 "FT (Functional Tests)" ;
+    nsv:Variable%20Name "FORM" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/FRQADJ/TAUG-PanCan%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "The explanation for the change in frequency of the intervention administration." ;
+    nsv:Label "Intervention Frequency Adjustment Reason" ;
+    nsv:Limited%20to%20Class%28es%29 "Interventions" ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "TAUG-PanCan v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Public Review" ;
+    nsv:Used%20in%20Domain%28s%29 "EC (Exposure as Collected) EX (Exposure)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "103763847 110373406" ;
+    nsv:Variable%20Name "FRQADJ" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/FTINID/UG-Pediatrics%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "An identifier that distinguishes multiple fetuses or infants from a multi-gestation pregnancy." ;
+    nsv:Label "Fetus or Infant Identifier" ;
+    nsv:Requester%20Remarks "This NSV was defined in the HIV TAUG. The description was copied from the FTINID NSV that already exists in the NSV Registry. In the Pediatrics User Guide, this NSV is used in AP domains." ;
+    nsv:Role "Non-Standard Identifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "UG-Pediatrics v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Internal Review" ;
+    nsv:Used%20in%20Domain%28s%29 "CE (Clinical Events) MH (Medical History) PR (Procedures) VS (Vital Signs)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "142085288 142089096 142089090 144539727" ;
+    nsv:Variable%20Name "FTINID" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/HLGT/CDASHIG%20%20v2.2>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Curator%20Remarks "Matches SDTM v2.0 with the exception of the the qualified variable is TRT and removal of \"to the event\" in the description." ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "The high-level group term from the primary hierarchy assigned from MedDRA." ;
+    nsv:External%20Dictionary "MedDRA" ;
+    nsv:Label "High Level Group Term" ;
+    nsv:Limited%20to%20Class%28es%29 "Interventions" ;
+    nsv:Qualifying%20Variable%28s%29 "TRT" ;
+    nsv:Role "Non-Standard Variable Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "CDASHIG  v2.2" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Variable%20Name "HLGT" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/HLGTCD/CDASHIG%20%20v2.2>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Curator%20Remarks "To watch the SDTM v2.1 updates to definitions. This one aligns." ;
+    nsv:Define-XML%20Datatype "integer" ;
+    nsv:Description "The high-level group term code from the primary hierarchy assigned from MedDRA." ;
+    nsv:External%20Dictionary "MedDRA" ;
+    nsv:Label "High Level Group Term Code" ;
+    nsv:Limited%20to%20Class%28es%29 "Interventions" ;
+    nsv:Qualifying%20Variable%28s%29 "HLGT" ;
+    nsv:Role "Non-Standard Variable Qualifier" ;
+    nsv:Simple%20Datatype "Num" ;
+    nsv:Source%28s%29 "CDASHIG  v2.2" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Variable%20Name "HLGTCD" ;
+    nsv:XML%20Datatype "float" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/HLT/CDASHIG%20%20v2.2>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Curator%20Remarks """Variable for next version of CDASHIG v2.3 or 2.4. SDTM team notified of inconsistencies of MedDRA variable definitions.\r
+https://jira.cdisc.org/browse/SDTM-693\r
+""" ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "The high-level term from the primary hierarchy assigned from MedDRA." ;
+    nsv:External%20Dictionary "MedDRA" ;
+    nsv:Label "High Level Term" ;
+    nsv:Limited%20to%20Class%28es%29 "Interventions" ;
+    nsv:Qualifying%20Variable%28s%29 "TRT" ;
+    nsv:Role "Non-Standard Variable Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "CDASHIG  v2.2" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Variable%20Name "HLT" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/HLTCD/CDASHIG%20%20v2.2>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Curator%20Remarks "Definition updated to match the SDTM v2.1 \"The high-level term code from the primary hierarchy assigned to the event from MedDRA.\" with the removal of \"to the event\".  Jira: https://jira.cdisc.org/browse/SDTM-694" ;
+    nsv:Define-XML%20Datatype "integer" ;
+    nsv:Description "The high-level term code from the primary hierarchy assigned from MedDRA." ;
+    nsv:External%20Dictionary "MedDRA" ;
+    nsv:Label "High Level Term Code" ;
+    nsv:Limited%20to%20Class%28es%29 "Interventions" ;
+    nsv:Qualifying%20Variable%28s%29 "HLT" ;
+    nsv:Role "Non-Standard Variable Qualifier" ;
+    nsv:Simple%20Datatype "Num" ;
+    nsv:Source%28s%29 "CDASHIG  v2.2" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Variable%20Name "HLTCD" ;
+    nsv:XML%20Datatype "float" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/ICINSL/TAUG-COVID-19%20v2.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "A description of the condition of the image with respect to the level of inspiration." ;
+    nsv:Label "Image Condition r/t Inspiratory Level" ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "TAUG-COVID-19 v2.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Internal Review" ;
+    nsv:Used%20in%20Domain%28s%29 "RE (Respiratory System Findings)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "159327898 159327893" ;
+    nsv:Variable%20Name "ICINSL" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/ICMOTD/TAUG-COVID-19%20v2.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "A description of the condition of the image with respect to image distortion due to movement." ;
+    nsv:Label "Image Condition r/t Motion Distortion" ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "TAUG-COVID-19 v2.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Used%20in%20Domain%28s%29 "RE (Respiratory System Findings)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "159327898 159327893" ;
+    nsv:Variable%20Name "ICMOTD" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/ICNOIS/TAUG-COVID-19%20v2.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Curator%20Remarks "Updated to be more granular based on ISMT discussions in March 2023." ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "Free or standardized text describing the condition of the image with respect to the presence of signal noise." ;
+    nsv:Label "Image Condition r/t Noise" ;
+    nsv:Requester%20Remarks " This is the standard text in other NSVs in the notes: \"Variable values will vary depending on the imaging modality. Used when multiple image conditions are relevant. Examples include \"ARTIFACT\", \"BLURRY\", \"DARK\".\" Debated whether it was better to put all and the information about the N = Noise. Decided it was better to have it all. Please consider. Thank you." ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "TAUG-COVID-19 v2.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Used%20in%20Domain%28s%29 "RE (Respiratory System Findings)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "159327898 159327893" ;
+    nsv:Variable%20Name "ICNOIS" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/IMCND/TAUG-Crohn%27s%20Disease%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "Free or standardized text describing the condition of the image. " ;
+    nsv:Label "Image Condition" ;
+    nsv:Notes "Variable values will vary depending on the imaging modality. Examples include \"ARTIFACT\", \"BLURRY\", \"DARK\"." ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "TAUG-Crohn's Disease v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Review for Publication" ;
+    nsv:Used%20in%20Domain%28s%29 "GI (Gastrointestinal System Findings) MI (Microscopic Findings)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "103759635 107447232" ;
+    nsv:Variable%20Name "IMCND" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/IMCND1/TAUG-Crohn%27s%20Disease%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "Free or standardized text describing the condition of the image." ;
+    nsv:Label "Image Condition 1" ;
+    nsv:Notes "Variable values will vary depending on the imaging modality. Used when multiple image conditions are relevant. Examples include \"ARTIFACT\", \"BLURRY\", \"DARK\"." ;
+    nsv:Requester%20Remarks "Definition copied from --IMCND NSV. Used when --IMCND = \"MULTIPLE\". See linked example." ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "TAUG-Crohn's Disease v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Review for Publication" ;
+    nsv:Used%20in%20Domain%28s%29 "MI (Microscopic Findings)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "107447232" ;
+    nsv:Variable%20Name "IMCND1" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/IMCND2/TAUG-Crohn%27s%20Disease%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "Free or standardized text describing the condition of the image." ;
+    nsv:Label "Image Condition 2" ;
+    nsv:Notes "Variable values will vary depending on the imaging modality. Used when multiple image conditions are relevant. Examples include \"ARTIFACT\", \"BLURRY\", \"DARK\"." ;
+    nsv:Requester%20Remarks "Definition copied from --IMCND NSV. Used when --IMCND = \"MULTIPLE\". See linked example." ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "TAUG-Crohn's Disease v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Review for Publication" ;
+    nsv:Used%20in%20Domain%28s%29 "MI (Microscopic Findings)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "107447232" ;
+    nsv:Variable%20Name "IMCND2" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/IMTOBZ/TAUG-COVID-19%20v2.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Curator%20Remarks "Example uses numbers, however, in the future there could be sponsor identifiers for the different observation zones that are coded with numbers and letters." ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "The point or area of examination within the image." ;
+    nsv:Label "Image Target Observation Zone" ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "TAUG-COVID-19 v2.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Internal Review" ;
+    nsv:Used%20in%20Domain%28s%29 "RE (Respiratory System Findings)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "165093185" ;
+    nsv:Variable%20Name "IMTOBZ" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/IMVIEW/TAUG-DMD-Cardiac%20Imaging%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "Indicates the view of the imaging relative to the subject." ;
+    nsv:Label "Imaging View" ;
+    nsv:Notes "Not a property of the device; the subject is positioned relative to the X-Ray machine to obtain the desired view (e.g., \"POSTERIOR-ANTERIOR\")." ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "TAUG-DMD-Cardiac Imaging v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Internal Review" ;
+    nsv:Used%20in%20Domain%28s%29 "CV (Cardiovascular System Findings)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "186121685" ;
+    nsv:Variable%20Name "IMVIEW" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/INDADJ/TAUG-PanCan%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "The explanation for why an infusion duration was changed as compared to a previous infusion." ;
+    nsv:Label "Infusion Duration Adjustment Reason" ;
+    nsv:Limited%20to%20Domain%28s%29 "EC (Exposure as Collected) EX (Exposure)" ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "TAUG-PanCan v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Public Review" ;
+    nsv:Used%20in%20Domain%28s%29 "EC (Exposure as Collected) EX (Exposure)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "103763847" ;
+    nsv:Variable%20Name "INDADJ" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/INDC/CDMH%20SDTM%20NSVs%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Curator%20Remarks "Team reviewed an updated the description. Request to SDTM team for the INDC updated definition to include event or intervention and add --INDC in the Events Class." ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "The sign, symptom, or condition that is the basis for initiation of an event or intervention." ;
+    nsv:Label "Indication" ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "CDMH SDTM NSVs v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Internal Review" ;
+    nsv:Used%20in%20Domain%28s%29 "HO (Healthcare Encounters)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "153062731 169414787" ;
+    nsv:Variable%20Name "INDC" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/INFIRP/TAUG-PanCan%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Codelist%20Reference "(<a href=\"http://evs.nci.nih.gov/ftp1/CDISC/SDTM/SDTM%20Terminology.html#CL.C66742.NY\" target=\"_blank\">NY</a>)" ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "An indicator to identify whether the infusion was delayed temporarily." ;
+    nsv:Label "Infusion Interrupted" ;
+    nsv:Limited%20to%20Domain%28s%29 "EC (Exposure as Collected) EX (Exposure)" ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "TAUG-PanCan v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Public Review" ;
+    nsv:Used%20in%20Domain%28s%29 "EC (Exposure as Collected) EX (Exposure)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "103763847" ;
+    nsv:Variable%20Name "INFIRP" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/INFRT/CDASHIG%20v2.3>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Curator%20Remarks "The variable was reviewed for CDASHIG v2.2 after publication. During NSV review, the variable was updated and metadata updated including the variable name from FLRT to INFRT. The start date for the transition to the new NSV is yet to be determined by the CDASH team." ;
+    nsv:Define-XML%20Datatype "integer" ;
+    nsv:Description "The infusion rate for the total amount of drug + vehicle administered to the subject." ;
+    nsv:Label "Infusion Rate" ;
+    nsv:Limited%20to%20Class%28es%29 "Interventions" ;
+    nsv:Qualifying%20Variable%28s%29 "--TRT" ;
+    nsv:Requester%20Remarks """This variables also needs the unit field. --FLRTU. \r
+CDASH has this defined as CHAR. """ ;
+    nsv:Role "Non-Standard Variable Qualifier" ;
+    nsv:Simple%20Datatype "Num" ;
+    nsv:Source%28s%29 "CDASHIG v2.3" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Variable%20Name "INFRT" ;
+    nsv:XML%20Datatype "float" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/INFRT/CDASHIG%20vX.Y>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Codelist%20Reference "(<a href=\"http://evs.nci.nih.gov/ftp1/CDISC/SDTM/SDTM%20Terminology.html#CL.C71620.UNIT\" target=\"_blank\">UNIT</a>)" ;
+    nsv:Curator%20Remarks """This variable is changed between CDASHIG v2.2 to the next version (2.3 or 3.0) as of 2022-08-24. Updated to be applied to next version. This is from the review.\r
+\r
+When next version is published update or verify the correct CDASHIG source.""" ;
+    nsv:Define-XML%20Datatype "float" ;
+    nsv:Description "The infusion rate for the total amount of drug + vehicle administered to the subject." ;
+    nsv:Label "Infusion Rate " ;
+    nsv:Limited%20to%20Class%28es%29 "Interventions" ;
+    nsv:Qualifying%20Variable%28s%29 "--TRT" ;
+    nsv:Role "Non-Standard Variable Qualifier" ;
+    nsv:Simple%20Datatype "Num" ;
+    nsv:Source%28s%29 "CDASHIG vX.Y" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Variable%20Name "INFRT" ;
+    nsv:XML%20Datatype "float" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/INFRTU/CDASHIG%20v2.3>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Codelist%20Reference "(<a href=\"http://evs.nci.nih.gov/ftp1/CDISC/SDTM/SDTM%20Terminology.html#CL.C71620.UNIT\" target=\"_blank\">UNIT</a>)" ;
+    nsv:Curator%20Remarks "The variable was reviewed for CDASHIG v2.2 after publication. During NSV review, the variable was updated and metadata updated including the variable name from FLTU to INFRTU. The start date for the transition to the new NSV is yet to be determined by the CDASH team." ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "The unit of measure for the infusion rate for the total amount of drug + vehicle administered to the subject." ;
+    nsv:Label "Infusion Rate Unit" ;
+    nsv:Limited%20to%20Class%28es%29 "Interventions" ;
+    nsv:Qualifying%20Variable%28s%29 "INFRT" ;
+    nsv:Role "Non-Standard Variable Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "CDASHIG v2.3" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Published" ;
+    nsv:Variable%20Name "INFRTU" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/ISOTYP/TAUG-COVID-19%20v2.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "Used to indicate the type of transmission-based precautions to prevent the spread of infectious agents." ;
+    nsv:Label "Isolation Type" ;
+    nsv:Limited%20to%20Class%28es%29 "Events" ;
+    nsv:Limited%20to%20Domain%28s%29 "HO (Healthcare Encounters)" ;
+    nsv:Notes "Examples: contact isolation, droplet isolation, airborne isolation, reverse isolation" ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "TAUG-COVID-19 v2.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Internal Review" ;
+    nsv:Used%20in%20Domain%28s%29 "HO (Healthcare Encounters)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "169414787 169413557" ;
+    nsv:Variable%20Name "ISOTYP" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/ISRSYS/QRS%3A%20SF36%20V2.0%20ACUTE%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "The software system that is used for scoring the QRS Instrument." ;
+    nsv:Label "Instrument Scoring System Software" ;
+    nsv:Limited%20to%20Domain%28s%29 "FT (Functional Tests) QS (Questionnaires) RS (Disease Response and Clin Classification)" ;
+    nsv:Requester%20Remarks "This QRS supplement is being readied for public review." ;
+    nsv:Role "Non-Standard Result Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "QRS: SF36 V2.0 ACUTE v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Review for Publication" ;
+    nsv:Used%20in%20Domain%28s%29 "QS (Questionnaires)" ;
+    nsv:Variable%20Name "ISRSYS" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/LLT/CDASHIG%20%20v2.2>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Curator%20Remarks """Check with the CDASH team.\r
+Okayed by CDASH team - approved for next version of CDASHIG.  \r
+NSV bc it is for interventions.\r
+2022-09-14 Removed: "assigned to the event" since this is for "interventions" which is inconsistent with the SDTM v2.0 definition.  To place Jira: SDTM team consider dictionary type (MedDRA, ATC, etc.) variables be used in all domains and consider the definition reflect this. Currently, the definition assumes MedDRA can only be used for events.\r
+09-28-2022 Added "assigned" back in the definition to be consistent with the other MedDRA variables.""" ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "The lowest-level term assigned from MedDRA." ;
+    nsv:External%20Dictionary "MedDRA " ;
+    nsv:Label "Lowest Level Term" ;
+    nsv:Limited%20to%20Class%28es%29 "Interventions" ;
+    nsv:Notes "These are coding variables using MedDRA that can be used in Intervention Domains since the current SDTM use is for the Events Domains." ;
+    nsv:Qualifying%20Variable%28s%29 "TRT" ;
+    nsv:Requester%20Remarks "THE CDASH TEAM IS requesting that all CDASH NSV variables published in the CDASHIG be entered into the NSV registry. CDASH has many coding variable to be added. This is just an example. This is one of the MedDRA coding terms that CDASH needs to add for the Intervention Class. Currently, these variables are only allowed in the Events domain. Some companies code procedures to MedDRA.   Additionally, CDASH wants to add the coding variables for Anatomical Therapeutic Chemical (ATC) classification system for CM. This topic may require discussion with the SDTM for harmonization in SDTM 4.0. Perhaps SDTM should create a new class of variables called coding variables, that can be used as needed in all domains. " ;
+    nsv:Role "Non-Standard Variable Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "CDASHIG  v2.2" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Published" ;
+    nsv:Variable%20Name "LLT" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/LLTCD/CDASHIG%20%20v2.2>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Curator%20Remarks """The SDTM v2.0 definition is "The lowest-level term\r
+code assigned to the\r
+event from MedDRA." We removed the "assigned to the event" because this is related to interventions.  In the future, if it is allowed in SDTM the definition will have to change.""" ;
+    nsv:Define-XML%20Datatype "integer" ;
+    nsv:Description "The lowest-level term code assigned from MedDRA." ;
+    nsv:External%20Dictionary "MedDRA" ;
+    nsv:Label "Lowest Level Term Code" ;
+    nsv:Limited%20to%20Class%28es%29 "Interventions" ;
+    nsv:Publication%20Date%20of%20the%20Source%20Document "2021-09-28" ;
+    nsv:Qualifying%20Variable%28s%29 "LLT" ;
+    nsv:Role "Non-Standard Variable Qualifier" ;
+    nsv:Simple%20Datatype "Num" ;
+    nsv:Source%28s%29 "CDASHIG  v2.2" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Published" ;
+    nsv:Variable%20Name "LLTCD" ;
+    nsv:XML%20Datatype "float" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/LOC1/QRS%3A%20RECIST%20V1.1%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Codelist%20Reference "(<a href=\"http://evs.nci.nih.gov/ftp1/CDISC/SDTM/SDTM%20Terminology.html#CL.C74456.LOC\" target=\"_blank\">LOC</a>)" ;
+    nsv:Curator%20Remarks """Suggestion for future LOC variables - standardize the label by "Anatomical Location". Precedent set for these types of variables - the current label matches the SDTM V2.0 and SDTMIG V3.4.\r
+\r
+Jira for SDS team will be placed.""" ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "Location of Procedure 1" ;
+    nsv:Label "Location of Procedure 1" ;
+    nsv:Limited%20to%20Class%28es%29 "Interventions" ;
+    nsv:Limited%20to%20Domain%28s%29 "PR (Procedures)" ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "QRS: RECIST V1.1 v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Internal Review" ;
+    nsv:Used%20in%20Domain%28s%29 "PR (Procedures)" ;
+    nsv:Variable%20Name "LOC1" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/LOC1/TAUG-COVID-19%20v2.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Codelist%20Reference "(<a href=\"http://evs.nci.nih.gov/ftp1/CDISC/SDTM/SDTM%20Terminology.html#CL.C74456.LOC\" target=\"_blank\">LOC</a>)" ;
+    nsv:Curator%20Remarks "Standard variable with multiple PRLOC values represented." ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "Anatomical location of a procedure." ;
+    nsv:Label "Location of Procedure 1" ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "TAUG-COVID-19 v2.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Used%20in%20Domain%28s%29 "PR (Procedures)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "159323499" ;
+    nsv:Variable%20Name "LOC1" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/LOC1/TAUG-Crohn%27s%20Disease%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Codelist%20Reference "(<a href=\"http://evs.nci.nih.gov/ftp1/CDISC/SDTM/SDTM%20Terminology.html#CL.C74456.LOC\" target=\"_blank\">LOC</a>)" ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "The anatomical location relevant for the event." ;
+    nsv:Label "Location of Event 1" ;
+    nsv:Limited%20to%20Class%28es%29 "Events" ;
+    nsv:Notes "Used when multiple locations are relevant." ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "TAUG-Crohn's Disease v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Review for Publication" ;
+    nsv:Used%20in%20Domain%28s%29 "MH (Medical History)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "99659828" ;
+    nsv:Variable%20Name "LOC1" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/LOC2/QRS%3A%20RECIST%20V1.1%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Codelist%20Reference "(<a href=\"http://evs.nci.nih.gov/ftp1/CDISC/SDTM/SDTM%20Terminology.html#CL.C74456.LOC\" target=\"_blank\">LOC</a>)" ;
+    nsv:Curator%20Remarks """Suggestion for future LOC variables - standardize the label by "Anatomical Location". Precedent set for these types of variables - the current label matches the SDTM V2.0 and SDTMIG V3.4.\r
+\r
+Jira for SDS team will be placed.""" ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "Location of Procedure 2" ;
+    nsv:Label "Location of Procedure 2" ;
+    nsv:Limited%20to%20Class%28es%29 "Interventions" ;
+    nsv:Limited%20to%20Domain%28s%29 "PR (Procedures)" ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "QRS: RECIST V1.1 v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Internal Review" ;
+    nsv:Used%20in%20Domain%28s%29 "PR (Procedures)" ;
+    nsv:Variable%20Name "LOC2" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/LOC2/TAUG-COVID-19%20v2.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Codelist%20Reference "(<a href=\"http://evs.nci.nih.gov/ftp1/CDISC/SDTM/SDTM%20Terminology.html#CL.C74456.LOC\" target=\"_blank\">LOC</a>)" ;
+    nsv:Curator%20Remarks "Standard variable with multiple PRLOC values represented. " ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "Anatomical location of a procedure." ;
+    nsv:Label "Location of Procedure 2" ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "TAUG-COVID-19 v2.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Used%20in%20Domain%28s%29 "PR (Procedures)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "159323499" ;
+    nsv:Variable%20Name "LOC2" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/LOC2/TAUG-Crohn%27s%20Disease%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Codelist%20Reference "(<a href=\"http://evs.nci.nih.gov/ftp1/CDISC/SDTM/SDTM%20Terminology.html#CL.C74456.LOC\" target=\"_blank\">LOC</a>)" ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "The anatomical location relevant for the event." ;
+    nsv:Label "Location of Event 2" ;
+    nsv:Limited%20to%20Class%28es%29 "Events" ;
+    nsv:Notes "Used when multiple locations are relevant." ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "TAUG-Crohn's Disease v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Review for Publication" ;
+    nsv:Used%20in%20Domain%28s%29 "MH (Medical History)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "99659828" ;
+    nsv:Variable%20Name "LOC2" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/LOCDTL/QRS%3A%20RECIST%20V1.1%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "The free text description that further qualifies the value in --LOC, and provides additional, more specific anatomical and granular information about a specific location, a proximate location or a range of location(s)." ;
+    nsv:Label "Location Detail" ;
+    nsv:Limited%20to%20Domain%28s%29 "TU (Tumor/Lesion Identification)" ;
+    nsv:Qualifying%20Variable%28s%29 "--LOC" ;
+    nsv:Role "Non-Standard Variable Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "QRS: RECIST V1.1 v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Used%20in%20Domain%28s%29 "TU (Tumor/Lesion Identification)" ;
+    nsv:Variable%20Name "LOCDTL" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/MAGTRG/SDTMIG%20v4.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "A textual description that identifies the multiple pre-specified, targeted microbial antigens being detected." ;
+    nsv:Label "Multi-Antigens Test Target" ;
+    nsv:Limited%20to%20Class%28es%29 "Findings" ;
+    nsv:Limited%20to%20Domain%28s%29 "MB (Microbiology Specimen)" ;
+    nsv:Notes "For the MB domain, this variable is used to identify the multiple specific microbial genes, proteins, toxins, mRNAs, etc., being detected." ;
+    nsv:Qualifying%20Variable%28s%29 "--TEST" ;
+    nsv:Requester%20Remarks """When MBTEST = E. coli DNA, MBMAGTRG = IpaH gene; aatA gene\r
+\r
+When MBTEST = HPV mRNA, MBMAGTRG = HPV E6 mRNA; HPV E7 mRNA""" ;
+    nsv:Role "Non-Standard Variable Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "SDTMIG v4.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "In-Development" ;
+    nsv:Used%20in%20Domain%28s%29 "MB (Microbiology Specimen)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "179318470" ;
+    nsv:Variable%20Name "MAGTRG" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/MOTRG/SDTMIG%20v4.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "A textual description that identifies the multiple pre-specified, targeted microorganisms and their variants being detected." ;
+    nsv:Label "Multi-Microorganisms Test Target" ;
+    nsv:Limited%20to%20Class%28es%29 "Findings" ;
+    nsv:Limited%20to%20Domain%28s%29 "MB (Microbiology Specimen)" ;
+    nsv:Notes "For the MB domain, this variable is used to describe the multiple specific microorganisms and their variants being detected." ;
+    nsv:Qualifying%20Variable%28s%29 "--TEST" ;
+    nsv:Requester%20Remarks " Multiple species from the same genus; multiple variants, serotypes, types, strains from the same species. This variable is used to describe \"multiple\" organisms being detected in a single analysis." ;
+    nsv:Role "Non-Standard Variable Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "SDTMIG v4.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "In-Development" ;
+    nsv:Used%20in%20Domain%28s%29 "MB (Microbiology Specimen)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "179318470" ;
+    nsv:Variable%20Name "MOTRG" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/MRKSTR/TAUG-Rare%20Diseases%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Curator%20Remarks "Expected for possible promotion in the next version update of the SDTMIG (expand variable to be able to use in the BS domain)." ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "The text string identifying the full set of markers/indicators used by the laboratory to operationally define the complete test based on the combination of CPTEST, CPSBMRKS, and CPCELSTA. Because laboratories often use different markers/indicators to identify a cell population, the relationship between a named cell population in CPTEST (as combined with CPSBMRKS and CPCELSTA values) and the set of markers used to identify that population is many-to-one. To ensure nuances important for accurately interpreting the data are accounted for and which arise from the use of different sets of markers, it is necessary to operationally define the test in terms of the complete set of markers/indicators used to perform that test." ;
+    nsv:Label "Marker String" ;
+    nsv:Requester%20Remarks "Per SDTM v2.0, the variable for Marker String (MRKSTR) is only permitted in the CP domain. Therefore, it is included in this BS dataset as non-standard variable." ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "TAUG-Rare Diseases v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Review for Publication" ;
+    nsv:Used%20in%20Domain%28s%29 "BS (Biospecimen Findings)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "159336529" ;
+    nsv:Variable%20Name "MRKSTR" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/NCF/CDMH%20SDTM%20NSVs%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Codelist%20Reference "(<a href=\"http://evs.nci.nih.gov/ftp1/CDISC/SDTM/SDTM%20Terminology.html#CL.C78738.NCF\" target=\"_blank\">NCF</a>)" ;
+    nsv:Curator%20Remarks "Removed the \"SU\"" ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "Indication the substance in question was used." ;
+    nsv:Label "Never Current Former Usage" ;
+    nsv:Limited%20to%20Class%28es%29 "Interventions" ;
+    nsv:Limited%20to%20Domain%28s%29 "SU (Substance Use)" ;
+    nsv:Notes "Use case is RWD and transfer of data related to smoking. alcohol, or drugs, etc." ;
+    nsv:Requester%20Remarks " For CDMH mapping project, SU domain relationship to whether a substance was never used, currently used or formerly/previously used.  CURRENT, FORMER, NEVER." ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "CDMH SDTM NSVs v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "129046270" ;
+    nsv:Variable%20Name "NCF" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/NMDOSE/TAUG-Psoriasis%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Define-XML%20Datatype "float" ;
+    nsv:Description "The number of doses that were not taken at the prescribed or planned dosing interval(s)." ;
+    nsv:Label "Number of Missed Doses" ;
+    nsv:Limited%20to%20Class%28es%29 "Interventions" ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Num" ;
+    nsv:Source%28s%29 "TAUG-Psoriasis v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Published" ;
+    nsv:Used%20in%20Domain%28s%29 "EC (Exposure as Collected) EX (Exposure)" ;
+    nsv:Variable%20Name "NMDOSE" ;
+    nsv:XML%20Datatype "float" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/OIQ/TAUG-DMD-Cardiac%20Imaging%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Curator%20Remarks "This variable does not represent an imaging diagnosis. Examples include \"Poor\", \"Fair\", \"Good\", \"Non-evaluable\", \"Evaluable\", \"Evaluable Image - Sub-optimal\", \"Evaluable Image - Optimal\"." ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "A descriptive statement about the image quality, which may include information about technical issues or interference during the recording, processing, or transmission of the data. This information may indicate how usable the image is for the particular evaluation and/or how reliable the results may be." ;
+    nsv:Label "Overall Image Quality" ;
+    nsv:Notes "This variable does not represent an imaging diagnosis. Examples include \"Poor\", \"Fair\", \"Good\", \"Non-evaluable\", \"Evaluable\", \"Evaluable Image - Sub-optimal\", \"Evaluable Image - Optimal\"." ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "TAUG-DMD-Cardiac Imaging v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "In-Development" ;
+    nsv:Used%20in%20Domain%28s%29 "CV (Cardiovascular System Findings)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "186121683" ;
+    nsv:Variable%20Name "OIQ" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/OTHPRX/QRS%3A%20WHODAS%202.0%20-%2012%2B24-ITEM%20INTERVIEWER%20v1.0%20QRS%3A%20WHODAS%202.0%20-%2012-ITEM%20INTERVIEWER%20v1.0%20QRS%3A%20WHODAS%202.0%20-%2036-ITEM%20INTERVIEWER%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Curator%20Remarks """6-Dec-2021, Variable changed from "OTHPROXY" to "OTHPRX" for a 6 character variable.\r
+Changed from limited domain of QS to no limitations.  Remains limited to class of findings. \r
+""" ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "I am the ___________ (choose one) of this person - Other Specify (Value)" ;
+    nsv:Label "Other Proxy" ;
+    nsv:Limited%20to%20Class%28es%29 "Findings" ;
+    nsv:Limited%20to%20Domain%28s%29 "QS (Questionnaires)" ;
+    nsv:Notes "QRS: WHODAS 2.0 - 12+24-ITEM INTERVIEWER, WHODAS 2.0 - 12-ITEM INTERVIEWER, WHODAS 2.0 - 36-ITEM INTERVIEWER" ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "QRS: WHODAS 2.0 - 12+24-ITEM INTERVIEWER v1.0 QRS: WHODAS 2.0 - 12-ITEM INTERVIEWER v1.0 QRS: WHODAS 2.0 - 36-ITEM INTERVIEWER v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Used%20in%20Domain%28s%29 "QS (Questionnaires)" ;
+    nsv:Variable%20Name "OTHPRX" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/OTHRSP/QRS%3A%20CDRS-R%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Curator%20Remarks "This could be used for \"Other, specify\" fields where appropriate." ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "Response for Other specify text provided on CRF" ;
+    nsv:Label "Other Response Specify" ;
+    nsv:Limited%20to%20Class%28es%29 "Findings" ;
+    nsv:Limited%20to%20Domain%28s%29 "FT (Functional Tests) QS (Questionnaires) RS (Disease Response and Clin Classification)" ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "QRS: CDRS-R v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Review for Publication" ;
+    nsv:Used%20in%20Domain%28s%29 "RS (Disease Response and Clin Classification)" ;
+    nsv:Variable%20Name "OTHRSP" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/OTHWKS/QRS%3A%20WHODAS%202.0%20-%2012%2B24-ITEM%20INTERVIEWER%20v1.0%20QRS%3A%20WHODAS%202.0%20-%2012-ITEM%20INTERVIEWER%20v1.0%20QRS%3A%20WHODAS%202.0%20-%2036-ITEM%20INTERVIEWER%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Curator%20Remarks """8-Dec-2021, Variable changed from 8 characters to 6 characters - "OTHWRKST" to "WKSOTH"\r
+Removed the limitation of the domain of QS. \r
+5-Dec-2021, QRS convention is to follow the order of the terms in the label. Updated to "OTHWKS"\r
+""" ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "Which describes your main work status best? Other Specify (value)" ;
+    nsv:Label "Other Work Status" ;
+    nsv:Limited%20to%20Class%28es%29 "Findings" ;
+    nsv:Limited%20to%20Domain%28s%29 "QS (Questionnaires)" ;
+    nsv:Notes "QRS: WHODAS 2.0 - 12+24-ITEM INTERVIEWER, WHODAS 2.0 - 12-ITEM INTERVIEWER, WHODAS 2.0 - 36-ITEM INTERVIEWER" ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "QRS: WHODAS 2.0 - 12+24-ITEM INTERVIEWER v1.0 QRS: WHODAS 2.0 - 12-ITEM INTERVIEWER v1.0 QRS: WHODAS 2.0 - 36-ITEM INTERVIEWER v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Used%20in%20Domain%28s%29 "QS (Questionnaires)" ;
+    nsv:Variable%20Name "OTHWKS" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/PCTDSK/QRS%3A%20MDS-UPDRS%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Curator%20Remarks """8-Dec-2021, Character updated from 8 characters to 6, \r
+"PCTDYSK" to "PCTDSK"\r
+Removed the QS domain limitation.\r
+""" ;
+    nsv:Define-XML%20Datatype "float" ;
+    nsv:Description "A. DYSKINESIAS [exclusive of OFF-state dystonia] : 4.1 Time Spent with DYSKINESIAS: sub question" ;
+    nsv:Label "Percent Dyskinesia" ;
+    nsv:Limited%20to%20Class%28es%29 "Findings" ;
+    nsv:Limited%20to%20Domain%28s%29 "QS (Questionnaires)" ;
+    nsv:Notes "QRS: MDS-UPDRS" ;
+    nsv:Role "Non-Standard Result Qualifier" ;
+    nsv:Simple%20Datatype "Num" ;
+    nsv:Source%28s%29 "QRS: MDS-UPDRS v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Used%20in%20Domain%28s%29 "QS (Questionnaires)" ;
+    nsv:Variable%20Name "PCTDSK" ;
+    nsv:XML%20Datatype "float" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/PCTHOF/QRS%3A%20MDS-UPDRS%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Curator%20Remarks """On 8-Dec, Variable decreased from 8 to 6 characters.\r
+Updated from PCTHROFF to PCTHOF.\r
+Removed the limitation of the QS domain.""" ;
+    nsv:Define-XML%20Datatype "float" ;
+    nsv:Description "B. MOTOR FLUCTUATIONS: 4.3 TIME SPENT IN THE OFF STATE: sub-question" ;
+    nsv:Label "Percent of Hours OFF" ;
+    nsv:Limited%20to%20Class%28es%29 "Findings" ;
+    nsv:Limited%20to%20Domain%28s%29 "QS (Questionnaires)" ;
+    nsv:Notes "QRS: MDS-UPDRS" ;
+    nsv:Role "Non-Standard Result Qualifier" ;
+    nsv:Simple%20Datatype "Num" ;
+    nsv:Source%28s%29 "QRS: MDS-UPDRS v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Used%20in%20Domain%28s%29 "QS (Questionnaires)" ;
+    nsv:Variable%20Name "PCTHOF" ;
+    nsv:XML%20Datatype "float" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/PCTODS/QRS%3A%20MDS-UPDRS%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Curator%20Remarks """5-Jan-2022 Variable changed from PCTOFDYS to PCTODS to move from 8 characters to 6 characters.\r
+\r
+""" ;
+    nsv:Define-XML%20Datatype "float" ;
+    nsv:Description "C. “OFF” DYSTONIA: PAINFUL OFF-STATE DYSTONIA: Sub-question" ;
+    nsv:Label "Percent of  OFF with Dystonia" ;
+    nsv:Limited%20to%20Class%28es%29 "Findings" ;
+    nsv:Limited%20to%20Domain%28s%29 "QS (Questionnaires)" ;
+    nsv:Notes "QRS: MDS-UPDRS" ;
+    nsv:Role "Non-Standard Result Qualifier" ;
+    nsv:Simple%20Datatype "Num" ;
+    nsv:Source%28s%29 "QRS: MDS-UPDRS v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Used%20in%20Domain%28s%29 "QS (Questionnaires)" ;
+    nsv:Variable%20Name "PCTODS" ;
+    nsv:XML%20Datatype "float" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/PLDUIC/TAUG-PanCan%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Define-XML%20Datatype "durationDatetime" ;
+    nsv:Description "The planned duration of multiple interventions (sum total) over a set course." ;
+    nsv:Label "Planned Duration of Intervention Course " ;
+    nsv:Limited%20to%20Class%28es%29 "Interventions" ;
+    nsv:Notes "The variable demonstrates the planned overall time that multiple interventions, within an intervention course, are to occur (e.g., four weeks, ten weeks, etc.).  May be used with PLDUSA/Planned Duration Single Administration." ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "TAUG-PanCan v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Public Review" ;
+    nsv:Used%20in%20Domain%28s%29 "PR (Procedures)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "107457035" ;
+    nsv:Variable%20Name "PLDUIC" ;
+    nsv:XML%20Datatype "duration" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/PLDUSA/TAUG-PanCan%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "The planned duration of a single administration or session of the intervention course." ;
+    nsv:Label "Planned Duration Single Administration" ;
+    nsv:Limited%20to%20Class%28es%29 "Interventions" ;
+    nsv:Limited%20to%20Domain%28s%29 "EC (Exposure as Collected) EX (Exposure)" ;
+    nsv:Notes "The variable demonstrates how the treatment planned to occur in a single session(e.g., 90 min, 24 hours, 72 hours, etc.).  This applies to medication or therapy sessions. May be used with PLDUIC/Planned Duration Intvn Course." ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "TAUG-PanCan v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Review for Publication" ;
+    nsv:Used%20in%20Domain%28s%29 "EC (Exposure as Collected) EX (Exposure)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "103763847" ;
+    nsv:Variable%20Name "PLDUSA" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/PNWOMO/QRS%3A%20PI%20%20v1.2%20QRS%3A%20PR%20v1.2>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Curator%20Remarks """Updated the NSV label to capitalize the W/Wo M\r
+on 2022-06-17 per CDISC CT conventions.  """ ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "Pain intensity or relief measurements with or without motion." ;
+    nsv:Label "Pain With or Without Motion" ;
+    nsv:Limited%20to%20Class%28es%29 "Findings" ;
+    nsv:Limited%20to%20Domain%28s%29 "QS (Questionnaires)" ;
+    nsv:Notes "QRS: PI, PR" ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "QRS: PI  v1.2 QRS: PR v1.2" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Internal Review" ;
+    nsv:Used%20in%20Domain%28s%29 "QS (Questionnaires)" ;
+    nsv:Variable%20Name "PNWOMO" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/PPRAID/QRS%3A%20ADCS-ADL%20MCI%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Curator%20Remarks """Preprinted identifier that is represented on the CRF as part of the instrument for the value of the NSV.\r
+\r
+Will possibly be promoted in SDTMIG v4.0 with the QX domain.""" ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "Preprinted Administrator represented on a CRF who is recording responses on the CRF" ;
+    nsv:Label "Preprinted Administrator Identifier" ;
+    nsv:Limited%20to%20Class%28es%29 "Findings" ;
+    nsv:Limited%20to%20Domain%28s%29 "FT (Functional Tests) QS (Questionnaires) RS (Disease Response and Clin Classification)" ;
+    nsv:Notes "Generic QRS Adminstration information" ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "QRS: ADCS-ADL MCI v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "In-Development" ;
+    nsv:Used%20in%20Domain%28s%29 "FT (Functional Tests) QS (Questionnaires) RS (Disease Response and Clin Classification)" ;
+    nsv:Variable%20Name "PPRAID" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/PPRRID/QRS%3A%20DAD%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Curator%20Remarks """Preprinted respondent that is represented on the CRF as part of the instrument for the value of the NSV.\r
+\r
+Will possibly be promoted in SDTMIG v4.0 with the QX domain.""" ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "Preprinted Respondent represented on a CRF who is providing responses on the CRF" ;
+    nsv:Label "Preprinted Respondent Identifier" ;
+    nsv:Limited%20to%20Class%28es%29 "Findings" ;
+    nsv:Limited%20to%20Domain%28s%29 "FT (Functional Tests) QS (Questionnaires) RS (Disease Response and Clin Classification)" ;
+    nsv:Notes "Generic QRS CRF Adminstration information" ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "QRS: DAD v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "In-Development" ;
+    nsv:Used%20in%20Domain%28s%29 "FT (Functional Tests) QS (Questionnaires) RS (Disease Response and Clin Classification)" ;
+    nsv:Variable%20Name "PPRRID" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/PPRRRI/QRS%3A%20DAD%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Curator%20Remarks """Preprinted respondent relationship that is represented on the CRF as part of the instrument for the value of the NSV.\r
+\r
+Will possibly be promoted in SDTMIG v4.0 with the QX domain.""" ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "Preprinted Respondent Relationship Identifier represented on a CRF as the respondent's relationship to the subject and who is providing responses on the CRF" ;
+    nsv:Label "Preprinted Respondent Relationship ID" ;
+    nsv:Limited%20to%20Class%28es%29 "Findings" ;
+    nsv:Limited%20to%20Domain%28s%29 "FT (Functional Tests) QS (Questionnaires) RS (Disease Response and Clin Classification)" ;
+    nsv:Notes "Generic QRS CRF Adminstration information" ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "QRS: DAD v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "In-Development" ;
+    nsv:Used%20in%20Domain%28s%29 "FT (Functional Tests) QS (Questionnaires) RS (Disease Response and Clin Classification)" ;
+    nsv:Variable%20Name "PPRRRI" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/PRCTID/TAUG-TCM-Acupuncture%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Description "The identification of the practitioner, which is sponsor-defined." ;
+    nsv:Label "Practitioner ID" ;
+    nsv:Notes "Used to collect the ID of the acupuncturist at a specific treatment session." ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "TAUG-TCM-Acupuncture v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Public Review" ;
+    nsv:Used%20in%20Domain%28s%29 "DX (Device Exposure)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "124202946 103743870" ;
+    nsv:Variable%20Name "PRCTID" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/PRTYP/QRS%3A%20RECIST%20V1.1%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Codelist%20Reference "(<a href=\"http://evs.nci.nih.gov/ftp1/CDISC/SDTM/SDTM%20Terminology.html#CL.C127268.DSPRTYP\" target=\"_blank\">DSPRTYP</a>)" ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description " Specifies the disease presentation type of the identified non-measurable tumor or lesion." ;
+    nsv:Label "Tumor or Lesion Presentation Type" ;
+    nsv:Limited%20to%20Domain%28s%29 "TU (Tumor/Lesion Identification)" ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "QRS: RECIST V1.1 v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Public Review" ;
+    nsv:Used%20in%20Domain%28s%29 "TU (Tumor/Lesion Identification)" ;
+    nsv:Variable%20Name "PRTYP" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/PRVIR/QRS%3A%20RECIST%20V1.1%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Codelist%20Reference "(<a href=\"http://evs.nci.nih.gov/ftp1/CDISC/SDTM/SDTM%20Terminology.html#CL.C66742.NY\" target=\"_blank\">NY</a>)" ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "Indicator as to whether a target tumor or lesion was previously irradiated." ;
+    nsv:Label "Previously Irradiated Indicator" ;
+    nsv:Limited%20to%20Domain%28s%29 "TU (Tumor/Lesion Identification)" ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "QRS: RECIST V1.1 v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Used%20in%20Domain%28s%29 "TU (Tumor/Lesion Identification)" ;
+    nsv:Variable%20Name "PRVIR" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/PRVIRP/QRS%3A%20RECIST%20V1.1%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Codelist%20Reference "(<a href=\"http://evs.nci.nih.gov/ftp1/CDISC/SDTM/SDTM%20Terminology.html#CL.C66742.NY\" target=\"_blank\">NY</a>)" ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description " Indicator as to whether a previously irradiated tumor or lesion has progressed." ;
+    nsv:Label "Previously Irradiated Progression" ;
+    nsv:Limited%20to%20Domain%28s%29 "TU (Tumor/Lesion Identification)" ;
+    nsv:Notes " May be collected for studies using RECIST criteria to ensure previously irradiated target tumors are progressing." ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "QRS: RECIST V1.1 v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Used%20in%20Domain%28s%29 "TU (Tumor/Lesion Identification)" ;
+    nsv:Variable%20Name "PRVIRP" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/PTCD/CDASHIG%20%20v2.2>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Curator%20Remarks """The SDTM v2.0 definition is:\r
+"The preferred term code assigned to the event from the MedDRA dictionary."\r
+\r
+Jira issue placed - https://jira.cdisc.org/browse/SDS-2667 - regarding "dictionary" showing up in only some of the MedDRA definitions.""" ;
+    nsv:Define-XML%20Datatype "integer" ;
+    nsv:Description "The preferred term code assigned from MedDRA." ;
+    nsv:External%20Dictionary "MedDRA" ;
+    nsv:Label "Preferred Term Code" ;
+    nsv:Limited%20to%20Class%28es%29 "Interventions" ;
+    nsv:Publication%20Date%20of%20the%20Source%20Document "2021-09-28" ;
+    nsv:Qualifying%20Variable%28s%29 "DECOD" ;
+    nsv:Role "Non-Standard Variable Qualifier" ;
+    nsv:Simple%20Datatype "Num" ;
+    nsv:Source%28s%29 "CDASHIG  v2.2" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Published" ;
+    nsv:Variable%20Name "PTCD" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/PURGNC/UG-Pediatrics%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Codelist%20Reference "(<a href=\"http://evs.nci.nih.gov/ftp1/CDISC/SDTM/SDTM%20Terminology.html#CL.C101856.PRURGNCY\" target=\"_blank\">PRURGNCY</a>)" ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "The urgency of a procedure." ;
+    nsv:Label "Procedure Urgency Status " ;
+    nsv:Limited%20to%20Class%28es%29 "Interventions" ;
+    nsv:Limited%20to%20Domain%28s%29 "PR (Procedures)" ;
+    nsv:Requester%20Remarks " Copied from the HIV TAUG (apart from the Description)." ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "UG-Pediatrics v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "In-Development" ;
+    nsv:Used%20in%20Domain%28s%29 "PR (Procedures)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "142085288 142089096 142089090" ;
+    nsv:Variable%20Name "PURGNC" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/RACEOTH/CDASHIG%20%20v2.2>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "A free-text field to be used when none of the pre-printed values for RACE are applicable or if another, unprinted selection should be added to those pre-printed values." ;
+    nsv:Label "Race Other" ;
+    nsv:Limited%20to%20Class%28es%29 "Special Purpose" ;
+    nsv:Limited%20to%20Domain%28s%29 "DM (Demographics)" ;
+    nsv:Publication%20Date%20of%20the%20Source%20Document "2021-09-28" ;
+    nsv:Qualifying%20Variable%28s%29 "RACE" ;
+    nsv:Requester%20Remarks " See CDASHIG" ;
+    nsv:Role "Non-Standard Variable Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "CDASHIG  v2.2" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Published" ;
+    nsv:Used%20in%20Domain%28s%29 "DM (Demographics)" ;
+    nsv:Variable%20Name "RACEOTH" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/REAS/CDMH%20SDTM%20NSVs%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Curator%20Remarks "Changed from REASEV to REAS to broaden the use to include any Interventions and Events. SDS team email suggested this change." ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "The explanation for why the event or intervention happened." ;
+    nsv:Label "Reason for the Event or Intervention" ;
+    nsv:Limited%20to%20Class%28es%29 "Events Interventions" ;
+    nsv:Notes "It is recommended that sponsors develop controlled terminology. Typically the reason is for Health Care Encounters which could include LACK OF EFFICACY, ADVERSE EVENT, CHEMOTHERAPY, PHYSICAL THERAPY, INDICATION UNDER STUDY, NOT INDICATION UNDER STUDY." ;
+    nsv:Requester%20Remarks "For mapping project" ;
+    nsv:Role "Non-Standard Variable Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "CDMH SDTM NSVs v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Variable%20Name "REAS" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/REASDL/QRS%3A%20NHPT%20v1.0%20QRS%3A%20PASAT%20v1.0%20QRS%3A%20T25FW%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Curator%20Remarks "Removed the domain code, FT from the variable 26-Jan-2022. The variable is now within the 6 characters." ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "Additional explanation for why requested information was not available in the instance when the Reason Not Done (REASND) = \"Other, specify\"." ;
+    nsv:Label "Reason Not Done Details" ;
+    nsv:Limited%20to%20Class%28es%29 "Findings" ;
+    nsv:Limited%20to%20Domain%28s%29 "FT (Functional Tests)" ;
+    nsv:Notes "QRS: NHPT, PASAT, T25FW" ;
+    nsv:Role "Non-Standard Result Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "QRS: NHPT v1.0 QRS: PASAT v1.0 QRS: T25FW v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Used%20in%20Domain%28s%29 "FT (Functional Tests)" ;
+    nsv:Variable%20Name "REASDL" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/REASDX/TAUG-T1D%20-%20P%26D%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "A textual description of what led to the diagnosis of the condition named in --TERM." ;
+    nsv:Label "Reason for Diagnosis" ;
+    nsv:Notes "Set to “DIABETIC KETOACIDOSIS” if “Did the subject ever have diabetic ketoacidosis?” = “Yes” and “Did the subject present with diabetic ketoacidosis when the diabetes diagnosis was made?” = “Yes”. Set to “NOT DIABETIC KETOACIDOSIS” if “Did the subject ever have diabetic ketoacidosis?” = “No” or (“Did the subject ever have diabetic ketoacidosis?” = “Yes” and “Did the subject present with diabetic ketoacidosis when the diabetes diagnosis was made?” = “No”). Set to “UNKNOWN IF DIABETIC KETOACIDOSIS” if “Did the subject ever have diabetic ketoacidosis?” = “Unknown” or (“Did the subject ever have diabetic ketoacidosis?” = “Yes” and “Did the subject present with diabetic ketoacidosis when the diabetes diagnosis was made?” = “Unknown”)." ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "TAUG-T1D - P&D v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Published" ;
+    nsv:Used%20in%20Domain%28s%29 "MH (Medical History)" ;
+    nsv:Variable%20Name "REASDX" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/REASEV/CDASHIG%20v2.3>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Curator%20Remarks """Limiting it to HO domain to prevent inappropriate use of the variable in other domains.\r
+\r
+The variable was reviewed for CDASHIG v2.2 after publication. During NSV review, the variable was updated and metadata updated including the variable name from REAS to REASEV. The start date for the transition to the new NSV is yet to be determined by the CDASH team.""" ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "A description of the reason for the event." ;
+    nsv:Label "Reason for the Event" ;
+    nsv:Limited%20to%20Class%28es%29 "Events" ;
+    nsv:Limited%20to%20Domain%28s%29 "HO (Healthcare Encounters)" ;
+    nsv:Notes "It is recommended that sponsors develop controlled terminology. Typically the reason is for Health Care Encounters which could include LACK OF EFFICACY, ADVERSE EVENT, CHEMOTHERAPY, PHYSICAL THERAPY, INDICATION UNDER STUDY, NOT INDICATION UNDER STUDY." ;
+    nsv:Role "Non-Standard Variable Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "CDASHIG v2.3" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Variable%20Name "REASEV" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/REASM1/QRS%3A%20PASAT%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Curator%20Remarks "Removed the domain code, FT from the variable 26-Jan-2022. The variable is now within the 6 characters." ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "Did it take more than one attempt to get one successful trial? If yes, please specify reason(s) for more than one attempted trial:" ;
+    nsv:Label "Reason More Than One Attempted Trial" ;
+    nsv:Limited%20to%20Class%28es%29 "Findings" ;
+    nsv:Limited%20to%20Domain%28s%29 "FT (Functional Tests)" ;
+    nsv:Notes "QRS: PASAT" ;
+    nsv:Role "Non-Standard Result Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "QRS: PASAT v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Published" ;
+    nsv:Used%20in%20Domain%28s%29 "FT (Functional Tests)" ;
+    nsv:Variable%20Name "REASM1" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/REASM2/QRS%3A%20NHPT%20v1.0%20QRS%3A%20T25FW%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Curator%20Remarks "Removed the domain code, FT from the variable 26-Jan-2022. The variable is now within the 6 characters." ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "Did it take more than two attempts to get two successful trials? Yes No If yes, please specify reasons(s) for more than two attempted trials:" ;
+    nsv:Label "Reason More Than Two Attempted Trials" ;
+    nsv:Limited%20to%20Class%28es%29 "Findings" ;
+    nsv:Limited%20to%20Domain%28s%29 "FT (Functional Tests)" ;
+    nsv:Notes "QRS: NHPT, T25FW" ;
+    nsv:Role "Non-Standard Result Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "QRS: NHPT v1.0 QRS: T25FW v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Published" ;
+    nsv:Used%20in%20Domain%28s%29 "FT (Functional Tests)" ;
+    nsv:Variable%20Name "REASM2" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/REASNE/QRS%3A%20RECIST%20V1.1%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Curator%20Remarks "Removed the RS from the request since that is the domain code." ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "When \"NE\" (Not Evaluable) is a valid result per the disease response criteria, the reason will be specified in this variable." ;
+    nsv:Label "Reason Response Not Evaluable" ;
+    nsv:Limited%20to%20Class%28es%29 "Findings" ;
+    nsv:Limited%20to%20Domain%28s%29 "RS (Disease Response and Clin Classification)" ;
+    nsv:Role "Non-Standard Result Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "QRS: RECIST V1.1 v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Used%20in%20Domain%28s%29 "RS (Disease Response and Clin Classification)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "73162448" ;
+    nsv:Variable%20Name "REASNE" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/RECVFL/TAUG-T1D-Exercise%26Nutrition%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Codelist%20Reference "(<a href=\"http://evs.nci.nih.gov/ftp1/CDISC/SDTM/SDTM%20Terminology.html#CL.C66742.NY\" target=\"_blank\">NY</a>)" ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "An indicator of whether or not the record is valid." ;
+    nsv:Label "Record Validity Flag" ;
+    nsv:Notes "May be assigned by the device that produces the data." ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "TAUG-T1D-Exercise&Nutrition v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Review for Publication" ;
+    nsv:Used%20in%20Domain%28s%29 "FA (Findings About Events or Interventions) VS (Vital Signs)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "92793018" ;
+    nsv:Variable%20Name "RECVFL" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/RESMOD/SENDIG-DART%20v1.2>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Curator%20Remarks "Due for promotion with SENDIG v4.0; SDTM v2.2 (?) - next SEND SDTM version. Watch for updates to promote the variable." ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "Qualifiers that describe characteristics of the standardized result and that are not represented in other variables that describe the result." ;
+    nsv:Label "Result Modifiers" ;
+    nsv:Limited%20to%20Class%28es%29 "Findings" ;
+    nsv:Notes "Limited to non-clinical use only. Used in FX examples 1 and 2 in SENDIG-DART v1.2; also used in other SENDIGs and is planned for promotion to a standard variable." ;
+    nsv:Requester%20Remarks "This NSV is already in use in past SENDIG documents and is in the upcoming SENDIG-DART v1.2, getting ready for public review at this time." ;
+    nsv:Role "Non-Standard Result Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "SENDIG-DART v1.2" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved - Flagged for Promotion to SDTM" ;
+    nsv:Status%20of%20the%20Source%20Document "Public Review" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "122266267 122266268" ;
+    nsv:Variable%20Name "RESMOD" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/RINCAS/TAUG-COVID-19%20v2.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "The reason the investigator recorded an assessment that was different from the subject's self-reported assessment." ;
+    nsv:Label "Reason Investigator Changed Assessment" ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "TAUG-COVID-19 v2.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Internal Review" ;
+    nsv:Used%20in%20Domain%28s%29 "FA (Findings About Events or Interventions)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "153062746" ;
+    nsv:Variable%20Name "RINCAS" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/RSIVIP/CDASHIG%20v2.3>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Curator%20Remarks "The variable was reviewed for CDASHIG v2.2 after publication. During NSV review, the variable was updated and metadata updated including the variable name from TRPRS to RSIVIP. The start date for the transition to the new NSV is yet to be determined by the CDASH team." ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "The explanation for why the intervention was interrupted." ;
+    nsv:Label "Reason Intervention Interrupted" ;
+    nsv:Limited%20to%20Class%28es%29 "Interventions" ;
+    nsv:Qualifying%20Variable%28s%29 "--TRT" ;
+    nsv:Role "Non-Standard Variable Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "CDASHIG v2.3" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Variable%20Name "RSIVIP" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/RSNRVF/TAUG-T1D-Exercise%26Nutrition%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "The reason for the value of --RECVFL." ;
+    nsv:Label "Reason for Record Validity Flag Value" ;
+    nsv:Limited%20to%20Class%28es%29 "Findings" ;
+    nsv:Notes "May be provided for records flagged as invalid. May be assigned by the device that produces the data." ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "TAUG-T1D-Exercise&Nutrition v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Review for Publication" ;
+    nsv:Used%20in%20Domain%28s%29 "FA (Findings About Events or Interventions) VS (Vital Signs)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "92793018" ;
+    nsv:Variable%20Name "RSNRVF" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/RSPMOD/QRS%3A%20SDMT%20V1.0%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Curator%20Remarks """Changed Label from Response Modality to Response Mode to provide consistency and align with other terms.\r
+\r
+SDMT - Symbol digit modalities test (a functional test)\r
+\r
+The NSV will be republished when the NSV goes from 8 characters to 6 characters.""" ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "Examinees can give either written or spoken responses." ;
+    nsv:Label "Response Mode" ;
+    nsv:Limited%20to%20Class%28es%29 "Findings" ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "QRS: SDMT V1.0 v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "In-Development" ;
+    nsv:Used%20in%20Domain%28s%29 "FT (Functional Tests)" ;
+    nsv:Variable%20Name "RSPMOD" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/SCMIND/TAUG-T1D-Exercise%26Nutrition%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Codelist%20Reference "(<a href=\"http://evs.nci.nih.gov/ftp1/CDISC/SDTM/SDTM%20Terminology.html#CL.C66742.NY\" target=\"_blank\">NY</a>)" ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "Indicates whether the standardized test criteria were met for the test." ;
+    nsv:Label "Standardized Test Criteria Met Indicator" ;
+    nsv:Limited%20to%20Class%28es%29 "Findings" ;
+    nsv:Notes "Standardized test criteria may be specified in the protocol or in --STSTCN." ;
+    nsv:Requester%20Remarks "The modelling of these was based on the SSEVCN and STDSEV NSVs." ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "TAUG-T1D-Exercise&Nutrition v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Review for Publication" ;
+    nsv:Used%20in%20Domain%28s%29 "RE (Respiratory System Findings)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "92793021" ;
+    nsv:Variable%20Name "SCMIND" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/SETTNG/TAUG-T1D%20-%20P%26D%20v2.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Codelist%20Reference "(<a href=\"http://evs.nci.nih.gov/ftp1/CDISC/SDTM/SDTM%20Terminology.html#CL.C127262.SETTING\" target=\"_blank\">SETTING</a>)" ;
+    nsv:Curator%20Remarks """This variable was not promoted in SDTM v2.0/SDTMIG v3.4. Use GATE for devices settings in CP domain. \r
+\r
+2022-04-06 updated description to "environmental setting" in newer NSV.""" ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "The environment/setting where the device event occurred." ;
+    nsv:Label "Setting of Device Event" ;
+    nsv:Limited%20to%20Domain%28s%29 "DE (Device Events)" ;
+    nsv:Publication%20Date%20of%20the%20Source%20Document "2021-05-20" ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "TAUG-T1D - P&D v2.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Published" ;
+    nsv:Used%20in%20Domain%28s%29 "DE (Device Events)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "73161715 73161716" ;
+    nsv:Variable%20Name "SETTNG" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/SETTNG/TAUG-T1D-Exercise%26Nutrition%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Codelist%20Reference "(<a href=\"http://evs.nci.nih.gov/ftp1/CDISC/SDTM/SDTM%20Terminology.html#CL.C127262.SETTING\" target=\"_blank\">SETTING</a>)" ;
+    nsv:Curator%20Remarks """This variable was not promoted in SDTM v2.0/SDTMIG v3.4. Use GATE for device settings in CP domain. \r
+\r
+2022-04-06 updated description to "environmental setting" in newer NSV.""" ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "The environment/setting where the event, intervention, or finding occurred." ;
+    nsv:Label "Environmental Setting" ;
+    nsv:Publication%20Date%20of%20the%20Source%20Document "2021-06-10" ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "TAUG-T1D-Exercise&Nutrition v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Published" ;
+    nsv:Used%20in%20Domain%28s%29 "FA (Findings About Events or Interventions) ML (Meal Data) PR (Procedures) VS (Vital Signs)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "92793015 92793018" ;
+    nsv:Variable%20Name "SETTNG" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/SETTNG/UG-Pediatrics%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Codelist%20Reference "(<a href=\"http://evs.nci.nih.gov/ftp1/CDISC/SDTM/SDTM%20Terminology.html#CL.C127262.SETTING\" target=\"_blank\">SETTING</a>)" ;
+    nsv:Curator%20Remarks "Updated from \"The environment/setting where the event occurred.\" to \"The environmental setting where the event occurred.\" Moving forward to use this description thus avoiding a \"slash\"." ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "The environmental setting where the event occurred." ;
+    nsv:Label "Event Setting" ;
+    nsv:Limited%20to%20Class%28es%29 "Events" ;
+    nsv:Requester%20Remarks " This NSV was copied from the HIV TAUG. The Label and Description were copied from the HIV NSV table. I specified the \"restricted to class\" as Events based on the Label." ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "UG-Pediatrics v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Internal Review" ;
+    nsv:Used%20in%20Domain%28s%29 "CE (Clinical Events) MH (Medical History)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "142085288 142089096 142089090" ;
+    nsv:Variable%20Name "SETTNG" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/SINTV/TAUG-T1D%20-%20P%26D%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Codelist%20Reference "(<a href=\"http://evs.nci.nih.gov/ftp1/CDISC/SDTM/SDTM%20Terminology.html#CL.C66742.NY\" target=\"_blank\">NY</a>)" ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "Records whether medical or surgical intervention was necessary to preclude permanent impairment of a body function, or prevent permanent damage to a body structure, either situation suspected to be due to the use of a medical product." ;
+    nsv:Label "Needs Intervention to Prevent Impairment." ;
+    nsv:Limited%20to%20Domain%28s%29 "AE (Adverse Events)" ;
+    nsv:Notes "Used in studies that include devices. Valid values are \"Y\", \"N\", and null. Expected use is in medical device-related trials. It is part of the definition of a serious AE as represented in 21CFR Part 803.3(w)(3)" ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "TAUG-T1D - P&D v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Published" ;
+    nsv:Used%20in%20Domain%28s%29 "AE (Adverse Events)" ;
+    nsv:Variable%20Name "SINTV" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/SLNUM/QRS%3A%20RECIST%20V1.1%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Curator%20Remarks "For use in the Findings TU and Body Systems domains. Not for use with specimen-based laboratory domains." ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "The numeric identifier used to identify an image slice." ;
+    nsv:Label "Slice Number" ;
+    nsv:Limited%20to%20Class%28es%29 "Findings" ;
+    nsv:Limited%20to%20Domain%28s%29 "TU (Tumor/Lesion Identification)" ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "QRS: RECIST V1.1 v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Internal Review" ;
+    nsv:Used%20in%20Domain%28s%29 "TU (Tumor/Lesion Identification)" ;
+    nsv:Variable%20Name "SLNUM" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/SLPDS1/QRS%3A%20CDRS-R%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "Response value on the CRF indicating when sleep disturbance occurs" ;
+    nsv:Label "Sleep Disturbance 1: First going to bed" ;
+    nsv:Limited%20to%20Class%28es%29 "Findings" ;
+    nsv:Limited%20to%20Domain%28s%29 "RS (Disease Response and Clin Classification)" ;
+    nsv:Notes "QRS supplement specific NSV" ;
+    nsv:Requester%20Remarks "1st of 3 response values for the type of sleep disturbance listed on the CRF" ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "QRS: CDRS-R v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Review for Publication" ;
+    nsv:Used%20in%20Domain%28s%29 "RS (Disease Response and Clin Classification)" ;
+    nsv:Variable%20Name "SLPDS1" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/SLPDS2/QRS%3A%20CDRS-R%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "Response value on the CRF indicating when sleep disturbance occurs" ;
+    nsv:Label "Sleep Disturbance 2: Middle of the night" ;
+    nsv:Limited%20to%20Class%28es%29 "Findings" ;
+    nsv:Limited%20to%20Domain%28s%29 "RS (Disease Response and Clin Classification)" ;
+    nsv:Notes "QRS supplement specific NSV" ;
+    nsv:Requester%20Remarks "2nd of 3 response values for the type of sleep disturbance listed on the CRF" ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "QRS: CDRS-R v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Review for Publication" ;
+    nsv:Used%20in%20Domain%28s%29 "RS (Disease Response and Clin Classification)" ;
+    nsv:Variable%20Name "SLPDS2" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/SLPDS3/QRS%3A%20CDRS-R%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "Response value on the CRF indicating when sleep disturbance occurs" ;
+    nsv:Label "Sleep Disturbance 3: Early morning" ;
+    nsv:Limited%20to%20Class%28es%29 "Findings" ;
+    nsv:Limited%20to%20Domain%28s%29 "RS (Disease Response and Clin Classification)" ;
+    nsv:Notes "QRS supplement specific NSV" ;
+    nsv:Requester%20Remarks "3rd of 3 response values for the type of sleep disturbance listed on the CRF" ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "QRS: CDRS-R v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Review for Publication" ;
+    nsv:Used%20in%20Domain%28s%29 "RS (Disease Response and Clin Classification)" ;
+    nsv:Variable%20Name "SLPDS3" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/SLPSTA/UG-Pediatrics%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "The sleep state of the subject when the test was performed." ;
+    nsv:Label "Sleep State" ;
+    nsv:Limited%20to%20Class%28es%29 "Findings" ;
+    nsv:Notes "Examples include \"AWAKE\", \"ASLEEP\"." ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "UG-Pediatrics v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Used%20in%20Domain%28s%29 "VS (Vital Signs)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "131078107 131078088" ;
+    nsv:Variable%20Name "SLPSTA" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/SLTHK/QRS%3A%20RECIST%20V1.1%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "The dimension between two surfaces of an imaging plane. " ;
+    nsv:Label "Slice Thickness" ;
+    nsv:Limited%20to%20Domain%28s%29 "PR (Procedures)" ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "QRS: RECIST V1.1 v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Public Review" ;
+    nsv:Used%20in%20Domain%28s%29 "PR (Procedures)" ;
+    nsv:Variable%20Name "SLTHK" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/SOC/CDASHIG%20%20v2.2>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "The system organ class from the primary heirarchy assigned in MedDRA." ;
+    nsv:External%20Dictionary "MedDRA" ;
+    nsv:Label "Primary System Organ Class" ;
+    nsv:Limited%20to%20Class%28es%29 "Interventions" ;
+    nsv:Publication%20Date%20of%20the%20Source%20Document "2021-09-28" ;
+    nsv:Qualifying%20Variable%28s%29 "TRT" ;
+    nsv:Role "Non-Standard Variable Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "CDASHIG  v2.2" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Published" ;
+    nsv:Variable%20Name "SOC" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/SOCCD/CDASHIG%20%20v2.2>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Curator%20Remarks "Watch for updates to definitions from the SDTM v2.1 team." ;
+    nsv:Define-XML%20Datatype "integer" ;
+    nsv:Description "The system organ class code from the primary hierarchy assigned in MedDRA." ;
+    nsv:External%20Dictionary "MedDRA" ;
+    nsv:Label "Primary System Organ Class Code" ;
+    nsv:Limited%20to%20Class%28es%29 "Interventions" ;
+    nsv:Qualifying%20Variable%28s%29 "SOC " ;
+    nsv:Role "Non-Standard Variable Qualifier" ;
+    nsv:Simple%20Datatype "Num" ;
+    nsv:Source%28s%29 "CDASHIG  v2.2" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Variable%20Name "SOCCD" ;
+    nsv:XML%20Datatype "float" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/SOURCE/TAUG-PanCan%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "The entity that has provided the data." ;
+    nsv:Label "Source of Information" ;
+    nsv:Notes "Examples: “MEDICAL RECORD”, “PATIENT”, “FAMILY MEMBER”, “NON-MEDICAL RECORD”, “TEACHER”, “FRIEND”." ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "TAUG-PanCan v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Review for Publication" ;
+    nsv:Used%20in%20Domain%28s%29 "VS (Vital Signs)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "107456438" ;
+    nsv:Variable%20Name "SOURCE" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/SPEC/TAUG-T1D-Prevention%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Codelist%20Reference "(<a href=\"http://evs.nci.nih.gov/ftp1/CDISC/SDTM/SDTM%20Terminology.html#CL.C78734.SPECTYPE\" target=\"_blank\">SPECTYPE</a>)" ;
+    nsv:Curator%20Remarks """Updated definition to match the 1-Sep-2021 BESPEC draft description.  \r
+Variable due for promotion in the next version of SDTM 3.0 and SDTMIG 4.0.""" ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "Defines the type of specimen that is the outcome of the event." ;
+    nsv:Label "Specimen Material Type" ;
+    nsv:Notes "Examples include \"SERUM\", \"URINE\"." ;
+    nsv:Requester%20Remarks "Definition copied from TAUG-Crohn's Disease v1.0 NSV." ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "TAUG-T1D-Prevention v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Used%20in%20Domain%28s%29 "BE (Biospecimen Events)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "113597105 92793113" ;
+    nsv:Variable%20Name "SPEC" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/SSEVCN/TAUG-T1D%20-%20P%26D%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "The name of a set of standardized criteria used to assess the severity/intensity of the event." ;
+    nsv:Label "Standardized Severity Criteria Name" ;
+    nsv:Notes "The standardized severity/intensity assessment result is recorded in --STDSEV." ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "TAUG-T1D - P&D v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Published" ;
+    nsv:Used%20in%20Domain%28s%29 "AE (Adverse Events)" ;
+    nsv:Variable%20Name "SSEVCN" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/STCRNM/TAUG-T1D-Exercise%26Nutrition%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "The name of the standardized criteria used to define the protocol for a test." ;
+    nsv:Label "Standardized Test Criteria Name" ;
+    nsv:Limited%20to%20Class%28es%29 "Findings" ;
+    nsv:Notes "May be used alone to indicate which criteria were used for the test, or with --STSIND to record whether the named test criteria were met." ;
+    nsv:Requester%20Remarks "The modelling of these was based on the SSEVCN and STDSEV NSVs" ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "TAUG-T1D-Exercise&Nutrition v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Review for Publication" ;
+    nsv:Used%20in%20Domain%28s%29 "RE (Respiratory System Findings)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "92793021" ;
+    nsv:Variable%20Name "STCRNM" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/STDSEV/TAUG-T1D%20-%20P%26D%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "The quality or degree of harm associated with an event, as collected with reference to the set of standardized severity criteria." ;
+    nsv:Label "Standardized Severity/Intensity" ;
+    nsv:Notes "The name of the set of standardized severity criteria used is recorded in --SSEVCN." ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "TAUG-T1D - P&D v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Published" ;
+    nsv:Used%20in%20Domain%28s%29 "AE (Adverse Events)" ;
+    nsv:Variable%20Name "STDSEV" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/STMDTL/UG-Pediatrics%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "A description of the stimulus that was applied to elicit the test response." ;
+    nsv:Label "Stimulus Detail" ;
+    nsv:Limited%20to%20Class%28es%29 "Findings" ;
+    nsv:Qualifying%20Variable%28s%29 "--TESTCD" ;
+    nsv:Requester%20Remarks " GGG recommendation. \"Detail\" was chosen instead of \"Details\" in the label to align with the label for --TSTDTL." ;
+    nsv:Role "Non-Standard Variable Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "UG-Pediatrics v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Public Review" ;
+    nsv:Used%20in%20Domain%28s%29 "NV (Nervous System Findings)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "144542636 144542695" ;
+    nsv:Variable%20Name "STMDTL" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/STMTH/TAUG-Crohn%27s%20Disease%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "The staining method relevant for the event." ;
+    nsv:Label "Staining Method" ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "TAUG-Crohn's Disease v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Review for Publication" ;
+    nsv:Used%20in%20Domain%28s%29 "BE (Biospecimen Events)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "103743956" ;
+    nsv:Variable%20Name "STMTH" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/STNGOT/TAUG-T1D%20-%20P%26D%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "Other specified environment/setting where the device event occurred." ;
+    nsv:Label "Setting of Device Event Other" ;
+    nsv:Notes "Only populated when --SETTNG is \"OTHER\"." ;
+    nsv:Qualifying%20Variable%28s%29 "SETTNG" ;
+    nsv:Role "Non-Standard Variable Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "TAUG-T1D - P&D v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Published" ;
+    nsv:Used%20in%20Domain%28s%29 "DE (Device Events)" ;
+    nsv:Variable%20Name "STNGOT" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/SUABTS/TAUG-T1D%20-%20P%26D%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Codelist%20Reference "(<a href=\"http://evs.nci.nih.gov/ftp1/CDISC/SDTM/SDTM%20Terminology.html#CL.C66742.NY\" target=\"_blank\">NY</a>)" ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "An indicator of whether or not a supportive antibody test was performed to confirm the diagnosis represented in --TERM." ;
+    nsv:Label "Supportive Antibody Test Performed" ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "TAUG-T1D - P&D v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Published" ;
+    nsv:Used%20in%20Domain%28s%29 "MH (Medical History)" ;
+    nsv:Variable%20Name "SUABTS" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/SVGNUM/TAUG-T1D-Exercise%26Nutrition%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Define-XML%20Datatype "float" ;
+    nsv:Description "The amount of substance administered represented as a number of servings." ;
+    nsv:Label "Number of Servings" ;
+    nsv:Notes "Used when dose variables are used to represent the mass of substance administered." ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Num" ;
+    nsv:Source%28s%29 "TAUG-T1D-Exercise&Nutrition v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Public Review" ;
+    nsv:Used%20in%20Domain%28s%29 "ML (Meal Data)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "92793032 92793031 92793028" ;
+    nsv:Variable%20Name "SVGNUM" ;
+    nsv:XML%20Datatype "float" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/SYMPTM/QRS%3A%20PRO-CTCAE%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Codelist%20Reference """This is the CODELIST reference: Patient-Reported Outcomes version Of The Common Terminology Criteria For Adverse Events (PRO-CTCAE™) QUICK GUIDE TO THE ITEM LIBRARY\r
+""" ;
+    nsv:Curator%20Remarks """This is the CODELIST reference: Patient-Reported Outcomes version Of The Common Terminology Criteria For Adverse Events (PRO-CTCAE) QUICK GUIDE TO THE ITEM LIBRARY\r
+""" ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "The prespecifed item library symptom term. " ;
+    nsv:Label "Symptom Term" ;
+    nsv:Limited%20to%20Class%28es%29 "Findings" ;
+    nsv:Limited%20to%20Domain%28s%29 "QS (Questionnaires)" ;
+    nsv:Notes "QRS supplement specific NSV" ;
+    nsv:Requester%20Remarks "Patient-Reported Outcomes version Of The Common Terminology Criteria For Adverse Events (PRO-CTCAE™) item library term" ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "QRS: PRO-CTCAE v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "In-Development" ;
+    nsv:Used%20in%20Domain%28s%29 "QS (Questionnaires)" ;
+    nsv:Variable%20Name "SYMPTM" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/THRAWK/QRS%3A%20MDS-UPDRS%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Curator%20Remarks "Already published but variable updated with review for next version (as of 2022-08-10)." ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "Total hours awake Sub-question located on CRF: Part IV: Motor Complications, A . DYSKINESIAS [exclusive of OFF-state dystonia], 4.1 TIME SPENT WITH DYSKINESIAS " ;
+    nsv:Label "Total Hours Awake" ;
+    nsv:Limited%20to%20Class%28es%29 "Findings" ;
+    nsv:Limited%20to%20Domain%28s%29 "QS (Questionnaires)" ;
+    nsv:Notes "QRS: MDS-UPDRS" ;
+    nsv:Role "Non-Standard Result Qualifier" ;
+    nsv:Simple%20Datatype "Num" ;
+    nsv:Source%28s%29 "QRS: MDS-UPDRS v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "In-Development" ;
+    nsv:Used%20in%20Domain%28s%29 "QS (Questionnaires)" ;
+    nsv:Variable%20Name "THRAWK" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/THRDSK/QRS%3A%20MDS-UPDRS%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Curator%20Remarks """5-Jan-2022 TOTDYSK was changed to THRDSK to go from eight characters to six characters.\r
+\r
+""" ;
+    nsv:Define-XML%20Datatype "float" ;
+    nsv:Description "Part IV: Motor Complications, A . DYSKINESIAS [exclusive of OFF-state dystonia], 4.1 TIME SPENT WITH DYSKINESIAS Sub-question" ;
+    nsv:Label "Total Hours with Dyskinesia" ;
+    nsv:Limited%20to%20Class%28es%29 "Findings" ;
+    nsv:Limited%20to%20Domain%28s%29 "QS (Questionnaires)" ;
+    nsv:Notes "QRS: MDS-UPDRS" ;
+    nsv:Role "Non-Standard Result Qualifier" ;
+    nsv:Simple%20Datatype "Num" ;
+    nsv:Source%28s%29 "QRS: MDS-UPDRS v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Used%20in%20Domain%28s%29 "QS (Questionnaires)" ;
+    nsv:Variable%20Name "THRDSK" ;
+    nsv:XML%20Datatype "float" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/THRODS/QRS%3A%20MDS-UPDRS%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Curator%20Remarks "5-Jan-2022 Variable changed from TOTOFDYS to THRODS to go from eight characters to six.  " ;
+    nsv:Define-XML%20Datatype "float" ;
+    nsv:Description "C. “OFF” DYSTONIA, 4.6 PAINFUL OFF-STATE DYSTONIA: sub-question" ;
+    nsv:Label "Total Hours OFF with Dystonia" ;
+    nsv:Limited%20to%20Class%28es%29 "Findings" ;
+    nsv:Limited%20to%20Domain%28s%29 "QS (Questionnaires)" ;
+    nsv:Notes "QRS: MDS-UPDRS" ;
+    nsv:Role "Non-Standard Result Qualifier" ;
+    nsv:Simple%20Datatype "Num" ;
+    nsv:Source%28s%29 "QRS: MDS-UPDRS v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Used%20in%20Domain%28s%29 "QS (Questionnaires)" ;
+    nsv:Variable%20Name "THRODS" ;
+    nsv:XML%20Datatype "float" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/TLVRSN/QRS%3A%20BACS%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Curator%20Remarks """QRS instrument can be found in the QRS webpage of the CDISC website.\r
+\r
+Changed variable from TLVERS to TLVRSN on 2022-02-02""" ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "The version of the Tower of London item (test) in the BACS battery instrument." ;
+    nsv:Label "Tower of London Version" ;
+    nsv:Limited%20to%20Class%28es%29 "Findings" ;
+    nsv:Limited%20to%20Domain%28s%29 "FT (Functional Tests)" ;
+    nsv:Notes "QRS: BACS" ;
+    nsv:Publication%20Date%20of%20the%20Source%20Document "2015-03-01" ;
+    nsv:Requester%20Remarks """BACS is a battery of tests and the version refers to what version of the battery.   The group of questions has a version. \r
+\r
+Codelist Reference is Instrument Specific: A or B""" ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "QRS: BACS v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Published" ;
+    nsv:Used%20in%20Domain%28s%29 "FT (Functional Tests)" ;
+    nsv:Variable%20Name "TLVRSN" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/TMRFNC/TAUG-PanCan%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "An endocrine tumor's ability to produce and secrete biologically active hormones that can elicit characteristic symptomatology on other tissues and organs." ;
+    nsv:Label "Tumor Functionality" ;
+    nsv:Limited%20to%20Domain%28s%29 "MH (Medical History)" ;
+    nsv:Notes "For example, \"Functional\" or \"Non-functional\"" ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "TAUG-PanCan v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Review for Publication" ;
+    nsv:Used%20in%20Domain%28s%29 "MH (Medical History)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "103754966" ;
+    nsv:Variable%20Name "TMRFNC" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/TOTHOF/QRS%3A%20MDS-UPDRS%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Curator%20Remarks "5-Jan-2022 TOTHROFF was changed to TOTHOF to go from eight characters to six.  " ;
+    nsv:Define-XML%20Datatype "float" ;
+    nsv:Description "B . MOTOR FLUCTUATIONS, 4.3 TIME SPENT IN THE OFF STATE: sub-question" ;
+    nsv:Label "Total Hours OFF" ;
+    nsv:Limited%20to%20Class%28es%29 "Findings" ;
+    nsv:Limited%20to%20Domain%28s%29 "QS (Questionnaires)" ;
+    nsv:Notes "QRS: MDS-UPDRS" ;
+    nsv:Role "Non-Standard Result Qualifier" ;
+    nsv:Simple%20Datatype "Num" ;
+    nsv:Source%28s%29 "QRS: MDS-UPDRS v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Used%20in%20Domain%28s%29 "QS (Questionnaires)" ;
+    nsv:Variable%20Name "TOTHOF" ;
+    nsv:XML%20Datatype "float" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/TRTSTT/TAUG-PanCan%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Codelist%20Reference "(<a href=\"http://evs.nci.nih.gov/ftp1/CDISC/SDTM/SDTM%20Terminology.html#CL.C124308.TRTSET\" target=\"_blank\">TRTSET</a>)" ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "The clinical trial or treatment setting for the therapy of interest." ;
+    nsv:Label "Treatment Setting" ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "TAUG-PanCan v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Public Review" ;
+    nsv:Used%20in%20Domain%28s%29 "PR (Procedures)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "107457035" ;
+    nsv:Variable%20Name "TRTSTT" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/TSTCND/TAUG-T1D-Exercise%26Nutrition%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Curator%20Remarks "Planned promotion to standard variable with SDTM v2.0" ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "Identifies any planned condition imposed on the test system at the time the test is performed." ;
+    nsv:Label "Test Condition" ;
+    nsv:Notes "Stimulating or activating agents, assay temperature, incubation time, etc." ;
+    nsv:Qualifying%20Variable%28s%29 "--TESTCD; --TEST" ;
+    nsv:Role "Non-Standard Variable Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "TAUG-T1D-Exercise&Nutrition v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Review for Publication" ;
+    nsv:Used%20in%20Domain%28s%29 "RE (Respiratory System Findings)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "92793021 92793024" ;
+    nsv:Variable%20Name "TSTCND" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/TTSORI/TAUG-PanCan%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Curator%20Remarks "The variable is undergoing updates by the BE/BS team and is subject to change. " ;
+    nsv:Define-XML%20Datatype "text" ;
+    nsv:Description "A characterization of the tumor tissue biospecimen used to indicate whether the collected sample was extracted from a primary tumor site, or a metastatic (secondary) tumor site. " ;
+    nsv:Label "Tumor Tissue Origin" ;
+    nsv:Limited%20to%20Class%28es%29 "Events" ;
+    nsv:Limited%20to%20Domain%28s%29 "BE (Biospecimen Events)" ;
+    nsv:Notes "This is about the actual sample and not findings of the sample (i.e., not for assessments)." ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Char" ;
+    nsv:Source%28s%29 "TAUG-PanCan v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Public Review" ;
+    nsv:Used%20in%20Domain%28s%29 "BE (Biospecimen Events)" ;
+    nsv:Used%20in%20WIKI%20Example%28s%29 "110371472" ;
+    nsv:Variable%20Name "TTSORI" ;
+    nsv:XML%20Datatype "string" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/VMVRSN/QRS%3A%20BACS%20v1.0>
+    a <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha> ;
+    nsv:Curator%20Remarks """This is an item within the BACs battery of tests.  A battery is composed of multiple instruments that may have multiple tests.  This is an instrument within the battery.\r
+\r
+QRS instrument can be found in the QRS webpage of the CDISC website.\r
+\r
+Codelist Reference is Instrument Specific: 1 - 8\r
+The variable was changed from VMVERS to VMVRSN""" ;
+    nsv:Define-XML%20Datatype "float" ;
+    nsv:Description "The version of the Verbal Memory item (test) in the BACS battery instrument. " ;
+    nsv:Label "Verbal Memory Version" ;
+    nsv:Limited%20to%20Class%28es%29 "Findings" ;
+    nsv:Limited%20to%20Domain%28s%29 "FT (Functional Tests)" ;
+    nsv:Publication%20Date%20of%20the%20Source%20Document "2015-03-01" ;
+    nsv:Role "Non-Standard Record Qualifier" ;
+    nsv:Simple%20Datatype "Num" ;
+    nsv:Source%28s%29 "QRS: BACS v1.0" ;
+    nsv:Status%20of%20the%20NSV%20Review "Approved" ;
+    nsv:Status%20of%20the%20Source%20Document "Published" ;
+    nsv:Used%20in%20Domain%28s%29 "FT (Functional Tests)" ;
+    nsv:Variable%20Name "VMVRSN" ;
+    nsv:XML%20Datatype "float" ;
+.
