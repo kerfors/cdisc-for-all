@@ -1,0 +1,69 @@
+# The SDTMIG base graph: the SDTMIG v3.4 variable table (cdisc.org sign-in), as published.
+# Hand-kept. The CSVW table description and the structural SHACL are generated from it (cfa.rule, gen-shacl).
+# Class = the table, named by its file name without version and extension; one attribute per published
+# column (name = header verbatim, in published order), slot_uri by the mapping rule; row key = unique key
+# row_key (its slot order is the IRI order). The tables publish no key: row_key is the smallest column set
+# that identifies every row (chosen 2026-11-26, for review).
+# Sign-in content: the graph, view and Provenance built from this module are not published (.gitignore).
+id: https://kerfors.github.io/cdisc-for-all/def/sdtmig
+name: sdtmig
+title: SDTMIG v3.4 variable table, as published
+prefixes:
+  linkml: https://w3id.org/linkml/
+imports:
+  - linkml:types
+default_range: string
+annotations:
+  source: sdtmig
+classes:
+  "SDTMIG":
+    class_uri: https://kerfors.github.io/cdisc-for-all/def/sdtmig#SDTMIG
+    unique_keys:
+      row_key:
+        unique_key_name: row_key
+        unique_key_slots:
+          - "Dataset Name"
+          - "Variable Name"
+    attributes:
+      "Version":
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/sdtmig/SDTMIG#Version
+        range: string
+      "Variable Order":
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/sdtmig/SDTMIG#Variable%20Order
+        range: string
+      "Class":
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/sdtmig/SDTMIG#Class
+        range: string
+      "Dataset Name":
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/sdtmig/SDTMIG#Dataset%20Name
+        range: string
+      "Variable Name":
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/sdtmig/SDTMIG#Variable%20Name
+        range: string
+      "Variable Label":
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/sdtmig/SDTMIG#Variable%20Label
+        range: string
+      "Type":
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/sdtmig/SDTMIG#Type
+        range: string
+      "CDISC CT Codelist Code(s)":
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/sdtmig/SDTMIG#CDISC%20CT%20Codelist%20Code%28s%29
+        range: string
+      "Codelist Submission Values":
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/sdtmig/SDTMIG#Codelist%20Submission%20Values
+        range: string
+      "Described Value Domain(s)":
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/sdtmig/SDTMIG#Described%20Value%20Domain%28s%29
+        range: string
+      "Value List":
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/sdtmig/SDTMIG#Value%20List
+        range: string
+      "Role":
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/sdtmig/SDTMIG#Role
+        range: string
+      "CDISC Notes":
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/sdtmig/SDTMIG#CDISC%20Notes
+        range: string
+      "Core":
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/sdtmig/SDTMIG#Core
+        range: string

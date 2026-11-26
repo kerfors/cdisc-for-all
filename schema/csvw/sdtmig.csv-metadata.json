@@ -1,0 +1,91 @@
+{
+ "@context": "http://www.w3.org/ns/csvw",
+ "url": "SDTMIG.csv",
+ "dialect": {
+  "trim": false
+ },
+ "tableSchema": {
+  "columns": [
+   {
+    "titles": "Version",
+    "name": "Version",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/sdtmig/SDTMIG#Version"
+   },
+   {
+    "titles": "Variable Order",
+    "name": "Variable%20Order",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/sdtmig/SDTMIG#Variable%20Order"
+   },
+   {
+    "titles": "Class",
+    "name": "Class",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/sdtmig/SDTMIG#Class"
+   },
+   {
+    "titles": "Dataset Name",
+    "name": "Dataset%20Name",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/sdtmig/SDTMIG#Dataset%20Name"
+   },
+   {
+    "titles": "Variable Name",
+    "name": "Variable%20Name",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/sdtmig/SDTMIG#Variable%20Name"
+   },
+   {
+    "titles": "Variable Label",
+    "name": "Variable%20Label",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/sdtmig/SDTMIG#Variable%20Label"
+   },
+   {
+    "titles": "Type",
+    "name": "Type",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/sdtmig/SDTMIG#Type"
+   },
+   {
+    "titles": "CDISC CT Codelist Code(s)",
+    "name": "CDISC%20CT%20Codelist%20Code%28s%29",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/sdtmig/SDTMIG#CDISC%20CT%20Codelist%20Code%28s%29"
+   },
+   {
+    "titles": "Codelist Submission Values",
+    "name": "Codelist%20Submission%20Values",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/sdtmig/SDTMIG#Codelist%20Submission%20Values"
+   },
+   {
+    "titles": "Described Value Domain(s)",
+    "name": "Described%20Value%20Domain%28s%29",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/sdtmig/SDTMIG#Described%20Value%20Domain%28s%29"
+   },
+   {
+    "titles": "Value List",
+    "name": "Value%20List",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/sdtmig/SDTMIG#Value%20List"
+   },
+   {
+    "titles": "Role",
+    "name": "Role",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/sdtmig/SDTMIG#Role"
+   },
+   {
+    "titles": "CDISC Notes",
+    "name": "CDISC%20Notes",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/sdtmig/SDTMIG#CDISC%20Notes"
+   },
+   {
+    "titles": "Core",
+    "name": "Core",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/sdtmig/SDTMIG#Core"
+   },
+   {
+    "virtual": true,
+    "propertyUrl": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+    "valueUrl": "https://kerfors.github.io/cdisc-for-all/def/sdtmig#SDTMIG"
+   }
+  ],
+  "primaryKey": [
+   "Dataset%20Name",
+   "Variable%20Name"
+  ],
+  "aboutUrl": "https://kerfors.github.io/cdisc-for-all/id/sdtmig/SDTMIG/{Dataset%20Name}/{Variable%20Name}"
+ }
+}

@@ -8,4 +8,6 @@ imports:
   - linkml:types
   - nsv_registry
   - cosmos
+  - sdtmig
+  - sdtm_model
 default_range: string

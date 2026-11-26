@@ -1,0 +1,97 @@
+{
+ "@context": "http://www.w3.org/ns/csvw",
+ "url": "SDTM.csv",
+ "dialect": {
+  "trim": false
+ },
+ "tableSchema": {
+  "columns": [
+   {
+    "titles": "Version",
+    "name": "Version",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/sdtm-model/SDTM#Version"
+   },
+   {
+    "titles": "Variable Order",
+    "name": "Variable%20Order",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/sdtm-model/SDTM#Variable%20Order"
+   },
+   {
+    "titles": "Class",
+    "name": "Class",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/sdtm-model/SDTM#Class"
+   },
+   {
+    "titles": "Dataset Name",
+    "name": "Dataset%20Name",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/sdtm-model/SDTM#Dataset%20Name"
+   },
+   {
+    "titles": "Variable Name",
+    "name": "Variable%20Name",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/sdtm-model/SDTM#Variable%20Name"
+   },
+   {
+    "titles": "Variable Label",
+    "name": "Variable%20Label",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/sdtm-model/SDTM#Variable%20Label"
+   },
+   {
+    "titles": "Type",
+    "name": "Type",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/sdtm-model/SDTM#Type"
+   },
+   {
+    "titles": "Described Value Domain",
+    "name": "Described%20Value%20Domain",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/sdtm-model/SDTM#Described%20Value%20Domain"
+   },
+   {
+    "titles": "Role",
+    "name": "Role",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/sdtm-model/SDTM#Role"
+   },
+   {
+    "titles": "Variables Qualified",
+    "name": "Variables%20Qualified",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/sdtm-model/SDTM#Variables%20Qualified"
+   },
+   {
+    "titles": "Usage Restrictions",
+    "name": "Usage%20Restrictions",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/sdtm-model/SDTM#Usage%20Restrictions"
+   },
+   {
+    "titles": "Variable C-Code",
+    "name": "Variable%20C%2DCode",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/sdtm-model/SDTM#Variable%20C-Code"
+   },
+   {
+    "titles": "Definition",
+    "name": "Definition",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/sdtm-model/SDTM#Definition"
+   },
+   {
+    "titles": "Notes",
+    "name": "Notes",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/sdtm-model/SDTM#Notes"
+   },
+   {
+    "titles": "Examples",
+    "name": "Examples",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/sdtm-model/SDTM#Examples"
+   },
+   {
+    "virtual": true,
+    "propertyUrl": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+    "valueUrl": "https://kerfors.github.io/cdisc-for-all/def/sdtm-model#SDTM"
+   }
+  ],
+  "primaryKey": [
+   "Class",
+   "Dataset%20Name",
+   "Variable%20Name"
+  ],
+  "aboutUrl": "https://kerfors.github.io/cdisc-for-all/id/sdtm-model/SDTM/{Class}/{Dataset%20Name}/{Variable%20Name}"
+ }
+}
