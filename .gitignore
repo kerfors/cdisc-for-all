@@ -1,0 +1,29 @@
+# Source files: external, re-downloadable; each reader stops if a file differs from its pin
+base/*/downloads/*
+!base/*/downloads/.gitkeep
+
+# Sign-in content (cdisc.org): the as-published graphs and views of the SDTMIG and
+# SDTM Model variable tables are built locally and not published (README, "Content and licences")
+base/sdtmig/*.ttl
+base/sdtmig/*.xlsx
+base/sdtmig/Provenance.json
+base/sdtm-model/*.ttl
+base/sdtm-model/*.xlsx
+base/sdtm-model/Provenance.json
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Python
+__pycache__/
+*.pyc
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Claude Code
+.claude/worktrees/
