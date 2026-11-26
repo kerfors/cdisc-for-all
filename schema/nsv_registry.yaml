@@ -1,0 +1,92 @@
+# The NSV Registry base graph: the sheet "Approved NSVs-alpha" as published.
+# Hand-kept. The CSVW table description and the structural SHACL are generated from it (cfa.rule, gen-shacl).
+# Class = the sheet, one attribute per published column (name = header verbatim, in published order),
+# slot_uri by the mapping rule, row key = unique key row_key (its slot order is the IRI order).
+# The file is not named here: Reference_Versions.json pins it and names its sheet (= the class name).
+# header_row: the sheet row that holds the header (read by cfa.read; not part of the CSVW, which
+# describes the table as read).
+id: https://kerfors.github.io/cdisc-for-all/def/nsv-registry
+name: nsv-registry
+title: Approved Non-Standard Variable Registry, as published
+prefixes:
+  linkml: https://w3id.org/linkml/
+imports:
+  - linkml:types
+default_range: string
+annotations:
+  source: nsv-registry
+classes:
+  "Approved NSVs-alpha":
+    class_uri: https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha
+    annotations:
+      header_row: 3
+    unique_keys:
+      row_key:
+        unique_key_name: row_key
+        unique_key_slots:
+          - "Variable Name"
+          - "Source(s)"
+    attributes:
+      "Variable Name":
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/nsv-registry/Approved%20NSVs-alpha#Variable%20Name
+        range: string
+      "Label":
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/nsv-registry/Approved%20NSVs-alpha#Label
+        range: string
+      "Description":
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/nsv-registry/Approved%20NSVs-alpha#Description
+        range: string
+      "Notes":
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/nsv-registry/Approved%20NSVs-alpha#Notes
+        range: string
+      "Status of the NSV Review":
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/nsv-registry/Approved%20NSVs-alpha#Status%20of%20the%20NSV%20Review
+        range: string
+      "Source(s)":
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/nsv-registry/Approved%20NSVs-alpha#Source%28s%29
+        range: string
+      "Status of the Source Document":
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/nsv-registry/Approved%20NSVs-alpha#Status%20of%20the%20Source%20Document
+        range: string
+      "Publication Date of the Source Document":
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/nsv-registry/Approved%20NSVs-alpha#Publication%20Date%20of%20the%20Source%20Document
+        range: string
+      "Requester Remarks":
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/nsv-registry/Approved%20NSVs-alpha#Requester%20Remarks
+        range: string
+      "Curator Remarks":
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/nsv-registry/Approved%20NSVs-alpha#Curator%20Remarks
+        range: string
+      "Role":
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/nsv-registry/Approved%20NSVs-alpha#Role
+        range: string
+      "Qualifying Variable(s)":
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/nsv-registry/Approved%20NSVs-alpha#Qualifying%20Variable%28s%29
+        range: string
+      "Simple Datatype":
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/nsv-registry/Approved%20NSVs-alpha#Simple%20Datatype
+        range: string
+      "XML Datatype":
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/nsv-registry/Approved%20NSVs-alpha#XML%20Datatype
+        range: string
+      "Define-XML Datatype":
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/nsv-registry/Approved%20NSVs-alpha#Define-XML%20Datatype
+        range: string
+      "Limited to Class(es)":
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/nsv-registry/Approved%20NSVs-alpha#Limited%20to%20Class%28es%29
+        range: string
+      "Limited to Domain(s)":
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/nsv-registry/Approved%20NSVs-alpha#Limited%20to%20Domain%28s%29
+        range: string
+      "Used in Domain(s)":
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/nsv-registry/Approved%20NSVs-alpha#Used%20in%20Domain%28s%29
+        range: string
+      "Used in WIKI Example(s)":
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/nsv-registry/Approved%20NSVs-alpha#Used%20in%20WIKI%20Example%28s%29
+        range: string
+      "External Dictionary":
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/nsv-registry/Approved%20NSVs-alpha#External%20Dictionary
+        range: string
+      "Codelist Reference":
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/nsv-registry/Approved%20NSVs-alpha#Codelist%20Reference
+        range: string

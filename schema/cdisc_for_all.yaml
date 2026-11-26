@@ -1,0 +1,10 @@
+# The index schema: imports every module. Base modules first; links.yaml and pure.yaml follow in later steps.
+id: https://kerfors.github.io/cdisc-for-all/def
+name: cdisc-for-all
+title: cdisc-for-all, the contract
+prefixes:
+  linkml: https://w3id.org/linkml/
+imports:
+  - linkml:types
+  - nsv_registry
+default_range: string

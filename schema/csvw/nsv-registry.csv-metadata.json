@@ -1,0 +1,126 @@
+{
+ "@context": "http://www.w3.org/ns/csvw",
+ "url": "Approved%20NSVs-alpha.csv",
+ "dialect": {
+  "trim": false
+ },
+ "tableSchema": {
+  "columns": [
+   {
+    "titles": "Variable Name",
+    "name": "Variable%20Name",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/nsv-registry/Approved%20NSVs-alpha#Variable%20Name"
+   },
+   {
+    "titles": "Label",
+    "name": "Label",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/nsv-registry/Approved%20NSVs-alpha#Label"
+   },
+   {
+    "titles": "Description",
+    "name": "Description",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/nsv-registry/Approved%20NSVs-alpha#Description"
+   },
+   {
+    "titles": "Notes",
+    "name": "Notes",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/nsv-registry/Approved%20NSVs-alpha#Notes"
+   },
+   {
+    "titles": "Status of the NSV Review",
+    "name": "Status%20of%20the%20NSV%20Review",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/nsv-registry/Approved%20NSVs-alpha#Status%20of%20the%20NSV%20Review"
+   },
+   {
+    "titles": "Source(s)",
+    "name": "Source%28s%29",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/nsv-registry/Approved%20NSVs-alpha#Source%28s%29"
+   },
+   {
+    "titles": "Status of the Source Document",
+    "name": "Status%20of%20the%20Source%20Document",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/nsv-registry/Approved%20NSVs-alpha#Status%20of%20the%20Source%20Document"
+   },
+   {
+    "titles": "Publication Date of the Source Document",
+    "name": "Publication%20Date%20of%20the%20Source%20Document",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/nsv-registry/Approved%20NSVs-alpha#Publication%20Date%20of%20the%20Source%20Document"
+   },
+   {
+    "titles": "Requester Remarks",
+    "name": "Requester%20Remarks",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/nsv-registry/Approved%20NSVs-alpha#Requester%20Remarks"
+   },
+   {
+    "titles": "Curator Remarks",
+    "name": "Curator%20Remarks",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/nsv-registry/Approved%20NSVs-alpha#Curator%20Remarks"
+   },
+   {
+    "titles": "Role",
+    "name": "Role",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/nsv-registry/Approved%20NSVs-alpha#Role"
+   },
+   {
+    "titles": "Qualifying Variable(s)",
+    "name": "Qualifying%20Variable%28s%29",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/nsv-registry/Approved%20NSVs-alpha#Qualifying%20Variable%28s%29"
+   },
+   {
+    "titles": "Simple Datatype",
+    "name": "Simple%20Datatype",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/nsv-registry/Approved%20NSVs-alpha#Simple%20Datatype"
+   },
+   {
+    "titles": "XML Datatype",
+    "name": "XML%20Datatype",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/nsv-registry/Approved%20NSVs-alpha#XML%20Datatype"
+   },
+   {
+    "titles": "Define-XML Datatype",
+    "name": "Define%2DXML%20Datatype",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/nsv-registry/Approved%20NSVs-alpha#Define-XML%20Datatype"
+   },
+   {
+    "titles": "Limited to Class(es)",
+    "name": "Limited%20to%20Class%28es%29",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/nsv-registry/Approved%20NSVs-alpha#Limited%20to%20Class%28es%29"
+   },
+   {
+    "titles": "Limited to Domain(s)",
+    "name": "Limited%20to%20Domain%28s%29",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/nsv-registry/Approved%20NSVs-alpha#Limited%20to%20Domain%28s%29"
+   },
+   {
+    "titles": "Used in Domain(s)",
+    "name": "Used%20in%20Domain%28s%29",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/nsv-registry/Approved%20NSVs-alpha#Used%20in%20Domain%28s%29"
+   },
+   {
+    "titles": "Used in WIKI Example(s)",
+    "name": "Used%20in%20WIKI%20Example%28s%29",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/nsv-registry/Approved%20NSVs-alpha#Used%20in%20WIKI%20Example%28s%29"
+   },
+   {
+    "titles": "External Dictionary",
+    "name": "External%20Dictionary",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/nsv-registry/Approved%20NSVs-alpha#External%20Dictionary"
+   },
+   {
+    "titles": "Codelist Reference",
+    "name": "Codelist%20Reference",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/nsv-registry/Approved%20NSVs-alpha#Codelist%20Reference"
+   },
+   {
+    "virtual": true,
+    "propertyUrl": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+    "valueUrl": "https://kerfors.github.io/cdisc-for-all/def/nsv-registry#Approved%20NSVs-alpha"
+   }
+  ],
+  "primaryKey": [
+   "Variable%20Name",
+   "Source%28s%29"
+  ],
+  "aboutUrl": "https://kerfors.github.io/cdisc-for-all/id/nsv-registry/Approved%20NSVs-alpha/{Variable%20Name}/{Source%28s%29}"
+ }
+}
