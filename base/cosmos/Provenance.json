@@ -1,0 +1,55 @@
+{
+ "source": "cosmos",
+ "graph": "https://kerfors.github.io/cdisc-for-all/graph/cosmos",
+ "pin": {
+  "publisher": "CDISC",
+  "title": "COSMoS Biomedical Concepts and SDTM Dataset Specializations (public export)",
+  "version": "Package 19",
+  "readme_as_of": "2026-11-02",
+  "access": "public",
+  "repository": "https://github.com/cdisc-org/COSMoS",
+  "commit": "41fdf29f50cfb6e233861bbcbc8e3b339dcea3b4",
+  "files": {
+   "export/cdisc_biomedical_concepts_latest.csv": {
+    "sha256": "5f1927a3e08a7b009e9181d4951bffc3b15baa8ab4dc5e908b5abad053c210fa"
+   },
+   "export/cdisc_biomedical_concepts_hierarchy_latest.csv": {
+    "sha256": "9e2855349c6d8cd3476565bff0747d40ba67c75dbffc1c8225895d67a7f88e92"
+   },
+   "export/cdisc_sdtm_dataset_specializations_latest.csv": {
+    "sha256": "21981bcffc6739bab02510d87fead6de8c0e10634f77b2eb2aa6f2bb5e8839d7"
+   }
+  }
+ },
+ "inputs": {
+  "base/cosmos/downloads/cdisc_biomedical_concepts_latest.csv": "5f1927a3e08a7b009e9181d4951bffc3b15baa8ab4dc5e908b5abad053c210fa",
+  "base/cosmos/downloads/cdisc_biomedical_concepts_hierarchy_latest.csv": "9e2855349c6d8cd3476565bff0747d40ba67c75dbffc1c8225895d67a7f88e92",
+  "base/cosmos/downloads/cdisc_sdtm_dataset_specializations_latest.csv": "21981bcffc6739bab02510d87fead6de8c0e10634f77b2eb2aa6f2bb5e8839d7"
+ },
+ "schema": {
+  "schema/cosmos.yaml": "d0359d56fa57f584ba51ef0b25fa37ab609c85405c8f68a7fa2e34dc70891769",
+  "schema/csvw/cosmos.csv-metadata.json": "a8a53280bbc2b9a1f96ea22bba8912316176c7cb0b78ef80c1e577569fec1f29",
+  "schema/shacl/cosmos.shacl.ttl": "64cbbd6e196162919a172c35cc107e5710775eaebe5169775c63d4adc536e695"
+ },
+ "triples": 477144,
+ "graph_sha256": "daec8206d5bf617e6a0492882c2c2bd3a9f2721c7e986477d42ecc282dd1ceab",
+ "graph_sha256_method": "SHA-256 of the canonical N-Triples (RDFC-1.0; no blank nodes)",
+ "source_text_sha256": {
+  "cdisc_biomedical_concepts_latest": "9d7fc71be5090b2671162b6e495f07d4e6b797af20af2238d267354edf957e21",
+  "cdisc_biomedical_concepts_hierarchy_latest": "b09e08d8bb74486e27e76fde49bc652497fb679d98ed282ca449fa17d359a7cb",
+  "cdisc_sdtm_dataset_specializations_latest": "67f5473d8fe3eaa172f93e092341fccc552251c510ea436c559547e13540b4d4"
+ },
+ "view_text_sha256": {
+  "cdisc_biomedical_concepts_latest": "9d7fc71be5090b2671162b6e495f07d4e6b797af20af2238d267354edf957e21",
+  "cdisc_biomedical_concepts_hierarchy_latest": "b09e08d8bb74486e27e76fde49bc652497fb679d98ed282ca449fa17d359a7cb",
+  "cdisc_sdtm_dataset_specializations_latest": "67f5473d8fe3eaa172f93e092341fccc552251c510ea436c559547e13540b4d4"
+ },
+ "text_sha256_method": "SHA-256 (UTF-8) of the JSON array [header, row, ...], each an array of strings (empty cell \"\"), rows sorted by the key columns in code point order, json.dumps(ensure_ascii=False, separators=(\",\", \":\")).",
+ "tools": {
+  "rdflib": "7.6.0",
+  "linkml": "1.12.1",
+  "pyshacl": "0.40.2",
+  "openpyxl": "3.1.5",
+  "pandas": "3.1.1"
+ }
+}
