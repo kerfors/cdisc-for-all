@@ -59,6 +59,7 @@ Machine-readable description of all of this: [catalog.ttl](https://kerfors.githu
 - [Start page](https://kerfors.github.io/cdisc-for-all/) and [example pages](https://kerfors.github.io/cdisc-for-all/examples/pages/): the test concept graph of nine lab tests; [link map](https://kerfors.github.io/cdisc-for-all/examples/pages/link_map.html).
 - [test_concept_graph.rq](https://github.com/kerfors/cdisc-for-all/blob/main/examples/test_concept_graph.rq): a SPARQL CONSTRUCT from an SDTM CT test C-code to its NCIt concept, the COSMoS BC, its Data Element Concepts, the bound CT terms and the Specializations. Load the base graphs, links.ttl, by-rule.ttl and cosmos-model.ttl into one store (the examples use Oxigraph).
 - [test_concept.py](https://github.com/kerfors/cdisc-for-all/blob/main/examples/test_concept.py): runs it per C-code: `python examples/test_concept.py C105585` (needs the full requirements.txt).
+- [cdisc_for_all_mcp.py](https://kerfors.github.io/cdisc-for-all/mcp/cdisc_for_all_mcp.py): a local MCP server (stdio) over the published graphs: find_test, test_concept, describe, sparql (read-only); run with `uv run https://kerfors.github.io/cdisc-for-all/mcp/cdisc_for_all_mcp.py`.
 - [Getting_Started.ipynb](https://github.com/kerfors/cdisc-for-all/blob/main/examples/Getting_Started.ipynb): reads catalog.ttl, loads the published graphs into Oxigraph (one named graph each, SHA-256 checked) and follows one test hop by hop, naming each link.
 
 ## Optional
