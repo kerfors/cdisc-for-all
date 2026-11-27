@@ -73,6 +73,9 @@ def load_links(path):
         unless = json.loads(ann.get('unless', '[]'))
         targets = ann.get('targets', 'one')
         func = ann.get('rule_function')
+        flag = json.loads(ann['flag']) if 'flag' in ann else None
+        if (flag is None) != ('flag_rule' not in ann) or (flag is not None and set(flag) != {'column', 'ends_with'}):
+            raise ValueError(f'{name}: flag is {{"column", "ends_with"}}, stated in flag_rule, both or neither')
         if targets not in ('one', 'all'):
             raise ValueError(f'{name}: targets {targets!r} is not one or all')
         if func is not None:
@@ -97,7 +100,7 @@ def load_links(path):
         for c in cols + requires:
             if c not in sv.get_class(dom).attributes:
                 raise ValueError(f'{name}: {c!r} is not a column of {dom}')
-        for c in target + target_empty:
+        for c in target + target_empty + ([flag['column']] if flag else []):
             if c not in sv.get_class(rng).attributes:
                 raise ValueError(f'{name}: {c!r} is not a column of {rng}')
         iri = f'{NS}{KINDS[kind]}/{dsrc}/{pct(dom)}#{pct(cols[-1])}'
@@ -117,6 +120,8 @@ def load_links(path):
             'requires': requires, 'requires_iris': [property_iri(dsrc, dom, c) for c in requires],
             'unless': unless, 'unless_iris': [earlier[u]['iri'] for u in unless],
             'targets': targets, 'rule_function': func, 'match_empty': match_empty,
+            'flag': flag, 'flag_rule': ann.get('flag_rule'),
+            'flag_iri': property_iri(rsrc, rng, flag['column']) if flag else None,
             'shape': f'{NS}shape/{pct(name)}',
         })
     iris = [s['iri'] for s in specs]
@@ -215,7 +220,30 @@ def link_shapes(specs):
             what = 'more target rows than keys' if amb else f'no {spec["kind"]} link'
             g.add((con, SH.message, Literal(f'{spec["name"]}: {what} for the value')))
             g.add((con, SH.select, Literal(_sparql(spec, ambiguous=amb))))
+        if spec['flag']:
+            base = spec['shape'] + '-flagged'
+            shape, con, target = URIRef(base), URIRef(base + '-sparql'), URIRef(base + '-target')
+            g.add((shape, RDF.type, SH.NodeShape))
+            g.add((shape, SH.target, target))
+            g.add((shape, SH.severity, SH.Info))
+            g.add((target, RDF.type, SH.SPARQLTarget))
+            g.add((target, SH.select, Literal(_flag_sparql(spec, '?this', spec['domain_class']))))
+            g.add((shape, SH.sparql, con))
+            g.add((con, RDF.type, SH.SPARQLConstraint))
+            g.add((con, SH.message, Literal(f'{spec["name"]}: {flag_result(spec)}')))
+            g.add((con, SH.select, Literal(_flag_sparql(spec))))
     return g
+
+
+def flag_result(spec):
+    return f'target {spec["flag"]["column"]} ends in {spec["flag"]["ends_with"]}'
+
+
+def _flag_sparql(spec, this='$this', cls=None):
+    end = json.dumps(spec['flag']['ends_with'])
+    return (f'SELECT {this} ?value WHERE {{ ' + (f'{this} a <{cls}> . ' if cls else '')
+            + f'{this} <{spec["column_iris"][-1]}> ?value . {this} <{spec["iri"]}> ?t . '
+            f'?t <{spec["flag_iri"]}> ?n . FILTER(STRENDS(?n, {end})) }}')
 
 
 def unresolved(g, spec, node, value):
@@ -231,7 +259,7 @@ def unresolved(g, spec, node, value):
 LINK_CHECK_COLUMNS = ['Link', 'Kind', 'Result', 'Table', 'Row', 'Column', 'Value', 'Not resolved', 'Target table']
 LINKS_SHEET_COLUMNS = ['Link', 'Property', 'Kind', 'Rule', 'Rule function', 'Table', 'Columns', 'Separator',
                        'Requires', 'Unless', 'Target table', 'Target columns', 'Target columns empty', 'Targets',
-                       'Description']
+                       'Description', 'Flag']
 
 
 def link_check_frame(report, g, specs):
@@ -242,6 +270,7 @@ def link_check_frame(report, g, specs):
     by_shape = {URIRef(s['shape']): (s, 'no link') for s in specs}
     by_shape.update({URIRef(s['shape'] + '-ambiguous'): (s, 'more target rows than keys')
                      for s in specs if s['targets'] == 'all'})
+    by_shape.update({URIRef(s['shape'] + '-flagged'): (s, flag_result(s)) for s in specs if s['flag']})
     rows = []
     for r in report.subjects(RDF.type, SH.ValidationResult):
         if report.value(r, SH.resultSeverity) != SH.Info:
@@ -264,7 +293,7 @@ def links_sheet(specs):
     js = lambda x: json.dumps(x, ensure_ascii=False) if x else ''
     rows = [[s['name'], s['iri'], s['kind'], s['rule'] or '', s['rule_function'] or '', s['domain'], js(s['columns']),
              s['separator'] or '', js(s['requires']), js(s['unless']), s['range'], js(s['target']),
-             js(s['target_empty']), s['targets'], s['description'] or '']
+             js(s['target_empty']), s['targets'], s['description'] or '', s['flag_rule'] or '']
             for s in specs]
     return pd.DataFrame(rows, columns=LINKS_SHEET_COLUMNS, dtype=str)
 

@@ -10,6 +10,8 @@
 #   target_empty:  base columns of the range that must be empty on the target (optional)
 #   separator:     the column holds several keys, split at this text, surrounding spaces removed (optional)
 #   rule:          the rule, stated (by rule only)
+#   flag:          a marker the target publishes, JSON {"column": c, "ends_with": text}: a linked row whose target's
+#                  column ends with the text is reported too (the link stays); flag_rule states it (optional)
 # Links by rule only:
 #   requires:      columns that must have a value for the link to apply (a row without them is outside the link)
 #   unless:        earlier links: the link applies only to a row that has none of them
@@ -90,6 +92,8 @@ slots:
       link: published key
       columns: '["bc_id"]'
       target: '["bc_id"]'
+      flag: '{"column": "bc_short_name", "ends_with": "[RETIRED]"}'
+      flag_rule: A Dataset Specialization row whose BC has a bc_short_name ending in "[RETIRED]", the marker COSMoS publishes for a retired BC, is reported. The link stays.
 
   "cosmos dataset specialization to data element concept":
     description: A Dataset Specialization variable row to the BC row of its data element concept, within its BC.

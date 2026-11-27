@@ -35,6 +35,13 @@ PREFIX sh: <http://www.w3.org/ns/shacl#>
     sh:target <https://kerfors.github.io/cdisc-for-all/shape/cosmos%20dataset%20specialization%20to%20biomedical%20concept-target> ;
 .
 
+<https://kerfors.github.io/cdisc-for-all/shape/cosmos%20dataset%20specialization%20to%20biomedical%20concept-flagged>
+    a sh:NodeShape ;
+    sh:severity sh:Info ;
+    sh:sparql <https://kerfors.github.io/cdisc-for-all/shape/cosmos%20dataset%20specialization%20to%20biomedical%20concept-flagged-sparql> ;
+    sh:target <https://kerfors.github.io/cdisc-for-all/shape/cosmos%20dataset%20specialization%20to%20biomedical%20concept-flagged-target> ;
+.
+
 <https://kerfors.github.io/cdisc-for-all/shape/cosmos%20dataset%20specialization%20to%20codelist>
     a sh:NodeShape ;
     sh:severity sh:Info ;
@@ -203,6 +210,17 @@ PREFIX sh: <http://www.w3.org/ns/shacl#>
 <https://kerfors.github.io/cdisc-for-all/shape/cosmos%20dataset%20specialization%20to%20assigned%20term-target>
     a sh:SPARQLTarget ;
     sh:select "SELECT ?this ?value WHERE { ?this a <https://kerfors.github.io/cdisc-for-all/def/cosmos#cdisc_sdtm_dataset_specializations_latest> . ?this <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#assigned_term> ?value . FILTER NOT EXISTS { ?this <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_sdtm_dataset_specializations_latest#assigned_term> ?t } }" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/cosmos%20dataset%20specialization%20to%20biomedical%20concept-flagged-sparql>
+    a sh:SPARQLConstraint ;
+    sh:message "cosmos dataset specialization to biomedical concept: target bc_short_name ends in [RETIRED]" ;
+    sh:select "SELECT $this ?value WHERE { $this <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#bc_id> ?value . $this <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_sdtm_dataset_specializations_latest#bc_id> ?t . ?t <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_hierarchy_latest#bc_short_name> ?n . FILTER(STRENDS(?n, \"[RETIRED]\")) }" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/cosmos%20dataset%20specialization%20to%20biomedical%20concept-flagged-target>
+    a sh:SPARQLTarget ;
+    sh:select "SELECT ?this ?value WHERE { ?this a <https://kerfors.github.io/cdisc-for-all/def/cosmos#cdisc_sdtm_dataset_specializations_latest> . ?this <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#bc_id> ?value . ?this <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_sdtm_dataset_specializations_latest#bc_id> ?t . ?t <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_hierarchy_latest#bc_short_name> ?n . FILTER(STRENDS(?n, \"[RETIRED]\")) }" ;
 .
 
 <https://kerfors.github.io/cdisc-for-all/shape/cosmos%20dataset%20specialization%20to%20biomedical%20concept-sparql>
