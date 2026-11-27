@@ -119,6 +119,7 @@ def catalog(root, specs):
                                        'and every link to a row that carries a marker its source publishes, such as COSMoS "[RETIRED]"')))
     g.add((rep, DCTERMS.license, MIT))
     _distribution(g, rep, root, 'linked/Link_Check.xlsx', 'Link_Check (Excel)')
+    g.add((rep, RDFS.comment, Literal('The rows of the links that start from or end at a row of a sign-in source are in Link_Check-signin, built locally and not published.')))
     mapping = CAT['sssom']
     g.add((cat, DCAT.dataset, mapping))
     g.add((mapping, RDF.type, DCAT.Dataset))
@@ -172,7 +173,7 @@ def llms_txt(root, specs, g):
             f'- [by-rule.ttl]({SITE}linked/by-rule.ttl): links by a stated rule.',
             f"- [cosmos-model.ttl]({SITE}linked/cosmos-model.ttl): the COSMoS export restated in COSMoS's authored model (COSMoS's own IRIs).",
             f'- [by-rule.sssom.tsv]({SITE}linked/by-rule.sssom.tsv): the links by a rule that matches a general name, as SSSOM.',
-            f'- [Link_Check.xlsx]({SITE}linked/Link_Check.xlsx): every reference that does not resolve, and every link to a row with a published marker such as "[RETIRED]".',
+            f'- [Link_Check.xlsx]({SITE}linked/Link_Check.xlsx): every reference that does not resolve, and every link to a row with a published marker such as "[RETIRED]". The rows of the links that touch a sign-in source are in a local Link_Check-signin, not published.',
             f'- [links.yaml]({REPO}/blob/main/schema/links.yaml): every link as stated (key columns, target columns, rule).', '',
             '## The links (predicate: from table -> to table)', '']
     for s in specs:
@@ -182,7 +183,7 @@ def llms_txt(root, specs, g):
     out += ['', '## Using it', '',
             f'- [Start page]({SITE}) and [example pages]({SITE}examples/pages/): the test concept graph of nine lab tests; [link map]({SITE}examples/pages/link_map.html).',
             f'- [test_concept_graph.rq]({REPO}/blob/main/examples/test_concept_graph.rq): a SPARQL CONSTRUCT from an SDTM CT test C-code to its NCIt concept, the COSMoS BC, its Data Element Concepts, the bound CT terms and the Specializations. Load the base graphs, links.ttl, by-rule.ttl and cosmos-model.ttl into one store (the examples use Oxigraph).',
-            f'- [test_concept.py]({REPO}/blob/main/examples/test_concept.py): runs it per C-code: `python examples/test_concept.py C105585`.',
+            f'- [test_concept.py]({REPO}/blob/main/examples/test_concept.py): runs it per C-code: `python examples/test_concept.py C105585` (needs the full requirements.txt).',
             f'- [Getting_Started.ipynb]({REPO}/blob/main/examples/Getting_Started.ipynb): reads catalog.ttl, loads the published graphs into Oxigraph (one named graph each, SHA-256 checked) and follows one test hop by hop, naming each link.', '',
             '## Optional', '',
             f'- [README]({REPO}#readme): rules, sources, pins, licences.',

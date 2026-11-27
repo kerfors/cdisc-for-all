@@ -13,6 +13,7 @@ base/sdtm-model/Provenance.json
 # Links that start from or end at a row of a sign-in source: local until decided
 linked/*-signin.ttl
 linked/*-signin.sssom.tsv
+linked/*-signin.xlsx
 # Results of the example queries
 examples/output/
 

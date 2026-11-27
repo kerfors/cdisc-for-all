@@ -49,7 +49,7 @@ ul.list a { color: var(--ct); cursor: pointer; }
   <span><svg width="34" height="8"><line x1="0" y1="4" x2="34" y2="4" stroke="var(--line)" stroke-width="2"/></svg>published key</span>
   <span><svg width="34" height="8"><line x1="0" y1="4" x2="34" y2="4" stroke="var(--line)" stroke-width="2" stroke-dasharray="6 4"/></svg>by rule</span>
   <span><svg width="34" height="8"><line x1="0" y1="4" x2="34" y2="4" stroke="var(--hi)" stroke-width="2"/></svg>has Link_Check rows</span>
-  <span><svg width="22" height="14"><rect x="1" y="1" width="20" height="12" fill="none" stroke="var(--model)" stroke-dasharray="3 3"/></svg>sign-in source: its graph and links are built locally</span>
+  <span><svg width="22" height="14"><rect x="1" y="1" width="20" height="12" fill="none" stroke="var(--model)" stroke-dasharray="3 3"/></svg>sign-in source: its graph, its links and their Link_Check rows are built locally</span>
 </div>
 <div class="wrap">
   <div class="diagram"><svg id="g"></svg></div>
@@ -111,7 +111,7 @@ function show(i) {
   if (l.separator) h += `<tr><td>separator</td><td>"${esc(l.separator)}"</td></tr>`;
   if (l.rule) h += `<tr><td>rule</td><td>${esc(l.rule)}</td></tr>`;
   if (l.flag_rule) h += `<tr><td>marker</td><td>${esc(l.flag_rule)}</td></tr>`;
-  if (l.signin) h += `<tr><td>graph</td><td>built locally (a sign-in source)</td></tr>`;
+  if (l.signin) h += `<tr><td>graph</td><td>built locally (a sign-in source); its Link_Check rows are in the local Link_Check-signin</td></tr>`;
   h += '</table>';
   if (l.check.length) {
     const groups = {};
