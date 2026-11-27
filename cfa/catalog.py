@@ -112,6 +112,14 @@ def catalog(root, specs):
     g.add((ds, VOID.triples, Literal(model['triples'])))
     _distribution(g, ds, root, f"linked/{model['file']}", 'the COSMoS model graph (Turtle)')
     g.add((ds, VOID.dataDump, URIRef(SITE + f"linked/{model['file']}")))
+    voc = URIRef(SITE + 'graph/vocabulary')
+    g.add((cat, DCAT.dataset, voc))
+    for t in (DCAT.Dataset, VOID.Dataset):
+        g.add((voc, RDF.type, t))
+    g.add((voc, DCTERMS.title, Literal('Vocabulary: the classes and properties the graphs use, in RDFS, restated from the LinkML schema')))
+    g.add((voc, DCTERMS.license, MIT))
+    _distribution(g, voc, root, 'schema/vocabulary.ttl', 'the vocabulary (Turtle)')
+    g.add((voc, VOID.dataDump, URIRef(SITE + 'schema/vocabulary.ttl')))
     rep = CAT['link-check']
     g.add((cat, DCAT.dataset, rep))
     g.add((rep, RDF.type, DCAT.Dataset))
@@ -160,6 +168,8 @@ def llms_txt(root, specs, g):
            f'IRIs: `{SITE}def/<source>/<table>#<column>` (a published column), `{SITE}id/<source>/<table>/<key>` (a row), '
            f'`{SITE}link/...` (a link on a published key), `{SITE}rule/...` (a link by rule). They are identifiers, not dereferenceable, and stable only within a pin; this is not a general RDF representation of the CDISC standards. '
            'NCIt concepts keep NCI\'s own IRIs (http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C...).', '',
+           f'What each class and property means: [vocabulary.ttl]({SITE}schema/vocabulary.ttl) (RDFS, from the LinkML schema: '
+           'every table as a class, every column as a property labelled with its published column name, every link with its description and rule).', '',
            f'Machine-readable description of all of this: [catalog.ttl]({SITE}catalog.ttl) (DCAT + VoID: files, licences, checksums, linksets).', '',
            '## Base graphs (one per source, as published)', '']
     for src, pin in pins.items():
