@@ -26,6 +26,8 @@ Details of each are under [Using it](#using-it-the-test-concept-graph).
 - **base** — one reader per source. It writes the source as an RDF graph in the shape the source publishes: one class per table, one property per published column, one node per row, every non-empty cell as a literal with its text unchanged. Its only selection is the scope (below). Each graph comes with an Excel view of the same table, generated from the graph.
 - **linked** — reads only the base graphs, plus pinned rule documents (COSMoS's own LinkML model). It makes the links between the sources, restates the COSMoS export in COSMoS's authored model, and reports every reference that does not resolve in Link_Check. Only published content, nothing derived: every value comes from a base graph unchanged, a link rests on a published key or on a stated rule, and a view only reshapes published facts losslessly.
 
+Beside the two layers, and generated from them or from the schema: the vocabulary of every class and property (`schema/vocabulary.ttl`), the catalogue of every graph and file (`catalog.ttl`, with `llms.txt` as its guide), and the ways to use the graphs (`examples/`: the test concept graph, review queries, notebooks and pages; `mcp/`: a server for AI assistants). There are no files made for one consumer, such as an Excel file per observation class: a consumer queries the graphs, or reads the Excel view of a base graph.
+
 ## The rules
 
 1. A value is as its source publishes it: no rewording, no filtering, no choosing. Source column names are kept.
@@ -34,7 +36,7 @@ Details of each are under [Using it](#using-it-the-test-concept-graph).
 4. Broken links stay broken. They are reported in Link_Check, not repaired. A link to a row that carries a marker its source publishes is kept and reported in Link_Check too: COSMoS marks a retired BC with "[RETIRED]" at the end of its bc_short_name, and every Dataset Specialization row linked to such a BC is listed (the marker is COSMoS's, not ours; the rows and the link stay).
 5. Nothing of ours: no position, no classification, no count, no flag.
 
-Content and shape are different things. A view that shows the same published facts in another shape (a pivot, the inverse of a published link) is allowed when it is lossless, adds no value of ours, and states its rule.
+Content and shape are different things. A view that shows the same published facts in another shape (the inverse of a published link) is allowed when it is lossless, adds no value of ours, and states its rule.
 
 ## How it is checked
 

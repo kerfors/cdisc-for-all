@@ -175,3 +175,7 @@ Kerstin's choices, one by one: the server reads the graphs from the site via cat
 ## MCP setup steps and Planned (2026-11-27)
 
 **Content.** README: the Claude Desktop setup names the configuration file (`~/Library/Application Support/Claude/claude_desktop_config.json`) instead of a Settings menu, and gives uv by its full path, since Claude Desktop does not see the Terminal's PATH (found when Kerstin set it up). Planned: the review queries are a first piece of the SPARQL cookbook.
+
+## README: what sits beside the layers (2026-11-27)
+
+**Content.** README: one paragraph under Two layers on what is generated beside them (vocabulary, catalogue and llms.txt, examples, MCP server), and that there are no files made for one consumer, such as an Excel file per observation class (decided 2026-11-27; README commit de920d2). The shape rule no longer names "a pivot" as its example, since no pivot view exists.
