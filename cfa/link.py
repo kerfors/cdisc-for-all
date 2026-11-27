@@ -144,10 +144,11 @@ def _tokens(value, sep):
     return [t.strip(' ') for t in value.split(sep)]
 
 
-def make_links(g, spec, made=None):
+def make_links(g, spec, made=None, matched=None):
     """The triples of one link over the base graphs g; made = the links made so far (for
     unless). Stops if a key matches more than one target row (unless targets is all), or a
-    column of several keys repeats a key."""
+    column of several keys repeats a key. For a link by a rule function, matched (a dict), if
+    given, gets per triple (row, target) the row's column values and the target key that matched."""
     index = {}
     for t in g.subjects(RDF.type, URIRef(spec['range_class'])):
         if any(_values(g, t, spec['target_empty_iris'])):
@@ -167,6 +168,9 @@ def make_links(g, spec, made=None):
             continue
         if func is not None:
             keys = [k for k in func(vals) if k in index][:1]
+            if matched is not None and keys:
+                for t in index[keys[0]]:
+                    matched[(s, t)] = (vals, keys[0])
         elif any(v == '' and c not in spec['match_empty'] for c, v in zip(spec['columns'], vals)):
             continue
         elif spec['separator'] is not None:

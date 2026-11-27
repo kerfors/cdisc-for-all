@@ -54,7 +54,7 @@ IRIs are in the namespace `https://kerfors.github.io/cdisc-for-all/` and are mad
 schema/          the LinkML schema (one module per source, links, the COSMoS model mapping) and the generated SHACL
 cfa/             the shared helper: reading, writing, IRIs, hashes, Schema sheets, Provenance
 base/<source>/   reader notebook, downloads/ (not in git), the graph (.ttl), its Excel view, Provenance
-linked/          the link graphs, the COSMoS model graph, Link_Check
+linked/          the link graphs, the SSSOM mapping set of the general-name links, the COSMoS model graph, Link_Check
 checks/          the schema check and the release check
 examples/        a SPARQL CONSTRUCT query over the graphs (the test concept graph), test_concept.py to run it per test C-code, an example notebook (results not in git)
 ```
