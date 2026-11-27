@@ -60,6 +60,8 @@ IRIs are in the namespace `https://kerfors.github.io/cdisc-for-all/` and are mad
 
 Start page, for study designers: [https://kerfors.github.io/cdisc-for-all/](https://kerfors.github.io/cdisc-for-all/) (`index.html`). Pages for nine lab tests, to open in a browser: [https://kerfors.github.io/cdisc-for-all/examples/pages/](https://kerfors.github.io/cdisc-for-all/examples/pages/) (source in [`examples/pages/`](examples/pages/README.md)). `examples/Example_Lab_Test_Graphs.ipynb` does the same in a notebook.
 
+The link map, for standards specialists: every link between the source tables as stated in `schema/links.yaml` (key columns, rule) with its Link_Check rows, [https://kerfors.github.io/cdisc-for-all/examples/pages/link_map.html](https://kerfors.github.io/cdisc-for-all/examples/pages/link_map.html), written by `python examples/link_map.py --out examples/pages/link_map.html`.
+
 ## Layout
 
 ```

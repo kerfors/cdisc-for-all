@@ -111,3 +111,11 @@ Kerstin's choices, one by one: the first new user is a study designer or clinica
 ## Examples — the guided steps removed (2026-11-27)
 
 Kerstin: a user can click through a page themselves; the steps add little. **Code.** The `#step` reading in `examples/graph_page.html` is removed (it is as at bf5d77a). **Content.** The nine pages are rebuilt, byte-identical to bf5d77a; the start page keeps what cdisc-for-all is for, how to read a page, the example tests, one's own test and what it is built on, without the guided reading and the tour links.
+
+## Examples — the link map, for standards specialists (2026-11-27)
+
+Kerstin's choices: the next user is a standards or metadata specialist; the start is a link map with the rules and the breaks.
+
+**Code.** `examples/link_map.py` with its template `link_map.html` writes one page from `schema/links.yaml` and `linked/Link_Check.xlsx`: the source tables as boxes (sign-in sources marked as built locally), each link as a line (solid: published key; dashed: by rule; red: it has Link_Check rows), and on a click the link as stated (description, key columns, target columns, separator, rule, marker) and its Link_Check rows, grouped by result. It stops if Link_Check names a link that links.yaml does not have. The box positions are a layout choice for reading.
+
+**Content.** `examples/pages/link_map.html`, linked from the start page, the README and the pages index.
