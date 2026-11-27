@@ -67,3 +67,11 @@
 ## Examples — only the observable query (2026-11-27)
 
 **Code.** `findings_test_graph.rq` is removed, with its section of `Example_Lab_Test_Graphs`: it shows the SDTM implementation side, not the upstream study design use. The observable query stays. README layout line and .gitignore comment adjusted.
+
+## Examples — the observable query starts from the test code (2026-11-27)
+
+**Code.** `observable_concept_graph.rq` takes an SDTM CT test term (codelist code and submission value, example GLUC) instead of a bc_id. The term's NCIt concept is the NCIt concept of the COSMoS BC rows (two published links, no link of ours). The result adds the CT terms with that concept (for GLUC: GLUC and Glucose), and the Specializations: each COSMoS SDTMGroup (Dataset Specialization) with a row bound to one of the BC's DECs, with only its type, datasetSpecializationId (the vlm_group_id), shortName, biomedicalConceptId and its variables link to those rows. For GLUC: 1,403 triples, 9 Specializations.
+
+## Examples — a page to read the observable graph (2026-11-27)
+
+**Code.** `examples/graph_page.py` with its template `graph_page.html` writes one HTML page from the result of the observable query: the nodes in columns (Test, Concept, BC, DEC, Values), each line named by its link in links.yaml (a line from a DEC to a value stands for the Dataset Specialization rows that carry both), every triple of a node on click (published columns, links, COSMoS's own model), NCIt ancestors and CUIs in the node panel, one chip per Specialization (vlm_group_id and shortName) that highlights the values it binds, the chips grouped by the CT term each binds to one DEC (default C70713 Biospecimen Type), and the DEC table as the overview. The notebook writes it to `examples/output/` (not in git).
