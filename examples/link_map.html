@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Link map</title>
+<style>
+:root { --bg: #ffffff; --fg: #1d1d1f; --muted: #6e6e73; --line: #b9b9c0; --panel: #f5f5f7; --ct: #2f6fb3; --ncit: #8a5a00; --bc: #2e7d4f; --dss: #7a3e9d; --model: #555555; --nsv: #a1452f; --hi: #d0342c; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg: #161618; --fg: #f2f2f2; --muted: #a1a1a6; --line: #55555a; --panel: #222225; --ct: #6aa6e8; --ncit: #e0a84a; --bc: #5cc28a; --dss: #c08ae0; --model: #aaaaaa; --nsv: #e78a72; --hi: #ff6b61; }
+}
+:root[data-theme="dark"] { --bg: #161618; --fg: #f2f2f2; --muted: #a1a1a6; --line: #55555a; --panel: #222225; --ct: #6aa6e8; --ncit: #e0a84a; --bc: #5cc28a; --dss: #c08ae0; --model: #aaaaaa; --nsv: #e78a72; --hi: #ff6b61; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 14px/1.45 -apple-system, "Segoe UI", Roboto, sans-serif; }
+main { max-width: 1500px; margin: 0 auto; padding: 20px 16px 40px; }
+h1 { font-size: 20px; margin: 0 0 4px; }
+p.lead { color: var(--muted); margin: 0 0 12px; max-width: 980px; }
+.wrap { display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 16px; align-items: start; }
+@media (max-width: 1000px) { .wrap { grid-template-columns: 1fr; } }
+.diagram { overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; }
+svg text { fill: var(--fg); font-size: 11px; }
+svg .src { fill: var(--muted); font-size: 11px; }
+.box rect { fill: var(--bg); stroke-width: 1.8; }
+.box.signin rect { stroke-dasharray: 3 3; }
+.edge { fill: none; stroke: var(--line); stroke-width: 1.6; cursor: pointer; }
+.edge.rule { stroke-dasharray: 6 4; }
+.edge.broken { stroke: var(--hi); }
+.edge.sel { stroke-width: 3.5; }
+.hit { fill: none; stroke: transparent; stroke-width: 12; cursor: pointer; }
+.panel { background: var(--panel); border-radius: 8px; padding: 12px 14px; position: sticky; top: 12px; max-height: calc(100vh - 24px); overflow-y: auto; }
+.panel h3 { margin: 0 0 2px; font-size: 15px; }
+.panel .src { font-size: 12px; color: var(--muted); margin-bottom: 8px; word-break: break-all; }
+.panel table { border-collapse: collapse; width: 100%; font-size: 12px; }
+.panel td:first-child { width: 70px; }
+.panel td, .panel th { border-top: 1px solid var(--line); padding: 4px; vertical-align: top; text-align: left; word-break: break-word; }
+.panel th { color: var(--muted); font-weight: 600; }
+.panel h4 { margin: 12px 0 4px; font-size: 12px; color: var(--muted); font-weight: 600; }
+.legend { display: flex; flex-wrap: wrap; gap: 16px; margin: 8px 0 12px; font-size: 12px; color: var(--muted); align-items: center; }
+.legend svg { vertical-align: middle; margin-right: 4px; }
+ul.list { padding-left: 18px; margin: 4px 0; font-size: 12px; }
+ul.list a { color: var(--ct); cursor: pointer; }
+</style>
+</head>
+<body>
+<main>
+<h1>Link map</h1>
+<p class="lead">Each box is a published table of a source; each line is a link between rows of two tables, as stated in <code>schema/links.yaml</code>. A solid line is a published key; a dashed line rests on a stated rule. A red line has rows in Link_Check: references in the published content that do not resolve, or a marker the target publishes. Click a line (or a link in the list) to see the link as stated and its Link_Check rows.</p>
+<div class="legend">
+  <span><svg width="34" height="8"><line x1="0" y1="4" x2="34" y2="4" stroke="var(--line)" stroke-width="2"/></svg>published key</span>
+  <span><svg width="34" height="8"><line x1="0" y1="4" x2="34" y2="4" stroke="var(--line)" stroke-width="2" stroke-dasharray="6 4"/></svg>by rule</span>
+  <span><svg width="34" height="8"><line x1="0" y1="4" x2="34" y2="4" stroke="var(--hi)" stroke-width="2"/></svg>has Link_Check rows</span>
+  <span><svg width="22" height="14"><rect x="1" y="1" width="20" height="12" fill="none" stroke="var(--model)" stroke-dasharray="3 3"/></svg>sign-in source: its graph and links are built locally</span>
+</div>
+<div class="wrap">
+  <div class="diagram"><svg id="g"></svg></div>
+  <div class="panel" id="panel"><p class="src">Click a line or a link.</p><div id="list"></div></div>
+</div>
+</main>
+<script>
+const DATA = __DATA__;
+const COLOR = {'sdtm-ct': 'var(--ct)', 'ncit-flat': 'var(--ncit)', 'nci-code-cui-map': 'var(--ncit)', 'cosmos': 'var(--bc)', 'sdtmig': 'var(--model)', 'sdtm-model': 'var(--model)', 'nsv-registry': 'var(--nsv)'};
+const NS = 'http://www.w3.org/2000/svg', W = 236, H = 54;
+const svg = document.getElementById('g'), panel = document.getElementById('panel');
+svg.setAttribute('width', 1090); svg.setAttribute('height', 520);
+function el(tag, attrs, parent) { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); (parent || svg).appendChild(e); return e; }
+function esc(s) { return String(s ?? '').replace(/[&<>"]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c])); }
+const edgeLayer = el('g', {});
+// lines between the same two tables are spread apart
+const pairCount = {}, pairIndex = {};
+DATA.links.forEach(l => { const k = [l.from, l.to].sort().join('|'); pairCount[k] = (pairCount[k] || 0) + 1; });
+const center = t => { const [x, y] = DATA.tables[t].xy; return [x + W / 2, y + H / 2]; };
+const edges = DATA.links.map((l, i) => {
+  const k = [l.from, l.to].sort().join('|'); pairIndex[k] = (pairIndex[k] || 0) + 1;
+  const n = pairCount[k], j = pairIndex[k] - (n + 1) / 2;
+  let d;
+  if (l.from === l.to) {
+    const [x, y] = DATA.tables[l.from].xy, r = 26 + 16 * (pairIndex[k] - 1);
+    d = `M${x + W - 40},${y} C${x + W - 40},${y - r} ${x + W + r},${y - r} ${x + W + r / 2},${y + H / 2} S${x + W},${y + H + r / 3} ${x + W},${y + H - 10}`;
+  } else {
+    const [x1, y1] = center(l.from), [x2, y2] = center(l.to);
+    const mx = (x1 + x2) / 2, my = (y1 + y2) / 2, dx = x2 - x1, dy = y2 - y1, len = Math.hypot(dx, dy) || 1;
+    const off = j * 34, cx = mx - dy / len * off, cy = my + dx / len * off;
+    d = `M${x1},${y1} Q${cx},${cy} ${x2},${y2}`;
+  }
+  const g = el('g', {}, edgeLayer);
+  const p = el('path', {d, class: 'edge' + (l.kind === 'by rule' ? ' rule' : '') + (l.check.length ? ' broken' : '')}, g);
+  const hit = el('path', {d, class: 'hit'}, g);
+  el('title', {}, hit).textContent = l.name;
+  hit.addEventListener('click', ev => { ev.stopPropagation(); show(i); });
+  return p;
+});
+Object.entries(DATA.tables).forEach(([t, info]) => {
+  const [x, y] = info.xy;
+  const g = el('g', {class: 'box' + (info.signin ? ' signin' : ''), transform: `translate(${x},${y})`});
+  el('rect', {width: W, height: H, rx: 6, stroke: COLOR[info.source]}, g);
+  el('text', {x: 10, y: 22}, g).textContent = t;
+  el('text', {x: 10, y: 40, class: 'src'}, g).textContent = info.source_name + (info.signin ? ' (sign-in, local)' : '');
+});
+function list() {
+  const by = {};
+  DATA.links.forEach((l, i) => { (by[l.from] = by[l.from] || []).push(i); });
+  return '<h4>The links, by the table they start from</h4>' + Object.entries(by).map(([t, ids]) =>
+    `<div class="src" style="margin:8px 0 0">${esc(t)}</div><ul class="list">` + ids.map(i => `<li><a data-i="${i}">${esc(DATA.links[i].name)}</a>${DATA.links[i].check.length ? ' <span style="color:var(--hi)">●</span>' : ''}</li>`).join('') + '</ul>').join('');
+}
+function show(i) {
+  const l = DATA.links[i];
+  edges.forEach((p, k) => p.classList.toggle('sel', k === i));
+  let h = `<h3>${esc(l.name)}</h3><div class="src">${esc(l.kind)} · ${esc(l.iri)}</div><p>${esc(l.description)}</p><table>`;
+  h += `<tr><td>from</td><td>${esc(l.from)}: ${l.columns.map(esc).join(' + ')}</td></tr>`;
+  h += `<tr><td>to</td><td>${esc(l.to)}: ${l.target.map(esc).join(' + ')}</td></tr>`;
+  if (l.separator) h += `<tr><td>separator</td><td>"${esc(l.separator)}"</td></tr>`;
+  if (l.rule) h += `<tr><td>rule</td><td>${esc(l.rule)}</td></tr>`;
+  if (l.flag_rule) h += `<tr><td>marker</td><td>${esc(l.flag_rule)}</td></tr>`;
+  if (l.signin) h += `<tr><td>graph</td><td>built locally (a sign-in source)</td></tr>`;
+  h += '</table>';
+  if (l.check.length) {
+    const groups = {};
+    l.check.forEach(r => { (groups[r[0]] = groups[r[0]] || []).push(r); });
+    Object.entries(groups).forEach(([res, rows]) => {
+      h += `<h4>Link_Check: ${esc(res)} (${rows.length} rows)</h4><table><tr><th>Row</th><th>${esc(rows[0][2])}</th><th>Not resolved</th></tr>`
+        + rows.map(r => `<tr><td>${esc(r[1].split('/').slice(7).join(' / '))}</td><td>${esc(r[3])}</td><td>${esc(r[4])}</td></tr>`).join('') + '</table>';
+    });
+  } else h += '<h4>Link_Check rows</h4><p class="src">none</p>';
+  h += '<p class="src" style="margin-top:12px"><a style="color:var(--ct);cursor:pointer" id="back">All links</a></p>';
+  panel.innerHTML = h;
+  document.getElementById('back').addEventListener('click', reset);
+}
+function reset() { edges.forEach(p => p.classList.remove('sel')); panel.innerHTML = '<p class="src">Click a line or a link.</p>' + list(); }
+panel.addEventListener('click', ev => { const a = ev.target.closest('a[data-i]'); if (a) show(+a.dataset.i); });
+svg.addEventListener('click', reset);
+reset();
+</script>
+</body>
+</html>
