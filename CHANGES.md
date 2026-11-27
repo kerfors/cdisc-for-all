@@ -107,3 +107,7 @@ Kerstin's choices, one by one: the first new user is a study designer or clinica
 **Code.** The page template (`examples/graph_page.html`) reads `#step=what`, `#step=specify`, `#step=variants` or `#step=values` from the address and highlights the part of the graph that answers the question (test, concept and BC; the BC's DECs; the Specializations; the CT terms bound to the DECs), with a list of it in the side panel, a banner with Back, Next and Close, and a line where the graph has nothing for the step. It adds no value to the graph.
 
 **Content.** `index.html` at the repository root, the start page of the GitHub Pages site: what cdisc-for-all is for, the four questions as a guided reading of the Glucose page, how to read a page, the nine example pages, the command for one's own test, and what it is built on. The nine pages in `examples/pages/` are rebuilt with the template.
+
+## Examples — the guided steps removed (2026-11-27)
+
+Kerstin: a user can click through a page themselves; the steps add little. **Code.** The `#step` reading in `examples/graph_page.html` is removed (it is as at bf5d77a). **Content.** The nine pages are rebuilt, byte-identical to bf5d77a; the start page keeps what cdisc-for-all is for, how to read a page, the example tests, one's own test and what it is built on, without the guided reading and the tour links.
