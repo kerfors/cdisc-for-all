@@ -79,13 +79,15 @@ Start page, for study designers: [https://kerfors.github.io/cdisc-for-all/](http
 
 The link map, for standards specialists: every link between the source tables as stated in `schema/links.yaml` (key columns, rule) with its Link_Check rows, [https://kerfors.github.io/cdisc-for-all/examples/pages/link_map.html](https://kerfors.github.io/cdisc-for-all/examples/pages/link_map.html), written by `python examples/link_map.py --out examples/pages/link_map.html`.
 
+Review queries, for standards specialists: SPARQL SELECTs that ask a question of the published content across sources, over the same graphs as the test concept graph. Their answers are not published content: a row is a place to look, not a finding of this repository. [`examples/review_testcd_vs_bc.rq`](examples/review_testcd_vs_bc.rq): the Dataset Specializations whose test code has another NCIt concept than their BC, and how NCIt relates the two. [`examples/review_unit_same_bc_specimen.rq`](examples/review_unit_same_bc_specimen.rq): pairs of Dataset Specializations with the same BC and the same specimen whose standard units differ. Each names the links it follows and the result for the current pins.
+
 For AI agents and other machines: [`llms.txt`](llms.txt) (what is here, the rules to keep, every file and link) and [`catalog.ttl`](catalog.ttl) (DCAT + VoID: every graph and file with licence, version, triple count and SHA-256, and one linkset per link), both written by `linked/Make_Catalog.ipynb`. What each class and property means: [`schema/vocabulary.ttl`](schema/vocabulary.ttl), plain RDFS restated from the LinkML schema: every table as a class, every column as a property labelled with its published column name, every link with its tables, description and rule. Written by `checks/00_Schema.ipynb`; Make_Catalog checks that every class and predicate of the graphs is declared in it.
 
 For developers: [`examples/Getting_Started.ipynb`](examples/Getting_Started.ipynb) needs no clone and no build. It reads `catalog.ttl` from the Pages site, downloads the graphs it lists (checked against their SHA-256), loads them into Oxigraph, one named graph each, and follows Glucose one hop at a time, from the SDTM CT term to its NCIt concept, the COSMoS BC and its DECs, the Dataset Specializations and the CT terms they bind, naming the link each hop follows.
 
-For AI assistants: [`mcp/cdisc_for_all_mcp.py`](mcp/cdisc_for_all_mcp.py) is a local MCP server (stdio). Like the getting-started notebook it reads `catalog.ttl` from the Pages site, downloads the published graphs once to `~/cdisc-for-all-data/` (SHA-256 checked) and loads them into Oxigraph; only published content, no sign-in source. Tools: `find_test` (text to SDTM CT term C-codes), `test_concept` (the test concept graph of a C-code), `describe` (every triple of one IRI, in and out), `sparql` (read-only). Resources: `llms.txt`, `catalog.ttl`, `schema/vocabulary.ttl`, `schema/links.yaml`. In Claude Desktop (Settings, Developer, Edit Config), with [uv](https://docs.astral.sh/uv/) installed:
+For AI assistants: [`mcp/cdisc_for_all_mcp.py`](mcp/cdisc_for_all_mcp.py) is a local MCP server (stdio). Like the getting-started notebook it reads `catalog.ttl` from the Pages site, downloads the published graphs once to `~/cdisc-for-all-data/` (SHA-256 checked) and loads them into Oxigraph; only published content, no sign-in source. Tools: `find_test` (text to SDTM CT term C-codes), `test_concept` (the test concept graph of a C-code), `describe` (every triple of one IRI, in and out), `sparql` (read-only). Resources: `llms.txt`, `catalog.ttl`, `schema/vocabulary.ttl`, `schema/links.yaml`. In Claude Desktop, with [uv](https://docs.astral.sh/uv/) installed, add it under `mcpServers` in the configuration file (on a Mac `~/Library/Application Support/Claude/claude_desktop_config.json`) and restart Claude Desktop. Claude Desktop does not see the Terminal's PATH, so give uv's full path, as `which uv` shows it (with Homebrew on a Mac: `/opt/homebrew/bin/uv`):
 
-    {"mcpServers": {"cdisc-for-all": {"command": "uv", "args": ["run", "https://kerfors.github.io/cdisc-for-all/mcp/cdisc_for_all_mcp.py"]}}}
+    {"mcpServers": {"cdisc-for-all": {"command": "/opt/homebrew/bin/uv", "args": ["run", "https://kerfors.github.io/cdisc-for-all/mcp/cdisc_for_all_mcp.py"]}}}
 
 Without uv, in a venv with `pip install mcp==2.3.0 pyoxigraph==0.5.13`, the command is the venv's `python` and the argument the path of the downloaded script. The first tool call downloads and loads the graphs (about 115 MB, once).
 
@@ -99,14 +101,14 @@ linked/          Make_Links, Make_COSMoS_Model and Make_Catalog notebooks, the l
 llms.txt, catalog.ttl   the entry point for AI agents and the DCAT + VoID catalogue (written by Make_Catalog)
 checks/          the schema check and the CSVW cross-check (rdf-tabular)
 mcp/             the MCP server for AI assistants (one script)
-examples/        a SPARQL CONSTRUCT query over the graphs (the test concept graph), test_concept.py to run it per test C-code, an example notebook, a getting-started notebook for developers (published graphs, no clone), example pages for nine lab tests (pages/)
+examples/        a SPARQL CONSTRUCT query over the graphs (the test concept graph), test_concept.py to run it per test C-code, two review queries (SPARQL SELECT), an example notebook, a getting-started notebook for developers (published graphs, no clone), example pages for nine lab tests (pages/)
 ```
 
 ## Planned
 
 Not built yet, in no fixed order:
 
-- **SPARQL cookbook**: short, tested queries for common questions, each naming the links it follows; it opens with a prefix block and patterns for the percent-encoded IRIs (`VALUES`, `BIND(IRI(...))`), which cannot all be written as prefixed names.
+- **SPARQL cookbook**: the two review queries in `examples/` are a first piece. Short, tested queries for common questions, each naming the links it follows; it opens with a prefix block and patterns for the percent-encoded IRIs (`VALUES`, `BIND(IRI(...))`), which cannot all be written as prefixed names.
 - **Dereferenceable IRIs**: today `def/`, `id/`, `link/` and `rule/` are identifiers only. Options: w3id redirects to generated pages, or the vocabulary graph served at `def/`.
 - **Test concept graph**: also follow child BCs and the test rows of the Specializations (for example WEIGHT, assigned under the child BC Body Weight).
 - **SSSOM** for the other links by rule.

@@ -61,6 +61,7 @@ Machine-readable description of all of this: [catalog.ttl](https://kerfors.githu
 - [test_concept.py](https://github.com/kerfors/cdisc-for-all/blob/main/examples/test_concept.py): runs it per C-code: `python examples/test_concept.py C105585` (needs the full requirements.txt).
 - [cdisc_for_all_mcp.py](https://kerfors.github.io/cdisc-for-all/mcp/cdisc_for_all_mcp.py): a local MCP server (stdio) over the published graphs: find_test, test_concept, describe, sparql (read-only); run with `uv run https://kerfors.github.io/cdisc-for-all/mcp/cdisc_for_all_mcp.py`.
 - [Getting_Started.ipynb](https://github.com/kerfors/cdisc-for-all/blob/main/examples/Getting_Started.ipynb): reads catalog.ttl, loads the published graphs into Oxigraph (one named graph each, SHA-256 checked) and follows one test hop by hop, naming each link.
+- Review queries, SPARQL SELECTs over the same graphs: [review_testcd_vs_bc.rq](https://github.com/kerfors/cdisc-for-all/blob/main/examples/review_testcd_vs_bc.rq) (Dataset Specializations whose test code has another NCIt concept than their BC, and how NCIt relates the two) and [review_unit_same_bc_specimen.rq](https://github.com/kerfors/cdisc-for-all/blob/main/examples/review_unit_same_bc_specimen.rq) (pairs with the same BC and specimen whose standard units differ). Their answers are not published content: a row is a place to look, not a finding of this repository.
 
 ## Optional
 
