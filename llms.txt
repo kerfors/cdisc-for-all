@@ -24,7 +24,7 @@ Machine-readable description of all of this: [catalog.ttl](https://kerfors.githu
 - [by-rule.ttl](https://kerfors.github.io/cdisc-for-all/linked/by-rule.ttl): links by a stated rule.
 - [cosmos-model.ttl](https://kerfors.github.io/cdisc-for-all/linked/cosmos-model.ttl): the COSMoS export restated in COSMoS's authored model (COSMoS's own IRIs).
 - [by-rule.sssom.tsv](https://kerfors.github.io/cdisc-for-all/linked/by-rule.sssom.tsv): the links by a rule that matches a general name, as SSSOM.
-- [Link_Check.xlsx](https://kerfors.github.io/cdisc-for-all/linked/Link_Check.xlsx): every reference that does not resolve, and every link to a row with a published marker such as "[RETIRED]".
+- [Link_Check.xlsx](https://kerfors.github.io/cdisc-for-all/linked/Link_Check.xlsx): every reference that does not resolve, and every link to a row with a published marker such as "[RETIRED]". The rows of the links that touch a sign-in source are in a local Link_Check-signin, not published.
 - [links.yaml](https://github.com/kerfors/cdisc-for-all/blob/main/schema/links.yaml): every link as stated (key columns, target columns, rule).
 
 ## The links (predicate: from table -> to table)
@@ -56,7 +56,7 @@ Machine-readable description of all of this: [catalog.ttl](https://kerfors.githu
 
 - [Start page](https://kerfors.github.io/cdisc-for-all/) and [example pages](https://kerfors.github.io/cdisc-for-all/examples/pages/): the test concept graph of nine lab tests; [link map](https://kerfors.github.io/cdisc-for-all/examples/pages/link_map.html).
 - [test_concept_graph.rq](https://github.com/kerfors/cdisc-for-all/blob/main/examples/test_concept_graph.rq): a SPARQL CONSTRUCT from an SDTM CT test C-code to its NCIt concept, the COSMoS BC, its Data Element Concepts, the bound CT terms and the Specializations. Load the base graphs, links.ttl, by-rule.ttl and cosmos-model.ttl into one store (the examples use Oxigraph).
-- [test_concept.py](https://github.com/kerfors/cdisc-for-all/blob/main/examples/test_concept.py): runs it per C-code: `python examples/test_concept.py C105585`.
+- [test_concept.py](https://github.com/kerfors/cdisc-for-all/blob/main/examples/test_concept.py): runs it per C-code: `python examples/test_concept.py C105585` (needs the full requirements.txt).
 - [Getting_Started.ipynb](https://github.com/kerfors/cdisc-for-all/blob/main/examples/Getting_Started.ipynb): reads catalog.ttl, loads the published graphs into Oxigraph (one named graph each, SHA-256 checked) and follows one test hop by hop, naming each link.
 
 ## Optional

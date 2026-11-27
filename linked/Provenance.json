@@ -52,7 +52,8 @@
   }
  },
  "graph_sha256_method": "SHA-256 of the canonical N-Triples (RDFC-1.0; no blank nodes)",
- "link_check_text_sha256": "a9a049d3b5cdced7821603a4f70366667e350c3f60222b34277865a5a121902b",
+ "link_check_text_sha256": "da6334b6771a1e857f3fcd9f59c988d99d01b9d8dbcc0acdc161485c29e1eda3",
+ "link_check_signin_text_sha256": "d748b519bc862da2cd710f384b7195191eb4206916b87d14465a167ece2550c2",
  "text_sha256_method": "SHA-256 (UTF-8) of the JSON array [header, row, ...], each an array of strings (empty cell \"\"), rows sorted by the key columns in code point order, json.dumps(ensure_ascii=False, separators=(\",\", \":\")).",
  "tools": {
   "rdflib": "7.6.0",

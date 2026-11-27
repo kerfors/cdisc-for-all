@@ -141,3 +141,11 @@ Kerstin asked whether the documentation is aligned and easy to find. **Code.** `
 ## Documentation — planned work, ready to share (2026-11-27)
 
 Kerstin: the MCP server goes on the list of things to do; the site is to be shared after the Thanksgiving weekend. **Content.** README: a "Planned" section (MCP server, SPARQL cookbook, child BCs and Specialization test rows in the test concept graph, SSSOM for the other links by rule, release check) and where to send questions (GitHub issues). `index.html`: a short "Planned" section with the same pointer, and a page description for link previews (meta description, Open Graph).
+
+## Link_Check: the sign-in rows local; documentation after the external check (2026-11-27)
+
+An external check of e559b3a (Kerstin, 2026-11-27) confirmed the published files, hashes, counts and the getting-started notebook, and found that Link_Check published about 490 rows from the links that touch a sign-in source, 4 of them quoting SDTMIG rows and cells.
+
+**Code.** `linked/Make_Links.ipynb` writes the rows of the links that start from or end at a row of a sign-in source to `Link_Check-signin.xlsx` (local, `.gitignore`), the other rows to `Link_Check.xlsx`; Provenance records the text hash of each. `examples/link_map.html` says the Link_Check rows of the sign-in links are local. `cfa/catalog.py`: catalog.ttl and llms.txt say so too; llms.txt says test_concept.py needs the full requirements.txt.
+
+**Content.** Make_Links re-run: the link graphs and SSSOM files are byte-identical; `Link_Check.xlsx` has 407 rows (897 before; the 490 rows of "cosmos dataset specialization to sdtmig variable" 344, "to model variable" 142 and "sdtmig variable to codelist" 4 are in the local file; both together equal the rows before). `Provenance.json`, `examples/pages/link_map.html`, `catalog.ttl` and `llms.txt` regenerated. README: what depends on the sign-in sources (the scope of sdtm-ct.ttl, the links by rule to the NSV Registry, and through them their Link_Check rows: not rebuildable exactly without a sign-in); test_concept.py needs the full requirements.txt; Planned adds a vocabulary graph generated from LinkML and dereferenceable IRIs, and the cookbook opens with prefixes and patterns for percent-encoded IRIs; the sign-in licence note names the local Link_Check rows.

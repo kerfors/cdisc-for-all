@@ -58,6 +58,8 @@ Every pin is in [`Reference_Versions.json`](Reference_Versions.json): version, f
 
 **Scope.** SDTM CT and NCIt are not carried in full: SDTM CT is carried for the codelists COSMoS refers to or SDTMIG v3.4 binds, with all their terms; NCIt for the concepts of those codelists and terms, the COSMoS concepts and the SDTM Model variable concepts, with all their ancestors. COSMoS is carried as its latest export only (the `_latest` files of `export/`), not the archived packages.
 
+**What depends on the sign-in sources.** Three published files are shaped by the SDTMIG or SDTM Model graphs: the scope of `sdtm-ct.ttl` (it includes the codelists SDTMIG v3.4 binds); the links by rule to the NSV Registry in `by-rule.ttl` (made only where a row has no SDTMIG or SDTM Model link); and, through those links, which rows `Link_Check.xlsx` lists for them. Without a cdisc.org sign-in these files cannot be rebuilt exactly; the published files are as built, with their inputs and hashes in Provenance.
+
 ## Identifiers
 
 IRIs are in the namespace `https://kerfors.github.io/cdisc-for-all/` and are made by rule from the published table, column and key (percent-encoded). They are identifiers for this repository's own use: not dereferenceable (the namespace is also the GitHub Pages address of this repository, which serves the files of main as they are; no IRI under def/, id/, link/ or rule/ is a file there), and stable only within a pin. NCIt concepts keep NCI's own IRIs. This is not a general RDF representation of the CDISC standards.
@@ -69,6 +71,8 @@ IRIs are in the namespace `https://kerfors.github.io/cdisc-for-all/` and are mad
     python3 -m venv ~/venvs/cdisc-for-all
     ~/venvs/cdisc-for-all/bin/pip install -r requirements.txt
     ~/venvs/cdisc-for-all/bin/python examples/test_concept.py C105585 C64853
+
+`test_concept.py` needs the full `requirements.txt` (it writes the page with the link specs, which use linkml); the getting-started notebook below needs only pyoxigraph and pandas.
 
 Start page, for study designers: [https://kerfors.github.io/cdisc-for-all/](https://kerfors.github.io/cdisc-for-all/) (`index.html`). Pages for nine lab tests, to open in a browser: [https://kerfors.github.io/cdisc-for-all/examples/pages/](https://kerfors.github.io/cdisc-for-all/examples/pages/) (source in [`examples/pages/`](examples/pages/README.md)). `examples/Example_Lab_Test_Graphs.ipynb` does the same in a notebook.
 
@@ -95,7 +99,9 @@ examples/        a SPARQL CONSTRUCT query over the graphs (the test concept grap
 Not built yet, in no fixed order:
 
 - **MCP server**, local (stdio): the published graphs in Oxigraph behind a few tools for an AI assistant, such as the test concept graph of a C-code, a read-only SPARQL SELECT and the description of one IRI, with `llms.txt`, `catalog.ttl` and `schema/links.yaml` as resources. It would start from `catalog.ttl` as the getting-started notebook does.
-- **SPARQL cookbook**: short, tested queries for common questions, each naming the links it follows.
+- **SPARQL cookbook**: short, tested queries for common questions, each naming the links it follows; it opens with a prefix block and patterns for the percent-encoded IRIs (`VALUES`, `BIND(IRI(...))`), which cannot all be written as prefixed names.
+- **Vocabulary graph**, generated from the LinkML schema: one class per table, one property per column with its published column name as label, and the descriptions and rules of links.yaml on the link predicates; listed in `catalog.ttl`. It restates the schema, nothing of ours.
+- **Dereferenceable IRIs**: today `def/`, `id/`, `link/` and `rule/` are identifiers only. Options: w3id redirects to generated pages, or the vocabulary graph served at `def/`.
 - **Test concept graph**: also follow child BCs and the test rows of the Specializations (for example WEIGHT, assigned under the child BC Body Weight).
 - **SSSOM** for the other links by rule.
 - **Release check**: read the source files again and compare (see [How it is checked](#how-it-is-checked)).
@@ -109,4 +115,4 @@ The code, the schema and the documentation written for this repository are under
 - NCI Thesaurus: Creative Commons Attribution 4.0 International (CC BY 4.0), [NCI Thesaurus Terms of Use](https://evs.nci.nih.gov/ftp1/NCI_Thesaurus/ThesaurusTermsofUse.htm). The NCIt content here is derived from the NCI Thesaurus, produced by NCI Enterprise Vocabulary Services; "NCI Thesaurus" is a trademark of the National Cancer Institute.
 - COSMoS: MIT licence, Copyright CDISC ([cdisc-org/COSMoS](https://github.com/cdisc-org/COSMoS)).
 - SDTM Controlled Terminology and the Non-Standard Variable Registry: the terms of CDISC and NCI EVS.
-- SDTMIG and SDTM Model variable tables: downloaded with a cdisc.org sign-in. The files, their graphs and views, and the links to and from their rows (the `-signin` files of `linked/`) are not in this repository; each user downloads the files and builds these locally.
+- SDTMIG and SDTM Model variable tables: downloaded with a cdisc.org sign-in. The files, their graphs and views, the links to and from their rows and the Link_Check rows of those links (the `-signin` files of `linked/`) are not in this repository; each user downloads the files and builds these locally.

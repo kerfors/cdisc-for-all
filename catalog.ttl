@@ -178,7 +178,7 @@ cat:catalog
     spdx:checksum
         [
             spdx:algorithm spdx:checksumAlgorithm_sha256 ;
-            spdx:checksumValue "d08fb677a80fe6722c5a75e2f70272dac570e5493cb67ba63a05298007d1297d"^^xsd:hexBinary ;
+            spdx:checksumValue "9a288b92986efe98420a1a3c8aa89fbe125b00f5fae6819bcf21740868ee9862"^^xsd:hexBinary ;
         ] ;
     dcat:downloadURL <https://kerfors.github.io/cdisc-for-all/linked/Link_Check.xlsx> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet> ;
@@ -236,6 +236,7 @@ cat:link-check
     a dcat:Dataset ;
     dcterms:license <https://opensource.org/licenses/MIT> ;
     dcterms:title "Link_Check: every reference in the published content that does not resolve, and every link to a row that carries a marker its source publishes, such as COSMoS \"[RETIRED]\"" ;
+    rdfs:comment "The rows of the links that start from or end at a row of a sign-in source are in Link_Check-signin, built locally and not published." ;
     dcat:distribution <https://kerfors.github.io/cdisc-for-all/catalog#file/linked/Link_Check.xlsx> ;
 .
 
