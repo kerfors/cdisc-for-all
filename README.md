@@ -9,7 +9,7 @@ The CDISC standards and the NCI Thesaurus are published as separate files, in di
 ## Two layers
 
 - **base** — one reader per source. It writes the source as an RDF graph in the shape the source publishes: one class per table, one property per published column, one node per row, every non-empty cell as a literal with its text unchanged. Its only selection is the scope (below). Each graph comes with an Excel view of the same table, generated from the graph.
-- **linked** — reads only the base graphs. It makes the links between the sources and generates the Excel files a consumer opens: one combined file per SDTM observation class, and Link_Check. Only published content, nothing derived: every value comes from a base graph unchanged, a link rests on a published key or on a stated rule, and a view only reshapes published facts losslessly.
+- **linked** — reads only the base graphs, plus pinned rule documents (COSMoS's own LinkML model). It makes the links between the sources, restates the COSMoS export in COSMoS's authored model, and generates the Excel files a consumer opens: one combined file per SDTM observation class, and Link_Check. Only published content, nothing derived: every value comes from a base graph unchanged, a link rests on a published key or on a stated rule, and a view only reshapes published facts losslessly.
 
 ## The rules
 
@@ -54,7 +54,7 @@ IRIs are in the namespace `https://kerfors.github.io/cdisc-for-all/` and are mad
 schema/          the LinkML schema (one module per source, links, linked) and the generated SHACL
 cfa/             the shared helper: reading, writing, IRIs, hashes, Schema sheets, Provenance
 base/<source>/   reader notebook, downloads/ (not in git), the graph (.ttl), its Excel view, Provenance
-linked/          the link graphs, the class files, Link_Check
+linked/          the link graphs, the COSMoS model graph, the class files, Link_Check
 checks/          the schema check and the release check
 ```
 

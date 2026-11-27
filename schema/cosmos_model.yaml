@@ -1,0 +1,133 @@
+# The COSMoS authored model in linked: which column of the COSMoS base graph fills which slot of
+# COSMoS's own LinkML model. Hand-kept. Read by cfa.model and linked/Make_COSMoS_Model.ipynb.
+#
+# The model files are COSMoS's (cdisc-org/COSMoS, model/), pinned in Reference_Versions.json and read
+# as a rule document: class and slot IRIs are taken from them as LinkML expands them, never typed here.
+# The column-to-slot mapping follows COSMoS's own converter (scripts/convert_latest_xlsx2yaml.py with
+# scripts/cosmoslib/bc_converter.py and sdtm_converter.py, at the pinned commit). None of the
+# converter's value changes is taken: every value is the base cell as published.
+#   Not taken: href (built from the NCIt code), packageType (a constant), Y/N to true/false,
+#   lowercasing, squeezing spaces, number reformatting, subset codelist values from curation workbooks.
+#
+# Per class:
+#   model    bc | sdtm (model_files)
+#   table    the base table whose rows give the values
+#   node     the node IRI, relative to {ns}id/cosmos/: a template over the table's columns ({column}),
+#            or over the node of another class ({Class}), plus {n} (position) for a multivalued object
+#   row      true: the node is a row node of the base graph (it must exist there)
+#   when     the node exists for a row where one of these columns has a value (default: always)
+#   slots    slot: column (a value), slot: {column: c, split: true} (one value per part at the
+#            separator, as published), slot: {object: Class} (the node of that class)
+#   split_by_position  (Coding) the columns are split at the separator; the n-th parts make node n
+#
+# Export columns with no slot stay in base only: the hierarchy table (bc_hierarchy_level,
+# bc_hierarchy_full, bc_short_name_id, dec_n; its other columns repeat the BC table).
+separator: ';'
+model_files:
+  bc: model/cosmos_bc_model.yaml
+  sdtm: model/cosmos_sdtm_model.yaml
+classes:
+  BiomedicalConcept:
+    model: bc
+    table: cdisc_biomedical_concepts_latest
+    node: cdisc_biomedical_concepts_hierarchy_latest/{bc_id}
+    row: true
+    slots:
+      packageDate: package_date
+      conceptId: bc_id
+      ncitCode: ncit_code
+      parentConceptId: parent_bc_id
+      categories: {column: bc_categories, split: true}
+      shortName: short_name
+      synonyms: {column: synonyms, split: true}
+      resultScales: {column: result_scales, split: true}
+      definition: definition
+      coding: {object: Coding}
+      dataElementConcepts: {object: DataElementConcept}
+  Coding:
+    model: bc
+    table: cdisc_biomedical_concepts_latest
+    node: '{BiomedicalConcept}/coding/{n}'
+    when: [code, system, system_name]
+    split_by_position: true
+    slots:
+      code: code
+      system: system
+      systemName: system_name
+  DataElementConcept:
+    model: bc
+    table: cdisc_biomedical_concepts_latest
+    node: cdisc_biomedical_concepts_latest/{bc_id}/{dec_id}
+    row: true
+    when: [dec_id]
+    slots:
+      conceptId: dec_id
+      ncitCode: ncit_dec_code
+      shortName: dec_label
+      dataType: data_type
+      exampleSet: {column: example_set, split: true}
+  SDTMGroup:
+    model: sdtm
+    table: cdisc_sdtm_dataset_specializations_latest
+    node: cdisc_sdtm_dataset_specializations_latest/{domain}/{vlm_group_id}
+    slots:
+      packageDate: package_date
+      datasetSpecializationId: vlm_group_id
+      domain: domain
+      shortName: short_name
+      source: vlm_source
+      sdtmigStartVersion: sdtmig_start_version
+      sdtmigEndVersion: sdtmig_end_version
+      biomedicalConceptId: bc_id
+      variables: {object: SDTMVariable}
+  SDTMVariable:
+    model: sdtm
+    table: cdisc_sdtm_dataset_specializations_latest
+    node: cdisc_sdtm_dataset_specializations_latest/{domain}/{vlm_group_id}/{sdtm_variable}
+    row: true
+    slots:
+      name: sdtm_variable
+      dataElementConceptId: dec_id
+      isNonStandard: nsv_flag
+      codelist: {object: CodeList}
+      subsetCodelist: subset_codelist
+      valueList: {column: value_list, split: true}
+      assignedTerm: {object: AssignedTerm}
+      role: role
+      relationship: {object: RelationShip}
+      dataType: data_type
+      length: length
+      format: format
+      significantDigits: significant_digits
+      mandatoryVariable: mandatory_variable
+      mandatoryValue: mandatory_value
+      originType: origin_type
+      originSource: origin_source
+      comparator: comparator
+      vlmTarget: vlm_target
+  CodeList:
+    model: sdtm
+    table: cdisc_sdtm_dataset_specializations_latest
+    node: '{SDTMVariable}/codelist'
+    when: [codelist, codelist_submission_value]
+    slots:
+      conceptId: codelist
+      submissionValue: codelist_submission_value
+  AssignedTerm:
+    model: sdtm
+    table: cdisc_sdtm_dataset_specializations_latest
+    node: '{SDTMVariable}/assignedTerm'
+    when: [assigned_term, assigned_value]
+    slots:
+      conceptId: assigned_term
+      value: assigned_value
+  RelationShip:
+    model: sdtm
+    table: cdisc_sdtm_dataset_specializations_latest
+    node: '{SDTMVariable}/relationship'
+    when: [subject, linking_phrase, predicate_term, object]
+    slots:
+      subject: subject
+      linkingPhrase: linking_phrase
+      predicateTerm: predicate_term
+      object: object

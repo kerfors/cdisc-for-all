@@ -16,6 +16,14 @@
    },
    "export/cdisc_sdtm_dataset_specializations_latest.csv": {
     "sha256": "21981bcffc6739bab02510d87fead6de8c0e10634f77b2eb2aa6f2bb5e8839d7"
+   },
+   "model/cosmos_bc_model.yaml": {
+    "sha256": "77e4d4ea525de369b3051e2277974327cd2d3797b76a95f85a7c6f566b319eee",
+    "read_by": "linked (rule document: the COSMoS authored model)"
+   },
+   "model/cosmos_sdtm_model.yaml": {
+    "sha256": "0f845febaf952e29d1dc62a0165962e92439b8125b1769bc3bfae8ef933235cc",
+    "read_by": "linked (rule document: the COSMoS authored model)"
    }
   }
  },
