@@ -31,6 +31,12 @@
 # Part C, the Specializations: each COSMoS SDTMGroup (Dataset Specialization) with such a row, with
 #   only these triples: its type, datasetSpecializationId (the vlm_group_id), shortName and
 #   biomedicalConceptId, and its variables link to the rows of Part B (COSMoS SDTM model).
+# Part D, the other tests of the BC: the rows of those Specializations whose assigned term is
+#   in a codelist of the start terms (for GLUC: Laboratory Test Code and Laboratory Test Name),
+#   with only their type, the assigned term link and the BC link (link: cosmos dataset
+#   specialization to biomedical concept); the variables link of the Specialization to them;
+#   every triple of each assigned term and of its NCIt concept. For GLUC this adds GLUCPE and
+#   Plasma Equivalent Glucose, which have their own NCIt concept.
 # Nothing is added: every triple is a triple of the graphs.
 
 CONSTRUCT { ?n ?p ?o }
@@ -48,6 +54,7 @@ WHERE {
     UNION
     {
         # Part A: the BC side
+        ?bc_row <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_biomedical_concepts_latest#ncit_code> ?concept .
         ?bc_row ^<https://www.cdisc.org/cosmos/biomedical_concept_v1.0dataElementConcepts>? ?b0 .
         ?b0 (<https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_biomedical_concepts_latest#parent_bc_id> |
              <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_biomedical_concepts_hierarchy_latest#parent_bc_id>)* ?b .
@@ -62,6 +69,7 @@ WHERE {
     UNION
     {
         # Part B: the Dataset Specialization rows, selected triples only
+        ?bc_row <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_biomedical_concepts_latest#ncit_code> ?concept .
         ?n <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_sdtm_dataset_specializations_latest#dec_id> ?bc_row .
         ?n ?p ?o .
         FILTER(?p IN (<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>,
@@ -72,6 +80,7 @@ WHERE {
     UNION
     {
         # Part B: the terms and their NCIt concepts
+        ?bc_row <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_biomedical_concepts_latest#ncit_code> ?concept .
         ?row <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_sdtm_dataset_specializations_latest#dec_id> ?bc_row ;
              <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_sdtm_dataset_specializations_latest#assigned_term> |
              <https://kerfors.github.io/cdisc-for-all/rule/cosmos/cdisc_sdtm_dataset_specializations_latest#value_list/sdtm-ct/SDTM%20Terminology> ?term .
@@ -81,6 +90,7 @@ WHERE {
     UNION
     {
         # Part C: the Specializations, selected triples only
+        ?bc_row <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_biomedical_concepts_latest#ncit_code> ?concept .
         ?n <https://www.cdisc.org/cosmos/sdtm_v1.0/variables> ?row .
         ?row <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_sdtm_dataset_specializations_latest#dec_id> ?bc_row .
         ?n ?p ?o .
@@ -91,8 +101,52 @@ WHERE {
     }
     UNION
     {
+        ?bc_row <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_biomedical_concepts_latest#ncit_code> ?concept .
         ?n <https://www.cdisc.org/cosmos/sdtm_v1.0/variables> ?o .
         ?o <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_sdtm_dataset_specializations_latest#dec_id> ?bc_row .
         BIND(<https://www.cdisc.org/cosmos/sdtm_v1.0/variables> AS ?p)
+    }
+    UNION
+    {
+        # Part D: the test rows of the Specializations, selected triples only
+        ?g <https://www.cdisc.org/cosmos/sdtm_v1.0/variables> ?r0 .
+        ?r0 <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_sdtm_dataset_specializations_latest#dec_id> ?bc_row .
+        ?bc_row <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_biomedical_concepts_latest#ncit_code> ?concept .
+        ?g <https://www.cdisc.org/cosmos/sdtm_v1.0/variables> ?n .
+        ?n <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_sdtm_dataset_specializations_latest#assigned_term> ?t .
+        ?t <https://kerfors.github.io/cdisc-for-all/def/sdtm-ct/SDTM%20Terminology#Codelist%20Code> ?cl .
+        ?test <https://kerfors.github.io/cdisc-for-all/link/sdtm-ct/SDTM%20Terminology#Code> ?concept ;
+              <https://kerfors.github.io/cdisc-for-all/def/sdtm-ct/SDTM%20Terminology#Codelist%20Code> ?cl .
+        ?n ?p ?o .
+        FILTER(?p IN (<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>,
+                      <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_sdtm_dataset_specializations_latest#assigned_term>,
+                      <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_sdtm_dataset_specializations_latest#bc_id>))
+    }
+    UNION
+    {
+        # Part D: the variables link to those rows
+        ?n <https://www.cdisc.org/cosmos/sdtm_v1.0/variables> ?r0 .
+        ?r0 <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_sdtm_dataset_specializations_latest#dec_id> ?bc_row .
+        ?bc_row <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_biomedical_concepts_latest#ncit_code> ?concept .
+        ?n <https://www.cdisc.org/cosmos/sdtm_v1.0/variables> ?o .
+        ?o <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_sdtm_dataset_specializations_latest#assigned_term> ?t .
+        ?t <https://kerfors.github.io/cdisc-for-all/def/sdtm-ct/SDTM%20Terminology#Codelist%20Code> ?cl .
+        ?test <https://kerfors.github.io/cdisc-for-all/link/sdtm-ct/SDTM%20Terminology#Code> ?concept ;
+              <https://kerfors.github.io/cdisc-for-all/def/sdtm-ct/SDTM%20Terminology#Codelist%20Code> ?cl .
+        BIND(<https://www.cdisc.org/cosmos/sdtm_v1.0/variables> AS ?p)
+    }
+    UNION
+    {
+        # Part D: the assigned terms and their NCIt concepts
+        ?g <https://www.cdisc.org/cosmos/sdtm_v1.0/variables> ?r0 .
+        ?r0 <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_sdtm_dataset_specializations_latest#dec_id> ?bc_row .
+        ?bc_row <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_biomedical_concepts_latest#ncit_code> ?concept .
+        ?g <https://www.cdisc.org/cosmos/sdtm_v1.0/variables> ?r .
+        ?r <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_sdtm_dataset_specializations_latest#assigned_term> ?t .
+        ?t <https://kerfors.github.io/cdisc-for-all/def/sdtm-ct/SDTM%20Terminology#Codelist%20Code> ?cl .
+        ?test <https://kerfors.github.io/cdisc-for-all/link/sdtm-ct/SDTM%20Terminology#Code> ?concept ;
+              <https://kerfors.github.io/cdisc-for-all/def/sdtm-ct/SDTM%20Terminology#Codelist%20Code> ?cl .
+        ?t <https://kerfors.github.io/cdisc-for-all/link/sdtm-ct/SDTM%20Terminology#Code>? ?n .
+        ?n ?p ?o .
     }
 }

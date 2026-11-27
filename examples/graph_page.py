@@ -24,6 +24,8 @@ CUI_NCIT = NS + 'link/nci-code-cui-map/nci_code_cui_map#code'
 DSS_DEC = NS + 'link/cosmos/cdisc_sdtm_dataset_specializations_latest#dec_id'
 DSS_TERMS = {NS + 'link/cosmos/cdisc_sdtm_dataset_specializations_latest#assigned_term',
              NS + 'rule/cosmos/cdisc_sdtm_dataset_specializations_latest#value_list/sdtm-ct/SDTM%20Terminology'}
+DSS_BC = NS + 'link/cosmos/cdisc_sdtm_dataset_specializations_latest#bc_id'
+ASSIGNED = NS + 'link/cosmos/cdisc_sdtm_dataset_specializations_latest#assigned_term'
 DECS = 'https://www.cdisc.org/cosmos/biomedical_concept_v1.0dataElementConcepts'
 GROUP = 'https://www.cdisc.org/cosmos/sdtm_v1.0/SDTMGroup'
 VARIABLES = 'https://www.cdisc.org/cosmos/sdtm_v1.0/variables'
@@ -73,8 +75,15 @@ def page_data(triples, links_yaml, group_dec):
     def objects(n, pred):
         return [v for p, v, lit in out.get(n, []) if p == pred and not lit]
 
-    tests = [n for n, t in base_type.items() if t == CT and not any(n in objects(r, x) for r in out for x in DSS_TERMS)]
-    concepts = sorted({c for n in tests for c in objects(n, CT_NCIT)})
+    # the test terms: the terms of the start concept (no Dataset Specialization row binds them to a DEC),
+    # and the terms that the BC's Specializations assign on their test rows (rows with the BC link)
+    dec_bound = {t for r, ty in base_type.items() if ty == DSS and objects(r, DSS_DEC) for x in DSS_TERMS for t in objects(r, x)}
+    test_rows = [r for r, ty in base_type.items() if ty == DSS and objects(r, DSS_BC)]
+    spec_tests = sorted({t for r in test_rows for t in objects(r, ASSIGNED)})
+    bc_concepts = {c for n, t in base_type.items() if t == BC_ROW for c in objects(n, BC_NCIT)}
+    concepts = sorted({c for n, t in base_type.items() if t == CT and n not in dec_bound for c in objects(n, CT_NCIT)} & bc_concepts)
+    concept_tests = sorted(n for n, t in base_type.items() if t == CT and n not in dec_bound and set(objects(n, CT_NCIT)) & set(concepts))
+    tests = concept_tests + sorted((t for t in spec_tests if t not in concept_tests), key=lambda n: label(n))
     bc_rows = sorted((n for n, t in base_type.items() if t == BC_ROW and set(objects(n, BC_NCIT)) & set(concepts)),
                      key=lambda n: label(n))
     hier = [n for n, t in base_type.items() if t == HIER]
@@ -92,12 +101,24 @@ def page_data(triples, links_yaml, group_dec):
             if term not in values:
                 values.append(term)
                 group[term] = dec
-    columns = [('Test', 'SDTM CT test terms', tests), ('Concept', 'the shared NCIt concept', concepts),
+    # one box per test: the test terms with the same NCIt concept (for GLUC: GLUC and Glucose) share a box
+    box = {t: 'test:' + (objects(t, CT_NCIT) or [t])[0] for t in tests}
+    boxes = list(dict.fromkeys(box[t] for t in tests))
+    members = {b: sorted((t for t in tests if box[t] == b), key=lambda t: (value(t, 'Codelist Name') or '', label(t))) for b in boxes}
+    columns = [('Test', 'SDTM CT, per NCIt concept', boxes), ('Concept', 'the shared NCIt concept', concepts),
                ('BC', 'COSMoS Biomedical Concepts', hier), ('DEC', 'its Data Element Concepts (BC rows)', bc_rows),
                ('Values', 'bound CT terms, per DEC', values)]
     edges = []
-    for n in tests:
-        edges += [(n, c, names[CT_NCIT], []) for c in objects(n, CT_NCIT)]
+    for b in boxes:
+        edges += [(b, c, names[CT_NCIT], []) for c in sorted({c for t in members[b] for c in objects(t, CT_NCIT)}) if c in concepts]
+    via = {}
+    for r in test_rows:
+        for t in objects(r, ASSIGNED):
+            for h in objects(r, DSS_BC):
+                if t not in concept_tests:  # drawn through the shared NCIt concept; the Specialization route only where that is missing
+                    via.setdefault((box[t], h), []).append(r)
+    for (t, h), rows in sorted(via.items()):
+        edges.append((t, h, 'via Specialization test rows (links: ' + names[ASSIGNED] + ', ' + names[DSS_BC] + ')', sorted(rows)))
     for n in bc_rows:
         edges += [(n, c, names[BC_NCIT], []) for c in objects(n, BC_NCIT)]
     for h in hier:
@@ -123,6 +144,9 @@ def page_data(triples, links_yaml, group_dec):
             info['ancestors'] = [[a, label(a)] for a in ancestors(n)]
             info['cui'] = [label(c) for c, t in base_type.items() if t == CUI and n in objects(c, CUI_NCIT)]
         nodes[n] = info
+    for b in boxes:
+        nodes[b] = {'label': ' / '.join(label(t) for t in members[b]), 'source': 'SDTM CT', 'types': [], 'triples': [],
+                    'members': [[t, label(t), value(t, 'Codelist Name') or ''] for t in members[b]]}
     for n in nodes:
         for row in nodes[n]['triples']:
             if not row[2] and row[1] in nodes:

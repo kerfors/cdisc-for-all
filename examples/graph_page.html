@@ -37,6 +37,7 @@ svg .colsub { fill: var(--muted); font-size: 11px; }
 .node.sel rect { stroke-width: 3; }
 .edge { fill: none; stroke: var(--line); stroke-width: 1.4; cursor: pointer; }
 .edge.hi { stroke: var(--hi); stroke-width: 2.2; }
+.edge.spec { stroke-dasharray: 5 4; }
 .dim { opacity: 0.25; }
 .panel { background: var(--panel); border-radius: 8px; padding: 12px 14px; position: sticky; top: 12px; max-height: calc(100vh - 24px); overflow-y: auto; }
 .panel h3 { margin: 0 0 2px; font-size: 15px; }
@@ -61,7 +62,7 @@ table.decs th { color: var(--muted); font-weight: 600; }
 <body>
 <main>
 <h1>__TITLE__</h1>
-<p class="lead">Each box is a node of the cdisc-for-all graphs: a row of a published table, or an NCIt concept. Each line is a link, named as in <code>schema/links.yaml</code>. The test reaches the Biomedical Concept only through the NCIt concept they share. Click a box to see its triples, the published values under their published column names; click a line to see its link.</p>
+<p class="lead">Each box is a node of the cdisc-for-all graphs: a row of a published table, or an NCIt concept. Each line is a link, named as in <code>schema/links.yaml</code>. A test reaches the Biomedical Concept in two ways: through the NCIt concept they share (solid line), or through a Specialization that assigns the test (dashed line). Click a box to see its triples, the published values under their published column names; click a line to see its link.</p>
 <div class="legend">
   <span style="--c: var(--ct)">SDTM CT</span><span style="--c: var(--ncit)">NCIt</span>
   <span style="--c: var(--bc)">COSMoS BC</span><span style="--c: var(--dss)">COSMoS Dataset Specialization</span>
@@ -114,7 +115,7 @@ const edgeEls = DATA.edges.map((e, k) => {
   let d;
   if (a.x === b.x) { const x = a.x; d = `M${x},${a.y + H / 2} C${x - 40},${a.y + H / 2} ${x - 40},${b.y + H / 2} ${x},${b.y + H / 2}`; }
   else { const [l, r] = a.x < b.x ? [a, b] : [b, a]; d = `M${l.x + W},${l.y + H / 2} C${l.x + W + 30},${l.y + H / 2} ${r.x - 30},${r.y + H / 2} ${r.x},${r.y + H / 2}`; }
-  const p = el('path', {d, class: 'edge'}, edgeLayer);
+  const p = el('path', {d, class: e[2].startsWith('via Specialization test rows') ? 'edge spec' : 'edge'}, edgeLayer);
   el('title', {}, p).textContent = e[2];
   p.addEventListener('click', ev => { ev.stopPropagation(); showEdge(k); });
   return p;
@@ -140,6 +141,11 @@ function showNode(id) {
   const touching = new Set(), ids = new Set([id]);
   DATA.edges.forEach((e, k) => { if (e[0] === id || e[1] === id) { touching.add(k); ids.add(e[0]); ids.add(e[1]); } });
   if (nodeEls[id]) highlight(ids, touching); else highlight(null, null);
+  if (n.members) {
+    panel.innerHTML = `<h3>${esc(n.label)}</h3><div class="src">One test: the SDTM CT terms with the same NCIt concept</div><table>`
+      + n.members.map(m => `<tr><td>${esc(m[2])}</td><td>${navLink(m[0], m[1])}</td></tr>`).join('') + '</table>';
+    return;
+  }
   let h = `<h3>${esc(n.label)}</h3><div class="src">${esc(n.source)} · ${esc(id)}</div>`;
   ['Published columns', 'Links', "COSMoS's own model (linked/cosmos-model.ttl)"].forEach(k => {
     const rows = n.triples.filter(t => t[3] === k).sort((a, b) => a[0].localeCompare(b[0]));
