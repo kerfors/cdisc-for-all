@@ -56,6 +56,7 @@ cfa/             the shared helper: reading, writing, IRIs, hashes, Schema sheet
 base/<source>/   reader notebook, downloads/ (not in git), the graph (.ttl), its Excel view, Provenance
 linked/          the link graphs, the COSMoS model graph, Link_Check
 checks/          the schema check and the release check
+examples/        SPARQL CONSTRUCT queries over the graphs, with an example notebook (results not in git)
 ```
 
 ## Content and licences

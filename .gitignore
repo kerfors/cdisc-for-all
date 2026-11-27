@@ -12,6 +12,8 @@ base/sdtm-model/*.xlsx
 base/sdtm-model/Provenance.json
 # Links that start from or end at a row of a sign-in source: local until decided
 linked/*-signin.ttl
+# Results of the example queries (query 1 holds sign-in content when the -signin files are present)
+examples/output/
 
 # Jupyter
 .ipynb_checkpoints/
