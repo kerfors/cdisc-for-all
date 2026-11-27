@@ -63,3 +63,7 @@
 **Code.** `examples/` holds two CONSTRUCT queries and a notebook that runs them. `findings_test_graph.rq`: from an SDTM CT test code term (parameter: codelist code and submission value, example GLUC in Laboratory Test Code), every row and COSMoS model node reached by any number of the links of schema/links.yaml and the COSMoS model properties that point to a node, with the code-CUI map rows of the NCIt concepts; every triple of each node. `observable_concept_graph.rq`: from a COSMoS BC (parameter: bc_id, example C105585), the BC side of COSMoS (the BC and its parents, DECs, Codings, the NCIt concepts with ancestors, CUIs), plus the SDTM CT terms that Dataset Specialization rows bind to the BC's DECs, taking from those rows only their type, the DEC link and the term links; the boundary follows COSMoS's own BC and SDTM models. `Example_Lab_Test_Graphs` runs both in Oxigraph (pyoxigraph, added to requirements.txt; rdflib's engine takes too long on the "any number of links" path) and writes the results to `examples/output/` (`.gitignore`). README: the layout line.
 
 **Content.** None: the results are not published.
+
+## Examples — only the observable query (2026-11-27)
+
+**Code.** `findings_test_graph.rq` is removed, with its section of `Example_Lab_Test_Graphs`: it shows the SDTM implementation side, not the upstream study design use. The observable query stays. README layout line and .gitignore comment adjusted.
