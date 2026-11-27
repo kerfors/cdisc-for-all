@@ -64,6 +64,8 @@ The link map, for standards specialists: every link between the source tables as
 
 For AI agents and other machines: [`llms.txt`](llms.txt) (what is here, the rules to keep, every file and link) and [`catalog.ttl`](catalog.ttl) (DCAT + VoID: every graph and file with licence, version, triple count and SHA-256, and one linkset per link), both written by `linked/Make_Catalog.ipynb`.
 
+For developers: [`examples/Getting_Started.ipynb`](examples/Getting_Started.ipynb) needs no clone and no build. It reads `catalog.ttl` from the Pages site, downloads the graphs it lists (checked against their SHA-256), loads them into Oxigraph, one named graph each, and follows Glucose one hop at a time, from the SDTM CT term to its NCIt concept, the COSMoS BC and its DECs, the Dataset Specializations and the CT terms they bind, naming the link each hop follows.
+
 ## Layout
 
 ```
@@ -73,7 +75,7 @@ base/<source>/   reader notebook, downloads/ (not in git), the graph (.ttl), its
 linked/          Make_Links, Make_COSMoS_Model and Make_Catalog notebooks, the link graphs, the SSSOM mapping set of the general-name links, the COSMoS model graph, Link_Check (-signin files local, not in git)
 llms.txt, catalog.ttl   the entry point for AI agents and the DCAT + VoID catalogue (written by Make_Catalog)
 checks/          the schema check and the CSVW cross-check (rdf-tabular)
-examples/        a SPARQL CONSTRUCT query over the graphs (the test concept graph), test_concept.py to run it per test C-code, an example notebook, example pages for nine lab tests (pages/)
+examples/        a SPARQL CONSTRUCT query over the graphs (the test concept graph), test_concept.py to run it per test C-code, an example notebook, a getting-started notebook for developers (published graphs, no clone), example pages for nine lab tests (pages/)
 ```
 
 ## Content and licences
