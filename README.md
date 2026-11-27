@@ -15,7 +15,7 @@ Fully linked wherever the published content resolves; every place it does not is
 | Study designer, clinical scientist | [Start page](https://kerfors.github.io/cdisc-for-all/) | One page per lab test: the test, its NCIt concept, the COSMoS BC, its DECs, the Specializations and the CT terms they bind |
 | Standards or metadata specialist | [Link map](https://kerfors.github.io/cdisc-for-all/examples/pages/link_map.html) | Every link between the source tables as stated, with its Link_Check rows |
 | Developer | [`examples/Getting_Started.ipynb`](examples/Getting_Started.ipynb) | The published graphs in Oxigraph, no clone, and Glucose one hop at a time |
-| AI agent | [`llms.txt`](llms.txt), [`catalog.ttl`](catalog.ttl) | What is here and the rules to keep; DCAT + VoID with every file, licence, checksum and linkset |
+| AI agent | [`llms.txt`](llms.txt), [`catalog.ttl`](catalog.ttl), [`schema/vocabulary.ttl`](schema/vocabulary.ttl) | What is here and the rules to keep; DCAT + VoID with every file, licence, checksum and linkset; what each class and property means |
 | Anyone rebuilding | [Layout](#layout) and the notebooks in `base/` and `linked/` | The build, source by source |
 
 Details of each are under [Using it](#using-it-the-test-concept-graph).
@@ -78,14 +78,14 @@ Start page, for study designers: [https://kerfors.github.io/cdisc-for-all/](http
 
 The link map, for standards specialists: every link between the source tables as stated in `schema/links.yaml` (key columns, rule) with its Link_Check rows, [https://kerfors.github.io/cdisc-for-all/examples/pages/link_map.html](https://kerfors.github.io/cdisc-for-all/examples/pages/link_map.html), written by `python examples/link_map.py --out examples/pages/link_map.html`.
 
-For AI agents and other machines: [`llms.txt`](llms.txt) (what is here, the rules to keep, every file and link) and [`catalog.ttl`](catalog.ttl) (DCAT + VoID: every graph and file with licence, version, triple count and SHA-256, and one linkset per link), both written by `linked/Make_Catalog.ipynb`.
+For AI agents and other machines: [`llms.txt`](llms.txt) (what is here, the rules to keep, every file and link) and [`catalog.ttl`](catalog.ttl) (DCAT + VoID: every graph and file with licence, version, triple count and SHA-256, and one linkset per link), both written by `linked/Make_Catalog.ipynb`. What each class and property means: [`schema/vocabulary.ttl`](schema/vocabulary.ttl), plain RDFS restated from the LinkML schema: every table as a class, every column as a property labelled with its published column name, every link with its tables, description and rule. Written by `checks/00_Schema.ipynb`; Make_Catalog checks that every class and predicate of the graphs is declared in it.
 
 For developers: [`examples/Getting_Started.ipynb`](examples/Getting_Started.ipynb) needs no clone and no build. It reads `catalog.ttl` from the Pages site, downloads the graphs it lists (checked against their SHA-256), loads them into Oxigraph, one named graph each, and follows Glucose one hop at a time, from the SDTM CT term to its NCIt concept, the COSMoS BC and its DECs, the Dataset Specializations and the CT terms they bind, naming the link each hop follows.
 
 ## Layout
 
 ```
-schema/          the LinkML schema (one module per source, links, the COSMoS model mapping) and the generated SHACL
+schema/          the LinkML schema (one module per source, links, the COSMoS model mapping), the generated SHACL and CSVW, and the vocabulary graph (vocabulary.ttl)
 cfa/             the shared helper: reading, writing, IRIs, hashes, Schema sheets, Provenance
 base/<source>/   reader notebook, downloads/ (not in git), the graph (.ttl), its Excel view, Provenance
 linked/          Make_Links, Make_COSMoS_Model and Make_Catalog notebooks, the link graphs, the SSSOM mapping set of the general-name links, the COSMoS model graph, Link_Check (-signin files local, not in git)
@@ -100,7 +100,6 @@ Not built yet, in no fixed order:
 
 - **MCP server**, local (stdio): the published graphs in Oxigraph behind a few tools for an AI assistant, such as the test concept graph of a C-code, a read-only SPARQL SELECT and the description of one IRI, with `llms.txt`, `catalog.ttl` and `schema/links.yaml` as resources. It would start from `catalog.ttl` as the getting-started notebook does.
 - **SPARQL cookbook**: short, tested queries for common questions, each naming the links it follows; it opens with a prefix block and patterns for the percent-encoded IRIs (`VALUES`, `BIND(IRI(...))`), which cannot all be written as prefixed names.
-- **Vocabulary graph**, generated from the LinkML schema: one class per table, one property per column with its published column name as label, and the descriptions and rules of links.yaml on the link predicates; listed in `catalog.ttl`. It restates the schema, nothing of ours.
 - **Dereferenceable IRIs**: today `def/`, `id/`, `link/` and `rule/` are identifiers only. Options: w3id redirects to generated pages, or the vocabulary graph served at `def/`.
 - **Test concept graph**: also follow child BCs and the test rows of the Specializations (for example WEIGHT, assigned under the child BC Body Weight).
 - **SSSOM** for the other links by rule.

@@ -6,6 +6,8 @@ Rules an agent should keep: every literal is a cell of the source as published (
 
 IRIs: `https://kerfors.github.io/cdisc-for-all/def/<source>/<table>#<column>` (a published column), `https://kerfors.github.io/cdisc-for-all/id/<source>/<table>/<key>` (a row), `https://kerfors.github.io/cdisc-for-all/link/...` (a link on a published key), `https://kerfors.github.io/cdisc-for-all/rule/...` (a link by rule). They are identifiers, not dereferenceable, and stable only within a pin; this is not a general RDF representation of the CDISC standards. NCIt concepts keep NCI's own IRIs (http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C...).
 
+What each class and property means: [vocabulary.ttl](https://kerfors.github.io/cdisc-for-all/schema/vocabulary.ttl) (RDFS, from the LinkML schema: every table as a class, every column as a property labelled with its published column name, every link with its description and rule).
+
 Machine-readable description of all of this: [catalog.ttl](https://kerfors.github.io/cdisc-for-all/catalog.ttl) (DCAT + VoID: files, licences, checksums, linksets).
 
 ## Base graphs (one per source, as published)

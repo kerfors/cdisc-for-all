@@ -1,0 +1,1376 @@
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX def_cosmos: <https://kerfors.github.io/cdisc-for-all/def/cosmos#>
+PREFIX def_cosmos_cdisc_biomedical_concepts_hierarchy_latest: <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_hierarchy_latest#>
+PREFIX def_cosmos_cdisc_biomedical_concepts_latest: <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_latest#>
+PREFIX def_cosmos_cdisc_sdtm_dataset_specializations_latest: <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#>
+PREFIX def_nci_code_cui_map: <https://kerfors.github.io/cdisc-for-all/def/nci-code-cui-map#>
+PREFIX def_nci_code_cui_map_nci_code_cui_map: <https://kerfors.github.io/cdisc-for-all/def/nci-code-cui-map/nci_code_cui_map#>
+PREFIX def_ncit_flat: <https://kerfors.github.io/cdisc-for-all/def/ncit-flat#>
+PREFIX def_ncit_flat_Thesaurus: <https://kerfors.github.io/cdisc-for-all/def/ncit-flat/Thesaurus#>
+PREFIX def_nsv_registry: <https://kerfors.github.io/cdisc-for-all/def/nsv-registry#>
+PREFIX def_nsv_registry_Approved_NSVs_alpha: <https://kerfors.github.io/cdisc-for-all/def/nsv-registry/Approved%20NSVs-alpha#>
+PREFIX def_sdtm_ct: <https://kerfors.github.io/cdisc-for-all/def/sdtm-ct#>
+PREFIX def_sdtm_ct_SDTM_Terminology: <https://kerfors.github.io/cdisc-for-all/def/sdtm-ct/SDTM%20Terminology#>
+PREFIX def_sdtm_model: <https://kerfors.github.io/cdisc-for-all/def/sdtm-model#>
+PREFIX def_sdtm_model_SDTM: <https://kerfors.github.io/cdisc-for-all/def/sdtm-model/SDTM#>
+PREFIX def_sdtmig: <https://kerfors.github.io/cdisc-for-all/def/sdtmig#>
+PREFIX def_sdtmig_SDTMIG: <https://kerfors.github.io/cdisc-for-all/def/sdtmig/SDTMIG#>
+PREFIX link_cosmos_cdisc_biomedical_concepts_hierarchy_latest: <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_biomedical_concepts_hierarchy_latest#>
+PREFIX link_cosmos_cdisc_biomedical_concepts_latest: <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_biomedical_concepts_latest#>
+PREFIX link_cosmos_cdisc_sdtm_dataset_specializations_latest: <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_sdtm_dataset_specializations_latest#>
+PREFIX link_nci_code_cui_map_nci_code_cui_map: <https://kerfors.github.io/cdisc-for-all/link/nci-code-cui-map/nci_code_cui_map#>
+PREFIX link_ncit_flat_Thesaurus: <https://kerfors.github.io/cdisc-for-all/link/ncit-flat/Thesaurus#>
+PREFIX link_sdtm_ct_SDTM_Terminology: <https://kerfors.github.io/cdisc-for-all/link/sdtm-ct/SDTM%20Terminology#>
+PREFIX link_sdtm_model_SDTM: <https://kerfors.github.io/cdisc-for-all/link/sdtm-model/SDTM#>
+PREFIX link_sdtmig_SDTMIG: <https://kerfors.github.io/cdisc-for-all/link/sdtmig/SDTMIG#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+def_cosmos:cdisc_biomedical_concepts_hierarchy_latest
+    a rdfs:Class ;
+    rdfs:label "cdisc_biomedical_concepts_hierarchy_latest" ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+.
+
+def_cosmos:cdisc_biomedical_concepts_latest
+    a rdfs:Class ;
+    rdfs:label "cdisc_biomedical_concepts_latest" ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+.
+
+def_cosmos:cdisc_sdtm_dataset_specializations_latest
+    a rdfs:Class ;
+    rdfs:label "cdisc_sdtm_dataset_specializations_latest" ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+.
+
+def_nci_code_cui_map:nci_code_cui_map
+    a rdfs:Class ;
+    rdfs:label "nci_code_cui_map" ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/nci-code-cui-map> ;
+.
+
+def_ncit_flat:Thesaurus
+    a rdfs:Class ;
+    rdfs:label "Thesaurus" ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/ncit-flat> ;
+.
+
+def_nsv_registry:Approved%20NSVs-alpha
+    a rdfs:Class ;
+    rdfs:label "Approved NSVs-alpha" ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/nsv-registry> ;
+.
+
+def_sdtm_ct:SDTM%20Terminology
+    a rdfs:Class ;
+    rdfs:label "SDTM Terminology" ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/sdtm-ct> ;
+.
+
+def_sdtm_model:SDTM
+    a rdfs:Class ;
+    rdfs:label "SDTM" ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/sdtm-model> ;
+.
+
+def_sdtmig:SDTMIG
+    a rdfs:Class ;
+    rdfs:label "SDTMIG" ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/sdtmig> ;
+.
+
+def_cosmos_cdisc_biomedical_concepts_hierarchy_latest:bc_categories
+    a rdf:Property ;
+    rdfs:label "bc_categories" ;
+    rdfs:domain def_cosmos:cdisc_biomedical_concepts_hierarchy_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+    rdfs:range xsd:string ;
+.
+
+def_cosmos_cdisc_biomedical_concepts_hierarchy_latest:bc_definition
+    a rdf:Property ;
+    rdfs:label "bc_definition" ;
+    rdfs:domain def_cosmos:cdisc_biomedical_concepts_hierarchy_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+    rdfs:range xsd:string ;
+.
+
+def_cosmos_cdisc_biomedical_concepts_hierarchy_latest:bc_hierarchy_full
+    a rdf:Property ;
+    rdfs:label "bc_hierarchy_full" ;
+    rdfs:domain def_cosmos:cdisc_biomedical_concepts_hierarchy_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+    rdfs:range xsd:string ;
+.
+
+def_cosmos_cdisc_biomedical_concepts_hierarchy_latest:bc_hierarchy_level
+    a rdf:Property ;
+    rdfs:label "bc_hierarchy_level" ;
+    rdfs:domain def_cosmos:cdisc_biomedical_concepts_hierarchy_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+    rdfs:range xsd:string ;
+.
+
+def_cosmos_cdisc_biomedical_concepts_hierarchy_latest:bc_id
+    a rdf:Property ;
+    rdfs:label "bc_id" ;
+    rdfs:domain def_cosmos:cdisc_biomedical_concepts_hierarchy_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+    rdfs:range xsd:string ;
+.
+
+def_cosmos_cdisc_biomedical_concepts_hierarchy_latest:bc_short_name
+    a rdf:Property ;
+    rdfs:label "bc_short_name" ;
+    rdfs:domain def_cosmos:cdisc_biomedical_concepts_hierarchy_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+    rdfs:range xsd:string ;
+.
+
+def_cosmos_cdisc_biomedical_concepts_hierarchy_latest:bc_short_name_id
+    a rdf:Property ;
+    rdfs:label "bc_short_name_id" ;
+    rdfs:domain def_cosmos:cdisc_biomedical_concepts_hierarchy_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+    rdfs:range xsd:string ;
+.
+
+def_cosmos_cdisc_biomedical_concepts_hierarchy_latest:bc_synonyms
+    a rdf:Property ;
+    rdfs:label "bc_synonyms" ;
+    rdfs:domain def_cosmos:cdisc_biomedical_concepts_hierarchy_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+    rdfs:range xsd:string ;
+.
+
+def_cosmos_cdisc_biomedical_concepts_hierarchy_latest:dec_n
+    a rdf:Property ;
+    rdfs:label "dec_n" ;
+    rdfs:domain def_cosmos:cdisc_biomedical_concepts_hierarchy_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+    rdfs:range xsd:string ;
+.
+
+def_cosmos_cdisc_biomedical_concepts_hierarchy_latest:parent_bc_id
+    a rdf:Property ;
+    rdfs:label "parent_bc_id" ;
+    rdfs:domain def_cosmos:cdisc_biomedical_concepts_hierarchy_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+    rdfs:range xsd:string ;
+.
+
+def_cosmos_cdisc_biomedical_concepts_hierarchy_latest:result_scales
+    a rdf:Property ;
+    rdfs:label "result_scales" ;
+    rdfs:domain def_cosmos:cdisc_biomedical_concepts_hierarchy_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+    rdfs:range xsd:string ;
+.
+
+def_cosmos_cdisc_biomedical_concepts_latest:bc_categories
+    a rdf:Property ;
+    rdfs:label "bc_categories" ;
+    rdfs:domain def_cosmos:cdisc_biomedical_concepts_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+    rdfs:range xsd:string ;
+.
+
+def_cosmos_cdisc_biomedical_concepts_latest:bc_id
+    a rdf:Property ;
+    rdfs:label "bc_id" ;
+    rdfs:domain def_cosmos:cdisc_biomedical_concepts_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+    rdfs:range xsd:string ;
+.
+
+def_cosmos_cdisc_biomedical_concepts_latest:code
+    a rdf:Property ;
+    rdfs:label "code" ;
+    rdfs:domain def_cosmos:cdisc_biomedical_concepts_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+    rdfs:range xsd:string ;
+.
+
+def_cosmos_cdisc_biomedical_concepts_latest:data_type
+    a rdf:Property ;
+    rdfs:label "data_type" ;
+    rdfs:domain def_cosmos:cdisc_biomedical_concepts_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+    rdfs:range xsd:string ;
+.
+
+def_cosmos_cdisc_biomedical_concepts_latest:dec_id
+    a rdf:Property ;
+    rdfs:label "dec_id" ;
+    rdfs:domain def_cosmos:cdisc_biomedical_concepts_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+    rdfs:range xsd:string ;
+.
+
+def_cosmos_cdisc_biomedical_concepts_latest:dec_label
+    a rdf:Property ;
+    rdfs:label "dec_label" ;
+    rdfs:domain def_cosmos:cdisc_biomedical_concepts_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+    rdfs:range xsd:string ;
+.
+
+def_cosmos_cdisc_biomedical_concepts_latest:definition
+    a rdf:Property ;
+    rdfs:label "definition" ;
+    rdfs:domain def_cosmos:cdisc_biomedical_concepts_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+    rdfs:range xsd:string ;
+.
+
+def_cosmos_cdisc_biomedical_concepts_latest:example_set
+    a rdf:Property ;
+    rdfs:label "example_set" ;
+    rdfs:domain def_cosmos:cdisc_biomedical_concepts_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+    rdfs:range xsd:string ;
+.
+
+def_cosmos_cdisc_biomedical_concepts_latest:ncit_code
+    a rdf:Property ;
+    rdfs:label "ncit_code" ;
+    rdfs:domain def_cosmos:cdisc_biomedical_concepts_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+    rdfs:range xsd:string ;
+.
+
+def_cosmos_cdisc_biomedical_concepts_latest:ncit_dec_code
+    a rdf:Property ;
+    rdfs:label "ncit_dec_code" ;
+    rdfs:domain def_cosmos:cdisc_biomedical_concepts_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+    rdfs:range xsd:string ;
+.
+
+def_cosmos_cdisc_biomedical_concepts_latest:package_date
+    a rdf:Property ;
+    rdfs:label "package_date" ;
+    rdfs:domain def_cosmos:cdisc_biomedical_concepts_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+    rdfs:range xsd:string ;
+.
+
+def_cosmos_cdisc_biomedical_concepts_latest:parent_bc_id
+    a rdf:Property ;
+    rdfs:label "parent_bc_id" ;
+    rdfs:domain def_cosmos:cdisc_biomedical_concepts_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+    rdfs:range xsd:string ;
+.
+
+def_cosmos_cdisc_biomedical_concepts_latest:result_scales
+    a rdf:Property ;
+    rdfs:label "result_scales" ;
+    rdfs:domain def_cosmos:cdisc_biomedical_concepts_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+    rdfs:range xsd:string ;
+.
+
+def_cosmos_cdisc_biomedical_concepts_latest:short_name
+    a rdf:Property ;
+    rdfs:label "short_name" ;
+    rdfs:domain def_cosmos:cdisc_biomedical_concepts_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+    rdfs:range xsd:string ;
+.
+
+def_cosmos_cdisc_biomedical_concepts_latest:synonyms
+    a rdf:Property ;
+    rdfs:label "synonyms" ;
+    rdfs:domain def_cosmos:cdisc_biomedical_concepts_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+    rdfs:range xsd:string ;
+.
+
+def_cosmos_cdisc_biomedical_concepts_latest:system
+    a rdf:Property ;
+    rdfs:label "system" ;
+    rdfs:domain def_cosmos:cdisc_biomedical_concepts_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+    rdfs:range xsd:string ;
+.
+
+def_cosmos_cdisc_biomedical_concepts_latest:system_name
+    a rdf:Property ;
+    rdfs:label "system_name" ;
+    rdfs:domain def_cosmos:cdisc_biomedical_concepts_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+    rdfs:range xsd:string ;
+.
+
+def_cosmos_cdisc_sdtm_dataset_specializations_latest:assigned_term
+    a rdf:Property ;
+    rdfs:label "assigned_term" ;
+    rdfs:domain def_cosmos:cdisc_sdtm_dataset_specializations_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+    rdfs:range xsd:string ;
+.
+
+def_cosmos_cdisc_sdtm_dataset_specializations_latest:assigned_value
+    a rdf:Property ;
+    rdfs:label "assigned_value" ;
+    rdfs:domain def_cosmos:cdisc_sdtm_dataset_specializations_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+    rdfs:range xsd:string ;
+.
+
+def_cosmos_cdisc_sdtm_dataset_specializations_latest:bc_id
+    a rdf:Property ;
+    rdfs:label "bc_id" ;
+    rdfs:domain def_cosmos:cdisc_sdtm_dataset_specializations_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+    rdfs:range xsd:string ;
+.
+
+def_cosmos_cdisc_sdtm_dataset_specializations_latest:codelist
+    a rdf:Property ;
+    rdfs:label "codelist" ;
+    rdfs:domain def_cosmos:cdisc_sdtm_dataset_specializations_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+    rdfs:range xsd:string ;
+.
+
+def_cosmos_cdisc_sdtm_dataset_specializations_latest:codelist_submission_value
+    a rdf:Property ;
+    rdfs:label "codelist_submission_value" ;
+    rdfs:domain def_cosmos:cdisc_sdtm_dataset_specializations_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+    rdfs:range xsd:string ;
+.
+
+def_cosmos_cdisc_sdtm_dataset_specializations_latest:comparator
+    a rdf:Property ;
+    rdfs:label "comparator" ;
+    rdfs:domain def_cosmos:cdisc_sdtm_dataset_specializations_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+    rdfs:range xsd:string ;
+.
+
+def_cosmos_cdisc_sdtm_dataset_specializations_latest:data_type
+    a rdf:Property ;
+    rdfs:label "data_type" ;
+    rdfs:domain def_cosmos:cdisc_sdtm_dataset_specializations_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+    rdfs:range xsd:string ;
+.
+
+def_cosmos_cdisc_sdtm_dataset_specializations_latest:dec_id
+    a rdf:Property ;
+    rdfs:label "dec_id" ;
+    rdfs:domain def_cosmos:cdisc_sdtm_dataset_specializations_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+    rdfs:range xsd:string ;
+.
+
+def_cosmos_cdisc_sdtm_dataset_specializations_latest:domain
+    a rdf:Property ;
+    rdfs:label "domain" ;
+    rdfs:domain def_cosmos:cdisc_sdtm_dataset_specializations_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+    rdfs:range xsd:string ;
+.
+
+def_cosmos_cdisc_sdtm_dataset_specializations_latest:format
+    a rdf:Property ;
+    rdfs:label "format" ;
+    rdfs:domain def_cosmos:cdisc_sdtm_dataset_specializations_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+    rdfs:range xsd:string ;
+.
+
+def_cosmos_cdisc_sdtm_dataset_specializations_latest:length
+    a rdf:Property ;
+    rdfs:label "length" ;
+    rdfs:domain def_cosmos:cdisc_sdtm_dataset_specializations_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+    rdfs:range xsd:string ;
+.
+
+def_cosmos_cdisc_sdtm_dataset_specializations_latest:linking_phrase
+    a rdf:Property ;
+    rdfs:label "linking_phrase" ;
+    rdfs:domain def_cosmos:cdisc_sdtm_dataset_specializations_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+    rdfs:range xsd:string ;
+.
+
+def_cosmos_cdisc_sdtm_dataset_specializations_latest:mandatory_value
+    a rdf:Property ;
+    rdfs:label "mandatory_value" ;
+    rdfs:domain def_cosmos:cdisc_sdtm_dataset_specializations_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+    rdfs:range xsd:string ;
+.
+
+def_cosmos_cdisc_sdtm_dataset_specializations_latest:mandatory_variable
+    a rdf:Property ;
+    rdfs:label "mandatory_variable" ;
+    rdfs:domain def_cosmos:cdisc_sdtm_dataset_specializations_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+    rdfs:range xsd:string ;
+.
+
+def_cosmos_cdisc_sdtm_dataset_specializations_latest:nsv_flag
+    a rdf:Property ;
+    rdfs:label "nsv_flag" ;
+    rdfs:domain def_cosmos:cdisc_sdtm_dataset_specializations_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+    rdfs:range xsd:string ;
+.
+
+def_cosmos_cdisc_sdtm_dataset_specializations_latest:object
+    a rdf:Property ;
+    rdfs:label "object" ;
+    rdfs:domain def_cosmos:cdisc_sdtm_dataset_specializations_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+    rdfs:range xsd:string ;
+.
+
+def_cosmos_cdisc_sdtm_dataset_specializations_latest:origin_source
+    a rdf:Property ;
+    rdfs:label "origin_source" ;
+    rdfs:domain def_cosmos:cdisc_sdtm_dataset_specializations_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+    rdfs:range xsd:string ;
+.
+
+def_cosmos_cdisc_sdtm_dataset_specializations_latest:origin_type
+    a rdf:Property ;
+    rdfs:label "origin_type" ;
+    rdfs:domain def_cosmos:cdisc_sdtm_dataset_specializations_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+    rdfs:range xsd:string ;
+.
+
+def_cosmos_cdisc_sdtm_dataset_specializations_latest:package_date
+    a rdf:Property ;
+    rdfs:label "package_date" ;
+    rdfs:domain def_cosmos:cdisc_sdtm_dataset_specializations_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+    rdfs:range xsd:string ;
+.
+
+def_cosmos_cdisc_sdtm_dataset_specializations_latest:predicate_term
+    a rdf:Property ;
+    rdfs:label "predicate_term" ;
+    rdfs:domain def_cosmos:cdisc_sdtm_dataset_specializations_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+    rdfs:range xsd:string ;
+.
+
+def_cosmos_cdisc_sdtm_dataset_specializations_latest:role
+    a rdf:Property ;
+    rdfs:label "role" ;
+    rdfs:domain def_cosmos:cdisc_sdtm_dataset_specializations_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+    rdfs:range xsd:string ;
+.
+
+def_cosmos_cdisc_sdtm_dataset_specializations_latest:sdtm_variable
+    a rdf:Property ;
+    rdfs:label "sdtm_variable" ;
+    rdfs:domain def_cosmos:cdisc_sdtm_dataset_specializations_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+    rdfs:range xsd:string ;
+.
+
+def_cosmos_cdisc_sdtm_dataset_specializations_latest:sdtmig_end_version
+    a rdf:Property ;
+    rdfs:label "sdtmig_end_version" ;
+    rdfs:domain def_cosmos:cdisc_sdtm_dataset_specializations_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+    rdfs:range xsd:string ;
+.
+
+def_cosmos_cdisc_sdtm_dataset_specializations_latest:sdtmig_start_version
+    a rdf:Property ;
+    rdfs:label "sdtmig_start_version" ;
+    rdfs:domain def_cosmos:cdisc_sdtm_dataset_specializations_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+    rdfs:range xsd:string ;
+.
+
+def_cosmos_cdisc_sdtm_dataset_specializations_latest:short_name
+    a rdf:Property ;
+    rdfs:label "short_name" ;
+    rdfs:domain def_cosmos:cdisc_sdtm_dataset_specializations_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+    rdfs:range xsd:string ;
+.
+
+def_cosmos_cdisc_sdtm_dataset_specializations_latest:significant_digits
+    a rdf:Property ;
+    rdfs:label "significant_digits" ;
+    rdfs:domain def_cosmos:cdisc_sdtm_dataset_specializations_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+    rdfs:range xsd:string ;
+.
+
+def_cosmos_cdisc_sdtm_dataset_specializations_latest:subject
+    a rdf:Property ;
+    rdfs:label "subject" ;
+    rdfs:domain def_cosmos:cdisc_sdtm_dataset_specializations_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+    rdfs:range xsd:string ;
+.
+
+def_cosmos_cdisc_sdtm_dataset_specializations_latest:subset_codelist
+    a rdf:Property ;
+    rdfs:label "subset_codelist" ;
+    rdfs:domain def_cosmos:cdisc_sdtm_dataset_specializations_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+    rdfs:range xsd:string ;
+.
+
+def_cosmos_cdisc_sdtm_dataset_specializations_latest:value_list
+    a rdf:Property ;
+    rdfs:label "value_list" ;
+    rdfs:domain def_cosmos:cdisc_sdtm_dataset_specializations_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+    rdfs:range xsd:string ;
+.
+
+def_cosmos_cdisc_sdtm_dataset_specializations_latest:vlm_group_id
+    a rdf:Property ;
+    rdfs:label "vlm_group_id" ;
+    rdfs:domain def_cosmos:cdisc_sdtm_dataset_specializations_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+    rdfs:range xsd:string ;
+.
+
+def_cosmos_cdisc_sdtm_dataset_specializations_latest:vlm_source
+    a rdf:Property ;
+    rdfs:label "vlm_source" ;
+    rdfs:domain def_cosmos:cdisc_sdtm_dataset_specializations_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+    rdfs:range xsd:string ;
+.
+
+def_cosmos_cdisc_sdtm_dataset_specializations_latest:vlm_target
+    a rdf:Property ;
+    rdfs:label "vlm_target" ;
+    rdfs:domain def_cosmos:cdisc_sdtm_dataset_specializations_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/cosmos> ;
+    rdfs:range xsd:string ;
+.
+
+def_nci_code_cui_map_nci_code_cui_map:CUI
+    a rdf:Property ;
+    rdfs:label "CUI" ;
+    rdfs:domain def_nci_code_cui_map:nci_code_cui_map ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/nci-code-cui-map> ;
+    rdfs:range xsd:string ;
+.
+
+def_nci_code_cui_map_nci_code_cui_map:code
+    a rdf:Property ;
+    rdfs:label "code" ;
+    rdfs:domain def_nci_code_cui_map:nci_code_cui_map ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/nci-code-cui-map> ;
+    rdfs:range xsd:string ;
+.
+
+def_nci_code_cui_map_nci_code_cui_map:field%203
+    a rdf:Property ;
+    rdfs:label "field 3" ;
+    rdfs:domain def_nci_code_cui_map:nci_code_cui_map ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/nci-code-cui-map> ;
+    rdfs:range xsd:string ;
+.
+
+def_nci_code_cui_map_nci_code_cui_map:field%204
+    a rdf:Property ;
+    rdfs:label "field 4" ;
+    rdfs:domain def_nci_code_cui_map:nci_code_cui_map ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/nci-code-cui-map> ;
+    rdfs:range xsd:string ;
+.
+
+def_nci_code_cui_map_nci_code_cui_map:field%205
+    a rdf:Property ;
+    rdfs:label "field 5" ;
+    rdfs:domain def_nci_code_cui_map:nci_code_cui_map ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/nci-code-cui-map> ;
+    rdfs:range xsd:string ;
+.
+
+def_ncit_flat_Thesaurus:code
+    a rdf:Property ;
+    rdfs:label "code" ;
+    rdfs:domain def_ncit_flat:Thesaurus ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/ncit-flat> ;
+    rdfs:range xsd:string ;
+.
+
+def_ncit_flat_Thesaurus:concept%20IRI
+    a rdf:Property ;
+    rdfs:label "concept IRI" ;
+    rdfs:domain def_ncit_flat:Thesaurus ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/ncit-flat> ;
+    rdfs:range xsd:string ;
+.
+
+def_ncit_flat_Thesaurus:concept%20in%20subset
+    a rdf:Property ;
+    rdfs:label "concept in subset" ;
+    rdfs:domain def_ncit_flat:Thesaurus ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/ncit-flat> ;
+    rdfs:range xsd:string ;
+.
+
+def_ncit_flat_Thesaurus:concept%20status
+    a rdf:Property ;
+    rdfs:label "concept status" ;
+    rdfs:domain def_ncit_flat:Thesaurus ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/ncit-flat> ;
+    rdfs:range xsd:string ;
+.
+
+def_ncit_flat_Thesaurus:definition
+    a rdf:Property ;
+    rdfs:label "definition" ;
+    rdfs:domain def_ncit_flat:Thesaurus ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/ncit-flat> ;
+    rdfs:range xsd:string ;
+.
+
+def_ncit_flat_Thesaurus:display%20name
+    a rdf:Property ;
+    rdfs:label "display name" ;
+    rdfs:domain def_ncit_flat:Thesaurus ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/ncit-flat> ;
+    rdfs:range xsd:string ;
+.
+
+def_ncit_flat_Thesaurus:parents
+    a rdf:Property ;
+    rdfs:label "parents" ;
+    rdfs:domain def_ncit_flat:Thesaurus ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/ncit-flat> ;
+    rdfs:range xsd:string ;
+.
+
+def_ncit_flat_Thesaurus:semantic%20type
+    a rdf:Property ;
+    rdfs:label "semantic type" ;
+    rdfs:domain def_ncit_flat:Thesaurus ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/ncit-flat> ;
+    rdfs:range xsd:string ;
+.
+
+def_ncit_flat_Thesaurus:synonyms
+    a rdf:Property ;
+    rdfs:label "synonyms" ;
+    rdfs:domain def_ncit_flat:Thesaurus ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/ncit-flat> ;
+    rdfs:range xsd:string ;
+.
+
+def_nsv_registry_Approved_NSVs_alpha:Codelist%20Reference
+    a rdf:Property ;
+    rdfs:label "Codelist Reference" ;
+    rdfs:domain def_nsv_registry:Approved%20NSVs-alpha ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/nsv-registry> ;
+    rdfs:range xsd:string ;
+.
+
+def_nsv_registry_Approved_NSVs_alpha:Curator%20Remarks
+    a rdf:Property ;
+    rdfs:label "Curator Remarks" ;
+    rdfs:domain def_nsv_registry:Approved%20NSVs-alpha ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/nsv-registry> ;
+    rdfs:range xsd:string ;
+.
+
+def_nsv_registry_Approved_NSVs_alpha:Define-XML%20Datatype
+    a rdf:Property ;
+    rdfs:label "Define-XML Datatype" ;
+    rdfs:domain def_nsv_registry:Approved%20NSVs-alpha ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/nsv-registry> ;
+    rdfs:range xsd:string ;
+.
+
+def_nsv_registry_Approved_NSVs_alpha:Description
+    a rdf:Property ;
+    rdfs:label "Description" ;
+    rdfs:domain def_nsv_registry:Approved%20NSVs-alpha ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/nsv-registry> ;
+    rdfs:range xsd:string ;
+.
+
+def_nsv_registry_Approved_NSVs_alpha:External%20Dictionary
+    a rdf:Property ;
+    rdfs:label "External Dictionary" ;
+    rdfs:domain def_nsv_registry:Approved%20NSVs-alpha ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/nsv-registry> ;
+    rdfs:range xsd:string ;
+.
+
+def_nsv_registry_Approved_NSVs_alpha:Label
+    a rdf:Property ;
+    rdfs:label "Label" ;
+    rdfs:domain def_nsv_registry:Approved%20NSVs-alpha ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/nsv-registry> ;
+    rdfs:range xsd:string ;
+.
+
+def_nsv_registry_Approved_NSVs_alpha:Limited%20to%20Class%28es%29
+    a rdf:Property ;
+    rdfs:label "Limited to Class(es)" ;
+    rdfs:domain def_nsv_registry:Approved%20NSVs-alpha ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/nsv-registry> ;
+    rdfs:range xsd:string ;
+.
+
+def_nsv_registry_Approved_NSVs_alpha:Limited%20to%20Domain%28s%29
+    a rdf:Property ;
+    rdfs:label "Limited to Domain(s)" ;
+    rdfs:domain def_nsv_registry:Approved%20NSVs-alpha ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/nsv-registry> ;
+    rdfs:range xsd:string ;
+.
+
+def_nsv_registry_Approved_NSVs_alpha:Notes
+    a rdf:Property ;
+    rdfs:label "Notes" ;
+    rdfs:domain def_nsv_registry:Approved%20NSVs-alpha ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/nsv-registry> ;
+    rdfs:range xsd:string ;
+.
+
+def_nsv_registry_Approved_NSVs_alpha:Publication%20Date%20of%20the%20Source%20Document
+    a rdf:Property ;
+    rdfs:label "Publication Date of the Source Document" ;
+    rdfs:domain def_nsv_registry:Approved%20NSVs-alpha ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/nsv-registry> ;
+    rdfs:range xsd:string ;
+.
+
+def_nsv_registry_Approved_NSVs_alpha:Qualifying%20Variable%28s%29
+    a rdf:Property ;
+    rdfs:label "Qualifying Variable(s)" ;
+    rdfs:domain def_nsv_registry:Approved%20NSVs-alpha ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/nsv-registry> ;
+    rdfs:range xsd:string ;
+.
+
+def_nsv_registry_Approved_NSVs_alpha:Requester%20Remarks
+    a rdf:Property ;
+    rdfs:label "Requester Remarks" ;
+    rdfs:domain def_nsv_registry:Approved%20NSVs-alpha ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/nsv-registry> ;
+    rdfs:range xsd:string ;
+.
+
+def_nsv_registry_Approved_NSVs_alpha:Role
+    a rdf:Property ;
+    rdfs:label "Role" ;
+    rdfs:domain def_nsv_registry:Approved%20NSVs-alpha ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/nsv-registry> ;
+    rdfs:range xsd:string ;
+.
+
+def_nsv_registry_Approved_NSVs_alpha:Simple%20Datatype
+    a rdf:Property ;
+    rdfs:label "Simple Datatype" ;
+    rdfs:domain def_nsv_registry:Approved%20NSVs-alpha ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/nsv-registry> ;
+    rdfs:range xsd:string ;
+.
+
+def_nsv_registry_Approved_NSVs_alpha:Source%28s%29
+    a rdf:Property ;
+    rdfs:label "Source(s)" ;
+    rdfs:domain def_nsv_registry:Approved%20NSVs-alpha ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/nsv-registry> ;
+    rdfs:range xsd:string ;
+.
+
+def_nsv_registry_Approved_NSVs_alpha:Status%20of%20the%20NSV%20Review
+    a rdf:Property ;
+    rdfs:label "Status of the NSV Review" ;
+    rdfs:domain def_nsv_registry:Approved%20NSVs-alpha ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/nsv-registry> ;
+    rdfs:range xsd:string ;
+.
+
+def_nsv_registry_Approved_NSVs_alpha:Status%20of%20the%20Source%20Document
+    a rdf:Property ;
+    rdfs:label "Status of the Source Document" ;
+    rdfs:domain def_nsv_registry:Approved%20NSVs-alpha ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/nsv-registry> ;
+    rdfs:range xsd:string ;
+.
+
+def_nsv_registry_Approved_NSVs_alpha:Used%20in%20Domain%28s%29
+    a rdf:Property ;
+    rdfs:label "Used in Domain(s)" ;
+    rdfs:domain def_nsv_registry:Approved%20NSVs-alpha ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/nsv-registry> ;
+    rdfs:range xsd:string ;
+.
+
+def_nsv_registry_Approved_NSVs_alpha:Used%20in%20WIKI%20Example%28s%29
+    a rdf:Property ;
+    rdfs:label "Used in WIKI Example(s)" ;
+    rdfs:domain def_nsv_registry:Approved%20NSVs-alpha ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/nsv-registry> ;
+    rdfs:range xsd:string ;
+.
+
+def_nsv_registry_Approved_NSVs_alpha:Variable%20Name
+    a rdf:Property ;
+    rdfs:label "Variable Name" ;
+    rdfs:domain def_nsv_registry:Approved%20NSVs-alpha ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/nsv-registry> ;
+    rdfs:range xsd:string ;
+.
+
+def_nsv_registry_Approved_NSVs_alpha:XML%20Datatype
+    a rdf:Property ;
+    rdfs:label "XML Datatype" ;
+    rdfs:domain def_nsv_registry:Approved%20NSVs-alpha ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/nsv-registry> ;
+    rdfs:range xsd:string ;
+.
+
+def_sdtm_ct_SDTM_Terminology:CDISC%20Definition
+    a rdf:Property ;
+    rdfs:label "CDISC Definition" ;
+    rdfs:domain def_sdtm_ct:SDTM%20Terminology ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/sdtm-ct> ;
+    rdfs:range xsd:string ;
+.
+
+def_sdtm_ct_SDTM_Terminology:CDISC%20Submission%20Value
+    a rdf:Property ;
+    rdfs:label "CDISC Submission Value" ;
+    rdfs:domain def_sdtm_ct:SDTM%20Terminology ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/sdtm-ct> ;
+    rdfs:range xsd:string ;
+.
+
+def_sdtm_ct_SDTM_Terminology:CDISC%20Synonym%28s%29
+    a rdf:Property ;
+    rdfs:label "CDISC Synonym(s)" ;
+    rdfs:domain def_sdtm_ct:SDTM%20Terminology ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/sdtm-ct> ;
+    rdfs:range xsd:string ;
+.
+
+def_sdtm_ct_SDTM_Terminology:Code
+    a rdf:Property ;
+    rdfs:label "Code" ;
+    rdfs:domain def_sdtm_ct:SDTM%20Terminology ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/sdtm-ct> ;
+    rdfs:range xsd:string ;
+.
+
+def_sdtm_ct_SDTM_Terminology:Codelist%20Code
+    a rdf:Property ;
+    rdfs:label "Codelist Code" ;
+    rdfs:domain def_sdtm_ct:SDTM%20Terminology ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/sdtm-ct> ;
+    rdfs:range xsd:string ;
+.
+
+def_sdtm_ct_SDTM_Terminology:Codelist%20Extensible%20%28Yes%2FNo%29
+    a rdf:Property ;
+    rdfs:label "Codelist Extensible (Yes/No)" ;
+    rdfs:domain def_sdtm_ct:SDTM%20Terminology ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/sdtm-ct> ;
+    rdfs:range xsd:string ;
+.
+
+def_sdtm_ct_SDTM_Terminology:Codelist%20Name
+    a rdf:Property ;
+    rdfs:label "Codelist Name" ;
+    rdfs:domain def_sdtm_ct:SDTM%20Terminology ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/sdtm-ct> ;
+    rdfs:range xsd:string ;
+.
+
+def_sdtm_ct_SDTM_Terminology:NCI%20Preferred%20Term
+    a rdf:Property ;
+    rdfs:label "NCI Preferred Term" ;
+    rdfs:domain def_sdtm_ct:SDTM%20Terminology ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/sdtm-ct> ;
+    rdfs:range xsd:string ;
+.
+
+def_sdtm_model_SDTM:Class
+    a rdf:Property ;
+    rdfs:label "Class" ;
+    rdfs:domain def_sdtm_model:SDTM ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/sdtm-model> ;
+    rdfs:range xsd:string ;
+.
+
+def_sdtm_model_SDTM:Dataset%20Name
+    a rdf:Property ;
+    rdfs:label "Dataset Name" ;
+    rdfs:domain def_sdtm_model:SDTM ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/sdtm-model> ;
+    rdfs:range xsd:string ;
+.
+
+def_sdtm_model_SDTM:Definition
+    a rdf:Property ;
+    rdfs:label "Definition" ;
+    rdfs:domain def_sdtm_model:SDTM ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/sdtm-model> ;
+    rdfs:range xsd:string ;
+.
+
+def_sdtm_model_SDTM:Described%20Value%20Domain
+    a rdf:Property ;
+    rdfs:label "Described Value Domain" ;
+    rdfs:domain def_sdtm_model:SDTM ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/sdtm-model> ;
+    rdfs:range xsd:string ;
+.
+
+def_sdtm_model_SDTM:Examples
+    a rdf:Property ;
+    rdfs:label "Examples" ;
+    rdfs:domain def_sdtm_model:SDTM ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/sdtm-model> ;
+    rdfs:range xsd:string ;
+.
+
+def_sdtm_model_SDTM:Notes
+    a rdf:Property ;
+    rdfs:label "Notes" ;
+    rdfs:domain def_sdtm_model:SDTM ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/sdtm-model> ;
+    rdfs:range xsd:string ;
+.
+
+def_sdtm_model_SDTM:Role
+    a rdf:Property ;
+    rdfs:label "Role" ;
+    rdfs:domain def_sdtm_model:SDTM ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/sdtm-model> ;
+    rdfs:range xsd:string ;
+.
+
+def_sdtm_model_SDTM:Type
+    a rdf:Property ;
+    rdfs:label "Type" ;
+    rdfs:domain def_sdtm_model:SDTM ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/sdtm-model> ;
+    rdfs:range xsd:string ;
+.
+
+def_sdtm_model_SDTM:Usage%20Restrictions
+    a rdf:Property ;
+    rdfs:label "Usage Restrictions" ;
+    rdfs:domain def_sdtm_model:SDTM ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/sdtm-model> ;
+    rdfs:range xsd:string ;
+.
+
+def_sdtm_model_SDTM:Variable%20C-Code
+    a rdf:Property ;
+    rdfs:label "Variable C-Code" ;
+    rdfs:domain def_sdtm_model:SDTM ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/sdtm-model> ;
+    rdfs:range xsd:string ;
+.
+
+def_sdtm_model_SDTM:Variable%20Label
+    a rdf:Property ;
+    rdfs:label "Variable Label" ;
+    rdfs:domain def_sdtm_model:SDTM ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/sdtm-model> ;
+    rdfs:range xsd:string ;
+.
+
+def_sdtm_model_SDTM:Variable%20Name
+    a rdf:Property ;
+    rdfs:label "Variable Name" ;
+    rdfs:domain def_sdtm_model:SDTM ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/sdtm-model> ;
+    rdfs:range xsd:string ;
+.
+
+def_sdtm_model_SDTM:Variable%20Order
+    a rdf:Property ;
+    rdfs:label "Variable Order" ;
+    rdfs:domain def_sdtm_model:SDTM ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/sdtm-model> ;
+    rdfs:range xsd:string ;
+.
+
+def_sdtm_model_SDTM:Variables%20Qualified
+    a rdf:Property ;
+    rdfs:label "Variables Qualified" ;
+    rdfs:domain def_sdtm_model:SDTM ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/sdtm-model> ;
+    rdfs:range xsd:string ;
+.
+
+def_sdtm_model_SDTM:Version
+    a rdf:Property ;
+    rdfs:label "Version" ;
+    rdfs:domain def_sdtm_model:SDTM ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/sdtm-model> ;
+    rdfs:range xsd:string ;
+.
+
+def_sdtmig_SDTMIG:CDISC%20CT%20Codelist%20Code%28s%29
+    a rdf:Property ;
+    rdfs:label "CDISC CT Codelist Code(s)" ;
+    rdfs:domain def_sdtmig:SDTMIG ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/sdtmig> ;
+    rdfs:range xsd:string ;
+.
+
+def_sdtmig_SDTMIG:CDISC%20Notes
+    a rdf:Property ;
+    rdfs:label "CDISC Notes" ;
+    rdfs:domain def_sdtmig:SDTMIG ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/sdtmig> ;
+    rdfs:range xsd:string ;
+.
+
+def_sdtmig_SDTMIG:Class
+    a rdf:Property ;
+    rdfs:label "Class" ;
+    rdfs:domain def_sdtmig:SDTMIG ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/sdtmig> ;
+    rdfs:range xsd:string ;
+.
+
+def_sdtmig_SDTMIG:Codelist%20Submission%20Values
+    a rdf:Property ;
+    rdfs:label "Codelist Submission Values" ;
+    rdfs:domain def_sdtmig:SDTMIG ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/sdtmig> ;
+    rdfs:range xsd:string ;
+.
+
+def_sdtmig_SDTMIG:Core
+    a rdf:Property ;
+    rdfs:label "Core" ;
+    rdfs:domain def_sdtmig:SDTMIG ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/sdtmig> ;
+    rdfs:range xsd:string ;
+.
+
+def_sdtmig_SDTMIG:Dataset%20Name
+    a rdf:Property ;
+    rdfs:label "Dataset Name" ;
+    rdfs:domain def_sdtmig:SDTMIG ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/sdtmig> ;
+    rdfs:range xsd:string ;
+.
+
+def_sdtmig_SDTMIG:Described%20Value%20Domain%28s%29
+    a rdf:Property ;
+    rdfs:label "Described Value Domain(s)" ;
+    rdfs:domain def_sdtmig:SDTMIG ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/sdtmig> ;
+    rdfs:range xsd:string ;
+.
+
+def_sdtmig_SDTMIG:Role
+    a rdf:Property ;
+    rdfs:label "Role" ;
+    rdfs:domain def_sdtmig:SDTMIG ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/sdtmig> ;
+    rdfs:range xsd:string ;
+.
+
+def_sdtmig_SDTMIG:Type
+    a rdf:Property ;
+    rdfs:label "Type" ;
+    rdfs:domain def_sdtmig:SDTMIG ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/sdtmig> ;
+    rdfs:range xsd:string ;
+.
+
+def_sdtmig_SDTMIG:Value%20List
+    a rdf:Property ;
+    rdfs:label "Value List" ;
+    rdfs:domain def_sdtmig:SDTMIG ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/sdtmig> ;
+    rdfs:range xsd:string ;
+.
+
+def_sdtmig_SDTMIG:Variable%20Label
+    a rdf:Property ;
+    rdfs:label "Variable Label" ;
+    rdfs:domain def_sdtmig:SDTMIG ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/sdtmig> ;
+    rdfs:range xsd:string ;
+.
+
+def_sdtmig_SDTMIG:Variable%20Name
+    a rdf:Property ;
+    rdfs:label "Variable Name" ;
+    rdfs:domain def_sdtmig:SDTMIG ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/sdtmig> ;
+    rdfs:range xsd:string ;
+.
+
+def_sdtmig_SDTMIG:Variable%20Order
+    a rdf:Property ;
+    rdfs:label "Variable Order" ;
+    rdfs:domain def_sdtmig:SDTMIG ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/sdtmig> ;
+    rdfs:range xsd:string ;
+.
+
+def_sdtmig_SDTMIG:Version
+    a rdf:Property ;
+    rdfs:label "Version" ;
+    rdfs:domain def_sdtmig:SDTMIG ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/sdtmig> ;
+    rdfs:range xsd:string ;
+.
+
+link_cosmos_cdisc_biomedical_concepts_hierarchy_latest:parent_bc_id
+    a rdf:Property ;
+    rdfs:label "cosmos hierarchy to parent" ;
+    dcterms:type "published key" ;
+    rdfs:comment "A BC hierarchy row to the hierarchy row of its parent BC." ;
+    rdfs:domain def_cosmos:cdisc_biomedical_concepts_hierarchy_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/links> ;
+    rdfs:range def_cosmos:cdisc_biomedical_concepts_hierarchy_latest ;
+.
+
+link_cosmos_cdisc_biomedical_concepts_latest:ncit_code
+    a rdf:Property ;
+    rdfs:label "cosmos biomedical concept to NCIt" ;
+    dcterms:type "published key" ;
+    rdfs:comment "A BC row to the NCIt concept of its ncit_code." ;
+    rdfs:domain def_cosmos:cdisc_biomedical_concepts_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/links> ;
+    rdfs:range def_ncit_flat:Thesaurus ;
+.
+
+link_cosmos_cdisc_biomedical_concepts_latest:ncit_dec_code
+    a rdf:Property ;
+    rdfs:label "cosmos data element concept to NCIt" ;
+    dcterms:type "published key" ;
+    rdfs:comment "A BC row to the NCIt concept of its ncit_dec_code." ;
+    rdfs:domain def_cosmos:cdisc_biomedical_concepts_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/links> ;
+    rdfs:range def_ncit_flat:Thesaurus ;
+.
+
+link_cosmos_cdisc_biomedical_concepts_latest:parent_bc_id
+    a rdf:Property ;
+    rdfs:label "cosmos biomedical concept to parent" ;
+    dcterms:type "published key" ;
+    rdfs:comment "A BC row to the hierarchy row of its parent BC." ;
+    rdfs:domain def_cosmos:cdisc_biomedical_concepts_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/links> ;
+    rdfs:range def_cosmos:cdisc_biomedical_concepts_hierarchy_latest ;
+.
+
+link_cosmos_cdisc_sdtm_dataset_specializations_latest:assigned_term
+    a rdf:Property ;
+    rdfs:label "cosmos dataset specialization to assigned term" ;
+    dcterms:type "published key" ;
+    rdfs:comment "A Dataset Specialization variable row to the SDTM CT term row of its assigned term, within its codelist." ;
+    rdfs:domain def_cosmos:cdisc_sdtm_dataset_specializations_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/links> ;
+    rdfs:range def_sdtm_ct:SDTM%20Terminology ;
+.
+
+link_cosmos_cdisc_sdtm_dataset_specializations_latest:bc_id
+    a rdf:Property ;
+    rdfs:label "cosmos dataset specialization to biomedical concept" ;
+    dcterms:type "published key" ;
+    rdfs:comment
+        "A Dataset Specialization variable row to the row of its BC in the BC hierarchy table (one row per BC)." ,
+        "Reported too: A Dataset Specialization row whose BC has a bc_short_name ending in \"[RETIRED]\", the marker COSMoS publishes for a retired BC, is reported. The link stays." ;
+    rdfs:domain def_cosmos:cdisc_sdtm_dataset_specializations_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/links> ;
+    rdfs:range def_cosmos:cdisc_biomedical_concepts_hierarchy_latest ;
+.
+
+link_cosmos_cdisc_sdtm_dataset_specializations_latest:codelist
+    a rdf:Property ;
+    rdfs:label "cosmos dataset specialization to codelist" ;
+    dcterms:type "published key" ;
+    rdfs:comment "A Dataset Specialization variable row to the SDTM CT codelist row of its codelist." ;
+    rdfs:domain def_cosmos:cdisc_sdtm_dataset_specializations_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/links> ;
+    rdfs:range def_sdtm_ct:SDTM%20Terminology ;
+.
+
+link_cosmos_cdisc_sdtm_dataset_specializations_latest:dec_id
+    a rdf:Property ;
+    rdfs:label "cosmos dataset specialization to data element concept" ;
+    dcterms:type "published key" ;
+    rdfs:comment "A Dataset Specialization variable row to the BC row of its data element concept, within its BC." ;
+    rdfs:domain def_cosmos:cdisc_sdtm_dataset_specializations_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/links> ;
+    rdfs:range def_cosmos:cdisc_biomedical_concepts_latest ;
+.
+
+link_nci_code_cui_map_nci_code_cui_map:code
+    a rdf:Property ;
+    rdfs:label "nci code-cui map to NCIt" ;
+    dcterms:type "published key" ;
+    rdfs:comment "A row of the code-CUI map to the NCIt concept of its code." ;
+    rdfs:domain def_nci_code_cui_map:nci_code_cui_map ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/links> ;
+    rdfs:range def_ncit_flat:Thesaurus ;
+.
+
+link_ncit_flat_Thesaurus:parents
+    a rdf:Property ;
+    rdfs:label "ncit concept to parent" ;
+    dcterms:type "published key" ;
+    rdfs:comment "An NCIt concept to each concept in its parents." ;
+    rdfs:domain def_ncit_flat:Thesaurus ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/links> ;
+    rdfs:range def_ncit_flat:Thesaurus ;
+.
+
+link_sdtm_ct_SDTM_Terminology:Code
+    a rdf:Property ;
+    rdfs:label "sdtm-ct to NCIt" ;
+    dcterms:type "published key" ;
+    rdfs:comment "A row of SDTM CT (codelist or term) to the NCIt concept of its code." ;
+    rdfs:domain def_sdtm_ct:SDTM%20Terminology ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/links> ;
+    rdfs:range def_ncit_flat:Thesaurus ;
+.
+
+link_sdtm_ct_SDTM_Terminology:Codelist%20Code
+    a rdf:Property ;
+    rdfs:label "sdtm-ct term to codelist" ;
+    dcterms:type "published key" ;
+    rdfs:comment "A term row of SDTM CT to the codelist row of its codelist." ;
+    rdfs:domain def_sdtm_ct:SDTM%20Terminology ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/links> ;
+    rdfs:range def_sdtm_ct:SDTM%20Terminology ;
+.
+
+link_sdtm_model_SDTM:Variable%20C-Code
+    a rdf:Property ;
+    rdfs:label "sdtm-model variable to NCIt" ;
+    dcterms:type "published key" ;
+    rdfs:comment "An SDTM Model variable row to the NCIt concept of its Variable C-Code." ;
+    rdfs:domain def_sdtm_model:SDTM ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/links> ;
+    rdfs:range def_ncit_flat:Thesaurus ;
+.
+
+link_sdtmig_SDTMIG:CDISC%20CT%20Codelist%20Code%28s%29
+    a rdf:Property ;
+    rdfs:label "sdtmig variable to codelist" ;
+    dcterms:type "published key" ;
+    rdfs:comment "An SDTMIG variable row to the SDTM CT codelist row of each code in its CDISC CT Codelist Code(s)." ;
+    rdfs:domain def_sdtmig:SDTMIG ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/links> ;
+    rdfs:range def_sdtm_ct:SDTM%20Terminology ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/rule/cosmos/cdisc_sdtm_dataset_specializations_latest#object/cosmos/cdisc_sdtm_dataset_specializations_latest>
+    a rdf:Property ;
+    rdfs:label "cosmos relationship object" ;
+    dcterms:type "by rule" ;
+    rdfs:comment
+        "A Dataset Specialization variable row to the variable row named in its object, in the same Dataset Specialization." ,
+        "Rule: object equals the sdtm_variable of a row with the same domain and vlm_group_id." ;
+    rdfs:domain def_cosmos:cdisc_sdtm_dataset_specializations_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/links> ;
+    rdfs:range def_cosmos:cdisc_sdtm_dataset_specializations_latest ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/rule/cosmos/cdisc_sdtm_dataset_specializations_latest#sdtm_variable/nsv-registry/Approved%20NSVs-alpha>
+    a rdf:Property ;
+    rdfs:label "cosmos dataset specialization to nsv" ;
+    dcterms:type "by rule" ;
+    rdfs:comment
+        "A Dataset Specialization variable row that is neither an SDTMIG nor an SDTM Model variable, to the NSV Registry rows of its name without the domain prefix." ,
+        "Rule: Only where the row has no link to an SDTMIG or an SDTM Model variable. sdtm_variable with the domain prefix removed (only if it starts with the domain) equals the registry Variable Name as published (no trimming). Every matching registry row is linked (the registry key is Variable Name + Source(s))." ;
+    rdfs:domain def_cosmos:cdisc_sdtm_dataset_specializations_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/links> ;
+    rdfs:range def_nsv_registry:Approved%20NSVs-alpha ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/rule/cosmos/cdisc_sdtm_dataset_specializations_latest#sdtm_variable/sdtm-model/SDTM>
+    a rdf:Property ;
+    rdfs:label "cosmos dataset specialization to model variable" ;
+    dcterms:type "by rule" ;
+    rdfs:comment
+        "A Dataset Specialization variable row that is not an SDTMIG variable of its domain, to an SDTM Model variable row." ,
+        "Rule: Only where the row has no link to an SDTMIG variable. The class of the domain is the Class the SDTMIG table gives for that Dataset Name; with it, the rule of \"sdtmig variable to model variable\" (domain as Dataset Name, sdtm_variable as Variable Name). A domain that is not an SDTMIG dataset has no class: only Class General Observations is tried." ;
+    rdfs:domain def_cosmos:cdisc_sdtm_dataset_specializations_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/links> ;
+    rdfs:range def_sdtm_model:SDTM ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/rule/cosmos/cdisc_sdtm_dataset_specializations_latest#sdtm_variable/sdtmig/SDTMIG>
+    a rdf:Property ;
+    rdfs:label "cosmos dataset specialization to sdtmig variable" ;
+    dcterms:type "by rule" ;
+    rdfs:comment
+        "A Dataset Specialization variable row to the SDTMIG variable row of the same name in its own domain." ,
+        "Rule: domain equals the SDTMIG Dataset Name and sdtm_variable equals the SDTMIG Variable Name." ;
+    rdfs:domain def_cosmos:cdisc_sdtm_dataset_specializations_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/links> ;
+    rdfs:range def_sdtmig:SDTMIG ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/rule/cosmos/cdisc_sdtm_dataset_specializations_latest#subject/cosmos/cdisc_sdtm_dataset_specializations_latest>
+    a rdf:Property ;
+    rdfs:label "cosmos relationship subject" ;
+    dcterms:type "by rule" ;
+    rdfs:comment
+        "A Dataset Specialization variable row to the variable row named in its subject, in the same Dataset Specialization." ,
+        "Rule: subject equals the sdtm_variable of a row with the same domain and vlm_group_id." ;
+    rdfs:domain def_cosmos:cdisc_sdtm_dataset_specializations_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/links> ;
+    rdfs:range def_cosmos:cdisc_sdtm_dataset_specializations_latest ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/rule/cosmos/cdisc_sdtm_dataset_specializations_latest#value_list/sdtm-ct/SDTM%20Terminology>
+    a rdf:Property ;
+    rdfs:label "cosmos value list to term" ;
+    dcterms:type "by rule" ;
+    rdfs:comment
+        "A Dataset Specialization variable row to the SDTM CT term row of each value in its value_list, within its codelist." ,
+        "Rule: Only where the row has a codelist. Each value of value_list (split at \";\") equals the CDISC Submission Value of a term row of that codelist." ;
+    rdfs:domain def_cosmos:cdisc_sdtm_dataset_specializations_latest ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/links> ;
+    rdfs:range def_sdtm_ct:SDTM%20Terminology ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/rule/sdtm-model/SDTM#Variables%20Qualified/sdtm-model/SDTM>
+    a rdf:Property ;
+    rdfs:label "sdtm-model variables qualified" ;
+    dcterms:type "by rule" ;
+    rdfs:comment
+        "An SDTM Model variable row to each Model variable named in its Variables Qualified, in the same class and dataset." ,
+        "Rule: Each name in Variables Qualified (split at \";\", surrounding spaces removed) equals the Variable Name of a Model row with the same Class and the same Dataset Name (both empty for a variable the Model publishes for a class)." ;
+    rdfs:domain def_sdtm_model:SDTM ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/links> ;
+    rdfs:range def_sdtm_model:SDTM ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/rule/sdtmig/SDTMIG#Variable%20Name/sdtm-model/SDTM>
+    a rdf:Property ;
+    rdfs:label "sdtmig variable to model variable" ;
+    dcterms:type "by rule" ;
+    rdfs:comment
+        "An SDTMIG variable row to the SDTM Model variable row it is an instance of." ,
+        "Rule: The first that matches: the Model row with the same Class, Dataset Name and Variable Name; else the Model row without a Dataset Name, with the same Class, whose Variable Name is the general name (the IG Variable Name with its Dataset Name prefix replaced by \"--\", or the Variable Name itself if it does not start with the Dataset Name); else the same for Class General Observations; for Class Findings About, else the same for Class Findings." ;
+    rdfs:domain def_sdtmig:SDTMIG ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/links> ;
+    rdfs:range def_sdtm_model:SDTM ;
+.
