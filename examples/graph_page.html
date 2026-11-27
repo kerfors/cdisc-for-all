@@ -57,17 +57,10 @@ table.decs th { color: var(--muted); font-weight: 600; }
 .chip { border: 1px solid var(--dss); color: var(--fg); background: var(--bg); border-radius: 14px; padding: 3px 10px; font: inherit; font-size: 12px; cursor: pointer; }
 .chip.on { background: var(--dss); color: var(--bg); }
 .chip b { font-weight: 600; margin-right: 4px; }
-.step { display: none; position: sticky; top: 0; z-index: 5; background: var(--bg); border: 1px solid var(--hi); border-radius: 8px; padding: 8px 12px; margin: 0 0 12px; font-size: 13px; }
-.wrap, #spech { scroll-margin-top: 64px; }
-.step b { margin-right: 8px; }
-.step a { color: var(--ct); margin-left: 10px; }
-.step .note { margin-top: 2px; }
-.outline { outline: 2px solid var(--hi); outline-offset: 4px; border-radius: 6px; }
 </style>
 </head>
 <body>
 <main>
-<div class="step" id="step"></div>
 <h1>__TITLE__</h1>
 <p class="lead">Each box is a node of the cdisc-for-all graphs: a row of a published table, or an NCIt concept. Each line is a link, named as in <code>schema/links.yaml</code>. A test reaches the Biomedical Concept in two ways: through the NCIt concept they share (solid line), or through a Specialization that assigns the test (dashed line). Click a box to see its triples, the published values under their published column names; click a line to see its link.</p>
 <div class="legend">
@@ -203,56 +196,6 @@ panel.addEventListener('click', ev => { const a = ev.target.closest('a.nav'); if
 svg.addEventListener('click', () => { highlight(null, null); document.querySelectorAll('.chip').forEach(c => c.classList.remove('on')); });
 const tbody = document.querySelector('#decs tbody');
 DATA.decs.forEach(r => { const tr = document.createElement('tr'); tr.innerHTML = r.map(c => `<td>${esc(c)}</td>`).join(''); tbody.appendChild(tr); });
-// The guided reading (the start page of the GitHub Pages site links here with #step=...): each step
-// highlights the part of the graph that answers one question. It adds no value to the graph.
-const COLS = Object.fromEntries(DATA.columns.map(c => [c[0], c[2]]));
-const STEPS = [
-  ['what', 'What is this test?', () => {
-    const ids = new Set([...COLS.Test, ...COLS.Concept, ...COLS.BC]), on = new Set();
-    DATA.edges.forEach((e, k) => { if (ids.has(e[0]) && ids.has(e[1])) on.add(k); });
-    if (COLS.Concept.length) showNode(COLS.Concept[0]);
-    highlight(ids, on);
-    return COLS.Concept.length ? '' : 'This test has no NCIt concept in the graph.';
-  }],
-  ['specify', 'What must I specify to measure it?', () => {
-    const ids = new Set([...COLS.BC, ...COLS.DEC]), on = new Set();
-    DATA.edges.forEach((e, k) => { if (COLS.BC.includes(e[0]) && COLS.DEC.includes(e[1])) on.add(k); });
-    highlight(ids, on);
-    panel.innerHTML = '<h3>Data Element Concepts</h3><div class="src">COSMoS BC rows: one per DEC of the BC</div><table>'
-      + DATA.decs.map(r => `<tr><td>${esc(r[0])}</td><td>${esc(r[2])}${r[3] ? ': ' + esc(r[3]) : ''}</td></tr>`).join('') + '</table>';
-    return COLS.DEC.length ? '' : 'No COSMoS BC with Data Element Concepts has the concept of this test.';
-  }],
-  ['variants', 'Which variants exist?', () => {
-    highlight(null, null);
-    document.getElementById('chips').classList.add('outline');
-    document.getElementById('spech').scrollIntoView({behavior: 'smooth'});
-    panel.innerHTML = '<h3>Specializations</h3><div class="src">COSMoS Dataset Specializations (SDTMGroup); click one to see what it binds</div><table>'
-      + DATA.specializations.map(v => `<tr><td>${esc(v.vlm_group_id)}</td><td>${esc(v.short_name)}</td></tr>`).join('') + '</table>';
-    return DATA.specializations.length ? '' : 'No Specialization binds a value to a DEC of this test.';
-  }],
-  ['values', 'Which values are allowed?', () => {
-    const ids = new Set([...COLS.DEC, ...COLS.Values]), on = new Set();
-    DATA.edges.forEach((e, k) => { if (COLS.DEC.includes(e[0]) && COLS.Values.includes(e[1])) on.add(k); });
-    highlight(ids, on);
-    panel.innerHTML = '<h3>Bound CT terms, per DEC</h3><div class="src">SDTM CT terms that Dataset Specialization rows bind to a DEC</div><table>'
-      + DATA.decs.filter(r => r[4]).map(r => `<tr><td>${esc(r[0])}</td><td>${esc(r[4])}</td></tr>`).join('') + '</table>';
-    return COLS.Values.length ? '' : 'No CT term is bound to a DEC of this test.';
-  }],
-];
-function runStep() {
-  const m = location.hash.match(/step=(\w+)/), box = document.getElementById('step');
-  document.getElementById('chips').classList.remove('outline');
-  const i = m ? STEPS.findIndex(s => s[0] === m[1]) : -1;
-  if (i < 0) { box.style.display = 'none'; if (m === null && location.hash === '') highlight(null, null); return; }
-  const none = STEPS[i][2]();
-  if (STEPS[i][0] !== 'variants') document.querySelector('.wrap').scrollIntoView({behavior: 'smooth'});
-  const prev = i > 0 ? `<a href="#step=${STEPS[i - 1][0]}">Back</a>` : '';
-  const next = i < STEPS.length - 1 ? `<a href="#step=${STEPS[i + 1][0]}">Next</a>` : '';
-  box.innerHTML = `<b>Step ${i + 1} of ${STEPS.length}</b>${esc(STEPS[i][1])}${prev}${next}<a href="#">Close</a>` + (none ? `<div class="note">${esc(none)}</div>` : '');
-  box.style.display = 'block';
-}
-window.addEventListener('hashchange', runStep);
-runStep();
 </script>
 </body>
 </html>
