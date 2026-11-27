@@ -1,0 +1,184 @@
+# The links between base rows. Hand-kept; the link-graph builder (cfa.link) and the link SHACL shapes are generated from it.
+# One slot per link. The slot is the link property: slot_uri {ns}link/{source}/{table}#{column} for a published
+# key, {ns}rule/{source}/{table}#{column} for a link by rule ({column} = the base column the link rests on).
+# domain = the base class of the rows the link starts from; range = the base class of the target rows.
+# Annotations (JSON lists where more than one column):
+#   link:          "published key" or "by rule"
+#   columns:       the base columns of the domain whose values are the key, in order; the last is the column the link rests on
+#   target:        the base columns of the range that the values must equal, in the same order
+#   target_empty:  base columns of the range that must be empty on the target (optional)
+#   separator:     the column holds several keys, split at this text, surrounding spaces removed (optional)
+#   rule:          the rule, stated (by rule only)
+# A link is made only where the target row exists and is the only row that matches. A row that has a value in the
+# link column and no link is reported (SHACL, sh:Info): that report is Link_Check. Broken links stay broken.
+id: https://kerfors.github.io/cdisc-for-all/def/links
+name: links
+title: cdisc-for-all, the links between base rows
+prefixes:
+  linkml: https://w3id.org/linkml/
+imports:
+  - linkml:types
+  - nsv_registry
+  - cosmos
+  - sdtmig
+  - sdtm_model
+  - sdtm_ct
+  - ncit_flat
+  - nci_code_cui_map
+default_range: string
+slots:
+
+  # --- SDTM CT
+
+  "sdtm-ct term to codelist":
+    description: A term row of SDTM CT to the codelist row of its codelist.
+    slot_uri: https://kerfors.github.io/cdisc-for-all/link/sdtm-ct/SDTM%20Terminology#Codelist%20Code
+    domain: "SDTM Terminology"
+    range: "SDTM Terminology"
+    annotations:
+      link: published key
+      columns: '["Codelist Code"]'
+      target: '["Code"]'
+      target_empty: '["Codelist Code"]'
+
+  "sdtm-ct to NCIt":
+    description: A row of SDTM CT (codelist or term) to the NCIt concept of its code.
+    slot_uri: https://kerfors.github.io/cdisc-for-all/link/sdtm-ct/SDTM%20Terminology#Code
+    domain: "SDTM Terminology"
+    range: "Thesaurus"
+    annotations:
+      link: published key
+      columns: '["Code"]'
+      target: '["code"]'
+
+  # --- COSMoS
+
+  "cosmos dataset specialization to codelist":
+    description: A Dataset Specialization variable row to the SDTM CT codelist row of its codelist.
+    slot_uri: https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_sdtm_dataset_specializations_latest#codelist
+    domain: cdisc_sdtm_dataset_specializations_latest
+    range: "SDTM Terminology"
+    annotations:
+      link: published key
+      columns: '["codelist"]'
+      target: '["Code"]'
+      target_empty: '["Codelist Code"]'
+
+  "cosmos dataset specialization to assigned term":
+    description: A Dataset Specialization variable row to the SDTM CT term row of its assigned term, within its codelist.
+    slot_uri: https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_sdtm_dataset_specializations_latest#assigned_term
+    domain: cdisc_sdtm_dataset_specializations_latest
+    range: "SDTM Terminology"
+    annotations:
+      link: published key
+      columns: '["codelist", "assigned_term"]'
+      target: '["Codelist Code", "Code"]'
+
+  "cosmos dataset specialization to biomedical concept":
+    description: A Dataset Specialization variable row to the row of its BC in the BC hierarchy table (one row per BC).
+    slot_uri: https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_sdtm_dataset_specializations_latest#bc_id
+    domain: cdisc_sdtm_dataset_specializations_latest
+    range: cdisc_biomedical_concepts_hierarchy_latest
+    annotations:
+      link: published key
+      columns: '["bc_id"]'
+      target: '["bc_id"]'
+
+  "cosmos dataset specialization to data element concept":
+    description: A Dataset Specialization variable row to the BC row of its data element concept, within its BC.
+    slot_uri: https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_sdtm_dataset_specializations_latest#dec_id
+    domain: cdisc_sdtm_dataset_specializations_latest
+    range: cdisc_biomedical_concepts_latest
+    annotations:
+      link: published key
+      columns: '["bc_id", "dec_id"]'
+      target: '["bc_id", "dec_id"]'
+
+  "cosmos biomedical concept to NCIt":
+    description: A BC row to the NCIt concept of its ncit_code.
+    slot_uri: https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_biomedical_concepts_latest#ncit_code
+    domain: cdisc_biomedical_concepts_latest
+    range: "Thesaurus"
+    annotations:
+      link: published key
+      columns: '["ncit_code"]'
+      target: '["code"]'
+
+  "cosmos data element concept to NCIt":
+    description: A BC row to the NCIt concept of its ncit_dec_code.
+    slot_uri: https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_biomedical_concepts_latest#ncit_dec_code
+    domain: cdisc_biomedical_concepts_latest
+    range: "Thesaurus"
+    annotations:
+      link: published key
+      columns: '["ncit_dec_code"]'
+      target: '["code"]'
+
+  "cosmos biomedical concept to parent":
+    description: A BC row to the hierarchy row of its parent BC.
+    slot_uri: https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_biomedical_concepts_latest#parent_bc_id
+    domain: cdisc_biomedical_concepts_latest
+    range: cdisc_biomedical_concepts_hierarchy_latest
+    annotations:
+      link: published key
+      columns: '["parent_bc_id"]'
+      target: '["bc_id"]'
+
+  "cosmos hierarchy to parent":
+    description: A BC hierarchy row to the hierarchy row of its parent BC.
+    slot_uri: https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_biomedical_concepts_hierarchy_latest#parent_bc_id
+    domain: cdisc_biomedical_concepts_hierarchy_latest
+    range: cdisc_biomedical_concepts_hierarchy_latest
+    annotations:
+      link: published key
+      columns: '["parent_bc_id"]'
+      target: '["bc_id"]'
+
+  # --- SDTMIG and SDTM Model (sign-in sources)
+
+  "sdtmig variable to codelist":
+    description: An SDTMIG variable row to the SDTM CT codelist row of each code in its CDISC CT Codelist Code(s).
+    slot_uri: https://kerfors.github.io/cdisc-for-all/link/sdtmig/SDTMIG#CDISC%20CT%20Codelist%20Code%28s%29
+    domain: "SDTMIG"
+    range: "SDTM Terminology"
+    multivalued: true
+    annotations:
+      link: published key
+      columns: '["CDISC CT Codelist Code(s)"]'
+      target: '["Code"]'
+      target_empty: '["Codelist Code"]'
+      separator: ";"
+
+  "sdtm-model variable to NCIt":
+    description: An SDTM Model variable row to the NCIt concept of its Variable C-Code.
+    slot_uri: https://kerfors.github.io/cdisc-for-all/link/sdtm-model/SDTM#Variable%20C-Code
+    domain: "SDTM"
+    range: "Thesaurus"
+    annotations:
+      link: published key
+      columns: '["Variable C-Code"]'
+      target: '["code"]'
+
+  # --- NCIt
+
+  "ncit concept to parent":
+    description: An NCIt concept to each concept in its parents.
+    slot_uri: https://kerfors.github.io/cdisc-for-all/link/ncit-flat/Thesaurus#parents
+    domain: "Thesaurus"
+    range: "Thesaurus"
+    multivalued: true
+    annotations:
+      link: published key
+      columns: '["parents"]'
+      target: '["code"]'
+      separator: "|"
+
+  "nci code-cui map to NCIt":
+    description: A row of the code-CUI map to the NCIt concept of its code.
+    slot_uri: https://kerfors.github.io/cdisc-for-all/link/nci-code-cui-map/nci_code_cui_map#code
+    domain: "nci_code_cui_map"
+    range: "Thesaurus"
+    annotations:
+      link: published key
+      columns: '["code"]'
+      target: '["code"]'

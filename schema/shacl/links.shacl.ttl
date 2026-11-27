@@ -1,0 +1,253 @@
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+
+<https://kerfors.github.io/cdisc-for-all/shape/cosmos%20biomedical%20concept%20to%20NCIt>
+    a sh:NodeShape ;
+    sh:severity sh:Info ;
+    sh:sparql <https://kerfors.github.io/cdisc-for-all/shape/cosmos%20biomedical%20concept%20to%20NCIt-sparql> ;
+    sh:target <https://kerfors.github.io/cdisc-for-all/shape/cosmos%20biomedical%20concept%20to%20NCIt-target> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/cosmos%20biomedical%20concept%20to%20parent>
+    a sh:NodeShape ;
+    sh:severity sh:Info ;
+    sh:sparql <https://kerfors.github.io/cdisc-for-all/shape/cosmos%20biomedical%20concept%20to%20parent-sparql> ;
+    sh:target <https://kerfors.github.io/cdisc-for-all/shape/cosmos%20biomedical%20concept%20to%20parent-target> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/cosmos%20data%20element%20concept%20to%20NCIt>
+    a sh:NodeShape ;
+    sh:severity sh:Info ;
+    sh:sparql <https://kerfors.github.io/cdisc-for-all/shape/cosmos%20data%20element%20concept%20to%20NCIt-sparql> ;
+    sh:target <https://kerfors.github.io/cdisc-for-all/shape/cosmos%20data%20element%20concept%20to%20NCIt-target> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/cosmos%20dataset%20specialization%20to%20assigned%20term>
+    a sh:NodeShape ;
+    sh:severity sh:Info ;
+    sh:sparql <https://kerfors.github.io/cdisc-for-all/shape/cosmos%20dataset%20specialization%20to%20assigned%20term-sparql> ;
+    sh:target <https://kerfors.github.io/cdisc-for-all/shape/cosmos%20dataset%20specialization%20to%20assigned%20term-target> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/cosmos%20dataset%20specialization%20to%20biomedical%20concept>
+    a sh:NodeShape ;
+    sh:severity sh:Info ;
+    sh:sparql <https://kerfors.github.io/cdisc-for-all/shape/cosmos%20dataset%20specialization%20to%20biomedical%20concept-sparql> ;
+    sh:target <https://kerfors.github.io/cdisc-for-all/shape/cosmos%20dataset%20specialization%20to%20biomedical%20concept-target> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/cosmos%20dataset%20specialization%20to%20codelist>
+    a sh:NodeShape ;
+    sh:severity sh:Info ;
+    sh:sparql <https://kerfors.github.io/cdisc-for-all/shape/cosmos%20dataset%20specialization%20to%20codelist-sparql> ;
+    sh:target <https://kerfors.github.io/cdisc-for-all/shape/cosmos%20dataset%20specialization%20to%20codelist-target> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/cosmos%20dataset%20specialization%20to%20data%20element%20concept>
+    a sh:NodeShape ;
+    sh:severity sh:Info ;
+    sh:sparql <https://kerfors.github.io/cdisc-for-all/shape/cosmos%20dataset%20specialization%20to%20data%20element%20concept-sparql> ;
+    sh:target <https://kerfors.github.io/cdisc-for-all/shape/cosmos%20dataset%20specialization%20to%20data%20element%20concept-target> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/cosmos%20hierarchy%20to%20parent>
+    a sh:NodeShape ;
+    sh:severity sh:Info ;
+    sh:sparql <https://kerfors.github.io/cdisc-for-all/shape/cosmos%20hierarchy%20to%20parent-sparql> ;
+    sh:target <https://kerfors.github.io/cdisc-for-all/shape/cosmos%20hierarchy%20to%20parent-target> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/nci%20code-cui%20map%20to%20NCIt>
+    a sh:NodeShape ;
+    sh:severity sh:Info ;
+    sh:sparql <https://kerfors.github.io/cdisc-for-all/shape/nci%20code-cui%20map%20to%20NCIt-sparql> ;
+    sh:target <https://kerfors.github.io/cdisc-for-all/shape/nci%20code-cui%20map%20to%20NCIt-target> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/ncit%20concept%20to%20parent>
+    a sh:NodeShape ;
+    sh:severity sh:Info ;
+    sh:sparql <https://kerfors.github.io/cdisc-for-all/shape/ncit%20concept%20to%20parent-sparql> ;
+    sh:target <https://kerfors.github.io/cdisc-for-all/shape/ncit%20concept%20to%20parent-target> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/sdtm-ct%20term%20to%20codelist>
+    a sh:NodeShape ;
+    sh:severity sh:Info ;
+    sh:sparql <https://kerfors.github.io/cdisc-for-all/shape/sdtm-ct%20term%20to%20codelist-sparql> ;
+    sh:target <https://kerfors.github.io/cdisc-for-all/shape/sdtm-ct%20term%20to%20codelist-target> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/sdtm-ct%20to%20NCIt>
+    a sh:NodeShape ;
+    sh:severity sh:Info ;
+    sh:sparql <https://kerfors.github.io/cdisc-for-all/shape/sdtm-ct%20to%20NCIt-sparql> ;
+    sh:target <https://kerfors.github.io/cdisc-for-all/shape/sdtm-ct%20to%20NCIt-target> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/sdtm-model%20variable%20to%20NCIt>
+    a sh:NodeShape ;
+    sh:severity sh:Info ;
+    sh:sparql <https://kerfors.github.io/cdisc-for-all/shape/sdtm-model%20variable%20to%20NCIt-sparql> ;
+    sh:target <https://kerfors.github.io/cdisc-for-all/shape/sdtm-model%20variable%20to%20NCIt-target> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/sdtmig%20variable%20to%20codelist>
+    a sh:NodeShape ;
+    sh:severity sh:Info ;
+    sh:sparql <https://kerfors.github.io/cdisc-for-all/shape/sdtmig%20variable%20to%20codelist-sparql> ;
+    sh:target <https://kerfors.github.io/cdisc-for-all/shape/sdtmig%20variable%20to%20codelist-target> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/cosmos%20biomedical%20concept%20to%20NCIt-sparql>
+    a sh:SPARQLConstraint ;
+    sh:message "cosmos biomedical concept to NCIt: no published key link for the value" ;
+    sh:select "SELECT $this ?value WHERE { $this <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_latest#ncit_code> ?value . FILTER NOT EXISTS { $this <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_biomedical_concepts_latest#ncit_code> ?t } }" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/cosmos%20biomedical%20concept%20to%20NCIt-target>
+    a sh:SPARQLTarget ;
+    sh:select "SELECT ?this ?value WHERE { ?this a <https://kerfors.github.io/cdisc-for-all/def/cosmos#cdisc_biomedical_concepts_latest> . ?this <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_latest#ncit_code> ?value . FILTER NOT EXISTS { ?this <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_biomedical_concepts_latest#ncit_code> ?t } }" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/cosmos%20biomedical%20concept%20to%20parent-sparql>
+    a sh:SPARQLConstraint ;
+    sh:message "cosmos biomedical concept to parent: no published key link for the value" ;
+    sh:select "SELECT $this ?value WHERE { $this <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_latest#parent_bc_id> ?value . FILTER NOT EXISTS { $this <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_biomedical_concepts_latest#parent_bc_id> ?t } }" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/cosmos%20biomedical%20concept%20to%20parent-target>
+    a sh:SPARQLTarget ;
+    sh:select "SELECT ?this ?value WHERE { ?this a <https://kerfors.github.io/cdisc-for-all/def/cosmos#cdisc_biomedical_concepts_latest> . ?this <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_latest#parent_bc_id> ?value . FILTER NOT EXISTS { ?this <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_biomedical_concepts_latest#parent_bc_id> ?t } }" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/cosmos%20data%20element%20concept%20to%20NCIt-sparql>
+    a sh:SPARQLConstraint ;
+    sh:message "cosmos data element concept to NCIt: no published key link for the value" ;
+    sh:select "SELECT $this ?value WHERE { $this <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_latest#ncit_dec_code> ?value . FILTER NOT EXISTS { $this <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_biomedical_concepts_latest#ncit_dec_code> ?t } }" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/cosmos%20data%20element%20concept%20to%20NCIt-target>
+    a sh:SPARQLTarget ;
+    sh:select "SELECT ?this ?value WHERE { ?this a <https://kerfors.github.io/cdisc-for-all/def/cosmos#cdisc_biomedical_concepts_latest> . ?this <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_latest#ncit_dec_code> ?value . FILTER NOT EXISTS { ?this <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_biomedical_concepts_latest#ncit_dec_code> ?t } }" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/cosmos%20dataset%20specialization%20to%20assigned%20term-sparql>
+    a sh:SPARQLConstraint ;
+    sh:message "cosmos dataset specialization to assigned term: no published key link for the value" ;
+    sh:select "SELECT $this ?value WHERE { $this <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#assigned_term> ?value . FILTER NOT EXISTS { $this <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_sdtm_dataset_specializations_latest#assigned_term> ?t } }" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/cosmos%20dataset%20specialization%20to%20assigned%20term-target>
+    a sh:SPARQLTarget ;
+    sh:select "SELECT ?this ?value WHERE { ?this a <https://kerfors.github.io/cdisc-for-all/def/cosmos#cdisc_sdtm_dataset_specializations_latest> . ?this <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#assigned_term> ?value . FILTER NOT EXISTS { ?this <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_sdtm_dataset_specializations_latest#assigned_term> ?t } }" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/cosmos%20dataset%20specialization%20to%20biomedical%20concept-sparql>
+    a sh:SPARQLConstraint ;
+    sh:message "cosmos dataset specialization to biomedical concept: no published key link for the value" ;
+    sh:select "SELECT $this ?value WHERE { $this <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#bc_id> ?value . FILTER NOT EXISTS { $this <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_sdtm_dataset_specializations_latest#bc_id> ?t } }" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/cosmos%20dataset%20specialization%20to%20biomedical%20concept-target>
+    a sh:SPARQLTarget ;
+    sh:select "SELECT ?this ?value WHERE { ?this a <https://kerfors.github.io/cdisc-for-all/def/cosmos#cdisc_sdtm_dataset_specializations_latest> . ?this <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#bc_id> ?value . FILTER NOT EXISTS { ?this <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_sdtm_dataset_specializations_latest#bc_id> ?t } }" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/cosmos%20dataset%20specialization%20to%20codelist-sparql>
+    a sh:SPARQLConstraint ;
+    sh:message "cosmos dataset specialization to codelist: no published key link for the value" ;
+    sh:select "SELECT $this ?value WHERE { $this <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#codelist> ?value . FILTER NOT EXISTS { $this <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_sdtm_dataset_specializations_latest#codelist> ?t } }" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/cosmos%20dataset%20specialization%20to%20codelist-target>
+    a sh:SPARQLTarget ;
+    sh:select "SELECT ?this ?value WHERE { ?this a <https://kerfors.github.io/cdisc-for-all/def/cosmos#cdisc_sdtm_dataset_specializations_latest> . ?this <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#codelist> ?value . FILTER NOT EXISTS { ?this <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_sdtm_dataset_specializations_latest#codelist> ?t } }" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/cosmos%20dataset%20specialization%20to%20data%20element%20concept-sparql>
+    a sh:SPARQLConstraint ;
+    sh:message "cosmos dataset specialization to data element concept: no published key link for the value" ;
+    sh:select "SELECT $this ?value WHERE { $this <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#dec_id> ?value . FILTER NOT EXISTS { $this <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_sdtm_dataset_specializations_latest#dec_id> ?t } }" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/cosmos%20dataset%20specialization%20to%20data%20element%20concept-target>
+    a sh:SPARQLTarget ;
+    sh:select "SELECT ?this ?value WHERE { ?this a <https://kerfors.github.io/cdisc-for-all/def/cosmos#cdisc_sdtm_dataset_specializations_latest> . ?this <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#dec_id> ?value . FILTER NOT EXISTS { ?this <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_sdtm_dataset_specializations_latest#dec_id> ?t } }" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/cosmos%20hierarchy%20to%20parent-sparql>
+    a sh:SPARQLConstraint ;
+    sh:message "cosmos hierarchy to parent: no published key link for the value" ;
+    sh:select "SELECT $this ?value WHERE { $this <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_hierarchy_latest#parent_bc_id> ?value . FILTER NOT EXISTS { $this <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_biomedical_concepts_hierarchy_latest#parent_bc_id> ?t } }" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/cosmos%20hierarchy%20to%20parent-target>
+    a sh:SPARQLTarget ;
+    sh:select "SELECT ?this ?value WHERE { ?this a <https://kerfors.github.io/cdisc-for-all/def/cosmos#cdisc_biomedical_concepts_hierarchy_latest> . ?this <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_hierarchy_latest#parent_bc_id> ?value . FILTER NOT EXISTS { ?this <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_biomedical_concepts_hierarchy_latest#parent_bc_id> ?t } }" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/nci%20code-cui%20map%20to%20NCIt-sparql>
+    a sh:SPARQLConstraint ;
+    sh:message "nci code-cui map to NCIt: no published key link for the value" ;
+    sh:select "SELECT $this ?value WHERE { $this <https://kerfors.github.io/cdisc-for-all/def/nci-code-cui-map/nci_code_cui_map#code> ?value . FILTER NOT EXISTS { $this <https://kerfors.github.io/cdisc-for-all/link/nci-code-cui-map/nci_code_cui_map#code> ?t } }" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/nci%20code-cui%20map%20to%20NCIt-target>
+    a sh:SPARQLTarget ;
+    sh:select "SELECT ?this ?value WHERE { ?this a <https://kerfors.github.io/cdisc-for-all/def/nci-code-cui-map#nci_code_cui_map> . ?this <https://kerfors.github.io/cdisc-for-all/def/nci-code-cui-map/nci_code_cui_map#code> ?value . FILTER NOT EXISTS { ?this <https://kerfors.github.io/cdisc-for-all/link/nci-code-cui-map/nci_code_cui_map#code> ?t } }" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/ncit%20concept%20to%20parent-sparql>
+    a sh:SPARQLConstraint ;
+    sh:message "ncit concept to parent: no published key link for the value" ;
+    sh:select "SELECT $this ?value WHERE { $this <https://kerfors.github.io/cdisc-for-all/def/ncit-flat/Thesaurus#parents> ?value . OPTIONAL { $this <https://kerfors.github.io/cdisc-for-all/link/ncit-flat/Thesaurus#parents> ?t } } GROUP BY $this ?value HAVING (COUNT(DISTINCT ?t) < (STRLEN(?value) - STRLEN(REPLACE(?value, \"|\", \"\", \"q\"))) / STRLEN(\"|\") + 1)" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/ncit%20concept%20to%20parent-target>
+    a sh:SPARQLTarget ;
+    sh:select "SELECT ?this ?value WHERE { ?this a <https://kerfors.github.io/cdisc-for-all/def/ncit-flat#Thesaurus> . ?this <https://kerfors.github.io/cdisc-for-all/def/ncit-flat/Thesaurus#parents> ?value . OPTIONAL { ?this <https://kerfors.github.io/cdisc-for-all/link/ncit-flat/Thesaurus#parents> ?t } } GROUP BY ?this ?value HAVING (COUNT(DISTINCT ?t) < (STRLEN(?value) - STRLEN(REPLACE(?value, \"|\", \"\", \"q\"))) / STRLEN(\"|\") + 1)" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/sdtm-ct%20term%20to%20codelist-sparql>
+    a sh:SPARQLConstraint ;
+    sh:message "sdtm-ct term to codelist: no published key link for the value" ;
+    sh:select "SELECT $this ?value WHERE { $this <https://kerfors.github.io/cdisc-for-all/def/sdtm-ct/SDTM%20Terminology#Codelist%20Code> ?value . FILTER NOT EXISTS { $this <https://kerfors.github.io/cdisc-for-all/link/sdtm-ct/SDTM%20Terminology#Codelist%20Code> ?t } }" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/sdtm-ct%20term%20to%20codelist-target>
+    a sh:SPARQLTarget ;
+    sh:select "SELECT ?this ?value WHERE { ?this a <https://kerfors.github.io/cdisc-for-all/def/sdtm-ct#SDTM%20Terminology> . ?this <https://kerfors.github.io/cdisc-for-all/def/sdtm-ct/SDTM%20Terminology#Codelist%20Code> ?value . FILTER NOT EXISTS { ?this <https://kerfors.github.io/cdisc-for-all/link/sdtm-ct/SDTM%20Terminology#Codelist%20Code> ?t } }" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/sdtm-ct%20to%20NCIt-sparql>
+    a sh:SPARQLConstraint ;
+    sh:message "sdtm-ct to NCIt: no published key link for the value" ;
+    sh:select "SELECT $this ?value WHERE { $this <https://kerfors.github.io/cdisc-for-all/def/sdtm-ct/SDTM%20Terminology#Code> ?value . FILTER NOT EXISTS { $this <https://kerfors.github.io/cdisc-for-all/link/sdtm-ct/SDTM%20Terminology#Code> ?t } }" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/sdtm-ct%20to%20NCIt-target>
+    a sh:SPARQLTarget ;
+    sh:select "SELECT ?this ?value WHERE { ?this a <https://kerfors.github.io/cdisc-for-all/def/sdtm-ct#SDTM%20Terminology> . ?this <https://kerfors.github.io/cdisc-for-all/def/sdtm-ct/SDTM%20Terminology#Code> ?value . FILTER NOT EXISTS { ?this <https://kerfors.github.io/cdisc-for-all/link/sdtm-ct/SDTM%20Terminology#Code> ?t } }" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/sdtm-model%20variable%20to%20NCIt-sparql>
+    a sh:SPARQLConstraint ;
+    sh:message "sdtm-model variable to NCIt: no published key link for the value" ;
+    sh:select "SELECT $this ?value WHERE { $this <https://kerfors.github.io/cdisc-for-all/def/sdtm-model/SDTM#Variable%20C-Code> ?value . FILTER NOT EXISTS { $this <https://kerfors.github.io/cdisc-for-all/link/sdtm-model/SDTM#Variable%20C-Code> ?t } }" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/sdtm-model%20variable%20to%20NCIt-target>
+    a sh:SPARQLTarget ;
+    sh:select "SELECT ?this ?value WHERE { ?this a <https://kerfors.github.io/cdisc-for-all/def/sdtm-model#SDTM> . ?this <https://kerfors.github.io/cdisc-for-all/def/sdtm-model/SDTM#Variable%20C-Code> ?value . FILTER NOT EXISTS { ?this <https://kerfors.github.io/cdisc-for-all/link/sdtm-model/SDTM#Variable%20C-Code> ?t } }" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/sdtmig%20variable%20to%20codelist-sparql>
+    a sh:SPARQLConstraint ;
+    sh:message "sdtmig variable to codelist: no published key link for the value" ;
+    sh:select "SELECT $this ?value WHERE { $this <https://kerfors.github.io/cdisc-for-all/def/sdtmig/SDTMIG#CDISC%20CT%20Codelist%20Code%28s%29> ?value . OPTIONAL { $this <https://kerfors.github.io/cdisc-for-all/link/sdtmig/SDTMIG#CDISC%20CT%20Codelist%20Code%28s%29> ?t } } GROUP BY $this ?value HAVING (COUNT(DISTINCT ?t) < (STRLEN(?value) - STRLEN(REPLACE(?value, \";\", \"\", \"q\"))) / STRLEN(\";\") + 1)" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/sdtmig%20variable%20to%20codelist-target>
+    a sh:SPARQLTarget ;
+    sh:select "SELECT ?this ?value WHERE { ?this a <https://kerfors.github.io/cdisc-for-all/def/sdtmig#SDTMIG> . ?this <https://kerfors.github.io/cdisc-for-all/def/sdtmig/SDTMIG#CDISC%20CT%20Codelist%20Code%28s%29> ?value . OPTIONAL { ?this <https://kerfors.github.io/cdisc-for-all/link/sdtmig/SDTMIG#CDISC%20CT%20Codelist%20Code%28s%29> ?t } } GROUP BY ?this ?value HAVING (COUNT(DISTINCT ?t) < (STRLEN(?value) - STRLEN(REPLACE(?value, \";\", \"\", \"q\"))) / STRLEN(\";\") + 1)" ;
+.

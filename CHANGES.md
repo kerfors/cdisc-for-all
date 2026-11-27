@@ -33,3 +33,9 @@
 ## The layer after base is named "linked" (2026-11-27)
 
 **Docs.** The layer after base, earlier called "pure", is named "linked" in the README and the index schema comment. The README states that it holds only published content, nothing derived.
+
+## Step 6 — the linked layer: published-key links and Link_Check (2026-11-27)
+
+**Code.** `schema/links.yaml`, imported by the index schema: one LinkML slot per link between base rows. The slot is the link property (`link/{source}/{table}#{column}` for a published key, `rule/…` for a link by rule); its domain and range are the base classes; annotations give the key columns, the target columns, target columns that must be empty, a separator for a cell of several keys (split there, surrounding spaces removed) and, for a link by rule, the rule. The first links are published keys within and between SDTM CT, COSMoS, SDTMIG, the SDTM Model, NCIt FLAT and the code–CUI map. A link to a Biomedical Concept goes to its row in the BC hierarchy table (one row per BC). `cfa.link` checks the links, builds each link's triples from the base graphs (a link only where the key matches exactly one target row; a key with an empty part gets none) and generates the link shapes: SHACL-SPARQL, severity Info, with SHACL-AF SPARQL targets. `checks/00_Schema` writes the link shapes. `linked/Make_Links` reads only the base graphs, writes the link graph, validates base and links against the link shapes, and renders Link_Check from the validation report. Links that start from or end at a row of a sign-in source are written to a separate file that is not published.
+
+**Content.** The `links` named graph, Link_Check (every row with a value in a link column and no link, or fewer links than keys; broken links are reported, not repaired) and Provenance.

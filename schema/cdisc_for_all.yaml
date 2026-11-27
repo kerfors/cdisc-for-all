@@ -1,4 +1,4 @@
-# The index schema: imports every module. Base modules first; links.yaml and linked.yaml follow in later steps.
+# The index schema: imports every module. Base modules first, then links.yaml; linked.yaml follows in a later step.
 id: https://kerfors.github.io/cdisc-for-all/def
 name: cdisc-for-all
 title: cdisc-for-all, the contract
@@ -13,4 +13,5 @@ imports:
   - sdtm_ct
   - ncit_flat
   - nci_code_cui_map
+  - links
 default_range: string
