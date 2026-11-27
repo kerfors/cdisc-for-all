@@ -39,6 +39,18 @@
    "graph_sha256": "26ce8312c7087b9e92fc2b9ac26f8761f89cc69402d586487d9af2081737f8a6"
   }
  },
+ "sssom": {
+  "by-rule": {
+   "file": "by-rule.sssom.tsv",
+   "rows": 33,
+   "sha256": "28bffe1636dde48bab598c51ec90c1ec3395fba3614afb44b5cb9c3817afd829"
+  },
+  "by-rule-signin": {
+   "file": "by-rule-signin.sssom.tsv",
+   "rows": 2119,
+   "sha256": "8203a89f1aa2794c700e227bc1ade5ae3e04c8b22d47a5936e3060dc54a014bc"
+  }
+ },
  "graph_sha256_method": "SHA-256 of the canonical N-Triples (RDFC-1.0; no blank nodes)",
  "link_check_text_sha256": "a9a049d3b5cdced7821603a4f70366667e350c3f60222b34277865a5a121902b",
  "text_sha256_method": "SHA-256 (UTF-8) of the JSON array [header, row, ...], each an array of strings (empty cell \"\"), rows sorted by the key columns in code point order, json.dumps(ensure_ascii=False, separators=(\",\", \":\")).",
