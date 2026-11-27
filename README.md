@@ -9,7 +9,7 @@ The CDISC standards and the NCI Thesaurus are published as separate files, in di
 ## Two layers
 
 - **base** — one reader per source. It writes the source as an RDF graph in the shape the source publishes: one class per table, one property per published column, one node per row, every non-empty cell as a literal with its text unchanged. Its only selection is the scope (below). Each graph comes with an Excel view of the same table, generated from the graph.
-- **linked** — reads only the base graphs, plus pinned rule documents (COSMoS's own LinkML model). It makes the links between the sources, restates the COSMoS export in COSMoS's authored model, and generates the Excel files a consumer opens: one combined file per SDTM observation class, and Link_Check. Only published content, nothing derived: every value comes from a base graph unchanged, a link rests on a published key or on a stated rule, and a view only reshapes published facts losslessly.
+- **linked** — reads only the base graphs, plus pinned rule documents (COSMoS's own LinkML model). It makes the links between the sources, restates the COSMoS export in COSMoS's authored model, and reports every reference that does not resolve in Link_Check. Only published content, nothing derived: every value comes from a base graph unchanged, a link rests on a published key or on a stated rule, and a view only reshapes published facts losslessly.
 
 ## The rules
 
@@ -23,7 +23,7 @@ Content and shape are different things. A view that shows the same published fac
 
 ## How it is checked
 
-- One LinkML schema describes the base graphs, the links and the linked sheets. SHACL shapes are generated from it: structural shapes must pass; link shapes report every reference that does not resolve, and that report is Link_Check.
+- One LinkML schema describes the base graphs and the links. SHACL shapes are generated from it: structural shapes must pass; link shapes report every reference that does not resolve, and that report is Link_Check.
 - Each graph has a content hash: SHA-256 of its canonical N-Triples (RDFC-1.0; the graphs have no blank nodes). Each Excel sheet has a text hash of the sheet read back as text.
 - A base graph is lossless when its Excel view, sorted by key, has the same text hash as the source table read as text.
 - The release check reads the source files again and compares.
@@ -34,7 +34,7 @@ Every pin is in [`Reference_Versions.json`](Reference_Versions.json): version, f
 
 | Source | Publisher | Access |
 |---|---|---|
-| COSMoS Biomedical Concepts and SDTM Dataset Specializations (Package 19) | CDISC | public (github.com/cdisc-org/COSMoS, `export/`) |
+| COSMoS Biomedical Concepts and SDTM Dataset Specializations (latest export, Package 19) | CDISC | public (github.com/cdisc-org/COSMoS, `export/`) |
 | SDTM Controlled Terminology 2026-09-25 | CDISC, via NCI EVS | public |
 | NCI Thesaurus, FLAT file, release 26.09d (built 2026-09-29) | NCI EVS | public |
 | NCIt code to CUI map (no release; pinned by date and SHA-256) | NCI EVS | public |
@@ -42,7 +42,7 @@ Every pin is in [`Reference_Versions.json`](Reference_Versions.json): version, f
 | SDTMIG v3.4 variable table | CDISC | cdisc.org sign-in |
 | SDTM v2.0 variable table | CDISC | cdisc.org sign-in |
 
-**Scope.** SDTM CT and NCIt are not carried in full: SDTM CT is carried for the codelists COSMoS refers to or SDTMIG v3.4 binds, with all their terms; NCIt for the concepts of those codelists and terms, the COSMoS concepts and the SDTM Model variable concepts, with all their ancestors.
+**Scope.** SDTM CT and NCIt are not carried in full: SDTM CT is carried for the codelists COSMoS refers to or SDTMIG v3.4 binds, with all their terms; NCIt for the concepts of those codelists and terms, the COSMoS concepts and the SDTM Model variable concepts, with all their ancestors. COSMoS is carried as its latest export only (the `_latest` files of `export/`), not the archived packages.
 
 ## Identifiers
 
@@ -51,10 +51,10 @@ IRIs are in the namespace `https://kerfors.github.io/cdisc-for-all/` and are mad
 ## Layout
 
 ```
-schema/          the LinkML schema (one module per source, links, linked) and the generated SHACL
+schema/          the LinkML schema (one module per source, links, the COSMoS model mapping) and the generated SHACL
 cfa/             the shared helper: reading, writing, IRIs, hashes, Schema sheets, Provenance
 base/<source>/   reader notebook, downloads/ (not in git), the graph (.ttl), its Excel view, Provenance
-linked/          the link graphs, the COSMoS model graph, the class files, Link_Check
+linked/          the link graphs, the COSMoS model graph, Link_Check
 checks/          the schema check and the release check
 ```
 
