@@ -137,3 +137,7 @@ Kerstin's choices: the notebook starts from the published graphs, with no clone;
 ## Documentation — where to start (2026-11-27)
 
 Kerstin asked whether the documentation is aligned and easy to find. **Code.** `cfa/catalog.py`: llms.txt names the getting-started notebook. **Content.** README: a "Where to start" table near the top (study designer, standards specialist, developer, AI agent, anyone rebuilding). `index.html`: a section for developers and AI agents (getting-started notebook, llms.txt, catalog.ttl). `llms.txt` regenerated. `examples/pages/README.md`: the link map row moved below the test pages.
+
+## Documentation — planned work, ready to share (2026-11-27)
+
+Kerstin: the MCP server goes on the list of things to do; the site is to be shared after the Thanksgiving weekend. **Content.** README: a "Planned" section (MCP server, SPARQL cookbook, child BCs and Specialization test rows in the test concept graph, SSSOM for the other links by rule, release check) and where to send questions (GitHub issues). `index.html`: a short "Planned" section with the same pointer, and a page description for link previews (meta description, Open Graph).

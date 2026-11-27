@@ -90,6 +90,18 @@ checks/          the schema check and the CSVW cross-check (rdf-tabular)
 examples/        a SPARQL CONSTRUCT query over the graphs (the test concept graph), test_concept.py to run it per test C-code, an example notebook, a getting-started notebook for developers (published graphs, no clone), example pages for nine lab tests (pages/)
 ```
 
+## Planned
+
+Not built yet, in no fixed order:
+
+- **MCP server**, local (stdio): the published graphs in Oxigraph behind a few tools for an AI assistant, such as the test concept graph of a C-code, a read-only SPARQL SELECT and the description of one IRI, with `llms.txt`, `catalog.ttl` and `schema/links.yaml` as resources. It would start from `catalog.ttl` as the getting-started notebook does.
+- **SPARQL cookbook**: short, tested queries for common questions, each naming the links it follows.
+- **Test concept graph**: also follow child BCs and the test rows of the Specializations (for example WEIGHT, assigned under the child BC Body Weight).
+- **SSSOM** for the other links by rule.
+- **Release check**: read the source files again and compare (see [How it is checked](#how-it-is-checked)).
+
+Questions and comments: [GitHub issues](https://github.com/kerfors/cdisc-for-all/issues).
+
 ## Content and licences
 
 The code, the schema and the documentation written for this repository are under the MIT licence ([LICENSE](LICENSE)). The content generated from the sources stays under the terms of its publishers:
