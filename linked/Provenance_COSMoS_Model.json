@@ -1,0 +1,47 @@
+{
+ "layer": "linked",
+ "graph": "https://kerfors.github.io/cdisc-for-all/graph/cosmos-model",
+ "inputs": {
+  "base/cosmos/cosmos.ttl": "ccbe3202c832e4513e93dd3e2b6d0ef4e8cd50f075194e0e6a40b1f6df991f26"
+ },
+ "rule_documents": {
+  "https://github.com/cdisc-org/COSMoS/blob/41fdf29f50cfb6e233861bbcbc8e3b339dcea3b4/model/cosmos_bc_model.yaml": "77e4d4ea525de369b3051e2277974327cd2d3797b76a95f85a7c6f566b319eee",
+  "https://github.com/cdisc-org/COSMoS/blob/41fdf29f50cfb6e233861bbcbc8e3b339dcea3b4/model/cosmos_sdtm_model.yaml": "0f845febaf952e29d1dc62a0165962e92439b8125b1769bc3bfae8ef933235cc"
+ },
+ "schema": {
+  "schema/cosmos_model.yaml": "fa353dabe84a68ff57244903571496fe4027ba8f438219ac72f1baf29c05c28f",
+  "schema/cosmos.yaml": "d0359d56fa57f584ba51ef0b25fa37ab609c85405c8f68a7fa2e34dc70891769"
+ },
+ "file": "cosmos-model.ttl",
+ "triples": 413154,
+ "graph_sha256": "b2605ac59c709efcd8ec1ef8f374f330ecb44a10dd121a1879a0487116f4495a",
+ "graph_sha256_method": "SHA-256 of the canonical N-Triples (RDFC-1.0; no blank nodes)",
+ "reverse_check": {
+  "cdisc_biomedical_concepts_latest": {
+   "rows": 7100,
+   "columns": 17,
+   "split_columns_compared_as_sets": [
+    "bc_categories",
+    "example_set",
+    "result_scales",
+    "synonyms"
+   ]
+  },
+  "cdisc_sdtm_dataset_specializations_latest": {
+   "rows": 15873,
+   "columns": 32,
+   "split_columns_compared_as_sets": [
+    "value_list"
+   ]
+  }
+ },
+ "repeated_parts_text_sha256": "60f4682d9c5f6c35e88a489f2a98254df9fba8e85254c93df237f7c3b7b84961",
+ "text_sha256_method": "SHA-256 (UTF-8) of the JSON array [header, row, ...], each an array of strings (empty cell \"\"), rows sorted by the key columns in code point order, json.dumps(ensure_ascii=False, separators=(\",\", \":\")).",
+ "tools": {
+  "rdflib": "7.6.0",
+  "linkml": "1.12.1",
+  "pyshacl": "0.40.2",
+  "openpyxl": "3.1.5",
+  "pandas": "3.1.1"
+ }
+}
