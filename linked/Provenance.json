@@ -10,8 +10,8 @@
   "base/nci-code-cui-map/nci-code-cui-map.ttl": "2bb377b7b4046b66cd6f68b69e72d427146a8181892669f916cc1c68524837b4"
  },
  "schema": {
-  "schema/links.yaml": "fbdfec591fdca7517d3c902719d5b75f33605458df86e95300f636c243ed2051",
-  "schema/shacl/links.shacl.ttl": "561f4f080ca324f3e350b88a4549a3f0b74fc34909aa399a301bfecd27615d60"
+  "schema/links.yaml": "0bf413ac4dc0b88220788635beeb93bd7fabed0d4d420ca73e64a4d794d5728e",
+  "schema/shacl/links.shacl.ttl": "17ab8bfd7ada16e4388c6882a4fdad185efa0ecac649f52aa6710fd7f2027e0f"
  },
  "link_graphs": {
   "links": {
@@ -20,15 +20,27 @@
    "triples": 147766,
    "graph_sha256": "d8e8a7c088f3c36072c37896937fad149b804962ae45ab3c6ebe7e83cec9b1a7"
   },
+  "by-rule": {
+   "file": "by-rule.ttl",
+   "graph": "https://kerfors.github.io/cdisc-for-all/graph/by-rule",
+   "triples": 37616,
+   "graph_sha256": "380c0c6e36b8bcaa129606844b2661d5e0f1d5d58a27bad19dc6c1da05b68f7b"
+  },
   "links-signin": {
    "file": "links-signin.ttl",
    "graph": "https://kerfors.github.io/cdisc-for-all/graph/links",
    "triples": 855,
    "graph_sha256": "8ddc9db7b1f6d78aeba5d976a3ed0737db07e431690edf7f3d4f2106ebc3de28"
+  },
+  "by-rule-signin": {
+   "file": "by-rule-signin.ttl",
+   "graph": "https://kerfors.github.io/cdisc-for-all/graph/by-rule",
+   "triples": 17797,
+   "graph_sha256": "26ce8312c7087b9e92fc2b9ac26f8761f89cc69402d586487d9af2081737f8a6"
   }
  },
  "graph_sha256_method": "SHA-256 of the canonical N-Triples (RDFC-1.0; no blank nodes)",
- "link_check_text_sha256": "eb1a97bfa667a1fa5c9e3f83640315ac65438178a69fa9b9004772999d756314",
+ "link_check_text_sha256": "7f7b6537ac8f878f5388163b5ca10469bff27eb88c8557258ce966e5ba70983b",
  "text_sha256_method": "SHA-256 (UTF-8) of the JSON array [header, row, ...], each an array of strings (empty cell \"\"), rows sorted by the key columns in code point order, json.dumps(ensure_ascii=False, separators=(\",\", \":\")).",
  "tools": {
   "rdflib": "7.6.0",
