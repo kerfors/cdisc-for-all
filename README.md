@@ -62,13 +62,16 @@ Start page, for study designers: [https://kerfors.github.io/cdisc-for-all/](http
 
 The link map, for standards specialists: every link between the source tables as stated in `schema/links.yaml` (key columns, rule) with its Link_Check rows, [https://kerfors.github.io/cdisc-for-all/examples/pages/link_map.html](https://kerfors.github.io/cdisc-for-all/examples/pages/link_map.html), written by `python examples/link_map.py --out examples/pages/link_map.html`.
 
+For AI agents and other machines: [`llms.txt`](llms.txt) (what is here, the rules to keep, every file and link) and [`catalog.ttl`](catalog.ttl) (DCAT + VoID: every graph and file with licence, version, triple count and SHA-256, and one linkset per link), both written by `linked/Make_Catalog.ipynb`.
+
 ## Layout
 
 ```
 schema/          the LinkML schema (one module per source, links, the COSMoS model mapping) and the generated SHACL
 cfa/             the shared helper: reading, writing, IRIs, hashes, Schema sheets, Provenance
 base/<source>/   reader notebook, downloads/ (not in git), the graph (.ttl), its Excel view, Provenance
-linked/          Make_Links and Make_COSMoS_Model notebooks, the link graphs, the SSSOM mapping set of the general-name links, the COSMoS model graph, Link_Check (-signin files local, not in git)
+linked/          Make_Links, Make_COSMoS_Model and Make_Catalog notebooks, the link graphs, the SSSOM mapping set of the general-name links, the COSMoS model graph, Link_Check (-signin files local, not in git)
+llms.txt, catalog.ttl   the entry point for AI agents and the DCAT + VoID catalogue (written by Make_Catalog)
 checks/          the schema check and the CSVW cross-check (rdf-tabular)
 examples/        a SPARQL CONSTRUCT query over the graphs (the test concept graph), test_concept.py to run it per test C-code, an example notebook, example pages for nine lab tests (pages/)
 ```

@@ -119,3 +119,11 @@ Kerstin's choices: the next user is a standards or metadata specialist; the star
 **Code.** `examples/link_map.py` with its template `link_map.html` writes one page from `schema/links.yaml` and `linked/Link_Check.xlsx`: the source tables as boxes (sign-in sources marked as built locally), each link as a line (solid: published key; dashed: by rule; red: it has Link_Check rows), and on a click the link as stated (description, key columns, target columns, separator, rule, marker) and its Link_Check rows, grouped by result. It stops if Link_Check names a link that links.yaml does not have. The box positions are a layout choice for reading.
 
 **Content.** `examples/pages/link_map.html`, linked from the start page, the README and the pages index.
+
+## Entry point for AI agents — llms.txt and catalog.ttl (2026-11-27)
+
+Kerstin's choices: the next user is an AI agent; the description is DCAT + VoID in one Turtle file; both files are at the repository root and generated.
+
+**Code.** `cfa/catalog.py` and `linked/Make_Catalog.ipynb` build both files from what the repository already states: Reference_Versions.json, the Provenance files of `base/` and `linked/`, and `schema/links.yaml`. Nothing is counted: triple counts are those Provenance records, checksums are the SHA-256 of the published files. The notebook reads `catalog.ttl` back (same graph) and requires every download URL to name a file in the repository. Run it after Make_Links and Make_COSMoS_Model.
+
+**Content.** `catalog.ttl`: a dcat:Catalog with each base graph, link graph and the COSMoS model graph as dcat:Dataset and void:Dataset (title, publisher, version, source, licence or rights as the README states them, void:triples, the Turtle and Excel files as distributions with their SHA-256), the sign-in sources without distributions, Link_Check and the SSSOM mapping set, and one void:Linkset per link of links.yaml (link predicate, subject and object graphs, description, rule). `llms.txt`: the same for an agent to read first, with the rules an agent should keep, the IRI patterns, every file and every link.

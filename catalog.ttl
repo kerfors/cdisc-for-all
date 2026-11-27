@@ -1,0 +1,647 @@
+PREFIX cat: <https://kerfors.github.io/cdisc-for-all/catalog#>
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX spdx: <http://spdx.org/rdf/terms#>
+PREFIX void: <http://rdfs.org/ns/void#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+cat:catalog
+    a dcat:Catalog ;
+    dcterms:description "CDISC and NCIt content as published, linked: the base graphs (one per source, as published), the link graphs, the COSMoS model graph, Link_Check and the SSSOM mapping set." ;
+    dcterms:license <https://opensource.org/licenses/MIT> ;
+    dcterms:title "cdisc-for-all" ;
+    rdfs:seeAlso <https://github.com/kerfors/cdisc-for-all> ;
+    dcat:dataset
+        cat:link-check ,
+        cat:sssom ,
+        <https://kerfors.github.io/cdisc-for-all/graph/by-rule> ,
+        <https://kerfors.github.io/cdisc-for-all/graph/cosmos> ,
+        <https://kerfors.github.io/cdisc-for-all/graph/cosmos-model> ,
+        <https://kerfors.github.io/cdisc-for-all/graph/links> ,
+        <https://kerfors.github.io/cdisc-for-all/graph/nci-code-cui-map> ,
+        <https://kerfors.github.io/cdisc-for-all/graph/ncit-flat> ,
+        <https://kerfors.github.io/cdisc-for-all/graph/nsv-registry> ,
+        <https://kerfors.github.io/cdisc-for-all/graph/sdtm-ct> ,
+        <https://kerfors.github.io/cdisc-for-all/graph/sdtm-model> ,
+        <https://kerfors.github.io/cdisc-for-all/graph/sdtmig> ;
+    dcat:landingPage <https://kerfors.github.io/cdisc-for-all/> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/catalog#file/base/cosmos/cdisc_biomedical_concepts_hierarchy_latest.xlsx>
+    a dcat:Distribution ;
+    dcterms:title "Excel view of the base graph" ;
+    spdx:checksum
+        [
+            spdx:algorithm spdx:checksumAlgorithm_sha256 ;
+            spdx:checksumValue "bca767c1f8daf0d8e9941c2b8e55297ae4bfaf54c14e549b17a253d43e98491e"^^xsd:hexBinary ;
+        ] ;
+    dcat:downloadURL <https://kerfors.github.io/cdisc-for-all/base/cosmos/cdisc_biomedical_concepts_hierarchy_latest.xlsx> ;
+    dcat:mediaType <https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/catalog#file/base/cosmos/cdisc_biomedical_concepts_latest.xlsx>
+    a dcat:Distribution ;
+    dcterms:title "Excel view of the base graph" ;
+    spdx:checksum
+        [
+            spdx:algorithm spdx:checksumAlgorithm_sha256 ;
+            spdx:checksumValue "2fb021631290986855cfcc3ac784a1abb5bf13f8afec9853ba5e9d684ba60e68"^^xsd:hexBinary ;
+        ] ;
+    dcat:downloadURL <https://kerfors.github.io/cdisc-for-all/base/cosmos/cdisc_biomedical_concepts_latest.xlsx> ;
+    dcat:mediaType <https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/catalog#file/base/cosmos/cdisc_sdtm_dataset_specializations_latest.xlsx>
+    a dcat:Distribution ;
+    dcterms:title "Excel view of the base graph" ;
+    spdx:checksum
+        [
+            spdx:algorithm spdx:checksumAlgorithm_sha256 ;
+            spdx:checksumValue "fef6671afc11592fff5eb72489eeea478bc8f1198cce84271968c672331da3c7"^^xsd:hexBinary ;
+        ] ;
+    dcat:downloadURL <https://kerfors.github.io/cdisc-for-all/base/cosmos/cdisc_sdtm_dataset_specializations_latest.xlsx> ;
+    dcat:mediaType <https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/catalog#file/base/cosmos/cosmos.ttl>
+    a dcat:Distribution ;
+    dcterms:title "the base graph (Turtle)" ;
+    spdx:checksum
+        [
+            spdx:algorithm spdx:checksumAlgorithm_sha256 ;
+            spdx:checksumValue "ccbe3202c832e4513e93dd3e2b6d0ef4e8cd50f075194e0e6a40b1f6df991f26"^^xsd:hexBinary ;
+        ] ;
+    dcat:downloadURL <https://kerfors.github.io/cdisc-for-all/base/cosmos/cosmos.ttl> ;
+    dcat:mediaType <https://www.iana.org/assignments/media-types/text/turtle> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/catalog#file/base/nci-code-cui-map/nci-code-cui-map.ttl>
+    a dcat:Distribution ;
+    dcterms:title "the base graph (Turtle)" ;
+    spdx:checksum
+        [
+            spdx:algorithm spdx:checksumAlgorithm_sha256 ;
+            spdx:checksumValue "2bb377b7b4046b66cd6f68b69e72d427146a8181892669f916cc1c68524837b4"^^xsd:hexBinary ;
+        ] ;
+    dcat:downloadURL <https://kerfors.github.io/cdisc-for-all/base/nci-code-cui-map/nci-code-cui-map.ttl> ;
+    dcat:mediaType <https://www.iana.org/assignments/media-types/text/turtle> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/catalog#file/base/nci-code-cui-map/nci_code_cui_map.xlsx>
+    a dcat:Distribution ;
+    dcterms:title "Excel view of the base graph" ;
+    spdx:checksum
+        [
+            spdx:algorithm spdx:checksumAlgorithm_sha256 ;
+            spdx:checksumValue "3373170728d0a7851073f05eaa0aaaa0e05c54ab1899082c9f3b9e6d68f9bd97"^^xsd:hexBinary ;
+        ] ;
+    dcat:downloadURL <https://kerfors.github.io/cdisc-for-all/base/nci-code-cui-map/nci_code_cui_map.xlsx> ;
+    dcat:mediaType <https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/catalog#file/base/ncit-flat/Thesaurus.xlsx>
+    a dcat:Distribution ;
+    dcterms:title "Excel view of the base graph" ;
+    spdx:checksum
+        [
+            spdx:algorithm spdx:checksumAlgorithm_sha256 ;
+            spdx:checksumValue "9c0c5f94fec83eccfab49c048f0ceb3cb50bfec21e4762fd5b45a2346a9ca94a"^^xsd:hexBinary ;
+        ] ;
+    dcat:downloadURL <https://kerfors.github.io/cdisc-for-all/base/ncit-flat/Thesaurus.xlsx> ;
+    dcat:mediaType <https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/catalog#file/base/ncit-flat/ncit-flat.ttl>
+    a dcat:Distribution ;
+    dcterms:title "the base graph (Turtle)" ;
+    spdx:checksum
+        [
+            spdx:algorithm spdx:checksumAlgorithm_sha256 ;
+            spdx:checksumValue "b98dd5530b10c2b6169b0c954a55e74c89df3d6c8806ce6a387790cd9be2e60f"^^xsd:hexBinary ;
+        ] ;
+    dcat:downloadURL <https://kerfors.github.io/cdisc-for-all/base/ncit-flat/ncit-flat.ttl> ;
+    dcat:mediaType <https://www.iana.org/assignments/media-types/text/turtle> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/catalog#file/base/nsv-registry/NSV_Registry.xlsx>
+    a dcat:Distribution ;
+    dcterms:title "Excel view of the base graph" ;
+    spdx:checksum
+        [
+            spdx:algorithm spdx:checksumAlgorithm_sha256 ;
+            spdx:checksumValue "49d08659f20f76db81176cf6506809d598bb816b943b6815a0f23fad0a8b3efb"^^xsd:hexBinary ;
+        ] ;
+    dcat:downloadURL <https://kerfors.github.io/cdisc-for-all/base/nsv-registry/NSV_Registry.xlsx> ;
+    dcat:mediaType <https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/catalog#file/base/nsv-registry/nsv-registry.ttl>
+    a dcat:Distribution ;
+    dcterms:title "the base graph (Turtle)" ;
+    spdx:checksum
+        [
+            spdx:algorithm spdx:checksumAlgorithm_sha256 ;
+            spdx:checksumValue "9f2d99fa6af2fe9c8d2c1f03d4565cf12ed6428f0a902329b806a17f8386a5f0"^^xsd:hexBinary ;
+        ] ;
+    dcat:downloadURL <https://kerfors.github.io/cdisc-for-all/base/nsv-registry/nsv-registry.ttl> ;
+    dcat:mediaType <https://www.iana.org/assignments/media-types/text/turtle> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/catalog#file/base/sdtm-ct/SDTM_Terminology.xlsx>
+    a dcat:Distribution ;
+    dcterms:title "Excel view of the base graph" ;
+    spdx:checksum
+        [
+            spdx:algorithm spdx:checksumAlgorithm_sha256 ;
+            spdx:checksumValue "c99c319edd8f64a0e2199c79f87f9b1874c2df3a2ce07d706ad3fc0aa5c7af04"^^xsd:hexBinary ;
+        ] ;
+    dcat:downloadURL <https://kerfors.github.io/cdisc-for-all/base/sdtm-ct/SDTM_Terminology.xlsx> ;
+    dcat:mediaType <https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/catalog#file/base/sdtm-ct/sdtm-ct.ttl>
+    a dcat:Distribution ;
+    dcterms:title "the base graph (Turtle)" ;
+    spdx:checksum
+        [
+            spdx:algorithm spdx:checksumAlgorithm_sha256 ;
+            spdx:checksumValue "fb6a09d0456028ab99134e14f78b3907e653e251ba416ea88f04aa36c640143e"^^xsd:hexBinary ;
+        ] ;
+    dcat:downloadURL <https://kerfors.github.io/cdisc-for-all/base/sdtm-ct/sdtm-ct.ttl> ;
+    dcat:mediaType <https://www.iana.org/assignments/media-types/text/turtle> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/catalog#file/linked/Link_Check.xlsx>
+    a dcat:Distribution ;
+    dcterms:title "Link_Check (Excel)" ;
+    spdx:checksum
+        [
+            spdx:algorithm spdx:checksumAlgorithm_sha256 ;
+            spdx:checksumValue "d08fb677a80fe6722c5a75e2f70272dac570e5493cb67ba63a05298007d1297d"^^xsd:hexBinary ;
+        ] ;
+    dcat:downloadURL <https://kerfors.github.io/cdisc-for-all/linked/Link_Check.xlsx> ;
+    dcat:mediaType <https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/catalog#file/linked/by-rule.sssom.tsv>
+    a dcat:Distribution ;
+    dcterms:title "SSSOM TSV" ;
+    spdx:checksum
+        [
+            spdx:algorithm spdx:checksumAlgorithm_sha256 ;
+            spdx:checksumValue "28bffe1636dde48bab598c51ec90c1ec3395fba3614afb44b5cb9c3817afd829"^^xsd:hexBinary ;
+        ] ;
+    dcat:downloadURL <https://kerfors.github.io/cdisc-for-all/linked/by-rule.sssom.tsv> ;
+    dcat:mediaType <https://www.iana.org/assignments/media-types/text/tab-separated-values> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/catalog#file/linked/by-rule.ttl>
+    a dcat:Distribution ;
+    dcterms:title "the link graph (Turtle)" ;
+    spdx:checksum
+        [
+            spdx:algorithm spdx:checksumAlgorithm_sha256 ;
+            spdx:checksumValue "81682a5289d6611fe43e5281c1936a6aaf047de61aaffd86f5749e9186834d3c"^^xsd:hexBinary ;
+        ] ;
+    dcat:downloadURL <https://kerfors.github.io/cdisc-for-all/linked/by-rule.ttl> ;
+    dcat:mediaType <https://www.iana.org/assignments/media-types/text/turtle> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/catalog#file/linked/cosmos-model.ttl>
+    a dcat:Distribution ;
+    dcterms:title "the COSMoS model graph (Turtle)" ;
+    spdx:checksum
+        [
+            spdx:algorithm spdx:checksumAlgorithm_sha256 ;
+            spdx:checksumValue "c4c24e99c7109013c2b9171375c5f23bf4004aef54a4152a06e1494c53698817"^^xsd:hexBinary ;
+        ] ;
+    dcat:downloadURL <https://kerfors.github.io/cdisc-for-all/linked/cosmos-model.ttl> ;
+    dcat:mediaType <https://www.iana.org/assignments/media-types/text/turtle> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/catalog#file/linked/links.ttl>
+    a dcat:Distribution ;
+    dcterms:title "the link graph (Turtle)" ;
+    spdx:checksum
+        [
+            spdx:algorithm spdx:checksumAlgorithm_sha256 ;
+            spdx:checksumValue "c5ac1c11098f5cd8bfdacc9d7930ac97c3be2f25edf44a2604de375cdbada592"^^xsd:hexBinary ;
+        ] ;
+    dcat:downloadURL <https://kerfors.github.io/cdisc-for-all/linked/links.ttl> ;
+    dcat:mediaType <https://www.iana.org/assignments/media-types/text/turtle> ;
+.
+
+cat:link-check
+    a dcat:Dataset ;
+    dcterms:license <https://opensource.org/licenses/MIT> ;
+    dcterms:title "Link_Check: every reference in the published content that does not resolve, and every link to a row that carries a marker its source publishes, such as COSMoS \"[RETIRED]\"" ;
+    dcat:distribution <https://kerfors.github.io/cdisc-for-all/catalog#file/linked/Link_Check.xlsx> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/catalog#linkset/cosmos_biomedical_concept_to_NCIt>
+    a void:Linkset ;
+    dcterms:description "A BC row to the NCIt concept of its ncit_code." ;
+    dcterms:title "cosmos biomedical concept to NCIt" ;
+    dcterms:type "published key" ;
+    void:linkPredicate <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_biomedical_concepts_latest#ncit_code> ;
+    void:objectsTarget <https://kerfors.github.io/cdisc-for-all/graph/ncit-flat> ;
+    void:subjectsTarget <https://kerfors.github.io/cdisc-for-all/graph/cosmos> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/catalog#linkset/cosmos_biomedical_concept_to_parent>
+    a void:Linkset ;
+    dcterms:description "A BC row to the hierarchy row of its parent BC." ;
+    dcterms:title "cosmos biomedical concept to parent" ;
+    dcterms:type "published key" ;
+    void:linkPredicate <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_biomedical_concepts_latest#parent_bc_id> ;
+    void:objectsTarget <https://kerfors.github.io/cdisc-for-all/graph/cosmos> ;
+    void:subjectsTarget <https://kerfors.github.io/cdisc-for-all/graph/cosmos> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/catalog#linkset/cosmos_data_element_concept_to_NCIt>
+    a void:Linkset ;
+    dcterms:description "A BC row to the NCIt concept of its ncit_dec_code." ;
+    dcterms:title "cosmos data element concept to NCIt" ;
+    dcterms:type "published key" ;
+    void:linkPredicate <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_biomedical_concepts_latest#ncit_dec_code> ;
+    void:objectsTarget <https://kerfors.github.io/cdisc-for-all/graph/ncit-flat> ;
+    void:subjectsTarget <https://kerfors.github.io/cdisc-for-all/graph/cosmos> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/catalog#linkset/cosmos_dataset_specialization_to_assigned_term>
+    a void:Linkset ;
+    dcterms:description "A Dataset Specialization variable row to the SDTM CT term row of its assigned term, within its codelist." ;
+    dcterms:title "cosmos dataset specialization to assigned term" ;
+    dcterms:type "published key" ;
+    void:linkPredicate <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_sdtm_dataset_specializations_latest#assigned_term> ;
+    void:objectsTarget <https://kerfors.github.io/cdisc-for-all/graph/sdtm-ct> ;
+    void:subjectsTarget <https://kerfors.github.io/cdisc-for-all/graph/cosmos> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/catalog#linkset/cosmos_dataset_specialization_to_biomedical_concept>
+    a void:Linkset ;
+    dcterms:description "A Dataset Specialization variable row to the row of its BC in the BC hierarchy table (one row per BC)." ;
+    dcterms:title "cosmos dataset specialization to biomedical concept" ;
+    dcterms:type "published key" ;
+    void:linkPredicate <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_sdtm_dataset_specializations_latest#bc_id> ;
+    void:objectsTarget <https://kerfors.github.io/cdisc-for-all/graph/cosmos> ;
+    void:subjectsTarget <https://kerfors.github.io/cdisc-for-all/graph/cosmos> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/catalog#linkset/cosmos_dataset_specialization_to_codelist>
+    a void:Linkset ;
+    dcterms:description "A Dataset Specialization variable row to the SDTM CT codelist row of its codelist." ;
+    dcterms:title "cosmos dataset specialization to codelist" ;
+    dcterms:type "published key" ;
+    void:linkPredicate <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_sdtm_dataset_specializations_latest#codelist> ;
+    void:objectsTarget <https://kerfors.github.io/cdisc-for-all/graph/sdtm-ct> ;
+    void:subjectsTarget <https://kerfors.github.io/cdisc-for-all/graph/cosmos> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/catalog#linkset/cosmos_dataset_specialization_to_data_element_concept>
+    a void:Linkset ;
+    dcterms:description "A Dataset Specialization variable row to the BC row of its data element concept, within its BC." ;
+    dcterms:title "cosmos dataset specialization to data element concept" ;
+    dcterms:type "published key" ;
+    void:linkPredicate <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_sdtm_dataset_specializations_latest#dec_id> ;
+    void:objectsTarget <https://kerfors.github.io/cdisc-for-all/graph/cosmos> ;
+    void:subjectsTarget <https://kerfors.github.io/cdisc-for-all/graph/cosmos> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/catalog#linkset/cosmos_dataset_specialization_to_model_variable>
+    a void:Linkset ;
+    dcterms:accessRights "Built locally, not published: it starts from or ends at a sign-in source." ;
+    dcterms:description "A Dataset Specialization variable row that is not an SDTMIG variable of its domain, to an SDTM Model variable row." ;
+    dcterms:title "cosmos dataset specialization to model variable" ;
+    dcterms:type "by rule" ;
+    void:linkPredicate <https://kerfors.github.io/cdisc-for-all/rule/cosmos/cdisc_sdtm_dataset_specializations_latest#sdtm_variable/sdtm-model/SDTM> ;
+    void:objectsTarget <https://kerfors.github.io/cdisc-for-all/graph/sdtm-model> ;
+    void:subjectsTarget <https://kerfors.github.io/cdisc-for-all/graph/cosmos> ;
+    rdfs:comment "Rule: Only where the row has no link to an SDTMIG variable. The class of the domain is the Class the SDTMIG table gives for that Dataset Name; with it, the rule of \"sdtmig variable to model variable\" (domain as Dataset Name, sdtm_variable as Variable Name). A domain that is not an SDTMIG dataset has no class: only Class General Observations is tried." ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/catalog#linkset/cosmos_dataset_specialization_to_nsv>
+    a void:Linkset ;
+    dcterms:description "A Dataset Specialization variable row that is neither an SDTMIG nor an SDTM Model variable, to the NSV Registry rows of its name without the domain prefix." ;
+    dcterms:title "cosmos dataset specialization to nsv" ;
+    dcterms:type "by rule" ;
+    void:linkPredicate <https://kerfors.github.io/cdisc-for-all/rule/cosmos/cdisc_sdtm_dataset_specializations_latest#sdtm_variable/nsv-registry/Approved%20NSVs-alpha> ;
+    void:objectsTarget <https://kerfors.github.io/cdisc-for-all/graph/nsv-registry> ;
+    void:subjectsTarget <https://kerfors.github.io/cdisc-for-all/graph/cosmos> ;
+    rdfs:comment "Rule: Only where the row has no link to an SDTMIG or an SDTM Model variable. sdtm_variable with the domain prefix removed (only if it starts with the domain) equals the registry Variable Name as published (no trimming). Every matching registry row is linked (the registry key is Variable Name + Source(s))." ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/catalog#linkset/cosmos_dataset_specialization_to_sdtmig_variable>
+    a void:Linkset ;
+    dcterms:accessRights "Built locally, not published: it starts from or ends at a sign-in source." ;
+    dcterms:description "A Dataset Specialization variable row to the SDTMIG variable row of the same name in its own domain." ;
+    dcterms:title "cosmos dataset specialization to sdtmig variable" ;
+    dcterms:type "by rule" ;
+    void:linkPredicate <https://kerfors.github.io/cdisc-for-all/rule/cosmos/cdisc_sdtm_dataset_specializations_latest#sdtm_variable/sdtmig/SDTMIG> ;
+    void:objectsTarget <https://kerfors.github.io/cdisc-for-all/graph/sdtmig> ;
+    void:subjectsTarget <https://kerfors.github.io/cdisc-for-all/graph/cosmos> ;
+    rdfs:comment "Rule: domain equals the SDTMIG Dataset Name and sdtm_variable equals the SDTMIG Variable Name." ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/catalog#linkset/cosmos_hierarchy_to_parent>
+    a void:Linkset ;
+    dcterms:description "A BC hierarchy row to the hierarchy row of its parent BC." ;
+    dcterms:title "cosmos hierarchy to parent" ;
+    dcterms:type "published key" ;
+    void:linkPredicate <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_biomedical_concepts_hierarchy_latest#parent_bc_id> ;
+    void:objectsTarget <https://kerfors.github.io/cdisc-for-all/graph/cosmos> ;
+    void:subjectsTarget <https://kerfors.github.io/cdisc-for-all/graph/cosmos> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/catalog#linkset/cosmos_relationship_object>
+    a void:Linkset ;
+    dcterms:description "A Dataset Specialization variable row to the variable row named in its object, in the same Dataset Specialization." ;
+    dcterms:title "cosmos relationship object" ;
+    dcterms:type "by rule" ;
+    void:linkPredicate <https://kerfors.github.io/cdisc-for-all/rule/cosmos/cdisc_sdtm_dataset_specializations_latest#object/cosmos/cdisc_sdtm_dataset_specializations_latest> ;
+    void:objectsTarget <https://kerfors.github.io/cdisc-for-all/graph/cosmos> ;
+    void:subjectsTarget <https://kerfors.github.io/cdisc-for-all/graph/cosmos> ;
+    rdfs:comment "Rule: object equals the sdtm_variable of a row with the same domain and vlm_group_id." ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/catalog#linkset/cosmos_relationship_subject>
+    a void:Linkset ;
+    dcterms:description "A Dataset Specialization variable row to the variable row named in its subject, in the same Dataset Specialization." ;
+    dcterms:title "cosmos relationship subject" ;
+    dcterms:type "by rule" ;
+    void:linkPredicate <https://kerfors.github.io/cdisc-for-all/rule/cosmos/cdisc_sdtm_dataset_specializations_latest#subject/cosmos/cdisc_sdtm_dataset_specializations_latest> ;
+    void:objectsTarget <https://kerfors.github.io/cdisc-for-all/graph/cosmos> ;
+    void:subjectsTarget <https://kerfors.github.io/cdisc-for-all/graph/cosmos> ;
+    rdfs:comment "Rule: subject equals the sdtm_variable of a row with the same domain and vlm_group_id." ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/catalog#linkset/cosmos_value_list_to_term>
+    a void:Linkset ;
+    dcterms:description "A Dataset Specialization variable row to the SDTM CT term row of each value in its value_list, within its codelist." ;
+    dcterms:title "cosmos value list to term" ;
+    dcterms:type "by rule" ;
+    void:linkPredicate <https://kerfors.github.io/cdisc-for-all/rule/cosmos/cdisc_sdtm_dataset_specializations_latest#value_list/sdtm-ct/SDTM%20Terminology> ;
+    void:objectsTarget <https://kerfors.github.io/cdisc-for-all/graph/sdtm-ct> ;
+    void:subjectsTarget <https://kerfors.github.io/cdisc-for-all/graph/cosmos> ;
+    rdfs:comment "Rule: Only where the row has a codelist. Each value of value_list (split at \";\") equals the CDISC Submission Value of a term row of that codelist." ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/catalog#linkset/nci_code-cui_map_to_NCIt>
+    a void:Linkset ;
+    dcterms:description "A row of the code-CUI map to the NCIt concept of its code." ;
+    dcterms:title "nci code-cui map to NCIt" ;
+    dcterms:type "published key" ;
+    void:linkPredicate <https://kerfors.github.io/cdisc-for-all/link/nci-code-cui-map/nci_code_cui_map#code> ;
+    void:objectsTarget <https://kerfors.github.io/cdisc-for-all/graph/ncit-flat> ;
+    void:subjectsTarget <https://kerfors.github.io/cdisc-for-all/graph/nci-code-cui-map> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/catalog#linkset/ncit_concept_to_parent>
+    a void:Linkset ;
+    dcterms:description "An NCIt concept to each concept in its parents." ;
+    dcterms:title "ncit concept to parent" ;
+    dcterms:type "published key" ;
+    void:linkPredicate <https://kerfors.github.io/cdisc-for-all/link/ncit-flat/Thesaurus#parents> ;
+    void:objectsTarget <https://kerfors.github.io/cdisc-for-all/graph/ncit-flat> ;
+    void:subjectsTarget <https://kerfors.github.io/cdisc-for-all/graph/ncit-flat> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/catalog#linkset/sdtm-ct_term_to_codelist>
+    a void:Linkset ;
+    dcterms:description "A term row of SDTM CT to the codelist row of its codelist." ;
+    dcterms:title "sdtm-ct term to codelist" ;
+    dcterms:type "published key" ;
+    void:linkPredicate <https://kerfors.github.io/cdisc-for-all/link/sdtm-ct/SDTM%20Terminology#Codelist%20Code> ;
+    void:objectsTarget <https://kerfors.github.io/cdisc-for-all/graph/sdtm-ct> ;
+    void:subjectsTarget <https://kerfors.github.io/cdisc-for-all/graph/sdtm-ct> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/catalog#linkset/sdtm-ct_to_NCIt>
+    a void:Linkset ;
+    dcterms:description "A row of SDTM CT (codelist or term) to the NCIt concept of its code." ;
+    dcterms:title "sdtm-ct to NCIt" ;
+    dcterms:type "published key" ;
+    void:linkPredicate <https://kerfors.github.io/cdisc-for-all/link/sdtm-ct/SDTM%20Terminology#Code> ;
+    void:objectsTarget <https://kerfors.github.io/cdisc-for-all/graph/ncit-flat> ;
+    void:subjectsTarget <https://kerfors.github.io/cdisc-for-all/graph/sdtm-ct> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/catalog#linkset/sdtm-model_variable_to_NCIt>
+    a void:Linkset ;
+    dcterms:accessRights "Built locally, not published: it starts from or ends at a sign-in source." ;
+    dcterms:description "An SDTM Model variable row to the NCIt concept of its Variable C-Code." ;
+    dcterms:title "sdtm-model variable to NCIt" ;
+    dcterms:type "published key" ;
+    void:linkPredicate <https://kerfors.github.io/cdisc-for-all/link/sdtm-model/SDTM#Variable%20C-Code> ;
+    void:objectsTarget <https://kerfors.github.io/cdisc-for-all/graph/ncit-flat> ;
+    void:subjectsTarget <https://kerfors.github.io/cdisc-for-all/graph/sdtm-model> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/catalog#linkset/sdtm-model_variables_qualified>
+    a void:Linkset ;
+    dcterms:accessRights "Built locally, not published: it starts from or ends at a sign-in source." ;
+    dcterms:description "An SDTM Model variable row to each Model variable named in its Variables Qualified, in the same class and dataset." ;
+    dcterms:title "sdtm-model variables qualified" ;
+    dcterms:type "by rule" ;
+    void:linkPredicate <https://kerfors.github.io/cdisc-for-all/rule/sdtm-model/SDTM#Variables%20Qualified/sdtm-model/SDTM> ;
+    void:objectsTarget <https://kerfors.github.io/cdisc-for-all/graph/sdtm-model> ;
+    void:subjectsTarget <https://kerfors.github.io/cdisc-for-all/graph/sdtm-model> ;
+    rdfs:comment "Rule: Each name in Variables Qualified (split at \";\", surrounding spaces removed) equals the Variable Name of a Model row with the same Class and the same Dataset Name (both empty for a variable the Model publishes for a class)." ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/catalog#linkset/sdtmig_variable_to_codelist>
+    a void:Linkset ;
+    dcterms:accessRights "Built locally, not published: it starts from or ends at a sign-in source." ;
+    dcterms:description "An SDTMIG variable row to the SDTM CT codelist row of each code in its CDISC CT Codelist Code(s)." ;
+    dcterms:title "sdtmig variable to codelist" ;
+    dcterms:type "published key" ;
+    void:linkPredicate <https://kerfors.github.io/cdisc-for-all/link/sdtmig/SDTMIG#CDISC%20CT%20Codelist%20Code%28s%29> ;
+    void:objectsTarget <https://kerfors.github.io/cdisc-for-all/graph/sdtm-ct> ;
+    void:subjectsTarget <https://kerfors.github.io/cdisc-for-all/graph/sdtmig> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/catalog#linkset/sdtmig_variable_to_model_variable>
+    a void:Linkset ;
+    dcterms:accessRights "Built locally, not published: it starts from or ends at a sign-in source." ;
+    dcterms:description "An SDTMIG variable row to the SDTM Model variable row it is an instance of." ;
+    dcterms:title "sdtmig variable to model variable" ;
+    dcterms:type "by rule" ;
+    void:linkPredicate <https://kerfors.github.io/cdisc-for-all/rule/sdtmig/SDTMIG#Variable%20Name/sdtm-model/SDTM> ;
+    void:objectsTarget <https://kerfors.github.io/cdisc-for-all/graph/sdtm-model> ;
+    void:subjectsTarget <https://kerfors.github.io/cdisc-for-all/graph/sdtmig> ;
+    rdfs:comment "Rule: The first that matches: the Model row with the same Class, Dataset Name and Variable Name; else the Model row without a Dataset Name, with the same Class, whose Variable Name is the general name (the IG Variable Name with its Dataset Name prefix replaced by \"--\", or the Variable Name itself if it does not start with the Dataset Name); else the same for Class General Observations; for Class Findings About, else the same for Class Findings." ;
+.
+
+cat:sssom
+    a dcat:Dataset ;
+    dcterms:license <https://opensource.org/licenses/MIT> ;
+    dcterms:title "SSSOM mapping set of the links by a rule that matches a general name" ;
+    dcat:distribution <https://kerfors.github.io/cdisc-for-all/catalog#file/linked/by-rule.sssom.tsv> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/graph/by-rule>
+    a
+        void:Dataset ,
+        dcat:Dataset ;
+    dcterms:license <https://opensource.org/licenses/MIT> ;
+    dcterms:title "Link graph: links by rule" ;
+    void:dataDump <https://kerfors.github.io/cdisc-for-all/linked/by-rule.ttl> ;
+    void:subset
+        <https://kerfors.github.io/cdisc-for-all/catalog#linkset/cosmos_dataset_specialization_to_model_variable> ,
+        <https://kerfors.github.io/cdisc-for-all/catalog#linkset/cosmos_dataset_specialization_to_nsv> ,
+        <https://kerfors.github.io/cdisc-for-all/catalog#linkset/cosmos_dataset_specialization_to_sdtmig_variable> ,
+        <https://kerfors.github.io/cdisc-for-all/catalog#linkset/cosmos_relationship_object> ,
+        <https://kerfors.github.io/cdisc-for-all/catalog#linkset/cosmos_relationship_subject> ,
+        <https://kerfors.github.io/cdisc-for-all/catalog#linkset/cosmos_value_list_to_term> ,
+        <https://kerfors.github.io/cdisc-for-all/catalog#linkset/sdtm-model_variables_qualified> ,
+        <https://kerfors.github.io/cdisc-for-all/catalog#linkset/sdtmig_variable_to_model_variable> ;
+    void:triples 37616 ;
+    rdfs:comment "The links to and from the sign-in sources are in a -signin file, built locally and not published." ;
+    dcat:distribution <https://kerfors.github.io/cdisc-for-all/catalog#file/linked/by-rule.ttl> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/graph/cosmos-model>
+    a
+        void:Dataset ,
+        dcat:Dataset ;
+    dcterms:license <https://opensource.org/licenses/MIT> ;
+    dcterms:title "COSMoS model graph: the COSMoS export in COSMoS's authored model" ;
+    void:dataDump <https://kerfors.github.io/cdisc-for-all/linked/cosmos-model.ttl> ;
+    void:triples 413154 ;
+    dcat:distribution <https://kerfors.github.io/cdisc-for-all/catalog#file/linked/cosmos-model.ttl> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/graph/links>
+    a
+        void:Dataset ,
+        dcat:Dataset ;
+    dcterms:license <https://opensource.org/licenses/MIT> ;
+    dcterms:title "Link graph: published-key links" ;
+    void:dataDump <https://kerfors.github.io/cdisc-for-all/linked/links.ttl> ;
+    void:subset
+        <https://kerfors.github.io/cdisc-for-all/catalog#linkset/cosmos_biomedical_concept_to_NCIt> ,
+        <https://kerfors.github.io/cdisc-for-all/catalog#linkset/cosmos_biomedical_concept_to_parent> ,
+        <https://kerfors.github.io/cdisc-for-all/catalog#linkset/cosmos_data_element_concept_to_NCIt> ,
+        <https://kerfors.github.io/cdisc-for-all/catalog#linkset/cosmos_dataset_specialization_to_assigned_term> ,
+        <https://kerfors.github.io/cdisc-for-all/catalog#linkset/cosmos_dataset_specialization_to_biomedical_concept> ,
+        <https://kerfors.github.io/cdisc-for-all/catalog#linkset/cosmos_dataset_specialization_to_codelist> ,
+        <https://kerfors.github.io/cdisc-for-all/catalog#linkset/cosmos_dataset_specialization_to_data_element_concept> ,
+        <https://kerfors.github.io/cdisc-for-all/catalog#linkset/cosmos_hierarchy_to_parent> ,
+        <https://kerfors.github.io/cdisc-for-all/catalog#linkset/nci_code-cui_map_to_NCIt> ,
+        <https://kerfors.github.io/cdisc-for-all/catalog#linkset/ncit_concept_to_parent> ,
+        <https://kerfors.github.io/cdisc-for-all/catalog#linkset/sdtm-ct_term_to_codelist> ,
+        <https://kerfors.github.io/cdisc-for-all/catalog#linkset/sdtm-ct_to_NCIt> ,
+        <https://kerfors.github.io/cdisc-for-all/catalog#linkset/sdtm-model_variable_to_NCIt> ,
+        <https://kerfors.github.io/cdisc-for-all/catalog#linkset/sdtmig_variable_to_codelist> ;
+    void:triples 147766 ;
+    rdfs:comment "The links to and from the sign-in sources are in a -signin file, built locally and not published." ;
+    dcat:distribution <https://kerfors.github.io/cdisc-for-all/catalog#file/linked/links.ttl> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/graph/nci-code-cui-map>
+    a
+        void:Dataset ,
+        dcat:Dataset ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:publisher "NCI EVS" ;
+    dcterms:rights "NCI Thesaurus Terms of Use: https://evs.nci.nih.gov/ftp1/NCI_Thesaurus/ThesaurusTermsofUse.htm" ;
+    dcterms:source <https://evs.nci.nih.gov/ftp1/NCI_Thesaurus/nci_code_cui_map.dat> ;
+    dcterms:title "NCIt code to CUI map (base graph)" ;
+    void:dataDump <https://kerfors.github.io/cdisc-for-all/base/nci-code-cui-map/nci-code-cui-map.ttl> ;
+    void:triples 90705 ;
+    dcat:distribution
+        <https://kerfors.github.io/cdisc-for-all/catalog#file/base/nci-code-cui-map/nci-code-cui-map.ttl> ,
+        <https://kerfors.github.io/cdisc-for-all/catalog#file/base/nci-code-cui-map/nci_code_cui_map.xlsx> ;
+    dcat:version "2026-07-11" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/graph/nsv-registry>
+    a
+        void:Dataset ,
+        dcat:Dataset ;
+    dcterms:publisher "CDISC" ;
+    dcterms:rights "The terms of CDISC and NCI EVS." ;
+    dcterms:source <https://www.cdisc.org/sites/default/files/2026-07/Approved-Non-Standard-Variable-Registry_2026-04-03_0.xlsx> ;
+    dcterms:title "Approved Non-Standard Variable Registry (base graph)" ;
+    void:dataDump <https://kerfors.github.io/cdisc-for-all/base/nsv-registry/nsv-registry.ttl> ;
+    void:triples 2428 ;
+    dcat:distribution
+        <https://kerfors.github.io/cdisc-for-all/catalog#file/base/nsv-registry/NSV_Registry.xlsx> ,
+        <https://kerfors.github.io/cdisc-for-all/catalog#file/base/nsv-registry/nsv-registry.ttl> ;
+    dcat:version "2026-04-03" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/graph/sdtmig>
+    a
+        void:Dataset ,
+        dcat:Dataset ;
+    dcterms:accessRights "Not published: cdisc.org sign-in: the graph, its view and its links are built locally and not published." ;
+    dcterms:publisher "CDISC" ;
+    dcterms:rights "cdisc.org sign-in: the graph, its view and its links are built locally and not published." ;
+    dcterms:title "SDTMIG v3.4 variable table (base graph)" ;
+    dcat:version "3.4" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/graph/sdtm-model>
+    a
+        void:Dataset ,
+        dcat:Dataset ;
+    dcterms:accessRights "Not published: cdisc.org sign-in: the graph, its view and its links are built locally and not published." ;
+    dcterms:publisher "CDISC" ;
+    dcterms:rights "cdisc.org sign-in: the graph, its view and its links are built locally and not published." ;
+    dcterms:title "SDTM v2.0 variable table (base graph)" ;
+    dcat:version "2.0" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/graph/ncit-flat>
+    a
+        void:Dataset ,
+        dcat:Dataset ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:publisher "NCI EVS" ;
+    dcterms:rights "NCI Thesaurus Terms of Use: https://evs.nci.nih.gov/ftp1/NCI_Thesaurus/ThesaurusTermsofUse.htm" ;
+    dcterms:source <https://evs.nci.nih.gov/ftp1/NCI_Thesaurus/Thesaurus_26.09d.FLAT.zip> ;
+    dcterms:title "NCI Thesaurus, FLAT file (base graph)" ;
+    void:dataDump <https://kerfors.github.io/cdisc-for-all/base/ncit-flat/ncit-flat.ttl> ;
+    void:triples 147732 ;
+    dcat:distribution
+        <https://kerfors.github.io/cdisc-for-all/catalog#file/base/ncit-flat/Thesaurus.xlsx> ,
+        <https://kerfors.github.io/cdisc-for-all/catalog#file/base/ncit-flat/ncit-flat.ttl> ;
+    dcat:version "26.09d" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/graph/sdtm-ct>
+    a
+        void:Dataset ,
+        dcat:Dataset ;
+    dcterms:publisher "CDISC, distributed by NCI EVS" ;
+    dcterms:rights "The terms of CDISC and NCI EVS." ;
+    dcterms:source <https://evs.nci.nih.gov/ftp1/CDISC/SDTM/SDTM%20Terminology.txt> ;
+    dcterms:title "SDTM Controlled Terminology (base graph)" ;
+    void:dataDump <https://kerfors.github.io/cdisc-for-all/base/sdtm-ct/sdtm-ct.ttl> ;
+    void:triples 186596 ;
+    dcat:distribution
+        <https://kerfors.github.io/cdisc-for-all/catalog#file/base/sdtm-ct/SDTM_Terminology.xlsx> ,
+        <https://kerfors.github.io/cdisc-for-all/catalog#file/base/sdtm-ct/sdtm-ct.ttl> ;
+    dcat:version "2026-09-25" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/graph/cosmos>
+    a
+        void:Dataset ,
+        dcat:Dataset ;
+    dcterms:license <https://opensource.org/licenses/MIT> ;
+    dcterms:publisher "CDISC" ;
+    dcterms:rights "MIT licence, Copyright CDISC." ;
+    dcterms:source <https://github.com/cdisc-org/COSMoS> ;
+    dcterms:title "COSMoS Biomedical Concepts and SDTM Dataset Specializations (public export) (base graph)" ;
+    void:dataDump <https://kerfors.github.io/cdisc-for-all/base/cosmos/cosmos.ttl> ;
+    void:triples 477144 ;
+    dcat:distribution
+        <https://kerfors.github.io/cdisc-for-all/catalog#file/base/cosmos/cdisc_biomedical_concepts_hierarchy_latest.xlsx> ,
+        <https://kerfors.github.io/cdisc-for-all/catalog#file/base/cosmos/cdisc_biomedical_concepts_latest.xlsx> ,
+        <https://kerfors.github.io/cdisc-for-all/catalog#file/base/cosmos/cdisc_sdtm_dataset_specializations_latest.xlsx> ,
+        <https://kerfors.github.io/cdisc-for-all/catalog#file/base/cosmos/cosmos.ttl> ;
+    dcat:version "Package 19" ;
+.

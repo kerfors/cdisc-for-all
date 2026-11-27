@@ -1,0 +1,64 @@
+# cdisc-for-all
+
+> CDISC and NCIt content as published, linked: one RDF graph per source in the shape the source publishes, the links between the sources as RDF, and a report (Link_Check) of every reference that does not resolve. For study design: what is defined about a lab test, and why.
+
+Rules an agent should keep: every literal is a cell of the source as published (column names kept); a link rests on a published key or on a stated rule (links by rule are in their own graph); broken references are reported in Link_Check, not repaired; nothing is added: no classification, no counts, no interpretation. Do not present an inference as published content.
+
+IRIs: `https://kerfors.github.io/cdisc-for-all/def/<source>/<table>#<column>` (a published column), `https://kerfors.github.io/cdisc-for-all/id/<source>/<table>/<key>` (a row), `https://kerfors.github.io/cdisc-for-all/link/...` (a link on a published key), `https://kerfors.github.io/cdisc-for-all/rule/...` (a link by rule). They are identifiers, not dereferenceable, and stable only within a pin; this is not a general RDF representation of the CDISC standards. NCIt concepts keep NCI's own IRIs (http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C...).
+
+Machine-readable description of all of this: [catalog.ttl](https://kerfors.github.io/cdisc-for-all/catalog.ttl) (DCAT + VoID: files, licences, checksums, linksets).
+
+## Base graphs (one per source, as published)
+
+- [cosmos.ttl](https://kerfors.github.io/cdisc-for-all/base/cosmos/cosmos.ttl): COSMoS Biomedical Concepts and SDTM Dataset Specializations (public export), Package 19 (CDISC). MIT licence, Copyright CDISC.
+- [sdtm-ct.ttl](https://kerfors.github.io/cdisc-for-all/base/sdtm-ct/sdtm-ct.ttl): SDTM Controlled Terminology, 2026-09-25 (CDISC, distributed by NCI EVS). The terms of CDISC and NCI EVS.
+- [ncit-flat.ttl](https://kerfors.github.io/cdisc-for-all/base/ncit-flat/ncit-flat.ttl): NCI Thesaurus, FLAT file, 26.09d (NCI EVS). NCI Thesaurus Terms of Use: https://evs.nci.nih.gov/ftp1/NCI_Thesaurus/ThesaurusTermsofUse.htm
+- [nci-code-cui-map.ttl](https://kerfors.github.io/cdisc-for-all/base/nci-code-cui-map/nci-code-cui-map.ttl): NCIt code to CUI map, 2026-07-11 (NCI EVS). NCI Thesaurus Terms of Use: https://evs.nci.nih.gov/ftp1/NCI_Thesaurus/ThesaurusTermsofUse.htm
+- [nsv-registry.ttl](https://kerfors.github.io/cdisc-for-all/base/nsv-registry/nsv-registry.ttl): Approved Non-Standard Variable Registry, 2026-04-03 (CDISC). The terms of CDISC and NCI EVS.
+- sdtmig: SDTMIG v3.4 variable table, 3.4 (CDISC). Not published: cdisc.org sign-in: the graph, its view and its links are built locally and not published.
+- sdtm-model: SDTM v2.0 variable table, 2.0 (CDISC). Not published: cdisc.org sign-in: the graph, its view and its links are built locally and not published.
+
+## Linked layer
+
+- [links.ttl](https://kerfors.github.io/cdisc-for-all/linked/links.ttl): links on published keys.
+- [by-rule.ttl](https://kerfors.github.io/cdisc-for-all/linked/by-rule.ttl): links by a stated rule.
+- [cosmos-model.ttl](https://kerfors.github.io/cdisc-for-all/linked/cosmos-model.ttl): the COSMoS export restated in COSMoS's authored model (COSMoS's own IRIs).
+- [by-rule.sssom.tsv](https://kerfors.github.io/cdisc-for-all/linked/by-rule.sssom.tsv): the links by a rule that matches a general name, as SSSOM.
+- [Link_Check.xlsx](https://kerfors.github.io/cdisc-for-all/linked/Link_Check.xlsx): every reference that does not resolve, and every link to a row with a published marker such as "[RETIRED]".
+- [links.yaml](https://github.com/kerfors/cdisc-for-all/blob/main/schema/links.yaml): every link as stated (key columns, target columns, rule).
+
+## The links (predicate: from table -> to table)
+
+- `https://kerfors.github.io/cdisc-for-all/link/sdtm-ct/SDTM%20Terminology#Codelist%20Code` (published key): SDTM Terminology -> SDTM Terminology. A term row of SDTM CT to the codelist row of its codelist.
+- `https://kerfors.github.io/cdisc-for-all/link/sdtm-ct/SDTM%20Terminology#Code` (published key): SDTM Terminology -> Thesaurus. A row of SDTM CT (codelist or term) to the NCIt concept of its code.
+- `https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_sdtm_dataset_specializations_latest#codelist` (published key): cdisc_sdtm_dataset_specializations_latest -> SDTM Terminology. A Dataset Specialization variable row to the SDTM CT codelist row of its codelist.
+- `https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_sdtm_dataset_specializations_latest#assigned_term` (published key): cdisc_sdtm_dataset_specializations_latest -> SDTM Terminology. A Dataset Specialization variable row to the SDTM CT term row of its assigned term, within its codelist.
+- `https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_sdtm_dataset_specializations_latest#bc_id` (published key): cdisc_sdtm_dataset_specializations_latest -> cdisc_biomedical_concepts_hierarchy_latest. A Dataset Specialization variable row to the row of its BC in the BC hierarchy table (one row per BC).
+- `https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_sdtm_dataset_specializations_latest#dec_id` (published key): cdisc_sdtm_dataset_specializations_latest -> cdisc_biomedical_concepts_latest. A Dataset Specialization variable row to the BC row of its data element concept, within its BC.
+- `https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_biomedical_concepts_latest#ncit_code` (published key): cdisc_biomedical_concepts_latest -> Thesaurus. A BC row to the NCIt concept of its ncit_code.
+- `https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_biomedical_concepts_latest#ncit_dec_code` (published key): cdisc_biomedical_concepts_latest -> Thesaurus. A BC row to the NCIt concept of its ncit_dec_code.
+- `https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_biomedical_concepts_latest#parent_bc_id` (published key): cdisc_biomedical_concepts_latest -> cdisc_biomedical_concepts_hierarchy_latest. A BC row to the hierarchy row of its parent BC.
+- `https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_biomedical_concepts_hierarchy_latest#parent_bc_id` (published key): cdisc_biomedical_concepts_hierarchy_latest -> cdisc_biomedical_concepts_hierarchy_latest. A BC hierarchy row to the hierarchy row of its parent BC.
+- `https://kerfors.github.io/cdisc-for-all/link/sdtmig/SDTMIG#CDISC%20CT%20Codelist%20Code%28s%29` (published key): SDTMIG -> SDTM Terminology. An SDTMIG variable row to the SDTM CT codelist row of each code in its CDISC CT Codelist Code(s). Built locally (sign-in source).
+- `https://kerfors.github.io/cdisc-for-all/link/sdtm-model/SDTM#Variable%20C-Code` (published key): SDTM -> Thesaurus. An SDTM Model variable row to the NCIt concept of its Variable C-Code. Built locally (sign-in source).
+- `https://kerfors.github.io/cdisc-for-all/link/ncit-flat/Thesaurus#parents` (published key): Thesaurus -> Thesaurus. An NCIt concept to each concept in its parents.
+- `https://kerfors.github.io/cdisc-for-all/link/nci-code-cui-map/nci_code_cui_map#code` (published key): nci_code_cui_map -> Thesaurus. A row of the code-CUI map to the NCIt concept of its code.
+- `https://kerfors.github.io/cdisc-for-all/rule/sdtmig/SDTMIG#Variable%20Name/sdtm-model/SDTM` (by rule): SDTMIG -> SDTM. An SDTMIG variable row to the SDTM Model variable row it is an instance of. Rule: The first that matches: the Model row with the same Class, Dataset Name and Variable Name; else the Model row without a Dataset Name, with the same Class, whose Variable Name is the general name (the IG Variable Name with its Dataset Name prefix replaced by "--", or the Variable Name itself if it does not start with the Dataset Name); else the same for Class General Observations; for Class Findings About, else the same for Class Findings. Built locally (sign-in source).
+- `https://kerfors.github.io/cdisc-for-all/rule/cosmos/cdisc_sdtm_dataset_specializations_latest#sdtm_variable/sdtmig/SDTMIG` (by rule): cdisc_sdtm_dataset_specializations_latest -> SDTMIG. A Dataset Specialization variable row to the SDTMIG variable row of the same name in its own domain. Rule: domain equals the SDTMIG Dataset Name and sdtm_variable equals the SDTMIG Variable Name. Built locally (sign-in source).
+- `https://kerfors.github.io/cdisc-for-all/rule/cosmos/cdisc_sdtm_dataset_specializations_latest#sdtm_variable/sdtm-model/SDTM` (by rule): cdisc_sdtm_dataset_specializations_latest -> SDTM. A Dataset Specialization variable row that is not an SDTMIG variable of its domain, to an SDTM Model variable row. Rule: Only where the row has no link to an SDTMIG variable. The class of the domain is the Class the SDTMIG table gives for that Dataset Name; with it, the rule of "sdtmig variable to model variable" (domain as Dataset Name, sdtm_variable as Variable Name). A domain that is not an SDTMIG dataset has no class: only Class General Observations is tried. Built locally (sign-in source).
+- `https://kerfors.github.io/cdisc-for-all/rule/cosmos/cdisc_sdtm_dataset_specializations_latest#sdtm_variable/nsv-registry/Approved%20NSVs-alpha` (by rule): cdisc_sdtm_dataset_specializations_latest -> Approved NSVs-alpha. A Dataset Specialization variable row that is neither an SDTMIG nor an SDTM Model variable, to the NSV Registry rows of its name without the domain prefix. Rule: Only where the row has no link to an SDTMIG or an SDTM Model variable. sdtm_variable with the domain prefix removed (only if it starts with the domain) equals the registry Variable Name as published (no trimming). Every matching registry row is linked (the registry key is Variable Name + Source(s)).
+- `https://kerfors.github.io/cdisc-for-all/rule/cosmos/cdisc_sdtm_dataset_specializations_latest#value_list/sdtm-ct/SDTM%20Terminology` (by rule): cdisc_sdtm_dataset_specializations_latest -> SDTM Terminology. A Dataset Specialization variable row to the SDTM CT term row of each value in its value_list, within its codelist. Rule: Only where the row has a codelist. Each value of value_list (split at ";") equals the CDISC Submission Value of a term row of that codelist.
+- `https://kerfors.github.io/cdisc-for-all/rule/sdtm-model/SDTM#Variables%20Qualified/sdtm-model/SDTM` (by rule): SDTM -> SDTM. An SDTM Model variable row to each Model variable named in its Variables Qualified, in the same class and dataset. Rule: Each name in Variables Qualified (split at ";", surrounding spaces removed) equals the Variable Name of a Model row with the same Class and the same Dataset Name (both empty for a variable the Model publishes for a class). Built locally (sign-in source).
+- `https://kerfors.github.io/cdisc-for-all/rule/cosmos/cdisc_sdtm_dataset_specializations_latest#subject/cosmos/cdisc_sdtm_dataset_specializations_latest` (by rule): cdisc_sdtm_dataset_specializations_latest -> cdisc_sdtm_dataset_specializations_latest. A Dataset Specialization variable row to the variable row named in its subject, in the same Dataset Specialization. Rule: subject equals the sdtm_variable of a row with the same domain and vlm_group_id.
+- `https://kerfors.github.io/cdisc-for-all/rule/cosmos/cdisc_sdtm_dataset_specializations_latest#object/cosmos/cdisc_sdtm_dataset_specializations_latest` (by rule): cdisc_sdtm_dataset_specializations_latest -> cdisc_sdtm_dataset_specializations_latest. A Dataset Specialization variable row to the variable row named in its object, in the same Dataset Specialization. Rule: object equals the sdtm_variable of a row with the same domain and vlm_group_id.
+
+## Using it
+
+- [Start page](https://kerfors.github.io/cdisc-for-all/) and [example pages](https://kerfors.github.io/cdisc-for-all/examples/pages/): the test concept graph of nine lab tests; [link map](https://kerfors.github.io/cdisc-for-all/examples/pages/link_map.html).
+- [test_concept_graph.rq](https://github.com/kerfors/cdisc-for-all/blob/main/examples/test_concept_graph.rq): a SPARQL CONSTRUCT from an SDTM CT test C-code to its NCIt concept, the COSMoS BC, its Data Element Concepts, the bound CT terms and the Specializations. Load the base graphs, links.ttl, by-rule.ttl and cosmos-model.ttl into one store (the examples use Oxigraph).
+- [test_concept.py](https://github.com/kerfors/cdisc-for-all/blob/main/examples/test_concept.py): runs it per C-code: `python examples/test_concept.py C105585`.
+
+## Optional
+
+- [README](https://github.com/kerfors/cdisc-for-all#readme): rules, sources, pins, licences.
+- [CHANGES](https://github.com/kerfors/cdisc-for-all/blob/main/CHANGES.md): every step and decision.
