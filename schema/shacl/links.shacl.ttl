@@ -49,11 +49,60 @@ PREFIX sh: <http://www.w3.org/ns/shacl#>
     sh:target <https://kerfors.github.io/cdisc-for-all/shape/cosmos%20dataset%20specialization%20to%20data%20element%20concept-target> ;
 .
 
+<https://kerfors.github.io/cdisc-for-all/shape/cosmos%20dataset%20specialization%20to%20model%20variable>
+    a sh:NodeShape ;
+    sh:severity sh:Info ;
+    sh:sparql <https://kerfors.github.io/cdisc-for-all/shape/cosmos%20dataset%20specialization%20to%20model%20variable-sparql> ;
+    sh:target <https://kerfors.github.io/cdisc-for-all/shape/cosmos%20dataset%20specialization%20to%20model%20variable-target> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/cosmos%20dataset%20specialization%20to%20nsv>
+    a sh:NodeShape ;
+    sh:severity sh:Info ;
+    sh:sparql <https://kerfors.github.io/cdisc-for-all/shape/cosmos%20dataset%20specialization%20to%20nsv-sparql> ;
+    sh:target <https://kerfors.github.io/cdisc-for-all/shape/cosmos%20dataset%20specialization%20to%20nsv-target> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/cosmos%20dataset%20specialization%20to%20nsv-ambiguous>
+    a sh:NodeShape ;
+    sh:severity sh:Info ;
+    sh:sparql <https://kerfors.github.io/cdisc-for-all/shape/cosmos%20dataset%20specialization%20to%20nsv-ambiguous-sparql> ;
+    sh:target <https://kerfors.github.io/cdisc-for-all/shape/cosmos%20dataset%20specialization%20to%20nsv-ambiguous-target> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/cosmos%20dataset%20specialization%20to%20sdtmig%20variable>
+    a sh:NodeShape ;
+    sh:severity sh:Info ;
+    sh:sparql <https://kerfors.github.io/cdisc-for-all/shape/cosmos%20dataset%20specialization%20to%20sdtmig%20variable-sparql> ;
+    sh:target <https://kerfors.github.io/cdisc-for-all/shape/cosmos%20dataset%20specialization%20to%20sdtmig%20variable-target> ;
+.
+
 <https://kerfors.github.io/cdisc-for-all/shape/cosmos%20hierarchy%20to%20parent>
     a sh:NodeShape ;
     sh:severity sh:Info ;
     sh:sparql <https://kerfors.github.io/cdisc-for-all/shape/cosmos%20hierarchy%20to%20parent-sparql> ;
     sh:target <https://kerfors.github.io/cdisc-for-all/shape/cosmos%20hierarchy%20to%20parent-target> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/cosmos%20relationship%20object>
+    a sh:NodeShape ;
+    sh:severity sh:Info ;
+    sh:sparql <https://kerfors.github.io/cdisc-for-all/shape/cosmos%20relationship%20object-sparql> ;
+    sh:target <https://kerfors.github.io/cdisc-for-all/shape/cosmos%20relationship%20object-target> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/cosmos%20relationship%20subject>
+    a sh:NodeShape ;
+    sh:severity sh:Info ;
+    sh:sparql <https://kerfors.github.io/cdisc-for-all/shape/cosmos%20relationship%20subject-sparql> ;
+    sh:target <https://kerfors.github.io/cdisc-for-all/shape/cosmos%20relationship%20subject-target> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/cosmos%20value%20list%20to%20term>
+    a sh:NodeShape ;
+    sh:severity sh:Info ;
+    sh:sparql <https://kerfors.github.io/cdisc-for-all/shape/cosmos%20value%20list%20to%20term-sparql> ;
+    sh:target <https://kerfors.github.io/cdisc-for-all/shape/cosmos%20value%20list%20to%20term-target> ;
 .
 
 <https://kerfors.github.io/cdisc-for-all/shape/nci%20code-cui%20map%20to%20NCIt>
@@ -91,11 +140,25 @@ PREFIX sh: <http://www.w3.org/ns/shacl#>
     sh:target <https://kerfors.github.io/cdisc-for-all/shape/sdtm-model%20variable%20to%20NCIt-target> ;
 .
 
+<https://kerfors.github.io/cdisc-for-all/shape/sdtm-model%20variables%20qualified>
+    a sh:NodeShape ;
+    sh:severity sh:Info ;
+    sh:sparql <https://kerfors.github.io/cdisc-for-all/shape/sdtm-model%20variables%20qualified-sparql> ;
+    sh:target <https://kerfors.github.io/cdisc-for-all/shape/sdtm-model%20variables%20qualified-target> ;
+.
+
 <https://kerfors.github.io/cdisc-for-all/shape/sdtmig%20variable%20to%20codelist>
     a sh:NodeShape ;
     sh:severity sh:Info ;
     sh:sparql <https://kerfors.github.io/cdisc-for-all/shape/sdtmig%20variable%20to%20codelist-sparql> ;
     sh:target <https://kerfors.github.io/cdisc-for-all/shape/sdtmig%20variable%20to%20codelist-target> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/sdtmig%20variable%20to%20model%20variable>
+    a sh:NodeShape ;
+    sh:severity sh:Info ;
+    sh:sparql <https://kerfors.github.io/cdisc-for-all/shape/sdtmig%20variable%20to%20model%20variable-sparql> ;
+    sh:target <https://kerfors.github.io/cdisc-for-all/shape/sdtmig%20variable%20to%20model%20variable-target> ;
 .
 
 <https://kerfors.github.io/cdisc-for-all/shape/cosmos%20biomedical%20concept%20to%20NCIt-sparql>
@@ -175,6 +238,50 @@ PREFIX sh: <http://www.w3.org/ns/shacl#>
     sh:select "SELECT ?this ?value WHERE { ?this a <https://kerfors.github.io/cdisc-for-all/def/cosmos#cdisc_sdtm_dataset_specializations_latest> . ?this <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#dec_id> ?value . FILTER NOT EXISTS { ?this <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_sdtm_dataset_specializations_latest#dec_id> ?t } }" ;
 .
 
+<https://kerfors.github.io/cdisc-for-all/shape/cosmos%20dataset%20specialization%20to%20model%20variable-sparql>
+    a sh:SPARQLConstraint ;
+    sh:message "cosmos dataset specialization to model variable: no by rule link for the value" ;
+    sh:select "SELECT $this ?value WHERE { $this <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#sdtm_variable> ?value . FILTER NOT EXISTS { $this <https://kerfors.github.io/cdisc-for-all/rule/cosmos/cdisc_sdtm_dataset_specializations_latest#sdtm_variable/sdtmig/SDTMIG> ?u0 } FILTER NOT EXISTS { $this <https://kerfors.github.io/cdisc-for-all/rule/cosmos/cdisc_sdtm_dataset_specializations_latest#sdtm_variable/sdtm-model/SDTM> ?t } }" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/cosmos%20dataset%20specialization%20to%20model%20variable-target>
+    a sh:SPARQLTarget ;
+    sh:select "SELECT ?this ?value WHERE { ?this a <https://kerfors.github.io/cdisc-for-all/def/cosmos#cdisc_sdtm_dataset_specializations_latest> . ?this <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#sdtm_variable> ?value . FILTER NOT EXISTS { ?this <https://kerfors.github.io/cdisc-for-all/rule/cosmos/cdisc_sdtm_dataset_specializations_latest#sdtm_variable/sdtmig/SDTMIG> ?u0 } FILTER NOT EXISTS { ?this <https://kerfors.github.io/cdisc-for-all/rule/cosmos/cdisc_sdtm_dataset_specializations_latest#sdtm_variable/sdtm-model/SDTM> ?t } }" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/cosmos%20dataset%20specialization%20to%20nsv-ambiguous-sparql>
+    a sh:SPARQLConstraint ;
+    sh:message "cosmos dataset specialization to nsv: more target rows than keys for the value" ;
+    sh:select "SELECT $this ?value WHERE { $this <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#sdtm_variable> ?value . FILTER NOT EXISTS { $this <https://kerfors.github.io/cdisc-for-all/rule/cosmos/cdisc_sdtm_dataset_specializations_latest#sdtm_variable/sdtmig/SDTMIG> ?u0 } FILTER NOT EXISTS { $this <https://kerfors.github.io/cdisc-for-all/rule/cosmos/cdisc_sdtm_dataset_specializations_latest#sdtm_variable/sdtm-model/SDTM> ?u1 } OPTIONAL { $this <https://kerfors.github.io/cdisc-for-all/rule/cosmos/cdisc_sdtm_dataset_specializations_latest#sdtm_variable/nsv-registry/Approved%20NSVs-alpha> ?t } } GROUP BY $this ?value HAVING (COUNT(DISTINCT ?t) > 1)" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/cosmos%20dataset%20specialization%20to%20nsv-ambiguous-target>
+    a sh:SPARQLTarget ;
+    sh:select "SELECT ?this ?value WHERE { ?this a <https://kerfors.github.io/cdisc-for-all/def/cosmos#cdisc_sdtm_dataset_specializations_latest> . ?this <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#sdtm_variable> ?value . FILTER NOT EXISTS { ?this <https://kerfors.github.io/cdisc-for-all/rule/cosmos/cdisc_sdtm_dataset_specializations_latest#sdtm_variable/sdtmig/SDTMIG> ?u0 } FILTER NOT EXISTS { ?this <https://kerfors.github.io/cdisc-for-all/rule/cosmos/cdisc_sdtm_dataset_specializations_latest#sdtm_variable/sdtm-model/SDTM> ?u1 } OPTIONAL { ?this <https://kerfors.github.io/cdisc-for-all/rule/cosmos/cdisc_sdtm_dataset_specializations_latest#sdtm_variable/nsv-registry/Approved%20NSVs-alpha> ?t } } GROUP BY ?this ?value HAVING (COUNT(DISTINCT ?t) > 1)" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/cosmos%20dataset%20specialization%20to%20nsv-sparql>
+    a sh:SPARQLConstraint ;
+    sh:message "cosmos dataset specialization to nsv: no by rule link for the value" ;
+    sh:select "SELECT $this ?value WHERE { $this <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#sdtm_variable> ?value . FILTER NOT EXISTS { $this <https://kerfors.github.io/cdisc-for-all/rule/cosmos/cdisc_sdtm_dataset_specializations_latest#sdtm_variable/sdtmig/SDTMIG> ?u0 } FILTER NOT EXISTS { $this <https://kerfors.github.io/cdisc-for-all/rule/cosmos/cdisc_sdtm_dataset_specializations_latest#sdtm_variable/sdtm-model/SDTM> ?u1 } FILTER NOT EXISTS { $this <https://kerfors.github.io/cdisc-for-all/rule/cosmos/cdisc_sdtm_dataset_specializations_latest#sdtm_variable/nsv-registry/Approved%20NSVs-alpha> ?t } }" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/cosmos%20dataset%20specialization%20to%20nsv-target>
+    a sh:SPARQLTarget ;
+    sh:select "SELECT ?this ?value WHERE { ?this a <https://kerfors.github.io/cdisc-for-all/def/cosmos#cdisc_sdtm_dataset_specializations_latest> . ?this <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#sdtm_variable> ?value . FILTER NOT EXISTS { ?this <https://kerfors.github.io/cdisc-for-all/rule/cosmos/cdisc_sdtm_dataset_specializations_latest#sdtm_variable/sdtmig/SDTMIG> ?u0 } FILTER NOT EXISTS { ?this <https://kerfors.github.io/cdisc-for-all/rule/cosmos/cdisc_sdtm_dataset_specializations_latest#sdtm_variable/sdtm-model/SDTM> ?u1 } FILTER NOT EXISTS { ?this <https://kerfors.github.io/cdisc-for-all/rule/cosmos/cdisc_sdtm_dataset_specializations_latest#sdtm_variable/nsv-registry/Approved%20NSVs-alpha> ?t } }" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/cosmos%20dataset%20specialization%20to%20sdtmig%20variable-sparql>
+    a sh:SPARQLConstraint ;
+    sh:message "cosmos dataset specialization to sdtmig variable: no by rule link for the value" ;
+    sh:select "SELECT $this ?value WHERE { $this <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#sdtm_variable> ?value . FILTER NOT EXISTS { $this <https://kerfors.github.io/cdisc-for-all/rule/cosmos/cdisc_sdtm_dataset_specializations_latest#sdtm_variable/sdtmig/SDTMIG> ?t } }" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/cosmos%20dataset%20specialization%20to%20sdtmig%20variable-target>
+    a sh:SPARQLTarget ;
+    sh:select "SELECT ?this ?value WHERE { ?this a <https://kerfors.github.io/cdisc-for-all/def/cosmos#cdisc_sdtm_dataset_specializations_latest> . ?this <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#sdtm_variable> ?value . FILTER NOT EXISTS { ?this <https://kerfors.github.io/cdisc-for-all/rule/cosmos/cdisc_sdtm_dataset_specializations_latest#sdtm_variable/sdtmig/SDTMIG> ?t } }" ;
+.
+
 <https://kerfors.github.io/cdisc-for-all/shape/cosmos%20hierarchy%20to%20parent-sparql>
     a sh:SPARQLConstraint ;
     sh:message "cosmos hierarchy to parent: no published key link for the value" ;
@@ -184,6 +291,39 @@ PREFIX sh: <http://www.w3.org/ns/shacl#>
 <https://kerfors.github.io/cdisc-for-all/shape/cosmos%20hierarchy%20to%20parent-target>
     a sh:SPARQLTarget ;
     sh:select "SELECT ?this ?value WHERE { ?this a <https://kerfors.github.io/cdisc-for-all/def/cosmos#cdisc_biomedical_concepts_hierarchy_latest> . ?this <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_hierarchy_latest#parent_bc_id> ?value . FILTER NOT EXISTS { ?this <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_biomedical_concepts_hierarchy_latest#parent_bc_id> ?t } }" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/cosmos%20relationship%20object-sparql>
+    a sh:SPARQLConstraint ;
+    sh:message "cosmos relationship object: no by rule link for the value" ;
+    sh:select "SELECT $this ?value WHERE { $this <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#object> ?value . FILTER NOT EXISTS { $this <https://kerfors.github.io/cdisc-for-all/rule/cosmos/cdisc_sdtm_dataset_specializations_latest#object/cosmos/cdisc_sdtm_dataset_specializations_latest> ?t } }" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/cosmos%20relationship%20object-target>
+    a sh:SPARQLTarget ;
+    sh:select "SELECT ?this ?value WHERE { ?this a <https://kerfors.github.io/cdisc-for-all/def/cosmos#cdisc_sdtm_dataset_specializations_latest> . ?this <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#object> ?value . FILTER NOT EXISTS { ?this <https://kerfors.github.io/cdisc-for-all/rule/cosmos/cdisc_sdtm_dataset_specializations_latest#object/cosmos/cdisc_sdtm_dataset_specializations_latest> ?t } }" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/cosmos%20relationship%20subject-sparql>
+    a sh:SPARQLConstraint ;
+    sh:message "cosmos relationship subject: no by rule link for the value" ;
+    sh:select "SELECT $this ?value WHERE { $this <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#subject> ?value . FILTER NOT EXISTS { $this <https://kerfors.github.io/cdisc-for-all/rule/cosmos/cdisc_sdtm_dataset_specializations_latest#subject/cosmos/cdisc_sdtm_dataset_specializations_latest> ?t } }" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/cosmos%20relationship%20subject-target>
+    a sh:SPARQLTarget ;
+    sh:select "SELECT ?this ?value WHERE { ?this a <https://kerfors.github.io/cdisc-for-all/def/cosmos#cdisc_sdtm_dataset_specializations_latest> . ?this <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#subject> ?value . FILTER NOT EXISTS { ?this <https://kerfors.github.io/cdisc-for-all/rule/cosmos/cdisc_sdtm_dataset_specializations_latest#subject/cosmos/cdisc_sdtm_dataset_specializations_latest> ?t } }" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/cosmos%20value%20list%20to%20term-sparql>
+    a sh:SPARQLConstraint ;
+    sh:message "cosmos value list to term: no by rule link for the value" ;
+    sh:select "SELECT $this ?value WHERE { $this <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#value_list> ?value . $this <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#codelist> ?r0 . OPTIONAL { $this <https://kerfors.github.io/cdisc-for-all/rule/cosmos/cdisc_sdtm_dataset_specializations_latest#value_list/sdtm-ct/SDTM%20Terminology> ?t } } GROUP BY $this ?value HAVING (COUNT(DISTINCT ?t) < (STRLEN(?value) - STRLEN(REPLACE(?value, \";\", \"\", \"q\"))) / STRLEN(\";\") + 1)" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/cosmos%20value%20list%20to%20term-target>
+    a sh:SPARQLTarget ;
+    sh:select "SELECT ?this ?value WHERE { ?this a <https://kerfors.github.io/cdisc-for-all/def/cosmos#cdisc_sdtm_dataset_specializations_latest> . ?this <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#value_list> ?value . ?this <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#codelist> ?r0 . OPTIONAL { ?this <https://kerfors.github.io/cdisc-for-all/rule/cosmos/cdisc_sdtm_dataset_specializations_latest#value_list/sdtm-ct/SDTM%20Terminology> ?t } } GROUP BY ?this ?value HAVING (COUNT(DISTINCT ?t) < (STRLEN(?value) - STRLEN(REPLACE(?value, \";\", \"\", \"q\"))) / STRLEN(\";\") + 1)" ;
 .
 
 <https://kerfors.github.io/cdisc-for-all/shape/nci%20code-cui%20map%20to%20NCIt-sparql>
@@ -241,6 +381,17 @@ PREFIX sh: <http://www.w3.org/ns/shacl#>
     sh:select "SELECT ?this ?value WHERE { ?this a <https://kerfors.github.io/cdisc-for-all/def/sdtm-model#SDTM> . ?this <https://kerfors.github.io/cdisc-for-all/def/sdtm-model/SDTM#Variable%20C-Code> ?value . FILTER NOT EXISTS { ?this <https://kerfors.github.io/cdisc-for-all/link/sdtm-model/SDTM#Variable%20C-Code> ?t } }" ;
 .
 
+<https://kerfors.github.io/cdisc-for-all/shape/sdtm-model%20variables%20qualified-sparql>
+    a sh:SPARQLConstraint ;
+    sh:message "sdtm-model variables qualified: no by rule link for the value" ;
+    sh:select "SELECT $this ?value WHERE { $this <https://kerfors.github.io/cdisc-for-all/def/sdtm-model/SDTM#Variables%20Qualified> ?value . OPTIONAL { $this <https://kerfors.github.io/cdisc-for-all/rule/sdtm-model/SDTM#Variables%20Qualified/sdtm-model/SDTM> ?t } } GROUP BY $this ?value HAVING (COUNT(DISTINCT ?t) < (STRLEN(?value) - STRLEN(REPLACE(?value, \";\", \"\", \"q\"))) / STRLEN(\";\") + 1)" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/sdtm-model%20variables%20qualified-target>
+    a sh:SPARQLTarget ;
+    sh:select "SELECT ?this ?value WHERE { ?this a <https://kerfors.github.io/cdisc-for-all/def/sdtm-model#SDTM> . ?this <https://kerfors.github.io/cdisc-for-all/def/sdtm-model/SDTM#Variables%20Qualified> ?value . OPTIONAL { ?this <https://kerfors.github.io/cdisc-for-all/rule/sdtm-model/SDTM#Variables%20Qualified/sdtm-model/SDTM> ?t } } GROUP BY ?this ?value HAVING (COUNT(DISTINCT ?t) < (STRLEN(?value) - STRLEN(REPLACE(?value, \";\", \"\", \"q\"))) / STRLEN(\";\") + 1)" ;
+.
+
 <https://kerfors.github.io/cdisc-for-all/shape/sdtmig%20variable%20to%20codelist-sparql>
     a sh:SPARQLConstraint ;
     sh:message "sdtmig variable to codelist: no published key link for the value" ;
@@ -250,4 +401,15 @@ PREFIX sh: <http://www.w3.org/ns/shacl#>
 <https://kerfors.github.io/cdisc-for-all/shape/sdtmig%20variable%20to%20codelist-target>
     a sh:SPARQLTarget ;
     sh:select "SELECT ?this ?value WHERE { ?this a <https://kerfors.github.io/cdisc-for-all/def/sdtmig#SDTMIG> . ?this <https://kerfors.github.io/cdisc-for-all/def/sdtmig/SDTMIG#CDISC%20CT%20Codelist%20Code%28s%29> ?value . OPTIONAL { ?this <https://kerfors.github.io/cdisc-for-all/link/sdtmig/SDTMIG#CDISC%20CT%20Codelist%20Code%28s%29> ?t } } GROUP BY ?this ?value HAVING (COUNT(DISTINCT ?t) < (STRLEN(?value) - STRLEN(REPLACE(?value, \";\", \"\", \"q\"))) / STRLEN(\";\") + 1)" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/sdtmig%20variable%20to%20model%20variable-sparql>
+    a sh:SPARQLConstraint ;
+    sh:message "sdtmig variable to model variable: no by rule link for the value" ;
+    sh:select "SELECT $this ?value WHERE { $this <https://kerfors.github.io/cdisc-for-all/def/sdtmig/SDTMIG#Variable%20Name> ?value . FILTER NOT EXISTS { $this <https://kerfors.github.io/cdisc-for-all/rule/sdtmig/SDTMIG#Variable%20Name/sdtm-model/SDTM> ?t } }" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/sdtmig%20variable%20to%20model%20variable-target>
+    a sh:SPARQLTarget ;
+    sh:select "SELECT ?this ?value WHERE { ?this a <https://kerfors.github.io/cdisc-for-all/def/sdtmig#SDTMIG> . ?this <https://kerfors.github.io/cdisc-for-all/def/sdtmig/SDTMIG#Variable%20Name> ?value . FILTER NOT EXISTS { ?this <https://kerfors.github.io/cdisc-for-all/rule/sdtmig/SDTMIG#Variable%20Name/sdtm-model/SDTM> ?t } }" ;
 .

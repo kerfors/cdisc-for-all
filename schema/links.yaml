@@ -1,6 +1,7 @@
 # The links between base rows. Hand-kept; the link-graph builder (cfa.link) and the link SHACL shapes are generated from it.
 # One slot per link. The slot is the link property: slot_uri {ns}link/{source}/{table}#{column} for a published
-# key, {ns}rule/{source}/{table}#{column} for a link by rule ({column} = the base column the link rests on).
+# key, {ns}rule/{source}/{table}#{column}/{target source}/{target table} for a link by rule ({column} = the base
+# column the link rests on; a link by rule names its target, since several rules may rest on one column).
 # domain = the base class of the rows the link starts from; range = the base class of the target rows.
 # Annotations (JSON lists where more than one column):
 #   link:          "published key" or "by rule"
@@ -9,6 +10,12 @@
 #   target_empty:  base columns of the range that must be empty on the target (optional)
 #   separator:     the column holds several keys, split at this text, surrounding spaces removed (optional)
 #   rule:          the rule, stated (by rule only)
+# Links by rule only:
+#   requires:      columns that must have a value for the link to apply (a row without them is outside the link)
+#   unless:        earlier links: the link applies only to a row that has none of them
+#   match_empty:   key columns (not the last) whose empty value matches an empty target column
+#   targets:       "all": every matching target row is linked; a row with more targets than keys is reported too
+#   rule_function: the function of cfa.link that implements the stated rule (target keys to try, in order)
 # A link is made only where the target row exists and is the only row that matches. A row that has a value in the
 # link column and no link is reported (SHACL, sh:Info): that report is Link_Check. Broken links stay broken.
 id: https://kerfors.github.io/cdisc-for-all/def/links
@@ -182,3 +189,105 @@ slots:
       link: published key
       columns: '["code"]'
       target: '["code"]'
+
+  # --- Links by rule (the rule stated in each; graph by-rule)
+
+  "sdtmig variable to model variable":
+    description: An SDTMIG variable row to the SDTM Model variable row it is an instance of.
+    slot_uri: https://kerfors.github.io/cdisc-for-all/rule/sdtmig/SDTMIG#Variable%20Name/sdtm-model/SDTM
+    domain: "SDTMIG"
+    range: "SDTM"
+    annotations:
+      link: by rule
+      columns: '["Class", "Dataset Name", "Variable Name"]'
+      target: '["Class", "Dataset Name", "Variable Name"]'
+      rule_function: sdtmig-model-variable
+      rule: "The first that matches: the Model row with the same Class, Dataset Name and Variable Name; else the Model row without a Dataset Name, with the same Class, whose Variable Name is the general name (the IG Variable Name with its Dataset Name prefix replaced by \"--\", or the Variable Name itself if it does not start with the Dataset Name); else the same for Class General Observations; for Class Findings About, else the same for Class Findings."
+
+  "cosmos dataset specialization to sdtmig variable":
+    description: A Dataset Specialization variable row to the SDTMIG variable row of the same name in its own domain.
+    slot_uri: https://kerfors.github.io/cdisc-for-all/rule/cosmos/cdisc_sdtm_dataset_specializations_latest#sdtm_variable/sdtmig/SDTMIG
+    domain: cdisc_sdtm_dataset_specializations_latest
+    range: "SDTMIG"
+    annotations:
+      link: by rule
+      columns: '["domain", "sdtm_variable"]'
+      target: '["Dataset Name", "Variable Name"]'
+      rule: "domain equals the SDTMIG Dataset Name and sdtm_variable equals the SDTMIG Variable Name."
+
+  "cosmos dataset specialization to model variable":
+    description: A Dataset Specialization variable row that is not an SDTMIG variable of its domain, to an SDTM Model variable row.
+    slot_uri: https://kerfors.github.io/cdisc-for-all/rule/cosmos/cdisc_sdtm_dataset_specializations_latest#sdtm_variable/sdtm-model/SDTM
+    domain: cdisc_sdtm_dataset_specializations_latest
+    range: "SDTM"
+    annotations:
+      link: by rule
+      columns: '["domain", "sdtm_variable"]'
+      target: '["Class", "Dataset Name", "Variable Name"]'
+      unless: '["cosmos dataset specialization to sdtmig variable"]'
+      rule_function: cosmos-model-variable
+      rule: "Only where the row has no link to an SDTMIG variable. The class of the domain is the Class the SDTMIG table gives for that Dataset Name; with it, the rule of \"sdtmig variable to model variable\" (domain as Dataset Name, sdtm_variable as Variable Name). A domain that is not an SDTMIG dataset has no class: only Class General Observations is tried."
+
+  "cosmos dataset specialization to nsv":
+    description: A Dataset Specialization variable row that is neither an SDTMIG nor an SDTM Model variable, to the NSV Registry rows of its name without the domain prefix.
+    slot_uri: https://kerfors.github.io/cdisc-for-all/rule/cosmos/cdisc_sdtm_dataset_specializations_latest#sdtm_variable/nsv-registry/Approved%20NSVs-alpha
+    domain: cdisc_sdtm_dataset_specializations_latest
+    range: "Approved NSVs-alpha"
+    annotations:
+      link: by rule
+      columns: '["domain", "sdtm_variable"]'
+      target: '["Variable Name"]'
+      unless: '["cosmos dataset specialization to sdtmig variable", "cosmos dataset specialization to model variable"]'
+      targets: all
+      rule_function: cosmos-nsv
+      rule: "Only where the row has no link to an SDTMIG or an SDTM Model variable. sdtm_variable with the domain prefix removed (only if it starts with the domain) equals the registry Variable Name as published (no trimming). Every matching registry row is linked (the registry key is Variable Name + Source(s))."
+
+  "cosmos value list to term":
+    description: A Dataset Specialization variable row to the SDTM CT term row of each value in its value_list, within its codelist.
+    slot_uri: https://kerfors.github.io/cdisc-for-all/rule/cosmos/cdisc_sdtm_dataset_specializations_latest#value_list/sdtm-ct/SDTM%20Terminology
+    domain: cdisc_sdtm_dataset_specializations_latest
+    range: "SDTM Terminology"
+    multivalued: true
+    annotations:
+      link: by rule
+      columns: '["codelist", "value_list"]'
+      target: '["Codelist Code", "CDISC Submission Value"]'
+      separator: ";"
+      requires: '["codelist"]'
+      rule: "Only where the row has a codelist. Each value of value_list (split at \";\") equals the CDISC Submission Value of a term row of that codelist."
+
+  "sdtm-model variables qualified":
+    description: An SDTM Model variable row to each Model variable named in its Variables Qualified, in the same class and dataset.
+    slot_uri: https://kerfors.github.io/cdisc-for-all/rule/sdtm-model/SDTM#Variables%20Qualified/sdtm-model/SDTM
+    domain: "SDTM"
+    range: "SDTM"
+    multivalued: true
+    annotations:
+      link: by rule
+      columns: '["Class", "Dataset Name", "Variables Qualified"]'
+      target: '["Class", "Dataset Name", "Variable Name"]'
+      match_empty: '["Dataset Name"]'
+      separator: ";"
+      rule: "Each name in Variables Qualified (split at \";\", surrounding spaces removed) equals the Variable Name of a Model row with the same Class and the same Dataset Name (both empty for a variable the Model publishes for a class)."
+
+  "cosmos relationship subject":
+    description: A Dataset Specialization variable row to the variable row named in its subject, in the same Dataset Specialization.
+    slot_uri: https://kerfors.github.io/cdisc-for-all/rule/cosmos/cdisc_sdtm_dataset_specializations_latest#subject/cosmos/cdisc_sdtm_dataset_specializations_latest
+    domain: cdisc_sdtm_dataset_specializations_latest
+    range: cdisc_sdtm_dataset_specializations_latest
+    annotations:
+      link: by rule
+      columns: '["domain", "vlm_group_id", "subject"]'
+      target: '["domain", "vlm_group_id", "sdtm_variable"]'
+      rule: "subject equals the sdtm_variable of a row with the same domain and vlm_group_id."
+
+  "cosmos relationship object":
+    description: A Dataset Specialization variable row to the variable row named in its object, in the same Dataset Specialization.
+    slot_uri: https://kerfors.github.io/cdisc-for-all/rule/cosmos/cdisc_sdtm_dataset_specializations_latest#object/cosmos/cdisc_sdtm_dataset_specializations_latest
+    domain: cdisc_sdtm_dataset_specializations_latest
+    range: cdisc_sdtm_dataset_specializations_latest
+    annotations:
+      link: by rule
+      columns: '["domain", "vlm_group_id", "object"]'
+      target: '["domain", "vlm_group_id", "sdtm_variable"]'
+      rule: "object equals the sdtm_variable of a row with the same domain and vlm_group_id."
