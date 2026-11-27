@@ -10,8 +10,8 @@
   "base/nci-code-cui-map/nci-code-cui-map.ttl": "2bb377b7b4046b66cd6f68b69e72d427146a8181892669f916cc1c68524837b4"
  },
  "schema": {
-  "schema/links.yaml": "0bf413ac4dc0b88220788635beeb93bd7fabed0d4d420ca73e64a4d794d5728e",
-  "schema/shacl/links.shacl.ttl": "17ab8bfd7ada16e4388c6882a4fdad185efa0ecac649f52aa6710fd7f2027e0f"
+  "schema/links.yaml": "0133e487e13ba2afd8ee98ae6df832a1695e07ce222e87476b2be442415fe46a",
+  "schema/shacl/links.shacl.ttl": "a8fe973388ac9ff6e6cd5a786cbbc2c34adecb5c8e356d6f51826b32336efc26"
  },
  "link_graphs": {
   "links": {
@@ -40,7 +40,7 @@
   }
  },
  "graph_sha256_method": "SHA-256 of the canonical N-Triples (RDFC-1.0; no blank nodes)",
- "link_check_text_sha256": "7f7b6537ac8f878f5388163b5ca10469bff27eb88c8557258ce966e5ba70983b",
+ "link_check_text_sha256": "a9a049d3b5cdced7821603a4f70366667e350c3f60222b34277865a5a121902b",
  "text_sha256_method": "SHA-256 (UTF-8) of the JSON array [header, row, ...], each an array of strings (empty cell \"\"), rows sorted by the key columns in code point order, json.dumps(ensure_ascii=False, separators=(\",\", \":\")).",
  "tools": {
   "rdflib": "7.6.0",
