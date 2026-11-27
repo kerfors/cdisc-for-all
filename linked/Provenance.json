@@ -1,0 +1,40 @@
+{
+ "layer": "linked",
+ "inputs": {
+  "base/nsv-registry/nsv-registry.ttl": "9f2d99fa6af2fe9c8d2c1f03d4565cf12ed6428f0a902329b806a17f8386a5f0",
+  "base/cosmos/cosmos.ttl": "ccbe3202c832e4513e93dd3e2b6d0ef4e8cd50f075194e0e6a40b1f6df991f26",
+  "base/sdtmig/sdtmig.ttl": "5bf04b0be7632bf7facb05c1fda2d7bbf912671f5697deee9efe05beb7fdfc85",
+  "base/sdtm-model/sdtm-model.ttl": "2581f22c21e5e770f3499c0d6109de4b0a2b2e3e1ac4b752591ccb0d8483585f",
+  "base/sdtm-ct/sdtm-ct.ttl": "fb6a09d0456028ab99134e14f78b3907e653e251ba416ea88f04aa36c640143e",
+  "base/ncit-flat/ncit-flat.ttl": "b98dd5530b10c2b6169b0c954a55e74c89df3d6c8806ce6a387790cd9be2e60f",
+  "base/nci-code-cui-map/nci-code-cui-map.ttl": "2bb377b7b4046b66cd6f68b69e72d427146a8181892669f916cc1c68524837b4"
+ },
+ "schema": {
+  "schema/links.yaml": "fbdfec591fdca7517d3c902719d5b75f33605458df86e95300f636c243ed2051",
+  "schema/shacl/links.shacl.ttl": "561f4f080ca324f3e350b88a4549a3f0b74fc34909aa399a301bfecd27615d60"
+ },
+ "link_graphs": {
+  "links": {
+   "file": "links.ttl",
+   "graph": "https://kerfors.github.io/cdisc-for-all/graph/links",
+   "triples": 147766,
+   "graph_sha256": "d8e8a7c088f3c36072c37896937fad149b804962ae45ab3c6ebe7e83cec9b1a7"
+  },
+  "links-signin": {
+   "file": "links-signin.ttl",
+   "graph": "https://kerfors.github.io/cdisc-for-all/graph/links",
+   "triples": 855,
+   "graph_sha256": "8ddc9db7b1f6d78aeba5d976a3ed0737db07e431690edf7f3d4f2106ebc3de28"
+  }
+ },
+ "graph_sha256_method": "SHA-256 of the canonical N-Triples (RDFC-1.0; no blank nodes)",
+ "link_check_text_sha256": "eb1a97bfa667a1fa5c9e3f83640315ac65438178a69fa9b9004772999d756314",
+ "text_sha256_method": "SHA-256 (UTF-8) of the JSON array [header, row, ...], each an array of strings (empty cell \"\"), rows sorted by the key columns in code point order, json.dumps(ensure_ascii=False, separators=(\",\", \":\")).",
+ "tools": {
+  "rdflib": "7.6.0",
+  "linkml": "1.12.1",
+  "pyshacl": "0.40.2",
+  "openpyxl": "3.1.5",
+  "pandas": "3.1.1"
+ }
+}
