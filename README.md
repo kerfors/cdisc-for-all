@@ -8,6 +8,18 @@ Fully linked wherever the published content resolves; every place it does not is
 
 **Status (2026-11-27):** the base graphs of all seven sources are built (SDTMIG and SDTM Model locally only); the linked layer has the published-key links, the links by rule (the general-name ones also as an SSSOM mapping set), the COSMoS model graph and Link_Check. `examples/` shows one use for study design: the test concept graph of a lab test. Changes are logged in [CHANGES.md](CHANGES.md).
 
+## Where to start
+
+| You are | Start here | What you get |
+|---|---|---|
+| Study designer, clinical scientist | [Start page](https://kerfors.github.io/cdisc-for-all/) | One page per lab test: the test, its NCIt concept, the COSMoS BC, its DECs, the Specializations and the CT terms they bind |
+| Standards or metadata specialist | [Link map](https://kerfors.github.io/cdisc-for-all/examples/pages/link_map.html) | Every link between the source tables as stated, with its Link_Check rows |
+| Developer | [`examples/Getting_Started.ipynb`](examples/Getting_Started.ipynb) | The published graphs in Oxigraph, no clone, and Glucose one hop at a time |
+| AI agent | [`llms.txt`](llms.txt), [`catalog.ttl`](catalog.ttl) | What is here and the rules to keep; DCAT + VoID with every file, licence, checksum and linkset |
+| Anyone rebuilding | [Layout](#layout) and the notebooks in `base/` and `linked/` | The build, source by source |
+
+Details of each are under [Using it](#using-it-the-test-concept-graph).
+
 ## Two layers
 
 - **base** — one reader per source. It writes the source as an RDF graph in the shape the source publishes: one class per table, one property per published column, one node per row, every non-empty cell as a literal with its text unchanged. Its only selection is the scope (below). Each graph comes with an Excel view of the same table, generated from the graph.

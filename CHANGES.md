@@ -133,3 +133,7 @@ Kerstin's choices: the next user is an AI agent; the description is DCAT + VoID 
 Kerstin's choices: the notebook starts from the published graphs, with no clone; the worked example is Glucose, one hop at a time.
 
 **Content.** `examples/Getting_Started.ipynb` reads `catalog.ttl` from the Pages site, downloads each graph it lists to `~/cdisc-for-all-data/` (again only when the SHA-256 differs; a file whose SHA-256 is not the catalogue's stops it), and loads them into Oxigraph, one named graph per dataset. Then for SDTM CT code C105585: the CT terms; the NCIt concept and its ancestors (link on Code; link on parents); the COSMoS BC rows with that concept (link on ncit_code); the Dataset Specializations with those DECs (link on dec_id); the CT terms they bind (link on assigned_term; rule link on value_list); which graph states each of those links; and test_concept_graph.rq over the union of the graphs (1,522 triples for C105585, as `examples/test_concept.py` gives). Needs only pyoxigraph and pandas.
+
+## Documentation — where to start (2026-11-27)
+
+Kerstin asked whether the documentation is aligned and easy to find. **Code.** `cfa/catalog.py`: llms.txt names the getting-started notebook. **Content.** README: a "Where to start" table near the top (study designer, standards specialist, developer, AI agent, anyone rebuilding). `index.html`: a section for developers and AI agents (getting-started notebook, llms.txt, catalog.ttl). `llms.txt` regenerated. `examples/pages/README.md`: the link map row moved below the test pages.

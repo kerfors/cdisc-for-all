@@ -61,6 +61,9 @@ pre { background: var(--panel); border-radius: 8px; padding: 10px 12px; overflow
 <p>Any SDTM CT test term, by its C-code, with Python (the commands in the <a href="https://github.com/kerfors/cdisc-for-all#using-it-the-test-concept-graph">README</a>):</p>
 <pre>python examples/test_concept.py C105585</pre>
 
+<h2>For developers and AI agents</h2>
+<p>Developers: the <a href="https://github.com/kerfors/cdisc-for-all/blob/main/examples/Getting_Started.ipynb">getting-started notebook</a> loads the published graphs into Oxigraph, with no clone, and follows Glucose one hop at a time. AI agents: <a href="llms.txt">llms.txt</a> says what is here and the rules to keep; <a href="catalog.ttl">catalog.ttl</a> lists every graph and file with licence, version and checksum (DCAT + VoID).</p>
+
 <h2>What it is built on</h2>
 <p>COSMoS (latest export), SDTM Controlled Terminology, the NCI Thesaurus and its code–CUI map, the Non-Standard Variable Registry, and the SDTMIG and SDTM Model variable tables (cdisc.org sign-in, used locally only). Every value is as published; links rest on published keys or on stated rules; every reference that does not resolve is listed in Link_Check. Source, rules and pins: <a href="https://github.com/kerfors/cdisc-for-all">github.com/kerfors/cdisc-for-all</a>.</p>
 <p class="muted">Not an official CDISC or NCI product. The content stays under the terms of its publishers (see the README).</p>

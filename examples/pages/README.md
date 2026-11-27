@@ -16,5 +16,5 @@ Rebuild them (results equal while the graphs are unchanged):
 | [test_concept_C64805.html](test_concept_C64805.html) | INR / Prothrombin Intl. Normalized Ratio | Coagulation | BC International Normalized Ratio of Prothrombin Time under Prothrombin Time, 2 Specializations (INRBLD, INRPPP) |
 | [test_concept_C64813.html](test_concept_C64813.html) | TSH / Thyrotropin | Endocrinology | BC Thyrotropin Measurement under Peptide Hormone Measurement, 2 Specializations (TSHBLD, TSHSERPL) |
 | [test_concept_C45997.html](test_concept_C45997.html) | PH / pH | Urinalysis | BC pH under Physical Property, 1 Specialization (PHURIN) |
-| [link_map.html](link_map.html) | (all links) | Standards | The source tables and every link between them as stated in schema/links.yaml, with the Link_Check rows of each link; written by `python examples/link_map.py --out examples/pages/link_map.html` |
 | [test_concept_C100429.html](test_concept_C100429.html) | A1AGLP / Alpha-1 Acid Glycoprotein | Chemistry | No COSMoS BC has its NCIt concept: the test terms and the concept only |
+| [link_map.html](link_map.html) | (all links) | Standards | The source tables and every link between them as stated in schema/links.yaml, with the Link_Check rows of each link; written by `python examples/link_map.py --out examples/pages/link_map.html` |
