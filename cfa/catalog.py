@@ -194,6 +194,7 @@ def llms_txt(root, specs, g):
             f'- [Start page]({SITE}) and [example pages]({SITE}examples/pages/): the test concept graph of nine lab tests; [link map]({SITE}examples/pages/link_map.html).',
             f'- [test_concept_graph.rq]({REPO}/blob/main/examples/test_concept_graph.rq): a SPARQL CONSTRUCT from an SDTM CT test C-code to its NCIt concept, the COSMoS BC, its Data Element Concepts, the bound CT terms and the Specializations. Load the base graphs, links.ttl, by-rule.ttl and cosmos-model.ttl into one store (the examples use Oxigraph).',
             f'- [test_concept.py]({REPO}/blob/main/examples/test_concept.py): runs it per C-code: `python examples/test_concept.py C105585` (needs the full requirements.txt).',
+            f'- [cdisc_for_all_mcp.py]({SITE}mcp/cdisc_for_all_mcp.py): a local MCP server (stdio) over the published graphs: find_test, test_concept, describe, sparql (read-only); run with `uv run {SITE}mcp/cdisc_for_all_mcp.py`.',
             f'- [Getting_Started.ipynb]({REPO}/blob/main/examples/Getting_Started.ipynb): reads catalog.ttl, loads the published graphs into Oxigraph (one named graph each, SHA-256 checked) and follows one test hop by hop, naming each link.', '',
             '## Optional', '',
             f'- [README]({REPO}#readme): rules, sources, pins, licences.',
