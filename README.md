@@ -4,7 +4,9 @@ CDISC and NCIt content as published, fully linked: an RDF base with Excel views 
 
 The CDISC standards and the NCI Thesaurus are published as separate files, in different formats, linked by codes and names. This repository reads them as they are, keeps every published value unchanged, and makes the links between them explicit and checkable. Nothing of ours is added: no classification, no interpretation, no counts.
 
-**Status:** started 2026-11-26. Nothing is built yet; this commit sets the scope, the pins and the rules.
+Fully linked wherever the published content resolves; every place it does not is listed in Link_Check. Within the scope below; links to and from the sign-in sources (SDTMIG, SDTM Model) are built locally, not published.
+
+**Status (2026-11-27):** the base graphs of all seven sources are built (SDTMIG and SDTM Model locally only); the linked layer has the published-key links, the links by rule (the general-name ones also as an SSSOM mapping set), the COSMoS model graph and Link_Check. `examples/` shows one use for study design: the test concept graph of a lab test. Changes are logged in [CHANGES.md](CHANGES.md).
 
 ## Two layers
 
@@ -15,8 +17,8 @@ The CDISC standards and the NCI Thesaurus are published as separate files, in di
 
 1. A value is as its source publishes it: no rewording, no filtering, no choosing. Source column names are kept.
 2. Rows are complete: nothing is left out because we judge it irrelevant.
-3. A link is a published key. Where a link rests on a naming rule, it is marked "by rule" and the rule is stated. Published-key links and by-rule links are kept in separate named graphs.
-4. Broken links stay broken. They are reported in Link_Check, not repaired.
+3. A link is a published key. Where a link rests on a naming rule, it is marked "by rule" and the rule is stated. Published-key links and by-rule links are kept in separate named graphs. The links whose rule matches a general name are also given as an SSSOM mapping set, with the part of the rule that matched on each row.
+4. Broken links stay broken. They are reported in Link_Check, not repaired. A link to a row that carries a marker its source publishes is kept and reported in Link_Check too: COSMoS marks a retired BC with "[RETIRED]" at the end of its bc_short_name, and every Dataset Specialization row linked to such a BC is listed (the marker is COSMoS's, not ours; the rows and the link stay).
 5. Nothing of ours: no position, no classification, no count, no flag.
 
 Content and shape are different things. A view that shows the same published facts in another shape (a pivot, the inverse of a published link) is allowed when it is lossless, adds no value of ours, and states its rule.
@@ -26,7 +28,7 @@ Content and shape are different things. A view that shows the same published fac
 - One LinkML schema describes the base graphs and the links. SHACL shapes are generated from it: structural shapes must pass; link shapes report every reference that does not resolve, and that report is Link_Check.
 - Each graph has a content hash: SHA-256 of its canonical N-Triples (RDFC-1.0; the graphs have no blank nodes). Each Excel sheet has a text hash of the sheet read back as text.
 - A base graph is lossless when its Excel view, sorted by key, has the same text hash as the source table read as text.
-- The release check reads the source files again and compares.
+- Each base graph is cross-checked against rdf-tabular, the reference CSVW implementation, converting the published files: the same graph. A release check that reads the source files again and compares is planned, not built.
 
 ## Sources
 
@@ -46,7 +48,17 @@ Every pin is in [`Reference_Versions.json`](Reference_Versions.json): version, f
 
 ## Identifiers
 
-IRIs are in the namespace `https://kerfors.github.io/cdisc-for-all/` and are made by rule from the published table, column and key (percent-encoded). They are identifiers for this repository's own use: not dereferenceable, and stable only within a pin. NCIt concepts keep NCI's own IRIs. This is not a general RDF representation of the CDISC standards.
+IRIs are in the namespace `https://kerfors.github.io/cdisc-for-all/` and are made by rule from the published table, column and key (percent-encoded). They are identifiers for this repository's own use: not dereferenceable (the namespace is also the GitHub Pages address of this repository, which serves the files of main as they are; no IRI under def/, id/, link/ or rule/ is a file there), and stable only within a pin. NCIt concepts keep NCI's own IRIs. This is not a general RDF representation of the CDISC standards.
+
+## Using it: the test concept graph
+
+`examples/test_concept.py` takes the C-code of an SDTM CT test term and writes the test concept graph (a SPARQL CONSTRUCT over the graphs, `examples/test_concept_graph.rq`) and a page to read it: the test terms and their NCIt concept; the COSMoS BC if one has that concept; its Data Element Concepts, the CT terms Dataset Specializations bind to them, and the Specializations, if it has any. Every triple is a triple of the graphs.
+
+    python3 -m venv ~/venvs/cdisc-for-all
+    ~/venvs/cdisc-for-all/bin/pip install -r requirements.txt
+    ~/venvs/cdisc-for-all/bin/python examples/test_concept.py C105585 C64853
+
+Pages for nine lab tests, to open in a browser: [https://kerfors.github.io/cdisc-for-all/examples/pages/](https://kerfors.github.io/cdisc-for-all/examples/pages/) (source in [`examples/pages/`](examples/pages/README.md)). `examples/Example_Lab_Test_Graphs.ipynb` does the same in a notebook.
 
 ## Layout
 
@@ -54,8 +66,8 @@ IRIs are in the namespace `https://kerfors.github.io/cdisc-for-all/` and are mad
 schema/          the LinkML schema (one module per source, links, the COSMoS model mapping) and the generated SHACL
 cfa/             the shared helper: reading, writing, IRIs, hashes, Schema sheets, Provenance
 base/<source>/   reader notebook, downloads/ (not in git), the graph (.ttl), its Excel view, Provenance
-linked/          the link graphs, the SSSOM mapping set of the general-name links, the COSMoS model graph, Link_Check
-checks/          the schema check and the release check
+linked/          Make_Links and Make_COSMoS_Model notebooks, the link graphs, the SSSOM mapping set of the general-name links, the COSMoS model graph, Link_Check (-signin files local, not in git)
+checks/          the schema check and the CSVW cross-check (rdf-tabular)
 examples/        a SPARQL CONSTRUCT query over the graphs (the test concept graph), test_concept.py to run it per test C-code, an example notebook, example pages for nine lab tests (pages/)
 ```
 
@@ -66,4 +78,4 @@ The code, the schema and the documentation written for this repository are under
 - NCI Thesaurus: Creative Commons Attribution 4.0 International (CC BY 4.0), [NCI Thesaurus Terms of Use](https://evs.nci.nih.gov/ftp1/NCI_Thesaurus/ThesaurusTermsofUse.htm). The NCIt content here is derived from the NCI Thesaurus, produced by NCI Enterprise Vocabulary Services; "NCI Thesaurus" is a trademark of the National Cancer Institute.
 - COSMoS: MIT licence, Copyright CDISC ([cdisc-org/COSMoS](https://github.com/cdisc-org/COSMoS)).
 - SDTM Controlled Terminology and the Non-Standard Variable Registry: the terms of CDISC and NCI EVS.
-- SDTMIG and SDTM Model variable tables: downloaded with a cdisc.org sign-in. The files, and the graphs and views that would reproduce them whole, are not in this repository; each user downloads them. What the linked files take from them is published.
+- SDTMIG and SDTM Model variable tables: downloaded with a cdisc.org sign-in. The files, their graphs and views, and the links to and from their rows (the `-signin` files of `linked/`) are not in this repository; each user downloads the files and builds these locally.

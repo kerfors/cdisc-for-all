@@ -1,6 +1,6 @@
 # Test concept pages — examples
 
-Pages written by `examples/test_concept.py` from the published graphs, one per SDTM CT lab test C-code. Each is one self-contained HTML file: open it in a browser (on GitHub: download it, or use a raw-HTML viewer). Every value on a page is a triple of the graphs; the page adds nothing.
+Pages written by `examples/test_concept.py` from the published graphs, one per SDTM CT lab test C-code. Each is one self-contained HTML file: open it in a browser, or on GitHub Pages: https://kerfors.github.io/cdisc-for-all/examples/pages/ Every value on a page is a triple of the graphs; the page adds nothing.
 
 Rebuild them (results equal while the graphs are unchanged):
 
