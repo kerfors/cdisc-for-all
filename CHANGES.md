@@ -99,3 +99,11 @@ Kerstin's choices, one by one: the three links whose rule matches a general name
 ## README brought up to date (2026-11-27)
 
 **Docs.** The status line states what is built (it still said nothing was). The claim is stated as agreed: fully linked wherever the published content resolves, every place it does not listed in Link_Check, within the scope, with the sign-in links local. Rule 3 mentions the SSSOM mapping set. A section "Using it" shows the test concept CLI and the example pages. The checks are described as they are: the CSVW cross-check with rdf-tabular is built, the release check is planned, not built. The licence note on the sign-in sources says that their links are local (it said what the linked files take from them is published). Rule 4 states what is done with "[RETIRED]": the link stays and its rows are listed in Link_Check, the marker being COSMoS's. The example pages are linked on GitHub Pages (served from main), and the Identifiers section says the IRI namespace is also the Pages address, which serves the files of main, and that no IRI is a file there.
+
+## Examples — a start page with a guided reading, for study designers (2026-11-27)
+
+Kerstin's choices, one by one: the first new user is a study designer or clinical scientist (no code); the start is a GitHub Pages landing page; the guided reading follows a designer's questions; the landing page lists the questions and each opens the example page at the part that answers it.
+
+**Code.** The page template (`examples/graph_page.html`) reads `#step=what`, `#step=specify`, `#step=variants` or `#step=values` from the address and highlights the part of the graph that answers the question (test, concept and BC; the BC's DECs; the Specializations; the CT terms bound to the DECs), with a list of it in the side panel, a banner with Back, Next and Close, and a line where the graph has nothing for the step. It adds no value to the graph.
+
+**Content.** `index.html` at the repository root, the start page of the GitHub Pages site: what cdisc-for-all is for, the four questions as a guided reading of the Glucose page, how to read a page, the nine example pages, the command for one's own test, and what it is built on. The nine pages in `examples/pages/` are rebuilt with the template.

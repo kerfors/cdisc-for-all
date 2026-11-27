@@ -58,7 +58,7 @@ IRIs are in the namespace `https://kerfors.github.io/cdisc-for-all/` and are mad
     ~/venvs/cdisc-for-all/bin/pip install -r requirements.txt
     ~/venvs/cdisc-for-all/bin/python examples/test_concept.py C105585 C64853
 
-Pages for nine lab tests, to open in a browser: [https://kerfors.github.io/cdisc-for-all/examples/pages/](https://kerfors.github.io/cdisc-for-all/examples/pages/) (source in [`examples/pages/`](examples/pages/README.md)). `examples/Example_Lab_Test_Graphs.ipynb` does the same in a notebook.
+Start page with a guided reading of Glucose, for study designers: [https://kerfors.github.io/cdisc-for-all/](https://kerfors.github.io/cdisc-for-all/) (`index.html`). Pages for nine lab tests, to open in a browser: [https://kerfors.github.io/cdisc-for-all/examples/pages/](https://kerfors.github.io/cdisc-for-all/examples/pages/) (source in [`examples/pages/`](examples/pages/README.md)). `examples/Example_Lab_Test_Graphs.ipynb` does the same in a notebook.
 
 ## Layout
 

@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cdisc-for-all</title>
+<style>
+:root { --bg: #ffffff; --fg: #1d1d1f; --muted: #6e6e73; --line: #d2d2d7; --panel: #f5f5f7; --ct: #2f6fb3; --ncit: #8a5a00; --bc: #2e7d4f; --dss: #7a3e9d; --hi: #d0342c; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg: #161618; --fg: #f2f2f2; --muted: #a1a1a6; --line: #3a3a3c; --panel: #222225; --ct: #6aa6e8; --ncit: #e0a84a; --bc: #5cc28a; --dss: #c08ae0; --hi: #ff6b61; }
+}
+:root[data-theme="dark"] { --bg: #161618; --fg: #f2f2f2; --muted: #a1a1a6; --line: #3a3a3c; --panel: #222225; --ct: #6aa6e8; --ncit: #e0a84a; --bc: #5cc28a; --dss: #c08ae0; --hi: #ff6b61; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 15px/1.55 -apple-system, "Segoe UI", Roboto, sans-serif; }
+main { max-width: 860px; margin: 0 auto; padding: 32px 16px 48px; }
+h1 { font-size: 26px; margin: 0 0 6px; }
+h2 { font-size: 18px; margin: 36px 0 10px; }
+p { margin: 0 0 12px; }
+.lead { color: var(--muted); font-size: 16px; }
+a { color: var(--ct); }
+ol.tour { list-style: none; padding: 0; margin: 0; counter-reset: s; }
+ol.tour li { counter-increment: s; background: var(--panel); border-radius: 8px; padding: 12px 14px 12px 52px; margin: 0 0 10px; position: relative; }
+ol.tour li::before { content: counter(s); position: absolute; left: 14px; top: 12px; width: 26px; height: 26px; border-radius: 50%; border: 1.5px solid var(--hi); color: var(--hi); text-align: center; line-height: 23px; font-weight: 600; font-size: 13px; }
+ol.tour b { display: block; }
+.go { font-weight: 600; white-space: nowrap; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+th, td { border-bottom: 1px solid var(--line); padding: 7px 6px; text-align: left; vertical-align: top; }
+th { color: var(--muted); font-weight: 600; }
+.legend span { white-space: nowrap; margin-right: 14px; }
+.legend span::before { content: ""; display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 5px; background: var(--c); vertical-align: -1px; }
+code, pre { font-size: 13px; }
+pre { background: var(--panel); border-radius: 8px; padding: 10px 12px; overflow-x: auto; }
+.muted { color: var(--muted); font-size: 13px; }
+</style>
+</head>
+<body>
+<main>
+<h1>cdisc-for-all</h1>
+<p class="lead">CDISC and NCIt content as published, linked. For study design: what is defined about a lab test, and why, before any data is captured.</p>
+<p>A lab test in SDTM Controlled Terminology has an NCIt concept. CDISC COSMoS describes the same concept as a Biomedical Concept (BC): what has to be specified to measure it, and the variants in which it is used. cdisc-for-all links these published sources, so that one page shows them together, each value as its source publishes it.</p>
+
+<h2>Start here: a guided reading of Glucose</h2>
+<p>Four questions a study designer asks about a test. Each opens the Glucose page with the part of the graph that answers it highlighted; Back and Next move between the steps.</p>
+<ol class="tour">
+  <li><b>What is this test?</b> The test code GLUC and the test name Glucose are two SDTM CT terms with one NCIt concept. The concept carries NCI's definition and its place in the NCIt hierarchy; the COSMoS BC Glucose Measurement has the same concept. <a class="go" href="examples/pages/test_concept_C105585.html#step=what">Open step 1</a></li>
+  <li><b>What must I specify to measure it?</b> The BC's Data Element Concepts: for Glucose, among others, the biospecimen type, the fasting status, the test method and the unit of concentration. <a class="go" href="examples/pages/test_concept_C105585.html#step=specify">Open step 2</a></li>
+  <li><b>Which variants exist?</b> COSMoS Dataset Specializations bind the BC to a use: for Glucose, nine, such as glucose concentration in blood, in serum or plasma, and in urine. <a class="go" href="examples/pages/test_concept_C105585.html#step=variants">Open step 3</a></li>
+  <li><b>Which values are allowed?</b> The SDTM CT terms the Specializations bind to each Data Element Concept: specimen types, units, methods, the yes/no of fasting. <a class="go" href="examples/pages/test_concept_C105585.html#step=values">Open step 4</a></li>
+</ol>
+
+<h2>How to read a page</h2>
+<p class="legend"><span style="--c: var(--ct)">SDTM CT</span><span style="--c: var(--ncit)">NCIt</span><span style="--c: var(--bc)">COSMoS BC</span><span style="--c: var(--dss)">COSMoS Dataset Specialization</span></p>
+<p>Columns from left to right: the test, its NCIt concept, the BC (with its parents), the BC's Data Element Concepts, and the bound CT terms. Each box is a row of a published table or an NCIt concept; each line is a link. Click a box to see every published value of it under its published column name; click a line to see which link it is. A dashed line is a test reached through a Specialization rather than through the shared NCIt concept.</p>
+
+<h2>Try another test</h2>
+<table>
+  <thead><tr><th>Test</th><th>Area</th><th></th></tr></thead>
+  <tbody>
+    <tr><td>GLUC / Glucose</td><td>Chemistry</td><td><a href="examples/pages/test_concept_C105585.html">page</a> · <a href="examples/pages/test_concept_C105585.html#step=what">tour</a></td></tr>
+    <tr><td>K / Potassium</td><td>Chemistry, electrolyte</td><td><a href="examples/pages/test_concept_C64853.html">page</a> · <a href="examples/pages/test_concept_C64853.html#step=what">tour</a></td></tr>
+    <tr><td>HBA1C / Hemoglobin A1C</td><td>Haematology</td><td><a href="examples/pages/test_concept_C64849.html">page</a> · <a href="examples/pages/test_concept_C64849.html#step=what">tour</a></td></tr>
+    <tr><td>WBC / Leukocytes</td><td>Haematology</td><td><a href="examples/pages/test_concept_C51948.html">page</a> · <a href="examples/pages/test_concept_C51948.html#step=what">tour</a></td></tr>
+    <tr><td>NEUT / Neutrophils</td><td>Haematology</td><td><a href="examples/pages/test_concept_C63321.html">page</a> · <a href="examples/pages/test_concept_C63321.html#step=what">tour</a></td></tr>
+    <tr><td>INR / Prothrombin Intl. Normalized Ratio</td><td>Coagulation</td><td><a href="examples/pages/test_concept_C64805.html">page</a> · <a href="examples/pages/test_concept_C64805.html#step=what">tour</a></td></tr>
+    <tr><td>TSH / Thyrotropin</td><td>Endocrinology</td><td><a href="examples/pages/test_concept_C64813.html">page</a> · <a href="examples/pages/test_concept_C64813.html#step=what">tour</a></td></tr>
+    <tr><td>PH / pH</td><td>Urinalysis</td><td><a href="examples/pages/test_concept_C45997.html">page</a> · <a href="examples/pages/test_concept_C45997.html#step=what">tour</a></td></tr>
+    <tr><td>A1AGLP / Alpha-1 Acid Glycoprotein</td><td>Chemistry</td><td><a href="examples/pages/test_concept_C100429.html">page</a> · <a href="examples/pages/test_concept_C100429.html#step=what">tour</a> <span class="muted">(no COSMoS BC: test and concept only)</span></td></tr>
+  </tbody>
+</table>
+
+<h2>Your own test</h2>
+<p>Any SDTM CT test term, by its C-code, with Python (the commands in the <a href="https://github.com/kerfors/cdisc-for-all#using-it-the-test-concept-graph">README</a>):</p>
+<pre>python examples/test_concept.py C105585</pre>
+
+<h2>What it is built on</h2>
+<p>COSMoS (latest export), SDTM Controlled Terminology, the NCI Thesaurus and its code–CUI map, the Non-Standard Variable Registry, and the SDTMIG and SDTM Model variable tables (cdisc.org sign-in, used locally only). Every value is as published; links rest on published keys or on stated rules; every reference that does not resolve is listed in Link_Check. Source, rules and pins: <a href="https://github.com/kerfors/cdisc-for-all">github.com/kerfors/cdisc-for-all</a>.</p>
+<p class="muted">Not an official CDISC or NCI product. The content stays under the terms of its publishers (see the README).</p>
+</main>
+</body>
+</html>
