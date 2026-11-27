@@ -67,15 +67,15 @@ table.decs th { color: var(--muted); font-weight: 600; }
   <span style="--c: var(--ct)">SDTM CT</span><span style="--c: var(--ncit)">NCIt</span>
   <span style="--c: var(--bc)">COSMoS BC</span><span style="--c: var(--dss)">COSMoS Dataset Specialization</span>
 </div>
-<h2 style="margin-top:8px">Specializations (COSMoS Dataset Specializations)</h2>
+<h2 style="margin-top:8px" id="spech">Specializations (COSMoS Dataset Specializations)</h2>
 <p class="note" id="chipnote"></p>
 <div id="chips"></div>
 <div class="wrap">
   <div class="diagram"><svg id="g"></svg></div>
   <div class="panel" id="panel"><p class="note">Click a box or a line.</p></div>
 </div>
-<h2>Overview: the Data Element Concepts</h2>
-<div style="overflow-x:auto">
+<h2 id="dech">Overview: the Data Element Concepts</h2>
+<div style="overflow-x:auto" id="decwrap">
 <table class="decs" id="decs"><thead><tr><th>DEC</th><th>dec_id</th><th>data_type</th><th>example_set (BC)</th><th>CT terms bound by Dataset Specializations</th></tr></thead><tbody></tbody></table>
 </div>
 <p class="note">The NCIt ancestors and the NCI code-CUI rows are in the graph but not drawn: click an NCIt box to see them. The Dataset Specialization rows are not drawn either: a line from a DEC to a value stands for the rows that carry both; click it to see them.</p>
@@ -165,6 +165,9 @@ function showEdge(k) {
 }
 const chips = document.getElementById('chips');
 document.getElementById('chipnote').textContent = `Grouped by the CT term each Specialization binds to the DEC ${DATA.group_label}.`;
+// a section with nothing in the graph is not shown (a test without BC, or a BC without DECs)
+if (!DATA.specializations.length) ['spech', 'chipnote', 'chips'].forEach(id => document.getElementById(id).style.display = 'none');
+if (!DATA.decs.length) ['dech', 'decwrap'].forEach(id => document.getElementById(id).style.display = 'none');
 const byGroup = new Map();
 DATA.specializations.forEach((v, i) => { const g = v.group || 'none bound'; if (!byGroup.has(g)) byGroup.set(g, []); byGroup.get(g).push(i); });
 [...byGroup.keys()].sort((a, b) => (a === 'none bound') - (b === 'none bound') || a.localeCompare(b)).forEach(g => {

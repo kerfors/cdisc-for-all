@@ -1,4 +1,4 @@
-"""One HTML page from the result of observable_concept_graph.rq: the graph in columns
+"""One HTML page from the result of test_concept_graph.rq: the graph in columns
 (Test, Concept, BC, DEC, Values), each edge named by its link, and every triple of a node
 on click. A view of the query result for reading; it adds no value to the graph."""
 import json
@@ -81,13 +81,16 @@ def page_data(triples, links_yaml, group_dec):
     test_rows = [r for r, ty in base_type.items() if ty == DSS and objects(r, DSS_BC)]
     spec_tests = sorted({t for r in test_rows for t in objects(r, ASSIGNED)})
     bc_concepts = {c for n, t in base_type.items() if t == BC_ROW for c in objects(n, BC_NCIT)}
-    concepts = sorted({c for n, t in base_type.items() if t == CT and n not in dec_bound for c in objects(n, CT_NCIT)} & bc_concepts)
+    start_concepts = {c for n, t in base_type.items() if t == CT and n not in dec_bound for c in objects(n, CT_NCIT)}
+    concepts = sorted(start_concepts & bc_concepts if bc_concepts else start_concepts)  # without a BC: only the start terms are there
     concept_tests = sorted(n for n, t in base_type.items() if t == CT and n not in dec_bound and set(objects(n, CT_NCIT)) & set(concepts))
     tests = concept_tests + sorted((t for t in spec_tests if t not in concept_tests), key=lambda n: label(n))
-    bc_rows = sorted((n for n, t in base_type.items() if t == BC_ROW and set(objects(n, BC_NCIT)) & set(concepts)),
-                     key=lambda n: label(n))
+    bc_all = sorted((n for n, t in base_type.items() if t == BC_ROW and set(objects(n, BC_NCIT)) & set(concepts)),
+                    key=lambda n: label(n))
+    bc_rows = [n for n in bc_all if value(n, 'dec_id')]
+    bc_only = [n for n in bc_all if not value(n, 'dec_id')]  # a BC row with an empty dec_id: a BC without DECs
     hier = [n for n, t in base_type.items() if t == HIER]
-    hier = sorted(hier, key=lambda n: (any(n in objects(h, NS + 'link/cosmos/cdisc_biomedical_concepts_hierarchy_latest#parent_bc_id') for h in hier), label(n)), reverse=True)
+    hier = sorted(hier, key=lambda n: (any(n in objects(h, NS + 'link/cosmos/cdisc_biomedical_concepts_hierarchy_latest#parent_bc_id') for h in hier), label(n)), reverse=True) + bc_only
     bound, values, group = {}, [], {}
     for r, t in base_type.items():
         if t != DSS:
@@ -119,7 +122,7 @@ def page_data(triples, links_yaml, group_dec):
                     via.setdefault((box[t], h), []).append(r)
     for (t, h), rows in sorted(via.items()):
         edges.append((t, h, 'via Specialization test rows (links: ' + names[ASSIGNED] + ', ' + names[DSS_BC] + ')', sorted(rows)))
-    for n in bc_rows:
+    for n in bc_all:
         edges += [(n, c, names[BC_NCIT], []) for c in objects(n, BC_NCIT)]
     for h in hier:
         edges += [(h, d, names[DECS], []) for d in objects(h, DECS) if d in bc_rows]
@@ -145,7 +148,7 @@ def page_data(triples, links_yaml, group_dec):
             info['cui'] = [label(c) for c, t in base_type.items() if t == CUI and n in objects(c, CUI_NCIT)]
         nodes[n] = info
     for b in boxes:
-        nodes[b] = {'label': ' / '.join(label(t) for t in members[b]), 'source': 'SDTM CT', 'types': [], 'triples': [],
+        nodes[b] = {'label': ' / '.join(dict.fromkeys(label(t) for t in members[b])), 'source': 'SDTM CT', 'types': [], 'triples': [],
                     'members': [[t, label(t), value(t, 'Codelist Name') or ''] for t in members[b]]}
     for n in nodes:
         for row in nodes[n]['triples']:
@@ -164,14 +167,21 @@ def page_data(triples, links_yaml, group_dec):
         specializations.append({'id': g, 'vlm_group_id': value(g, 'datasetSpecializationId'), 'short_name': value(g, 'shortName'),
                                 'rows': sorted(rows), 'pairs': [[d, t] for d, t in pairs], 'group': ' / '.join(by)})
     group_label = next((label(d) for d in bc_rows if value(d, 'dec_id') == group_dec), group_dec)
-    return {'columns': [[a, b, c] for a, b, c in columns], 'edges': edges, 'nodes': nodes, 'decs': dec_table,
+    level = 'BC and DECs' if bc_rows else 'BC, no DECs' if bc_all else 'test and concept, no BC'
+    return {'level': level, 'columns': [[a, b, c] for a, b, c in columns], 'edges': edges, 'nodes': nodes, 'decs': dec_table,
             'groups': group, 'specializations': specializations, 'group_label': group_label}
 
 
 def write_page(triples, path, title, links_yaml, group_dec='C70713'):
-    """group_dec: the DEC whose bound terms group the Specialization chips (default C70713,
+    """title: the page title; None gives "The test <first test box>: concept, BC and DECs" (or
+    ": concept and BC", ": concept", by what is there).
+    group_dec: the DEC whose bound terms group the Specialization chips (default C70713,
     Biospecimen Type); a Specialization that binds no term to it is shown under "none bound"."""
     data = page_data(triples, links_yaml, group_dec)
+    if title is None:
+        shown = {'BC and DECs': 'concept, BC and DECs', 'BC, no DECs': 'concept and BC', 'test and concept, no BC': 'concept'}[data['level']]
+        title = f"The test {data['nodes'][data['columns'][0][2][0]]['label']}: {shown}"
+    data['title'] = title
     template = (Path(__file__).parent / 'graph_page.html').read_text(encoding='utf-8')
     html = template.replace('__TITLE__', escape(title)).replace('__DATA__', json.dumps(data, ensure_ascii=False).replace('</', '<\\/'))
     Path(path).write_text(html, encoding='utf-8')
