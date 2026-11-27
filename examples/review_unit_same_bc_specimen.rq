@@ -1,0 +1,54 @@
+# Review query: pairs of Dataset Specializations with the same BC and the same specimen whose
+# standard units (--STRESU) have different NCIt concepts.
+#
+# A review query asks a question of the published content. Its answer is not published
+# content: a pair is a place to look, not a finding of this repository. Run it over the union
+# of the published base graphs (base/<source>/<source>.ttl), the link graphs (linked/links.ttl,
+# linked/by-rule.ttl) and the COSMoS model graph (linked/cosmos-model.ttl). No sign-in content
+# is used.
+#
+# Two Dataset Specializations (COSMoS SDTM model: SDTMGroup) are compared when
+#   their --SPEC rows link to the same BC (link: cosmos dataset specialization to biomedical concept;
+#   every row of a Specialization has this link) and have the same assigned term (link: cosmos
+#   dataset specialization to assigned term);
+#   their --STRESU rows have assigned terms (same link) whose NCIt concepts differ (link: sdtm-ct to NCIt).
+# The units are compared by NCIt concept, not by term row: the same unit is a term row in each
+# codelist it belongs to (% is C25613 in both Unit and Units for Vital Signs Results).
+# --SPEC and --STRESU are the rows whose sdtm_variable is the domain followed by SPEC or STRESU.
+# Specializations without a --SPEC or a --STRESU assigned term are not compared.
+#
+# Without the same-specimen condition, units differ for good reasons (RBCBLD 10^12/L, RBCURIN 10^6/L).
+#
+# COSMoS Package 19 with SDTM CT 2026-09-25 and NCIt 26.09d: one pair, GLUCSERPL (mmol/L) and
+# GLUCSERPLMT (pmol/L), both SERUM OR PLASMA, BC Glucose Measurement.
+
+SELECT DISTINCT ?bc_short_name ?specimen ?vlm_group_id_1 ?unit_1 ?vlm_group_id_2 ?unit_2
+WHERE {
+    ?g1 <https://www.cdisc.org/cosmos/sdtm_v1.0/variables> ?spec1 , ?u1 .
+    ?g2 <https://www.cdisc.org/cosmos/sdtm_v1.0/variables> ?spec2 , ?u2 .
+    ?spec1 <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_sdtm_dataset_specializations_latest#bc_id> ?bc_h .
+    ?spec2 <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_sdtm_dataset_specializations_latest#bc_id> ?bc_h .
+    ?bc_h <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_hierarchy_latest#bc_short_name> ?bc_short_name .
+    ?spec1 <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#domain> ?d1 ;
+           <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#sdtm_variable> ?sv1 ;
+           <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_sdtm_dataset_specializations_latest#assigned_term> ?spec_term .
+    ?spec2 <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#domain> ?d2 ;
+           <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#sdtm_variable> ?sv2 ;
+           <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_sdtm_dataset_specializations_latest#assigned_term> ?spec_term .
+    FILTER(?sv1 = CONCAT(?d1, "SPEC") && ?sv2 = CONCAT(?d2, "SPEC"))
+    ?spec_term <https://kerfors.github.io/cdisc-for-all/def/sdtm-ct/SDTM%20Terminology#CDISC%20Submission%20Value> ?specimen .
+    ?u1 <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#sdtm_variable> ?uv1 ;
+        <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_sdtm_dataset_specializations_latest#assigned_term> ?ut1 .
+    ?u2 <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#sdtm_variable> ?uv2 ;
+        <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_sdtm_dataset_specializations_latest#assigned_term> ?ut2 .
+    FILTER(?uv1 = CONCAT(?d1, "STRESU") && ?uv2 = CONCAT(?d2, "STRESU"))
+    ?ut1 <https://kerfors.github.io/cdisc-for-all/link/sdtm-ct/SDTM%20Terminology#Code> ?c1 ;
+         <https://kerfors.github.io/cdisc-for-all/def/sdtm-ct/SDTM%20Terminology#CDISC%20Submission%20Value> ?unit_1 .
+    ?ut2 <https://kerfors.github.io/cdisc-for-all/link/sdtm-ct/SDTM%20Terminology#Code> ?c2 ;
+         <https://kerfors.github.io/cdisc-for-all/def/sdtm-ct/SDTM%20Terminology#CDISC%20Submission%20Value> ?unit_2 .
+    FILTER(?c1 != ?c2)
+    ?g1 <https://www.cdisc.org/cosmos/sdtm_v1.0/datasetSpecializationId> ?vlm_group_id_1 .
+    ?g2 <https://www.cdisc.org/cosmos/sdtm_v1.0/datasetSpecializationId> ?vlm_group_id_2 .
+    FILTER(STR(?vlm_group_id_1) < STR(?vlm_group_id_2))
+}
+ORDER BY ?bc_short_name ?specimen ?vlm_group_id_1 ?vlm_group_id_2

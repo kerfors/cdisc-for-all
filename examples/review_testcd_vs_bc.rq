@@ -1,0 +1,56 @@
+# Review query: Dataset Specializations whose test code has another NCIt concept than their BC,
+# and how NCIt relates the two concepts.
+#
+# A review query asks a question of the published content. Its answer is not published
+# content: the relation column is the reader's question to NCIt, not a classification of
+# this repository. Run it over the union of the published base graphs (base/<source>/<source>.ttl),
+# the link graphs (linked/links.ttl, linked/by-rule.ttl) and the COSMoS model graph
+# (linked/cosmos-model.ttl). No sign-in content is used.
+#
+# The test row of a Dataset Specialization is its --TESTCD row: the row whose sdtm_variable is
+# the domain followed by TESTCD (every row of a Specialization has the BC link; only this one is used).
+# From it:
+#   the test concept: its assigned term (link: cosmos dataset specialization to assigned term)
+#   and that term's NCIt concept (link: sdtm-ct to NCIt);
+#   the BC concept: the BC hierarchy row of its BC link (link: cosmos dataset specialization to
+#   biomedical concept), the BC rows of that BC (COSMoS BC model: dataElementConcepts) and their
+#   NCIt concept (link: cosmos biomedical concept to NCIt).
+# Only rows where the two concepts differ are returned. The relation follows NCIt parents
+# (link: ncit concept to parent), in this order:
+#   "test is descendant of BC"   the BC concept is an ancestor of the test concept;
+#   "test is ancestor of BC"     the test concept is an ancestor of the BC concept;
+#   "siblings (shared parent)"   the two concepts have a parent in common;
+#   "no direct NCIt path"        none of these (a more distant common ancestor is not looked for).
+#
+# COSMoS Package 19 with SDTM CT 2026-09-25 and NCIt 26.09d: seven Dataset Specializations
+# (EGINTP, GLUCPE, HCGCNCTSERPL, HEIGHT, MICROCYRBC, URORGLN, WEIGHT).
+
+SELECT ?domain ?vlm_group_id ?sdtm_variable ?assigned_term ?test_concept
+       ?bc_short_name ?bc_concept ?relation
+WHERE {
+    ?row <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_sdtm_dataset_specializations_latest#bc_id> ?bc_h ;
+         <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_sdtm_dataset_specializations_latest#assigned_term> ?term ;
+         <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#domain> ?domain ;
+         <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#vlm_group_id> ?vlm_group_id ;
+         <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#sdtm_variable> ?sdtm_variable .
+    FILTER(?sdtm_variable = CONCAT(?domain, "TESTCD"))
+    ?term <https://kerfors.github.io/cdisc-for-all/link/sdtm-ct/SDTM%20Terminology#Code> ?tc ;
+          <https://kerfors.github.io/cdisc-for-all/def/sdtm-ct/SDTM%20Terminology#CDISC%20Submission%20Value> ?assigned_term .
+    ?bc_h <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_hierarchy_latest#bc_short_name> ?bc_short_name .
+    {
+        SELECT DISTINCT ?bc_h ?bc WHERE {
+            ?bc_h <https://www.cdisc.org/cosmos/biomedical_concept_v1.0dataElementConcepts> ?bc_row .
+            ?bc_row <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_biomedical_concepts_latest#ncit_code> ?bc .
+        }
+    }
+    FILTER(?tc != ?bc)
+    ?tc <https://kerfors.github.io/cdisc-for-all/def/ncit-flat/Thesaurus#code> ?test_concept .
+    ?bc <https://kerfors.github.io/cdisc-for-all/def/ncit-flat/Thesaurus#code> ?bc_concept .
+    BIND(
+        IF(EXISTS { ?tc <https://kerfors.github.io/cdisc-for-all/link/ncit-flat/Thesaurus#parents>+ ?bc }, "test is descendant of BC",
+        IF(EXISTS { ?bc <https://kerfors.github.io/cdisc-for-all/link/ncit-flat/Thesaurus#parents>+ ?tc }, "test is ancestor of BC",
+        IF(EXISTS { ?bc <https://kerfors.github.io/cdisc-for-all/link/ncit-flat/Thesaurus#parents> ?p .
+                    ?tc <https://kerfors.github.io/cdisc-for-all/link/ncit-flat/Thesaurus#parents> ?p }, "siblings (shared parent)",
+           "no direct NCIt path"))) AS ?relation)
+}
+ORDER BY ?relation ?domain ?vlm_group_id ?sdtm_variable
