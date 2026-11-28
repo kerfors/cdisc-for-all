@@ -70,7 +70,7 @@ IRIs are in the namespace `https://kerfors.github.io/cdisc-for-all/` and are mad
 
 ## Using it: the test concept graph
 
-`examples/test_concept.py` takes the C-code of an SDTM CT test term and writes the test concept graph (a SPARQL CONSTRUCT over the graphs, `examples/test_concept_graph.rq`) and a page to read it: the test terms and their NCIt concept; the COSMoS BC if one has that concept; its Data Element Concepts, the CT terms Dataset Specializations bind to them, and the Specializations, if it has any. Every triple is a triple of the graphs.
+`examples/test_concept.py` takes the C-code of an SDTM CT test term and writes the test concept graph (a SPARQL CONSTRUCT over the graphs, `examples/test_concept_graph.rq`) and a page to read it: the test terms and their NCIt concept; the COSMoS BC if one has that concept, and the BC of a Dataset Specialization whose --TESTCD row assigns the test (published keys; the test-row rule is the one of `review_testcd_vs_bc.rq`), so that WEIGHT reaches Body Weight, where COSMoS puts the Specialization WEIGHT, and not only Weight, the BC of its NCIt concept; the Data Element Concepts of those BCs, the CT terms Dataset Specializations bind to them, and the Specializations, if they have any. Every triple is a triple of the graphs.
 
     python3 -m venv ~/venvs/cdisc-for-all
     ~/venvs/cdisc-for-all/bin/pip install -r requirements.txt
@@ -78,7 +78,7 @@ IRIs are in the namespace `https://kerfors.github.io/cdisc-for-all/` and are mad
 
 `test_concept.py` needs the full `requirements.txt` (it writes the page with the link specs, which use linkml); the getting-started notebook below needs only pyoxigraph and pandas.
 
-Start page, for study designers: [https://kerfors.github.io/cdisc-for-all/](https://kerfors.github.io/cdisc-for-all/) (`index.html`). Pages for nine lab tests, to open in a browser: [https://kerfors.github.io/cdisc-for-all/examples/pages/](https://kerfors.github.io/cdisc-for-all/examples/pages/) (source in [`examples/pages/`](examples/pages/README.md)). `examples/Example_Lab_Test_Graphs.ipynb` does the same in a notebook.
+Start page, for study designers: [https://kerfors.github.io/cdisc-for-all/](https://kerfors.github.io/cdisc-for-all/) (`index.html`). Pages for nine lab tests and Weight, to open in a browser: [https://kerfors.github.io/cdisc-for-all/examples/pages/](https://kerfors.github.io/cdisc-for-all/examples/pages/) (source in [`examples/pages/`](examples/pages/README.md)). `examples/Example_Lab_Test_Graphs.ipynb` does the same in a notebook.
 
 The link map, for standards specialists: every link between the source tables as stated in `schema/links.yaml` (key columns, rule) with its Link_Check rows, [https://kerfors.github.io/cdisc-for-all/examples/pages/link_map.html](https://kerfors.github.io/cdisc-for-all/examples/pages/link_map.html), written by `python examples/link_map.py --out examples/pages/link_map.html`.
 
@@ -106,7 +106,7 @@ linked/          Make_Links, Make_COSMoS_Model and Make_Catalog notebooks, the l
 llms.txt, catalog.ttl   the entry point for AI agents and the DCAT + VoID catalogue (written by Make_Catalog)
 checks/          the schema check and the CSVW cross-check (rdf-tabular)
 mcp/             the MCP server for AI assistants (one script)
-examples/        a SPARQL CONSTRUCT query over the graphs (the test concept graph), test_concept.py to run it per test C-code, two review queries (SPARQL SELECT), the SPARQL cookbook (cookbook/), an example notebook, a getting-started notebook for developers (published graphs, no clone), example pages for nine lab tests (pages/)
+examples/        a SPARQL CONSTRUCT query over the graphs (the test concept graph), test_concept.py to run it per test C-code, two review queries (SPARQL SELECT), the SPARQL cookbook (cookbook/), an example notebook, a getting-started notebook for developers (published graphs, no clone), example pages for nine lab tests and Weight (pages/)
 ```
 
 ## Planned
@@ -114,7 +114,6 @@ examples/        a SPARQL CONSTRUCT query over the graphs (the test concept grap
 Not built yet, in no fixed order:
 
 - **Dereferenceable IRIs**: today `def/`, `id/`, `link/` and `rule/` are identifiers only. Options: w3id redirects to generated pages, or the vocabulary graph served at `def/`.
-- **Test concept graph**: also follow child BCs and the test rows of the Specializations (for example WEIGHT, assigned under the child BC Body Weight).
 - **SSSOM** for the other links by rule.
 - **Release check**: read the source files again and compare (see [How it is checked](#how-it-is-checked)).
 

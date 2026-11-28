@@ -1,10 +1,10 @@
 # Test concept pages — examples
 
-Pages written by `examples/test_concept.py` from the published graphs, one per SDTM CT lab test C-code. Each is one self-contained HTML file: open it in a browser, or on GitHub Pages: https://kerfors.github.io/cdisc-for-all/examples/pages/ Every value on a page is a triple of the graphs; the page adds nothing.
+Pages written by `examples/test_concept.py` from the published graphs, one per SDTM CT test C-code: nine lab tests and Weight. Each is one self-contained HTML file: open it in a browser, or on GitHub Pages: https://kerfors.github.io/cdisc-for-all/examples/pages/ Every value on a page is a triple of the graphs; the page adds nothing.
 
 Rebuild them (results equal while the graphs are unchanged):
 
-    python examples/test_concept.py C105585 C64853 C64849 C51948 C63321 C64805 C64813 C45997 C100429 --out examples/pages
+    python examples/test_concept.py C105585 C64853 C64849 C51948 C63321 C64805 C64813 C45997 C100429 C25208 --out examples/pages
 
 | Page | Test | Area | What it shows |
 |---|---|---|---|
@@ -17,4 +17,5 @@ Rebuild them (results equal while the graphs are unchanged):
 | [test_concept_C64813.html](test_concept_C64813.html) | TSH / Thyrotropin | Endocrinology | BC Thyrotropin Measurement under Peptide Hormone Measurement, 2 Specializations (TSHBLD, TSHSERPL) |
 | [test_concept_C45997.html](test_concept_C45997.html) | PH / pH | Urinalysis | BC pH under Physical Property, 1 Specialization (PHURIN) |
 | [test_concept_C100429.html](test_concept_C100429.html) | A1AGLP / Alpha-1 Acid Glycoprotein | Chemistry | No COSMoS BC has its NCIt concept: the test terms and the concept only |
+| [test_concept_C25208.html](test_concept_C25208.html) | WEIGHT / Weight | Vital signs | BC Weight (its NCIt concept, no DECs) and, from the test row, its child BC Body Weight with 3 DECs and 1 Specialization (WEIGHT) |
 | [link_map.html](link_map.html) | (all links) | Standards | The source tables and every link between them as stated in schema/links.yaml, with the Link_Check rows of each link; written by `python examples/link_map.py --out examples/pages/link_map.html` |
