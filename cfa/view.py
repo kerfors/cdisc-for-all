@@ -10,17 +10,26 @@ json.dumps(ensure_ascii=False, separators=(',', ':')). JSON keeps cells apart ev
 cell holds a tab or a line break.
 """
 
+import datetime
 import hashlib
+import io
 import json
+import zipfile
 
 import pandas as pd
 from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill
+from openpyxl.xml.functions import tostring
 from rdflib import Literal, URIRef
 from rdflib.namespace import RDF
 
 from cfa.read import encode_ooxml
 from cfa.rule import class_iri, columns, key_columns, module_source, property_iri
+
+# One fixed time for the document properties and the zip entries, so that a rebuild from the
+# same graph writes the same bytes (and the same SHA-256 in catalog.ttl). 1980-01-01 is the
+# earliest time a zip entry can carry; it is not a date of the content.
+FIXED_TIME = datetime.datetime(1980, 1, 1)
 
 HEADER_FONT = Font(name='Calibri', size=10, bold=True)
 DATA_FONT = Font(name='Calibri', size=10)
@@ -119,4 +128,14 @@ def write_view(path, readme_lines, sheets, schema_df, provenance):
     ws.column_dimensions['A'].width = 120
     for name, df in all_sheets.items():
         _write_sheet(wb.create_sheet(name), df)
-    wb.save(path)
+    buf = io.BytesIO()
+    wb.save(buf)
+    wb.properties.created = FIXED_TIME
+    wb.properties.modified = FIXED_TIME
+    core = tostring(wb.properties.to_tree())
+    buf.seek(0)
+    with zipfile.ZipFile(buf) as zin, zipfile.ZipFile(path, 'w', zipfile.ZIP_DEFLATED) as zout:
+        for info in zin.infolist():
+            entry = zipfile.ZipInfo(info.filename, date_time=FIXED_TIME.timetuple()[:6])
+            entry.compress_type = zipfile.ZIP_DEFLATED
+            zout.writestr(entry, core if info.filename == 'docProps/core.xml' else zin.read(info.filename))
