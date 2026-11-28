@@ -180,7 +180,7 @@ cat:catalog
     spdx:checksum
         [
             spdx:algorithm spdx:checksumAlgorithm_sha256 ;
-            spdx:checksumValue "9a288b92986efe98420a1a3c8aa89fbe125b00f5fae6819bcf21740868ee9862"^^xsd:hexBinary ;
+            spdx:checksumValue "f71f0df6779d55b53fddfc4625d617cef8e277a2d11c8a6e5cf308bacc1c933e"^^xsd:hexBinary ;
         ] ;
     dcat:downloadURL <https://kerfors.github.io/cdisc-for-all/linked/Link_Check.xlsx> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet> ;
@@ -240,7 +240,7 @@ cat:catalog
     spdx:checksum
         [
             spdx:algorithm spdx:checksumAlgorithm_sha256 ;
-            spdx:checksumValue "84118854996adeb7c7be1b5a2067a753a992e54be33fcb77fef5525ca0407ef3"^^xsd:hexBinary ;
+            spdx:checksumValue "81d414ac9e807b929900399dc5371fa7b40e66862f030c92bc135baaad12099f"^^xsd:hexBinary ;
         ] ;
     dcat:downloadURL <https://kerfors.github.io/cdisc-for-all/schema/vocabulary.ttl> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/text/turtle> ;
@@ -442,6 +442,30 @@ cat:link-check
     void:subjectsTarget <https://kerfors.github.io/cdisc-for-all/graph/sdtm-ct> ;
 .
 
+<https://kerfors.github.io/cdisc-for-all/catalog#linkset/sdtm-model_code_variable_to_its_long_version>
+    a void:Linkset ;
+    dcterms:accessRights "Built locally, not published: it starts from or ends at a sign-in source." ;
+    dcterms:description "An SDTM Model variable row whose name ends in \"CD\" to the Model row of the variable it is the short version of, in the same class and dataset." ;
+    dcterms:title "sdtm-model code variable to its long version" ;
+    dcterms:type "by rule" ;
+    void:linkPredicate <https://kerfors.github.io/cdisc-for-all/rule/sdtm-model/SDTM#Variable%20Name/sdtm-model/SDTM> ;
+    void:objectsTarget <https://kerfors.github.io/cdisc-for-all/graph/sdtm-model> ;
+    void:subjectsTarget <https://kerfors.github.io/cdisc-for-all/graph/sdtm-model> ;
+    rdfs:comment "Rule: SDTMIG v3.4, 4.2.1: variables with names ending in \"CD\" are short versions of the associated variables without the \"CD\" suffix (e.g. --TESTCD is the short version of --TEST). Only for a Variable Name ending in \"CD\": the Model row with the same Class and Dataset Name (both empty for a variable the Model publishes for a class) whose Variable Name is the name without the final \"CD\"." ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/catalog#linkset/sdtm-model_variable_name_as_fragment>
+    a void:Linkset ;
+    dcterms:accessRights "Built locally, not published: it starts from or ends at a sign-in source." ;
+    dcterms:description "An SDTM Model variable row whose name, without a leading \"--\", is a variable-naming fragment of SDTMIG Appendix D, to that fragment row." ;
+    dcterms:title "sdtm-model variable name as fragment" ;
+    dcterms:type "by rule" ;
+    void:linkPredicate <https://kerfors.github.io/cdisc-for-all/rule/sdtm-model/SDTM#Variable%20Name/sdtmig-fragments/CDISC%20Variable-naming%20Fragments> ;
+    void:objectsTarget <https://kerfors.github.io/cdisc-for-all/graph/sdtmig-fragments> ;
+    void:subjectsTarget <https://kerfors.github.io/cdisc-for-all/graph/sdtm-model> ;
+    rdfs:comment "Rule: The Variable Name with a leading \"--\" removed equals a Fragment as published (a Fragment cell that lists more than one, such as \"ST, STD\", split at \",\", surrounding spaces removed). Every matching fragment row is linked; a name that matches more than one row (the same fragment for more than one keyword) is reported." ;
+.
+
 <https://kerfors.github.io/cdisc-for-all/catalog#linkset/sdtm-model_variable_to_NCIt>
     a void:Linkset ;
     dcterms:accessRights "Built locally, not published: it starts from or ends at a sign-in source." ;
@@ -463,6 +487,18 @@ cat:link-check
     void:objectsTarget <https://kerfors.github.io/cdisc-for-all/graph/sdtm-model> ;
     void:subjectsTarget <https://kerfors.github.io/cdisc-for-all/graph/sdtm-model> ;
     rdfs:comment "Rule: Each name in Variables Qualified (split at \";\", surrounding spaces removed) equals the Variable Name of a Model row with the same Class and the same Dataset Name (both empty for a variable the Model publishes for a class)." ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/catalog#linkset/sdtmig_code_variable_to_its_long_version>
+    a void:Linkset ;
+    dcterms:accessRights "Built locally, not published: it starts from or ends at a sign-in source." ;
+    dcterms:description "An SDTMIG variable row whose name ends in \"CD\" to the SDTMIG row of the variable it is the short version of, in the same dataset." ;
+    dcterms:title "sdtmig code variable to its long version" ;
+    dcterms:type "by rule" ;
+    void:linkPredicate <https://kerfors.github.io/cdisc-for-all/rule/sdtmig/SDTMIG#Variable%20Name/sdtmig/SDTMIG> ;
+    void:objectsTarget <https://kerfors.github.io/cdisc-for-all/graph/sdtmig> ;
+    void:subjectsTarget <https://kerfors.github.io/cdisc-for-all/graph/sdtmig> ;
+    rdfs:comment "Rule: SDTMIG v3.4, 4.2.1: variables with names ending in \"CD\" are short versions of the associated variables without the \"CD\" suffix (e.g. --TESTCD is the short version of --TEST). Only for a Variable Name ending in \"CD\": the row with the same Dataset Name whose Variable Name is the name without the final \"CD\"." ;
 .
 
 <https://kerfors.github.io/cdisc-for-all/catalog#linkset/sdtmig_variable_to_codelist>
@@ -509,7 +545,10 @@ cat:sssom
         <https://kerfors.github.io/cdisc-for-all/catalog#linkset/cosmos_relationship_object> ,
         <https://kerfors.github.io/cdisc-for-all/catalog#linkset/cosmos_relationship_subject> ,
         <https://kerfors.github.io/cdisc-for-all/catalog#linkset/cosmos_value_list_to_term> ,
+        <https://kerfors.github.io/cdisc-for-all/catalog#linkset/sdtm-model_code_variable_to_its_long_version> ,
+        <https://kerfors.github.io/cdisc-for-all/catalog#linkset/sdtm-model_variable_name_as_fragment> ,
         <https://kerfors.github.io/cdisc-for-all/catalog#linkset/sdtm-model_variables_qualified> ,
+        <https://kerfors.github.io/cdisc-for-all/catalog#linkset/sdtmig_code_variable_to_its_long_version> ,
         <https://kerfors.github.io/cdisc-for-all/catalog#linkset/sdtmig_variable_to_model_variable> ;
     void:triples 37616 ;
     rdfs:comment "The links to and from the sign-in sources are in a -signin file, built locally and not published." ;
@@ -552,18 +591,6 @@ cat:sssom
     void:triples 147766 ;
     rdfs:comment "The links to and from the sign-in sources are in a -signin file, built locally and not published." ;
     dcat:distribution <https://kerfors.github.io/cdisc-for-all/catalog#file/linked/links.ttl> ;
-.
-
-<https://kerfors.github.io/cdisc-for-all/graph/sdtmig-fragments>
-    a
-        void:Dataset ,
-        dcat:Dataset ;
-    dcterms:accessRights "Not published: cdisc.org sign-in: the graph and its view are built locally and not published." ;
-    dcterms:publisher "CDISC" ;
-    dcterms:rights "cdisc.org sign-in: the graph and its view are built locally and not published." ;
-    dcterms:source <https://www.cdisc.org/system/files/members/standard/foundational/SDTMIG%20v3.4-FINAL_2022-07-21.pdf> ;
-    dcterms:title "SDTMIG v3.4 Appendix D, CDISC Variable-naming Fragments (base graph)" ;
-    dcat:version "3.4" ;
 .
 
 <https://kerfors.github.io/cdisc-for-all/graph/vocabulary>
@@ -609,6 +636,18 @@ cat:sssom
     dcat:version "2026-04-03" ;
 .
 
+<https://kerfors.github.io/cdisc-for-all/graph/sdtmig-fragments>
+    a
+        void:Dataset ,
+        dcat:Dataset ;
+    dcterms:accessRights "Not published: cdisc.org sign-in: the graph and its view are built locally and not published." ;
+    dcterms:publisher "CDISC" ;
+    dcterms:rights "cdisc.org sign-in: the graph and its view are built locally and not published." ;
+    dcterms:source <https://www.cdisc.org/system/files/members/standard/foundational/SDTMIG%20v3.4-FINAL_2022-07-21.pdf> ;
+    dcterms:title "SDTMIG v3.4 Appendix D, CDISC Variable-naming Fragments (base graph)" ;
+    dcat:version "3.4" ;
+.
+
 <https://kerfors.github.io/cdisc-for-all/graph/sdtmig>
     a
         void:Dataset ,
@@ -618,17 +657,6 @@ cat:sssom
     dcterms:rights "cdisc.org sign-in: the graph, its view and its links are built locally and not published." ;
     dcterms:title "SDTMIG v3.4 variable table (base graph)" ;
     dcat:version "3.4" ;
-.
-
-<https://kerfors.github.io/cdisc-for-all/graph/sdtm-model>
-    a
-        void:Dataset ,
-        dcat:Dataset ;
-    dcterms:accessRights "Not published: cdisc.org sign-in: the graph, its view and its links are built locally and not published." ;
-    dcterms:publisher "CDISC" ;
-    dcterms:rights "cdisc.org sign-in: the graph, its view and its links are built locally and not published." ;
-    dcterms:title "SDTM v2.0 variable table (base graph)" ;
-    dcat:version "2.0" ;
 .
 
 <https://kerfors.github.io/cdisc-for-all/graph/ncit-flat>
@@ -662,6 +690,17 @@ cat:sssom
         <https://kerfors.github.io/cdisc-for-all/catalog#file/base/sdtm-ct/SDTM_Terminology.xlsx> ,
         <https://kerfors.github.io/cdisc-for-all/catalog#file/base/sdtm-ct/sdtm-ct.ttl> ;
     dcat:version "2026-09-25" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/graph/sdtm-model>
+    a
+        void:Dataset ,
+        dcat:Dataset ;
+    dcterms:accessRights "Not published: cdisc.org sign-in: the graph, its view and its links are built locally and not published." ;
+    dcterms:publisher "CDISC" ;
+    dcterms:rights "cdisc.org sign-in: the graph, its view and its links are built locally and not published." ;
+    dcterms:title "SDTM v2.0 variable table (base graph)" ;
+    dcat:version "2.0" ;
 .
 
 <https://kerfors.github.io/cdisc-for-all/graph/cosmos>

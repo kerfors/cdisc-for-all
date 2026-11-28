@@ -4,14 +4,15 @@
   "base/nsv-registry/nsv-registry.ttl": "9f2d99fa6af2fe9c8d2c1f03d4565cf12ed6428f0a902329b806a17f8386a5f0",
   "base/cosmos/cosmos.ttl": "ccbe3202c832e4513e93dd3e2b6d0ef4e8cd50f075194e0e6a40b1f6df991f26",
   "base/sdtmig/sdtmig.ttl": "5bf04b0be7632bf7facb05c1fda2d7bbf912671f5697deee9efe05beb7fdfc85",
+  "base/sdtmig-fragments/sdtmig-fragments.ttl": "bfff090c32096a4eb4a1c59c6132536cec50b77acc90944e6061b23806649048",
   "base/sdtm-model/sdtm-model.ttl": "2581f22c21e5e770f3499c0d6109de4b0a2b2e3e1ac4b752591ccb0d8483585f",
   "base/sdtm-ct/sdtm-ct.ttl": "fb6a09d0456028ab99134e14f78b3907e653e251ba416ea88f04aa36c640143e",
   "base/ncit-flat/ncit-flat.ttl": "b98dd5530b10c2b6169b0c954a55e74c89df3d6c8806ce6a387790cd9be2e60f",
   "base/nci-code-cui-map/nci-code-cui-map.ttl": "2bb377b7b4046b66cd6f68b69e72d427146a8181892669f916cc1c68524837b4"
  },
  "schema": {
-  "schema/links.yaml": "0133e487e13ba2afd8ee98ae6df832a1695e07ce222e87476b2be442415fe46a",
-  "schema/shacl/links.shacl.ttl": "a8fe973388ac9ff6e6cd5a786cbbc2c34adecb5c8e356d6f51826b32336efc26"
+  "schema/links.yaml": "6aaccc255b74d13d0a9fd5eccd8de3fe4a0cd42d27c472cf171c0950077db4b4",
+  "schema/shacl/links.shacl.ttl": "5f1fcff7b1082f80235901d2230bb74d9a954fbb35d00f4170d591df7fe4db2e"
  },
  "link_graphs": {
   "links": {
@@ -35,8 +36,8 @@
   "by-rule-signin": {
    "file": "by-rule-signin.ttl",
    "graph": "https://kerfors.github.io/cdisc-for-all/graph/by-rule",
-   "triples": 17797,
-   "graph_sha256": "26ce8312c7087b9e92fc2b9ac26f8761f89cc69402d586487d9af2081737f8a6"
+   "triples": 17908,
+   "graph_sha256": "4fe00ef5a243503db6f401dbf557bdfd2b1714553f7ce1666d64f9141d9e6c27"
   }
  },
  "sssom": {
@@ -53,7 +54,7 @@
  },
  "graph_sha256_method": "SHA-256 of the canonical N-Triples (RDFC-1.0; no blank nodes)",
  "link_check_text_sha256": "da6334b6771a1e857f3fcd9f59c988d99d01b9d8dbcc0acdc161485c29e1eda3",
- "link_check_signin_text_sha256": "d748b519bc862da2cd710f384b7195191eb4206916b87d14465a167ece2550c2",
+ "link_check_signin_text_sha256": "d36cbd0fb32d385e8491e973768f92d730972f701051db6e26352d8716010d46",
  "text_sha256_method": "SHA-256 (UTF-8) of the JSON array [header, row, ...], each an array of strings (empty cell \"\"), rows sorted by the key columns in code point order, json.dumps(ensure_ascii=False, separators=(\",\", \":\")).",
  "tools": {
   "rdflib": "7.6.0",

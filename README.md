@@ -4,7 +4,7 @@ CDISC and NCIt content as published, fully linked: an RDF base with Excel views 
 
 The CDISC standards and the NCI Thesaurus are published as separate files, in different formats, linked by codes and names. This repository reads them as they are, keeps every published value unchanged, and makes the links between them explicit and checkable. Nothing of ours is added: no classification, no interpretation, no counts.
 
-Fully linked wherever the published content resolves; every place it does not is listed in Link_Check. Within the scope below; links to and from the sign-in sources (SDTMIG, SDTM Model) are built locally, not published.
+Fully linked wherever the published content resolves; every place it does not is listed in Link_Check. Within the scope below; links to and from the sign-in sources (SDTMIG, SDTMIG Appendix D, SDTM Model) are built locally, not published.
 
 **Status (2026-11-27):** the base graphs of all eight sources are built (SDTMIG, SDTMIG Appendix D and SDTM Model locally only); the linked layer has the published-key links, the links by rule (the general-name ones also as an SSSOM mapping set), the COSMoS model graph and Link_Check. `examples/` shows one use for study design: the test concept graph of a lab test. Changes are logged in [CHANGES.md](CHANGES.md).
 
