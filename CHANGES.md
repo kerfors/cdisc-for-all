@@ -219,3 +219,11 @@ Kerstin: the Link_Check rows belong in Link_Check.xlsx, the file meant for the c
 **Code.** `examples/link_map.html`: the panel of a link shows the number of Link_Check rows per result and points to `linked/Link_Check.xlsx` (filter column Link on the link's name), instead of listing the rows.
 
 **Content.** `examples/pages/link_map.html` regenerated. `index.html`: the Weight page among the example tests.
+
+## Link_Check: a Reason column (2026-11-28)
+
+Kerstin: Link_Check.xlsx is the file for the conversation with CDISC, so each row should say in words what is wrong.
+
+**Code.** `cfa.link.reason`: one sentence per Link_Check row, made only from links.yaml and the published values of the row: for a row with no link, what was looked for in the target table (the target columns and the row's values; for a column of several keys, the parts not found; for a link by a rule function, the keys the rule gives, or that it gives none); for a value that matches more than one target row, how many match; for a marker, the value the linked row carries. It states no cause. Make_Links writes it as the last column; the ReadMe sheet says how it is made.
+
+**Content.** `linked/Link_Check.xlsx` with the Reason column; the other columns and the rows are unchanged, as are the link graphs and the SSSOM files. Provenance.json: the new text hashes of Link_Check and the local Link_Check-signin.
