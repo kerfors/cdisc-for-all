@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>cdisc-for-all</title>
-<meta name="description" content="CDISC and NCIt content as published, linked. For study design: what is defined about a lab test, and why, before any data is captured.">
+<meta name="description" content="CDISC and NCIt content as published, linked. For study design: what is defined about a test, and why, before any data is captured.">
 <meta property="og:title" content="cdisc-for-all">
-<meta property="og:description" content="CDISC and NCIt content as published, linked. For study design: what is defined about a lab test, and why, before any data is captured.">
+<meta property="og:description" content="CDISC and NCIt content as published, linked. For study design: what is defined about a test, and why, before any data is captured.">
 <meta property="og:url" content="https://kerfors.github.io/cdisc-for-all/">
 <meta property="og:type" content="website">
 <style>
@@ -36,8 +36,8 @@ pre { background: var(--panel); border-radius: 8px; padding: 10px 12px; overflow
 <body>
 <main>
 <h1>cdisc-for-all</h1>
-<p class="lead">CDISC and NCIt content as published, linked. For study design: what is defined about a lab test, and why, before any data is captured.</p>
-<p>A lab test in SDTM Controlled Terminology has an NCIt concept. CDISC COSMoS describes the same concept as a Biomedical Concept (BC): what has to be specified to measure it, and the variants in which it is used. cdisc-for-all links these published sources, so that one page shows them together, each value as its source publishes it.</p>
+<p class="lead">CDISC and NCIt content as published, linked. For study design: what is defined about a test, and why, before any data is captured.</p>
+<p>A test in SDTM Controlled Terminology, such as a lab test, a vital sign, an ECG measurement or an immunogenicity assessment, has an NCIt concept. CDISC COSMoS describes the same concept as a Biomedical Concept (BC): what has to be specified to measure it, and the variants in which it is used. cdisc-for-all links these published sources, so that one page shows them together, each value as its source publishes it.</p>
 
 <h2>How to read a page</h2>
 <p class="legend"><span style="--c: var(--ct)">SDTM CT</span><span style="--c: var(--ncit)">NCIt</span><span style="--c: var(--bc)">COSMoS BC</span><span style="--c: var(--dss)">COSMoS Dataset Specialization</span></p>
@@ -57,6 +57,13 @@ pre { background: var(--panel); border-radius: 8px; padding: 10px 12px; overflow
     <tr><td>PH / pH</td><td>Urinalysis</td><td><a href="examples/pages/test_concept_C45997.html">page</a></td></tr>
     <tr><td>A1AGLP / Alpha-1 Acid Glycoprotein</td><td>Chemistry</td><td><a href="examples/pages/test_concept_C100429.html">page</a> <span class="muted">(no COSMoS BC: test and concept only)</span></td></tr>
     <tr><td>WEIGHT / Weight</td><td>Vital signs</td><td><a href="examples/pages/test_concept_C25208.html">page</a> <span class="muted">(BC Weight has no DECs; Body Weight reached through the test row of the Specialization WEIGHT)</span></td></tr>
+    <tr><td>MBNAB / Neutralizing Microbial-induced Antibody</td><td>Immunogenicity (IS)</td><td><a href="examples/pages/test_concept_C181396.html">page</a> <span class="muted">(no COSMoS BC: test and concept only)</span></td></tr>
+    <tr><td>MBAB / Microbial-induced Antibody</td><td>Immunogenicity (IS)</td><td><a href="examples/pages/test_concept_C187780.html">page</a> <span class="muted">(BC without DECs; no Specialization assigns the test)</span></td></tr>
+    <tr><td>MBIGGAB / Microbial-induced IgG Antibody</td><td>Immunogenicity (IS)</td><td><a href="examples/pages/test_concept_C181394.html">page</a> <span class="muted">(63 Specializations, one per organism)</span></td></tr>
+    <tr><td>QTCFAG / QTcF Interval, Aggregate</td><td>ECG (EG)</td><td><a href="examples/pages/test_concept_C117786.html">page</a></td></tr>
+    <tr><td>FEV1 / Forced Expiratory Volume in 1 Second</td><td>Respiratory (RE)</td><td><a href="examples/pages/test_concept_C38084.html">page</a></td></tr>
+    <tr><td>HBSAG / Hepatitis B Virus Surface Antigen</td><td>Microbiology (MB)</td><td><a href="examples/pages/test_concept_C64850.html">page</a></td></tr>
+    <tr><td>SNV / Single Nucleotide Variation</td><td>Genomics (GF)</td><td><a href="examples/pages/test_concept_C181331.html">page</a></td></tr>
   </tbody>
 </table>
 

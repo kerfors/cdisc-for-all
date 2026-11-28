@@ -78,7 +78,7 @@ IRIs are in the namespace `https://kerfors.github.io/cdisc-for-all/` and are mad
 
 `test_concept.py` needs the full `requirements.txt` (it writes the page with the link specs, which use linkml); the getting-started notebook below needs only pyoxigraph and pandas.
 
-Start page, for study designers: [https://kerfors.github.io/cdisc-for-all/](https://kerfors.github.io/cdisc-for-all/) (`index.html`). Pages for nine lab tests and Weight, to open in a browser: [https://kerfors.github.io/cdisc-for-all/examples/pages/](https://kerfors.github.io/cdisc-for-all/examples/pages/) (source in [`examples/pages/`](examples/pages/README.md)). `examples/Example_Lab_Test_Graphs.ipynb` does the same in a notebook.
+Start page, for study designers: [https://kerfors.github.io/cdisc-for-all/](https://kerfors.github.io/cdisc-for-all/) (`index.html`). Pages for nine lab tests, Weight, and seven tests from the IS, EG, RE, MB and GF domains, to open in a browser: [https://kerfors.github.io/cdisc-for-all/examples/pages/](https://kerfors.github.io/cdisc-for-all/examples/pages/) (source in [`examples/pages/`](examples/pages/README.md)). `examples/Example_Lab_Test_Graphs.ipynb` does the same in a notebook.
 
 The link map, for standards specialists: every link between the source tables as stated in `schema/links.yaml` (key columns, rule) with its Link_Check rows, [https://kerfors.github.io/cdisc-for-all/examples/pages/link_map.html](https://kerfors.github.io/cdisc-for-all/examples/pages/link_map.html), written by `python examples/link_map.py --out examples/pages/link_map.html`.
 
@@ -106,7 +106,7 @@ linked/          Make_Links, Make_COSMoS_Model and Make_Catalog notebooks, the l
 llms.txt, catalog.ttl   the entry point for AI agents and the DCAT + VoID catalogue (written by Make_Catalog)
 checks/          the schema check and the CSVW cross-check (rdf-tabular)
 mcp/             the MCP server for AI assistants (one script)
-examples/        a SPARQL CONSTRUCT query over the graphs (the test concept graph), test_concept.py to run it per test C-code, two review queries (SPARQL SELECT), the SPARQL cookbook (cookbook/), an example notebook, a getting-started notebook for developers (published graphs, no clone), example pages for nine lab tests and Weight (pages/)
+examples/        a SPARQL CONSTRUCT query over the graphs (the test concept graph), test_concept.py to run it per test C-code, two review queries (SPARQL SELECT), the SPARQL cookbook (cookbook/), an example notebook, a getting-started notebook for developers (published graphs, no clone), example pages for nine lab tests, Weight, and seven tests from the IS, EG, RE, MB and GF domains (pages/)
 ```
 
 ## Planned
