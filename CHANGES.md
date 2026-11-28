@@ -179,3 +179,11 @@ Kerstin's choices, one by one: the server reads the graphs from the site via cat
 ## README: what sits beside the layers (2026-11-27)
 
 **Content.** README: one paragraph under Two layers on what is generated beside them (vocabulary, catalogue and llms.txt, examples, MCP server), and that there are no files made for one consumer, such as an Excel file per observation class (decided 2026-11-27; README commit de920d2). The shape rule no longer names "a pivot" as its example, since no pivot view exists.
+
+## SDTMIG Appendix D, the variable-naming fragments (2026-11-28)
+
+Kerstin's choices: the SDTMIG v3.4 Appendix D table as its own base source (the CDISC Approved Fragments file of the NSV Registry page parked); no links for now, since no published key names a fragment and a split of variable names into fragments is not stated by CDISC.
+
+**Code.** `cfa.read.read_pdf_table`: a table a PDF publishes, read with pdfplumber from the pinned pages; it stops unless each page has one table, the header occurs once as the first row, every row has one cell per column, and the rows are consecutive lines of the page text. The LinkML module `schema/sdtmig_fragments.yaml`: one class, named by the appendix title, the two published columns, row key Keyword(s). Generated CSVW description and SHACL; the vocabulary regenerated. The reader notebook `base/sdtmig-fragments/Read_SDTMIG_Fragments.ipynb`. The pin names the PDF and the pages. pdfplumber added to requirements.txt.
+
+**Content.** None published: the graph, its view and Provenance are sign-in content, built locally (`.gitignore`). README: the source in the sources table and the licence note. `catalog.ttl` and `llms.txt` regenerated (the source listed as not published).

@@ -6,7 +6,7 @@ The CDISC standards and the NCI Thesaurus are published as separate files, in di
 
 Fully linked wherever the published content resolves; every place it does not is listed in Link_Check. Within the scope below; links to and from the sign-in sources (SDTMIG, SDTM Model) are built locally, not published.
 
-**Status (2026-11-27):** the base graphs of all seven sources are built (SDTMIG and SDTM Model locally only); the linked layer has the published-key links, the links by rule (the general-name ones also as an SSSOM mapping set), the COSMoS model graph and Link_Check. `examples/` shows one use for study design: the test concept graph of a lab test. Changes are logged in [CHANGES.md](CHANGES.md).
+**Status (2026-11-27):** the base graphs of all eight sources are built (SDTMIG, SDTMIG Appendix D and SDTM Model locally only); the linked layer has the published-key links, the links by rule (the general-name ones also as an SSSOM mapping set), the COSMoS model graph and Link_Check. `examples/` shows one use for study design: the test concept graph of a lab test. Changes are logged in [CHANGES.md](CHANGES.md).
 
 ## Where to start
 
@@ -57,6 +57,7 @@ Every pin is in [`Reference_Versions.json`](Reference_Versions.json): version, f
 | NCIt code to CUI map (no release; pinned by date and SHA-256) | NCI EVS | public |
 | Approved Non-Standard Variable Registry 2026-04-03 | CDISC | public |
 | SDTMIG v3.4 variable table | CDISC | cdisc.org sign-in |
+| SDTMIG v3.4 Appendix D, CDISC Variable-naming Fragments (the table in the SDTMIG v3.4 PDF) | CDISC | cdisc.org sign-in |
 | SDTM v2.0 variable table | CDISC | cdisc.org sign-in |
 
 **Scope.** SDTM CT and NCIt are not carried in full: SDTM CT is carried for the codelists COSMoS refers to or SDTMIG v3.4 binds, with all their terms; NCIt for the concepts of those codelists and terms, the COSMoS concepts and the SDTM Model variable concepts, with all their ancestors. COSMoS is carried as its latest export only (the `_latest` files of `export/`), not the archived packages.
@@ -125,4 +126,4 @@ The code, the schema and the documentation written for this repository are under
 - NCI Thesaurus: Creative Commons Attribution 4.0 International (CC BY 4.0), [NCI Thesaurus Terms of Use](https://evs.nci.nih.gov/ftp1/NCI_Thesaurus/ThesaurusTermsofUse.htm). The NCIt content here is derived from the NCI Thesaurus, produced by NCI Enterprise Vocabulary Services; "NCI Thesaurus" is a trademark of the National Cancer Institute.
 - COSMoS: MIT licence, Copyright CDISC ([cdisc-org/COSMoS](https://github.com/cdisc-org/COSMoS)).
 - SDTM Controlled Terminology and the Non-Standard Variable Registry: the terms of CDISC and NCI EVS.
-- SDTMIG and SDTM Model variable tables: downloaded with a cdisc.org sign-in. The files, their graphs and views, the links to and from their rows and the Link_Check rows of those links (the `-signin` files of `linked/`) are not in this repository; each user downloads the files and builds these locally.
+- SDTMIG and SDTM Model variable tables, and SDTMIG Appendix D: downloaded with a cdisc.org sign-in. The files, their graphs and views, the links to and from their rows and the Link_Check rows of those links (the `-signin` files of `linked/`) are not in this repository; each user downloads the files and builds these locally.

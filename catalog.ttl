@@ -25,6 +25,7 @@ cat:catalog
         <https://kerfors.github.io/cdisc-for-all/graph/sdtm-ct> ,
         <https://kerfors.github.io/cdisc-for-all/graph/sdtm-model> ,
         <https://kerfors.github.io/cdisc-for-all/graph/sdtmig> ,
+        <https://kerfors.github.io/cdisc-for-all/graph/sdtmig-fragments> ,
         <https://kerfors.github.io/cdisc-for-all/graph/vocabulary> ;
     dcat:landingPage <https://kerfors.github.io/cdisc-for-all/> ;
 .
@@ -239,7 +240,7 @@ cat:catalog
     spdx:checksum
         [
             spdx:algorithm spdx:checksumAlgorithm_sha256 ;
-            spdx:checksumValue "bd2b09a8c3aa7477ff02fd4055b8a3cdbd3ba3e761b8883cd59ef48763915998"^^xsd:hexBinary ;
+            spdx:checksumValue "84118854996adeb7c7be1b5a2067a753a992e54be33fcb77fef5525ca0407ef3"^^xsd:hexBinary ;
         ] ;
     dcat:downloadURL <https://kerfors.github.io/cdisc-for-all/schema/vocabulary.ttl> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/text/turtle> ;
@@ -551,6 +552,18 @@ cat:sssom
     void:triples 147766 ;
     rdfs:comment "The links to and from the sign-in sources are in a -signin file, built locally and not published." ;
     dcat:distribution <https://kerfors.github.io/cdisc-for-all/catalog#file/linked/links.ttl> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/graph/sdtmig-fragments>
+    a
+        void:Dataset ,
+        dcat:Dataset ;
+    dcterms:accessRights "Not published: cdisc.org sign-in: the graph and its view are built locally and not published." ;
+    dcterms:publisher "CDISC" ;
+    dcterms:rights "cdisc.org sign-in: the graph and its view are built locally and not published." ;
+    dcterms:source <https://www.cdisc.org/system/files/members/standard/foundational/SDTMIG%20v3.4-FINAL_2022-07-21.pdf> ;
+    dcterms:title "SDTMIG v3.4 Appendix D, CDISC Variable-naming Fragments (base graph)" ;
+    dcat:version "3.4" ;
 .
 
 <https://kerfors.github.io/cdisc-for-all/graph/vocabulary>

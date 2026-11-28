@@ -18,6 +18,7 @@ Machine-readable description of all of this: [catalog.ttl](https://kerfors.githu
 - [nci-code-cui-map.ttl](https://kerfors.github.io/cdisc-for-all/base/nci-code-cui-map/nci-code-cui-map.ttl): NCIt code to CUI map, 2026-07-11 (NCI EVS). NCI Thesaurus Terms of Use: https://evs.nci.nih.gov/ftp1/NCI_Thesaurus/ThesaurusTermsofUse.htm
 - [nsv-registry.ttl](https://kerfors.github.io/cdisc-for-all/base/nsv-registry/nsv-registry.ttl): Approved Non-Standard Variable Registry, 2026-04-03 (CDISC). The terms of CDISC and NCI EVS.
 - sdtmig: SDTMIG v3.4 variable table, 3.4 (CDISC). Not published: cdisc.org sign-in: the graph, its view and its links are built locally and not published.
+- sdtmig-fragments: SDTMIG v3.4 Appendix D, CDISC Variable-naming Fragments, 3.4 (CDISC). Not published: cdisc.org sign-in: the graph and its view are built locally and not published.
 - sdtm-model: SDTM v2.0 variable table, 2.0 (CDISC). Not published: cdisc.org sign-in: the graph, its view and its links are built locally and not published.
 
 ## Linked layer
