@@ -18,12 +18,13 @@ from cfa.read import read_xlsx_table  # noqa: E402
 
 LINKS = REPO_ROOT / 'schema' / 'links.yaml'
 CHECK = REPO_ROOT / 'linked' / 'Link_Check.xlsx'
-SIGNIN = {'sdtmig', 'sdtm-model'}
+SIGNIN = {'sdtmig', 'sdtm-model', 'sdtmig-fragments'}
 SOURCE_NAMES = {'sdtm-ct': 'SDTM CT', 'ncit-flat': 'NCIt', 'nci-code-cui-map': 'NCIt code-CUI map', 'cosmos': 'COSMoS',
-                'sdtmig': 'SDTMIG v3.4', 'sdtm-model': 'SDTM v2.0', 'nsv-registry': 'NSV Registry'}
+                'sdtmig': 'SDTMIG v3.4', 'sdtm-model': 'SDTM v2.0', 'nsv-registry': 'NSV Registry',
+                'sdtmig-fragments': 'SDTMIG v3.4 Appendix D'}
 # box positions (x, y) on the map, by table; a layout choice for reading, nothing more
 POSITIONS = {'Approved NSVs-alpha': (16, 30), 'SDTMIG': (16, 230), 'SDTM': (16, 430),
-             'cdisc_sdtm_dataset_specializations_latest': (276, 230),
+             'cdisc_sdtm_dataset_specializations_latest': (276, 230), 'CDISC Variable-naming Fragments': (276, 430),
              'cdisc_biomedical_concepts_hierarchy_latest': (536, 60), 'cdisc_biomedical_concepts_latest': (536, 260),
              'SDTM Terminology': (536, 460), 'Thesaurus': (796, 260), 'nci_code_cui_map': (796, 460)}
 
@@ -48,6 +49,7 @@ def page_data():
             'name': s['name'], 'kind': s['kind'], 'description': s['description'], 'iri': s['iri'],
             'from': s['domain'], 'to': s['range'], 'columns': s['columns'], 'target': s['target'],
             'separator': s['separator'], 'rule': s['rule'], 'flag_rule': s['flag_rule'],
+            'ends_with': s['ends_with'], 'target_separator': s['target_separator'], 'unmatched_rule': s['unmatched_rule'],
             'signin': bool({s['domain_source'], s['range_source']} & SIGNIN),
             'check': rows[['Result', 'Row', 'Column', 'Value', 'Not resolved']].values.tolist(),
         })

@@ -1375,6 +1375,31 @@ link_sdtmig_SDTMIG:CDISC%20CT%20Codelist%20Code%28s%29
     rdfs:range def_sdtm_ct:SDTM%20Terminology ;
 .
 
+<https://kerfors.github.io/cdisc-for-all/rule/sdtm-model/SDTM#Variable%20Name/sdtm-model/SDTM>
+    a rdf:Property ;
+    rdfs:label "sdtm-model code variable to its long version" ;
+    dcterms:type "by rule" ;
+    rdfs:comment
+        "An SDTM Model variable row whose name ends in \"CD\" to the Model row of the variable it is the short version of, in the same class and dataset." ,
+        "Rule: SDTMIG v3.4, 4.2.1: variables with names ending in \"CD\" are short versions of the associated variables without the \"CD\" suffix (e.g. --TESTCD is the short version of --TEST). Only for a Variable Name ending in \"CD\": the Model row with the same Class and Dataset Name (both empty for a variable the Model publishes for a class) whose Variable Name is the name without the final \"CD\"." ;
+    rdfs:domain def_sdtm_model:SDTM ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/links> ;
+    rdfs:range def_sdtm_model:SDTM ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/rule/sdtm-model/SDTM#Variable%20Name/sdtmig-fragments/CDISC%20Variable-naming%20Fragments>
+    a rdf:Property ;
+    rdfs:label "sdtm-model variable name as fragment" ;
+    dcterms:type "by rule" ;
+    rdfs:comment
+        "A row without this link is not reported: A Model variable does not refer to a fragment; a name that is not a fragment is not a break." ,
+        "An SDTM Model variable row whose name, without a leading \"--\", is a variable-naming fragment of SDTMIG Appendix D, to that fragment row." ,
+        "Rule: The Variable Name with a leading \"--\" removed equals a Fragment as published (a Fragment cell that lists more than one, such as \"ST, STD\", split at \",\", surrounding spaces removed). Every matching fragment row is linked; a name that matches more than one row (the same fragment for more than one keyword) is reported." ;
+    rdfs:domain def_sdtm_model:SDTM ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/links> ;
+    rdfs:range def_sdtmig_fragments:CDISC%20Variable-naming%20Fragments ;
+.
+
 <https://kerfors.github.io/cdisc-for-all/rule/sdtm-model/SDTM#Variables%20Qualified/sdtm-model/SDTM>
     a rdf:Property ;
     rdfs:label "sdtm-model variables qualified" ;
@@ -1397,4 +1422,16 @@ link_sdtmig_SDTMIG:CDISC%20CT%20Codelist%20Code%28s%29
     rdfs:domain def_sdtmig:SDTMIG ;
     rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/links> ;
     rdfs:range def_sdtm_model:SDTM ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/rule/sdtmig/SDTMIG#Variable%20Name/sdtmig/SDTMIG>
+    a rdf:Property ;
+    rdfs:label "sdtmig code variable to its long version" ;
+    dcterms:type "by rule" ;
+    rdfs:comment
+        "An SDTMIG variable row whose name ends in \"CD\" to the SDTMIG row of the variable it is the short version of, in the same dataset." ,
+        "Rule: SDTMIG v3.4, 4.2.1: variables with names ending in \"CD\" are short versions of the associated variables without the \"CD\" suffix (e.g. --TESTCD is the short version of --TEST). Only for a Variable Name ending in \"CD\": the row with the same Dataset Name whose Variable Name is the name without the final \"CD\"." ;
+    rdfs:domain def_sdtmig:SDTMIG ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/links> ;
+    rdfs:range def_sdtmig:SDTMIG ;
 .

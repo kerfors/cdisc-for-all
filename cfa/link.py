@@ -21,7 +21,11 @@ unless (earlier links: the link applies only to a row that has none of them), ma
 columns whose empty value matches an empty target column), targets "all"
 (link every matching target row; a row with more targets than keys is reported as well), and
 rule_function (a function of RULE_FUNCTIONS that gives, from the row's column values, the
-target keys to try in order; the first key that matches is used).
+target keys to try in order; the first key that matches is used), ends_with (the link applies
+only to a row whose link column value ends with this text), target_separator (the last target
+column holds several keys, split at this text, surrounding spaces removed), and unmatched
+"not reported" with unmatched_rule (a row without a link is not a result, for a link that
+matches names rather than resolving a reference; the reason stated).
 """
 
 import json
@@ -73,6 +77,11 @@ def load_links(path):
         unless = json.loads(ann.get('unless', '[]'))
         targets = ann.get('targets', 'one')
         func = ann.get('rule_function')
+        ends_with = ann.get('ends_with')
+        target_sep = ann.get('target_separator')
+        unmatched = ann.get('unmatched', 'reported')
+        if unmatched not in ('reported', 'not reported') or (unmatched == 'not reported') != ('unmatched_rule' in ann):
+            raise ValueError(f'{name}: unmatched is reported or not reported; not reported is stated in unmatched_rule')
         flag = json.loads(ann['flag']) if 'flag' in ann else None
         if (flag is None) != ('flag_rule' not in ann) or (flag is not None and set(flag) != {'column', 'ends_with'}):
             raise ValueError(f'{name}: flag is {{"column", "ends_with"}}, stated in flag_rule, both or neither')
@@ -85,8 +94,10 @@ def load_links(path):
                 raise ValueError(f'{name}: a rule_function takes no separator')
         elif len(cols) != len(target):
             raise ValueError(f'{name}: columns and target differ in length')
-        if (requires or unless or match_empty or targets != 'one') and kind != 'by rule':
-            raise ValueError(f'{name}: requires, unless, match_empty and targets are for a link by rule')
+        if (requires or unless or match_empty or targets != 'one' or ends_with or target_sep
+                or unmatched != 'reported') and kind != 'by rule':
+            raise ValueError(f'{name}: requires, unless, match_empty, targets, ends_with, target_separator '
+                             'and unmatched are for a link by rule')
         if any(c not in cols[:-1] for c in match_empty):
             raise ValueError(f'{name}: match_empty names a key column other than the last')
         earlier = {x['name']: x for x in specs}
@@ -121,6 +132,8 @@ def load_links(path):
             'unless': unless, 'unless_iris': [earlier[u]['iri'] for u in unless],
             'targets': targets, 'rule_function': func, 'match_empty': match_empty,
             'flag': flag, 'flag_rule': ann.get('flag_rule'),
+            'ends_with': ends_with, 'target_separator': target_sep,
+            'unmatched': unmatched, 'unmatched_rule': ann.get('unmatched_rule'),
             'flag_iri': property_iri(rsrc, rng, flag['column']) if flag else None,
             'shape': f'{NS}shape/{pct(name)}',
         })
@@ -154,15 +167,22 @@ def make_links(g, spec, made=None, matched=None):
         if any(_values(g, t, spec['target_empty_iris'])):
             continue
         key = tuple(_values(g, t, spec['target_iris']))
-        if key in index and spec['targets'] == 'one':
-            raise ValueError(f'{spec["name"]}: target key {key} matches {index[key]} and {t}')
-        index.setdefault(key, []).append(t)
+        if spec['target_separator'] is None:
+            tkeys = [key]
+        else:
+            tkeys = [key[:-1] + (x,) for x in _tokens(key[-1], spec['target_separator'])]
+        for k in tkeys:
+            if k in index and spec['targets'] == 'one':
+                raise ValueError(f'{spec["name"]}: target key {k} matches {index[k]} and {t}')
+            index.setdefault(k, []).append(t)
     func = RULE_FUNCTIONS[spec['rule_function']](g) if spec['rule_function'] else None
     out = Graph()
     p = URIRef(spec['iri'])
     for s in g.subjects(RDF.type, URIRef(spec['domain_class'])):
         vals = _values(g, s, spec['column_iris'])
         if vals[-1] == '' or '' in _values(g, s, spec['requires_iris']):
+            continue
+        if spec['ends_with'] is not None and not vals[-1].endswith(spec['ends_with']):
             continue
         if any((s, URIRef(u), None) in made for u in spec['unless_iris']):
             continue
@@ -191,6 +211,8 @@ def _sparql(spec, this='$this', cls=None, ambiguous=False):
     link = spec['iri']
     head = f'SELECT {this} ?value WHERE {{ ' + (f'{this} a <{cls}> . ' if cls else '')
     head += f'{this} <{col}> ?value . '
+    if spec['ends_with'] is not None:
+        head += f'FILTER(STRENDS(?value, {json.dumps(spec["ends_with"])})) '
     head += ''.join(f'{this} <{r}> ?r{i} . ' for i, r in enumerate(spec['requires_iris']))
     head += ''.join(f'FILTER NOT EXISTS {{ {this} <{u}> ?u{i} }} ' for i, u in enumerate(spec['unless_iris']))
     if spec['separator'] is None and not ambiguous:
@@ -209,7 +231,7 @@ def link_shapes(specs):
     g = Graph()
     g.bind('sh', SH)
     for spec in specs:
-        for amb in ([False, True] if spec['targets'] == 'all' else [False]):
+        for amb in ([False] if spec['unmatched'] == 'reported' else []) + ([True] if spec['targets'] == 'all' else []):
             base = spec['shape'] + ('-ambiguous' if amb else '')
             shape = URIRef(base)
             con = URIRef(base + '-sparql')
@@ -263,7 +285,7 @@ def unresolved(g, spec, node, value):
 LINK_CHECK_COLUMNS = ['Link', 'Kind', 'Result', 'Table', 'Row', 'Column', 'Value', 'Not resolved', 'Target table']
 LINKS_SHEET_COLUMNS = ['Link', 'Property', 'Kind', 'Rule', 'Rule function', 'Table', 'Columns', 'Separator',
                        'Requires', 'Unless', 'Target table', 'Target columns', 'Target columns empty', 'Targets',
-                       'Description', 'Flag']
+                       'Description', 'Flag', 'Ends with', 'Target separator', 'Not reported']
 
 
 def link_check_frame(report, g, specs):
@@ -297,7 +319,8 @@ def links_sheet(specs):
     js = lambda x: json.dumps(x, ensure_ascii=False) if x else ''
     rows = [[s['name'], s['iri'], s['kind'], s['rule'] or '', s['rule_function'] or '', s['domain'], js(s['columns']),
              s['separator'] or '', js(s['requires']), js(s['unless']), s['range'], js(s['target']),
-             js(s['target_empty']), s['targets'], s['description'] or '', s['flag_rule'] or '']
+             js(s['target_empty']), s['targets'], s['description'] or '', s['flag_rule'] or '',
+             s['ends_with'] or '', s['target_separator'] or '', s['unmatched_rule'] or '']
             for s in specs]
     return pd.DataFrame(rows, columns=LINKS_SHEET_COLUMNS, dtype=str)
 
@@ -358,8 +381,30 @@ def _cosmos_nsv(g):
     return keys
 
 
+def _cd_short_version(g):
+    """SDTMIG 4.2.1: a variable whose name ends in "CD" is the short version of the variable
+    without the "CD" suffix. The target key: the row's other key values, and its name without the
+    final "CD"."""
+    def keys(vals):
+        *rest, variable = vals
+        if variable.endswith('CD') and len(variable) > 2:
+            return [tuple(rest) + (variable[:-2],)]
+        return []
+    return keys
+
+
+def _model_name_fragment(g):
+    """An SDTM Model Variable Name, with a leading "--" removed, as a fragment."""
+    def keys(vals):
+        variable = vals[-1]
+        return [(variable[2:] if variable.startswith('--') else variable,)]
+    return keys
+
+
 RULE_FUNCTIONS = {
     'sdtmig-model-variable': _sdtmig_model_variable,
     'cosmos-model-variable': _cosmos_model_variable,
     'cosmos-nsv': _cosmos_nsv,
+    'cd-short-version': _cd_short_version,
+    'model-name-fragment': _model_name_fragment,
 }

@@ -58,7 +58,7 @@ ul.list a { color: var(--ct); cursor: pointer; }
 </main>
 <script>
 const DATA = __DATA__;
-const COLOR = {'sdtm-ct': 'var(--ct)', 'ncit-flat': 'var(--ncit)', 'nci-code-cui-map': 'var(--ncit)', 'cosmos': 'var(--bc)', 'sdtmig': 'var(--model)', 'sdtm-model': 'var(--model)', 'nsv-registry': 'var(--nsv)'};
+const COLOR = {'sdtm-ct': 'var(--ct)', 'ncit-flat': 'var(--ncit)', 'nci-code-cui-map': 'var(--ncit)', 'cosmos': 'var(--bc)', 'sdtmig': 'var(--model)', 'sdtm-model': 'var(--model)', 'sdtmig-fragments': 'var(--model)', 'nsv-registry': 'var(--nsv)'};
 const NS = 'http://www.w3.org/2000/svg', W = 236, H = 54;
 const svg = document.getElementById('g'), panel = document.getElementById('panel');
 svg.setAttribute('width', 1090); svg.setAttribute('height', 520);
@@ -109,8 +109,11 @@ function show(i) {
   h += `<tr><td>from</td><td>${esc(l.from)}: ${l.columns.map(esc).join(' + ')}</td></tr>`;
   h += `<tr><td>to</td><td>${esc(l.to)}: ${l.target.map(esc).join(' + ')}</td></tr>`;
   if (l.separator) h += `<tr><td>separator</td><td>"${esc(l.separator)}"</td></tr>`;
+  if (l.target_separator) h += `<tr><td>target separator</td><td>"${esc(l.target_separator)}"</td></tr>`;
+  if (l.ends_with) h += `<tr><td>only for</td><td>a value ending in "${esc(l.ends_with)}"</td></tr>`;
   if (l.rule) h += `<tr><td>rule</td><td>${esc(l.rule)}</td></tr>`;
   if (l.flag_rule) h += `<tr><td>marker</td><td>${esc(l.flag_rule)}</td></tr>`;
+  if (l.unmatched_rule) h += `<tr><td>no link</td><td>not reported: ${esc(l.unmatched_rule)}</td></tr>`;
   if (l.signin) h += `<tr><td>graph</td><td>built locally (a sign-in source); its Link_Check rows are in the local Link_Check-signin</td></tr>`;
   h += '</table>';
   if (l.check.length) {

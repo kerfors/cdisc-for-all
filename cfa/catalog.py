@@ -150,7 +150,7 @@ def catalog(root, specs):
         g.add((ls, DCTERMS.type, Literal(s['kind'])))
         if s['rule']:
             g.add((ls, RDFS.comment, Literal('Rule: ' + s['rule'])))
-        if {s['domain_source'], s['range_source']} & {'sdtmig', 'sdtm-model'}:
+        if {s['domain_source'], s['range_source']} & {'sdtmig', 'sdtm-model', 'sdtmig-fragments'}:
             g.add((ls, DCTERMS.accessRights, Literal('Built locally, not published: it starts from or ends at a sign-in source.')))
     return g
 
@@ -188,8 +188,10 @@ def llms_txt(root, specs, g):
             f'- [links.yaml]({REPO}/blob/main/schema/links.yaml): every link as stated (key columns, target columns, rule).', '',
             '## The links (predicate: from table -> to table)', '']
     for s in specs:
-        note = ' Built locally (sign-in source).' if {s['domain_source'], s['range_source']} & {'sdtmig', 'sdtm-model'} else ''
+        note = ' Built locally (sign-in source).' if {s['domain_source'], s['range_source']} & {'sdtmig', 'sdtm-model', 'sdtmig-fragments'} else ''
         rule = f" Rule: {s['rule']}" if s['rule'] else ''
+        if s['unmatched_rule']:
+            rule += f" A row without this link is not reported: {s['unmatched_rule']}"
         out.append(f"- `{s['iri']}` ({s['kind']}): {s['domain']} -> {s['range']}. {s['description']}{rule}{note}")
     out += ['', '## Using it', '',
             f'- [Start page]({SITE}) and [example pages]({SITE}examples/pages/): the test concept graph of nine lab tests; [link map]({SITE}examples/pages/link_map.html).',

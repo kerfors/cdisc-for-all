@@ -1,7 +1,8 @@
 """The vocabulary graph: the classes and properties the graphs use, in plain RDFS, restated from
 the LinkML schema. One class per base table (its class_uri), one property per published column
 (its slot_uri; label = the column name as published), one property per link of links.yaml (its
-slot_uri; label = the link name, with its description, its rule and its marker rule as stated).
+slot_uri; label = the link name, with its description, its rule, its marker rule and why a row
+without it is not reported, as stated).
 Nothing is added that the schema does not state."""
 from linkml_runtime.utils.schemaview import SchemaView
 from rdflib import Graph, Literal, URIRef
@@ -44,6 +45,8 @@ def vocabulary(index_path, specs):
             g.add((p, RDFS.comment, Literal('Rule: ' + s['rule'])))
         if s['flag_rule']:
             g.add((p, RDFS.comment, Literal('Reported too: ' + s['flag_rule'])))
+        if s['unmatched_rule']:
+            g.add((p, RDFS.comment, Literal('A row without this link is not reported: ' + s['unmatched_rule'])))
         g.add((p, RDFS.isDefinedBy, links_module))
     return g
 

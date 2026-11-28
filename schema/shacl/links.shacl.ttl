@@ -140,6 +140,20 @@ PREFIX sh: <http://www.w3.org/ns/shacl#>
     sh:target <https://kerfors.github.io/cdisc-for-all/shape/sdtm-ct%20to%20NCIt-target> ;
 .
 
+<https://kerfors.github.io/cdisc-for-all/shape/sdtm-model%20code%20variable%20to%20its%20long%20version>
+    a sh:NodeShape ;
+    sh:severity sh:Info ;
+    sh:sparql <https://kerfors.github.io/cdisc-for-all/shape/sdtm-model%20code%20variable%20to%20its%20long%20version-sparql> ;
+    sh:target <https://kerfors.github.io/cdisc-for-all/shape/sdtm-model%20code%20variable%20to%20its%20long%20version-target> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/sdtm-model%20variable%20name%20as%20fragment-ambiguous>
+    a sh:NodeShape ;
+    sh:severity sh:Info ;
+    sh:sparql <https://kerfors.github.io/cdisc-for-all/shape/sdtm-model%20variable%20name%20as%20fragment-ambiguous-sparql> ;
+    sh:target <https://kerfors.github.io/cdisc-for-all/shape/sdtm-model%20variable%20name%20as%20fragment-ambiguous-target> ;
+.
+
 <https://kerfors.github.io/cdisc-for-all/shape/sdtm-model%20variable%20to%20NCIt>
     a sh:NodeShape ;
     sh:severity sh:Info ;
@@ -152,6 +166,13 @@ PREFIX sh: <http://www.w3.org/ns/shacl#>
     sh:severity sh:Info ;
     sh:sparql <https://kerfors.github.io/cdisc-for-all/shape/sdtm-model%20variables%20qualified-sparql> ;
     sh:target <https://kerfors.github.io/cdisc-for-all/shape/sdtm-model%20variables%20qualified-target> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/sdtmig%20code%20variable%20to%20its%20long%20version>
+    a sh:NodeShape ;
+    sh:severity sh:Info ;
+    sh:sparql <https://kerfors.github.io/cdisc-for-all/shape/sdtmig%20code%20variable%20to%20its%20long%20version-sparql> ;
+    sh:target <https://kerfors.github.io/cdisc-for-all/shape/sdtmig%20code%20variable%20to%20its%20long%20version-target> ;
 .
 
 <https://kerfors.github.io/cdisc-for-all/shape/sdtmig%20variable%20to%20codelist>
@@ -388,6 +409,28 @@ PREFIX sh: <http://www.w3.org/ns/shacl#>
     sh:select "SELECT ?this ?value WHERE { ?this a <https://kerfors.github.io/cdisc-for-all/def/sdtm-ct#SDTM%20Terminology> . ?this <https://kerfors.github.io/cdisc-for-all/def/sdtm-ct/SDTM%20Terminology#Code> ?value . FILTER NOT EXISTS { ?this <https://kerfors.github.io/cdisc-for-all/link/sdtm-ct/SDTM%20Terminology#Code> ?t } }" ;
 .
 
+<https://kerfors.github.io/cdisc-for-all/shape/sdtm-model%20code%20variable%20to%20its%20long%20version-sparql>
+    a sh:SPARQLConstraint ;
+    sh:message "sdtm-model code variable to its long version: no by rule link for the value" ;
+    sh:select "SELECT $this ?value WHERE { $this <https://kerfors.github.io/cdisc-for-all/def/sdtm-model/SDTM#Variable%20Name> ?value . FILTER(STRENDS(?value, \"CD\")) FILTER NOT EXISTS { $this <https://kerfors.github.io/cdisc-for-all/rule/sdtm-model/SDTM#Variable%20Name/sdtm-model/SDTM> ?t } }" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/sdtm-model%20code%20variable%20to%20its%20long%20version-target>
+    a sh:SPARQLTarget ;
+    sh:select "SELECT ?this ?value WHERE { ?this a <https://kerfors.github.io/cdisc-for-all/def/sdtm-model#SDTM> . ?this <https://kerfors.github.io/cdisc-for-all/def/sdtm-model/SDTM#Variable%20Name> ?value . FILTER(STRENDS(?value, \"CD\")) FILTER NOT EXISTS { ?this <https://kerfors.github.io/cdisc-for-all/rule/sdtm-model/SDTM#Variable%20Name/sdtm-model/SDTM> ?t } }" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/sdtm-model%20variable%20name%20as%20fragment-ambiguous-sparql>
+    a sh:SPARQLConstraint ;
+    sh:message "sdtm-model variable name as fragment: more target rows than keys for the value" ;
+    sh:select "SELECT $this ?value WHERE { $this <https://kerfors.github.io/cdisc-for-all/def/sdtm-model/SDTM#Variable%20Name> ?value . OPTIONAL { $this <https://kerfors.github.io/cdisc-for-all/rule/sdtm-model/SDTM#Variable%20Name/sdtmig-fragments/CDISC%20Variable-naming%20Fragments> ?t } } GROUP BY $this ?value HAVING (COUNT(DISTINCT ?t) > 1)" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/sdtm-model%20variable%20name%20as%20fragment-ambiguous-target>
+    a sh:SPARQLTarget ;
+    sh:select "SELECT ?this ?value WHERE { ?this a <https://kerfors.github.io/cdisc-for-all/def/sdtm-model#SDTM> . ?this <https://kerfors.github.io/cdisc-for-all/def/sdtm-model/SDTM#Variable%20Name> ?value . OPTIONAL { ?this <https://kerfors.github.io/cdisc-for-all/rule/sdtm-model/SDTM#Variable%20Name/sdtmig-fragments/CDISC%20Variable-naming%20Fragments> ?t } } GROUP BY ?this ?value HAVING (COUNT(DISTINCT ?t) > 1)" ;
+.
+
 <https://kerfors.github.io/cdisc-for-all/shape/sdtm-model%20variable%20to%20NCIt-sparql>
     a sh:SPARQLConstraint ;
     sh:message "sdtm-model variable to NCIt: no published key link for the value" ;
@@ -408,6 +451,17 @@ PREFIX sh: <http://www.w3.org/ns/shacl#>
 <https://kerfors.github.io/cdisc-for-all/shape/sdtm-model%20variables%20qualified-target>
     a sh:SPARQLTarget ;
     sh:select "SELECT ?this ?value WHERE { ?this a <https://kerfors.github.io/cdisc-for-all/def/sdtm-model#SDTM> . ?this <https://kerfors.github.io/cdisc-for-all/def/sdtm-model/SDTM#Variables%20Qualified> ?value . OPTIONAL { ?this <https://kerfors.github.io/cdisc-for-all/rule/sdtm-model/SDTM#Variables%20Qualified/sdtm-model/SDTM> ?t } } GROUP BY ?this ?value HAVING (COUNT(DISTINCT ?t) < (STRLEN(?value) - STRLEN(REPLACE(?value, \";\", \"\", \"q\"))) / STRLEN(\";\") + 1)" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/sdtmig%20code%20variable%20to%20its%20long%20version-sparql>
+    a sh:SPARQLConstraint ;
+    sh:message "sdtmig code variable to its long version: no by rule link for the value" ;
+    sh:select "SELECT $this ?value WHERE { $this <https://kerfors.github.io/cdisc-for-all/def/sdtmig/SDTMIG#Variable%20Name> ?value . FILTER(STRENDS(?value, \"CD\")) FILTER NOT EXISTS { $this <https://kerfors.github.io/cdisc-for-all/rule/sdtmig/SDTMIG#Variable%20Name/sdtmig/SDTMIG> ?t } }" ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/shape/sdtmig%20code%20variable%20to%20its%20long%20version-target>
+    a sh:SPARQLTarget ;
+    sh:select "SELECT ?this ?value WHERE { ?this a <https://kerfors.github.io/cdisc-for-all/def/sdtmig#SDTMIG> . ?this <https://kerfors.github.io/cdisc-for-all/def/sdtmig/SDTMIG#Variable%20Name> ?value . FILTER(STRENDS(?value, \"CD\")) FILTER NOT EXISTS { ?this <https://kerfors.github.io/cdisc-for-all/rule/sdtmig/SDTMIG#Variable%20Name/sdtmig/SDTMIG> ?t } }" ;
 .
 
 <https://kerfors.github.io/cdisc-for-all/shape/sdtmig%20variable%20to%20codelist-sparql>

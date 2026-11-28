@@ -8,6 +8,8 @@ import yaml
 SKOS = 'http://www.w3.org/2004/02/skos/core#'
 SEMAPV = 'https://w3id.org/semapv/vocab/'
 COLUMNS = ['subject_id', 'predicate_id', 'object_id', 'mapping_justification', 'comment']
+# the rule functions of the links written as SSSOM (the general-name rules)
+RULE_FUNCTIONS = ('sdtmig-model-variable', 'cosmos-model-variable', 'cosmos-nsv')
 
 
 def branch(rule_function, vals, key):

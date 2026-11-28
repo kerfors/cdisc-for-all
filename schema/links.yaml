@@ -18,6 +18,10 @@
 #   match_empty:   key columns (not the last) whose empty value matches an empty target column
 #   targets:       "all": every matching target row is linked; a row with more targets than keys is reported too
 #   rule_function: the function of cfa.link that implements the stated rule (target keys to try, in order)
+#   ends_with:     the link applies only to a row whose link column value ends with this text
+#   target_separator: the last target column holds several keys, split at this text, surrounding spaces removed
+#   unmatched:     "not reported": a row without a link is not a Link_Check result (a link that matches names, not a
+#                  reference the row makes); unmatched_rule states why
 # A link is made only where the target row exists and is the only row that matches. A row that has a value in the
 # link column and no link is reported (SHACL, sh:Info): that report is Link_Check. Broken links stay broken.
 id: https://kerfors.github.io/cdisc-for-all/def/links
@@ -30,6 +34,7 @@ imports:
   - nsv_registry
   - cosmos
   - sdtmig
+  - sdtmig_fragments
   - sdtm_model
   - sdtm_ct
   - ncit_flat
@@ -295,3 +300,48 @@ slots:
       columns: '["domain", "vlm_group_id", "object"]'
       target: '["domain", "vlm_group_id", "sdtm_variable"]'
       rule: "object equals the sdtm_variable of a row with the same domain and vlm_group_id."
+
+  # --- SDTMIG Appendix D, variable-naming fragments (sign-in; Kerstin, 2026-11-28)
+
+  "sdtmig code variable to its long version":
+    description: An SDTMIG variable row whose name ends in "CD" to the SDTMIG row of the variable it is the short version of, in the same dataset.
+    slot_uri: https://kerfors.github.io/cdisc-for-all/rule/sdtmig/SDTMIG#Variable%20Name/sdtmig/SDTMIG
+    domain: "SDTMIG"
+    range: "SDTMIG"
+    annotations:
+      link: by rule
+      columns: '["Dataset Name", "Variable Name"]'
+      target: '["Dataset Name", "Variable Name"]'
+      ends_with: CD
+      rule_function: cd-short-version
+      rule: "SDTMIG v3.4, 4.2.1: variables with names ending in \"CD\" are short versions of the associated variables without the \"CD\" suffix (e.g. --TESTCD is the short version of --TEST). Only for a Variable Name ending in \"CD\": the row with the same Dataset Name whose Variable Name is the name without the final \"CD\"."
+
+  "sdtm-model code variable to its long version":
+    description: An SDTM Model variable row whose name ends in "CD" to the Model row of the variable it is the short version of, in the same class and dataset.
+    slot_uri: https://kerfors.github.io/cdisc-for-all/rule/sdtm-model/SDTM#Variable%20Name/sdtm-model/SDTM
+    domain: "SDTM"
+    range: "SDTM"
+    annotations:
+      link: by rule
+      columns: '["Class", "Dataset Name", "Variable Name"]'
+      target: '["Class", "Dataset Name", "Variable Name"]'
+      ends_with: CD
+      rule_function: cd-short-version
+      rule: "SDTMIG v3.4, 4.2.1: variables with names ending in \"CD\" are short versions of the associated variables without the \"CD\" suffix (e.g. --TESTCD is the short version of --TEST). Only for a Variable Name ending in \"CD\": the Model row with the same Class and Dataset Name (both empty for a variable the Model publishes for a class) whose Variable Name is the name without the final \"CD\"."
+
+  "sdtm-model variable name as fragment":
+    description: An SDTM Model variable row whose name, without a leading "--", is a variable-naming fragment of SDTMIG Appendix D, to that fragment row.
+    slot_uri: https://kerfors.github.io/cdisc-for-all/rule/sdtm-model/SDTM#Variable%20Name/sdtmig-fragments/CDISC%20Variable-naming%20Fragments
+    domain: "SDTM"
+    range: "CDISC Variable-naming Fragments"
+    annotations:
+      link: by rule
+      columns: '["Variable Name"]'
+      target: '["Fragment"]'
+      target_separator: ","
+      targets: all
+      unmatched: not reported
+      unmatched_rule: "A Model variable does not refer to a fragment; a name that is not a fragment is not a break."
+      rule_function: model-name-fragment
+      rule: "The Variable Name with a leading \"--\" removed equals a Fragment as published (a Fragment cell that lists more than one, such as \"ST, STD\", split at \",\", surrounding spaces removed). Every matching fragment row is linked; a name that matches more than one row (the same fragment for more than one keyword) is reported."
+
