@@ -119,10 +119,9 @@ function show(i) {
   if (l.check.length) {
     const groups = {};
     l.check.forEach(r => { (groups[r[0]] = groups[r[0]] || []).push(r); });
-    Object.entries(groups).forEach(([res, rows]) => {
-      h += `<h4>Link_Check: ${esc(res)} (${rows.length} rows)</h4><table><tr><th>Row</th><th>${esc(rows[0][2])}</th><th>Not resolved</th></tr>`
-        + rows.map(r => `<tr><td>${esc(r[1].split('/').slice(7).join(' / '))}</td><td>${esc(r[3])}</td><td>${esc(r[4])}</td></tr>`).join('') + '</table>';
-    });
+    h += '<h4>Link_Check rows</h4><table>';
+    Object.entries(groups).forEach(([res, rows]) => { h += `<tr><td>${rows.length}</td><td>${esc(res)}</td></tr>`; });
+    h += `</table><p class="src">Each row, with its value and what did not resolve, is in <a style="color:var(--ct)" href="../../linked/Link_Check.xlsx">Link_Check.xlsx</a> (filter column Link on "${esc(l.name)}").</p>`;
   } else h += '<h4>Link_Check rows</h4><p class="src">none</p>';
   h += '<p class="src" style="margin-top:12px"><a style="color:var(--ct);cursor:pointer" id="back">All links</a></p>';
   panel.innerHTML = h;

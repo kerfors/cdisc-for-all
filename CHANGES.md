@@ -211,3 +211,11 @@ Kerstin's choice: reach the BC COSMoS puts a test under through the test row of 
 **Code.** `examples/test_concept_graph.rq` has a second route from the test term to the BC: a Dataset Specialization row whose assigned term is the term and that is the --TESTCD row of its Specialization (sdtm_variable is the domain followed by TESTCD, the rule of `review_testcd_vs_bc.rq`), to its BC in the BC hierarchy table (published keys: dataset specialization to assigned term, dataset specialization to biomedical concept). Each part of the query that starts from the BC rows has a copy that starts from the test row; everything that follows from a BC (its parents, DECs, NCIt concepts, bound CT terms, Specializations) is as before. The copies keep the start term bound in every part, since Oxigraph is far too slow otherwise. Example: WEIGHT C25208 has the NCIt concept of the BC Weight, which has no DECs; from the test row it now reaches Body Weight C81328, where the Specialization WEIGHT is. The docstrings of `test_concept.py` and of the MCP tool `test_concept`, and the llms.txt line of `cfa/catalog.py`, say so.
 
 **Content.** `examples/pages/`: a tenth page, Weight (C25208); the nine lab test pages are rebuilt byte-identical. The pages README, README (Using it, layout; removed from Planned) and `llms.txt` updated. The cookbook results are unchanged.
+
+## Link map: Link_Check counts only; Weight on the start page (2026-11-28)
+
+Kerstin: the Link_Check rows belong in Link_Check.xlsx, the file meant for the conversation with CDISC, not on the link map.
+
+**Code.** `examples/link_map.html`: the panel of a link shows the number of Link_Check rows per result and points to `linked/Link_Check.xlsx` (filter column Link on the link's name), instead of listing the rows.
+
+**Content.** `examples/pages/link_map.html` regenerated. `index.html`: the Weight page among the example tests.
