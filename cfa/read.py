@@ -6,6 +6,7 @@ import io
 import re
 
 import pandas as pd
+import pdfplumber
 from openpyxl import load_workbook
 
 OOXML_ESCAPE = re.compile(r'_x([0-9A-Fa-f]{4})_')
@@ -69,6 +70,40 @@ def read_delimited_text(text, delimiter, names, label):
     names come from the schema. label names the source in error messages."""
     rows = list(csv.reader(io.StringIO(text, newline=''), delimiter=delimiter, quoting=csv.QUOTE_NONE))
     return _frame(label, [list(names)] + rows)
+
+
+def read_pdf_table(path, pages, header):
+    """A table a PDF publishes, as a text table. pages: the 1-based page numbers it is on, in
+    order; header: the header row as published. pdfplumber (extract_tables, default settings)
+    must find exactly one table on each page; the header must be the first row of the first
+    page and no other row; every row must have one cell per header column, none missing. A cell
+    is the text pdfplumber extracts, unchanged. Cross-check: on each page, the rows, each as its
+    cells joined by one space, must be a run of consecutive lines of the page text
+    (pdfplumber extract_text)."""
+    body = []
+    with pdfplumber.open(path) as pdf:
+        for n in pages:
+            page = pdf.pages[n - 1]
+            tables = page.extract_tables()
+            if len(tables) != 1:
+                raise ValueError(f'{path} page {n}: {len(tables)} tables, not 1')
+            rows = tables[0]
+            bad = [i + 1 for i, r in enumerate(rows) if len(r) != len(header) or any(c is None for c in r)]
+            if bad:
+                raise ValueError(f'{path} page {n}: rows without one cell per header column: {bad[:10]}')
+            lines = page.extract_text().splitlines()
+            joined = [' '.join(r) for r in rows]
+            if joined[0] not in lines:
+                raise ValueError(f'{path} page {n}: first table row not a line of the page text')
+            i = lines.index(joined[0])
+            if lines[i:i + len(joined)] != joined:
+                raise ValueError(f'{path} page {n}: the table rows are not consecutive lines of the page text')
+            body.extend(rows)
+    if body[0] != list(header):
+        raise ValueError(f'{path}: first row {body[0]} is not the header {list(header)}')
+    if list(header) in body[1:]:
+        raise ValueError(f'{path}: the header row occurs again inside the table')
+    return pd.DataFrame(body[1:], columns=list(header), dtype=str)
 
 
 def _frame(path, rows):

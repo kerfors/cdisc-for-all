@@ -9,6 +9,7 @@ imports:
   - nsv_registry
   - cosmos
   - sdtmig
+  - sdtmig_fragments
   - sdtm_model
   - sdtm_ct
   - ncit_flat

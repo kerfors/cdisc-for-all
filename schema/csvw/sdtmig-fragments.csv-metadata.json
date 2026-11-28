@@ -1,0 +1,30 @@
+{
+ "@context": "http://www.w3.org/ns/csvw",
+ "url": "CDISC%20Variable-naming%20Fragments.csv",
+ "dialect": {
+  "trim": false
+ },
+ "tableSchema": {
+  "columns": [
+   {
+    "titles": "Keyword(s)",
+    "name": "Keyword%28s%29",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/sdtmig-fragments/CDISC%20Variable-naming%20Fragments#Keyword%28s%29"
+   },
+   {
+    "titles": "Fragment",
+    "name": "Fragment",
+    "propertyUrl": "https://kerfors.github.io/cdisc-for-all/def/sdtmig-fragments/CDISC%20Variable-naming%20Fragments#Fragment"
+   },
+   {
+    "virtual": true,
+    "propertyUrl": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+    "valueUrl": "https://kerfors.github.io/cdisc-for-all/def/sdtmig-fragments#CDISC%20Variable-naming%20Fragments"
+   }
+  ],
+  "primaryKey": [
+   "Keyword%28s%29"
+  ],
+  "aboutUrl": "https://kerfors.github.io/cdisc-for-all/id/sdtmig-fragments/CDISC%20Variable-naming%20Fragments/{Keyword%28s%29}"
+ }
+}

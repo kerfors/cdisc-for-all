@@ -25,6 +25,7 @@ RIGHTS = {'sdtm-ct': 'The terms of CDISC and NCI EVS.', 'nsv-registry': 'The ter
           'nci-code-cui-map': 'NCI Thesaurus Terms of Use: https://evs.nci.nih.gov/ftp1/NCI_Thesaurus/ThesaurusTermsofUse.htm',
           'cosmos': 'MIT licence, Copyright CDISC.',
           'sdtmig': 'cdisc.org sign-in: the graph, its view and its links are built locally and not published.',
+          'sdtmig-fragments': 'cdisc.org sign-in: the graph and its view are built locally and not published.',
           'sdtm-model': 'cdisc.org sign-in: the graph, its view and its links are built locally and not published.'}
 MEDIA = {'.ttl': 'text/turtle', '.xlsx': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
          '.tsv': 'text/tab-separated-values', '.json': 'application/json', '.html': 'text/html'}

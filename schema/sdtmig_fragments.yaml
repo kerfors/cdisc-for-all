@@ -1,0 +1,33 @@
+# The SDTMIG fragments base graph: SDTMIG v3.4 Appendix D, "CDISC Variable-naming Fragments"
+# (cdisc.org sign-in), the table as published.
+# Hand-kept. The CSVW table description and the structural SHACL are generated from it (cfa.rule, gen-shacl).
+# Class = the table, named by the appendix title as published; one attribute per published column
+# (name = header verbatim, in published order), slot_uri by the mapping rule; row key = Keyword(s),
+# unique in every row.
+# The file and its pages are not named here: Reference_Versions.json pins the PDF and names the pages.
+# Sign-in content: the graph, view and Provenance built from this module are not published (.gitignore).
+id: https://kerfors.github.io/cdisc-for-all/def/sdtmig-fragments
+name: sdtmig-fragments
+title: SDTMIG v3.4 Appendix D, CDISC Variable-naming Fragments, as published
+prefixes:
+  linkml: https://w3id.org/linkml/
+imports:
+  - linkml:types
+default_range: string
+annotations:
+  source: sdtmig-fragments
+classes:
+  "CDISC Variable-naming Fragments":
+    class_uri: https://kerfors.github.io/cdisc-for-all/def/sdtmig-fragments#CDISC%20Variable-naming%20Fragments
+    unique_keys:
+      row_key:
+        unique_key_name: row_key
+        unique_key_slots:
+          - "Keyword(s)"
+    attributes:
+      "Keyword(s)":
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/sdtmig-fragments/CDISC%20Variable-naming%20Fragments#Keyword%28s%29
+        range: string
+      "Fragment":
+        slot_uri: https://kerfors.github.io/cdisc-for-all/def/sdtmig-fragments/CDISC%20Variable-naming%20Fragments#Fragment
+        range: string

@@ -7,3 +7,4 @@ linkml==1.12.1
 pyshacl==0.40.2
 pyld==3.3.0
 pyoxigraph==0.5.13
+pdfplumber==0.11.10

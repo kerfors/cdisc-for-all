@@ -15,6 +15,8 @@ PREFIX def_sdtm_model: <https://kerfors.github.io/cdisc-for-all/def/sdtm-model#>
 PREFIX def_sdtm_model_SDTM: <https://kerfors.github.io/cdisc-for-all/def/sdtm-model/SDTM#>
 PREFIX def_sdtmig: <https://kerfors.github.io/cdisc-for-all/def/sdtmig#>
 PREFIX def_sdtmig_SDTMIG: <https://kerfors.github.io/cdisc-for-all/def/sdtmig/SDTMIG#>
+PREFIX def_sdtmig_fragments: <https://kerfors.github.io/cdisc-for-all/def/sdtmig-fragments#>
+PREFIX def_sdtmig_fragments_CDISC_Variable_naming_Fragments: <https://kerfors.github.io/cdisc-for-all/def/sdtmig-fragments/CDISC%20Variable-naming%20Fragments#>
 PREFIX link_cosmos_cdisc_biomedical_concepts_hierarchy_latest: <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_biomedical_concepts_hierarchy_latest#>
 PREFIX link_cosmos_cdisc_biomedical_concepts_latest: <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_biomedical_concepts_latest#>
 PREFIX link_cosmos_cdisc_sdtm_dataset_specializations_latest: <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_sdtm_dataset_specializations_latest#>
@@ -79,6 +81,12 @@ def_sdtmig:SDTMIG
     a rdfs:Class ;
     rdfs:label "SDTMIG" ;
     rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/sdtmig> ;
+.
+
+def_sdtmig_fragments:CDISC%20Variable-naming%20Fragments
+    a rdfs:Class ;
+    rdfs:label "CDISC Variable-naming Fragments" ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/sdtmig-fragments> ;
 .
 
 def_cosmos_cdisc_biomedical_concepts_hierarchy_latest:bc_categories
@@ -1022,6 +1030,22 @@ def_sdtm_model_SDTM:Version
     rdfs:label "Version" ;
     rdfs:domain def_sdtm_model:SDTM ;
     rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/sdtm-model> ;
+    rdfs:range xsd:string ;
+.
+
+def_sdtmig_fragments_CDISC_Variable_naming_Fragments:Fragment
+    a rdf:Property ;
+    rdfs:label "Fragment" ;
+    rdfs:domain def_sdtmig_fragments:CDISC%20Variable-naming%20Fragments ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/sdtmig-fragments> ;
+    rdfs:range xsd:string ;
+.
+
+def_sdtmig_fragments_CDISC_Variable_naming_Fragments:Keyword%28s%29
+    a rdf:Property ;
+    rdfs:label "Keyword(s)" ;
+    rdfs:domain def_sdtmig_fragments:CDISC%20Variable-naming%20Fragments ;
+    rdfs:isDefinedBy <https://kerfors.github.io/cdisc-for-all/def/sdtmig-fragments> ;
     rdfs:range xsd:string ;
 .
 

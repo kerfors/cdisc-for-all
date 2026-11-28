@@ -94,6 +94,23 @@
    }
   }
  },
+ "sdtmig-fragments": {
+  "publisher": "CDISC",
+  "title": "SDTMIG v3.4 Appendix D, CDISC Variable-naming Fragments",
+  "version": "3.4",
+  "access": "cdisc.org sign-in; not published in this repo",
+  "url": "https://www.cdisc.org/system/files/members/standard/foundational/SDTMIG%20v3.4-FINAL_2022-07-21.pdf",
+  "files": {
+   "SDTMIG v3.4-FINAL_2022-07-21.pdf": {
+    "sha256": "ea4ddbba4a3e10a55bb2f36d5e28d9cfc191090717c2426475279750a7f57021",
+    "pages": [
+     449,
+     450,
+     451
+    ]
+   }
+  }
+ },
  "sdtm-model": {
   "publisher": "CDISC",
   "title": "SDTM v2.0 variable table",
