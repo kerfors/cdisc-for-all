@@ -36,7 +36,7 @@ cat:catalog
     spdx:checksum
         [
             spdx:algorithm spdx:checksumAlgorithm_sha256 ;
-            spdx:checksumValue "bca767c1f8daf0d8e9941c2b8e55297ae4bfaf54c14e549b17a253d43e98491e"^^xsd:hexBinary ;
+            spdx:checksumValue "fdf584b21ae420bdccab88dc02f07b3bd3a24ac77852935e0a81ee7feaf4604f"^^xsd:hexBinary ;
         ] ;
     dcat:downloadURL <https://kerfors.github.io/cdisc-for-all/base/cosmos/cdisc_biomedical_concepts_hierarchy_latest.xlsx> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet> ;
@@ -48,7 +48,7 @@ cat:catalog
     spdx:checksum
         [
             spdx:algorithm spdx:checksumAlgorithm_sha256 ;
-            spdx:checksumValue "2fb021631290986855cfcc3ac784a1abb5bf13f8afec9853ba5e9d684ba60e68"^^xsd:hexBinary ;
+            spdx:checksumValue "c22fb19e9a264291ba0f0cdd6d9f85868fe5e1b8bb8161ba1f506369890d24c6"^^xsd:hexBinary ;
         ] ;
     dcat:downloadURL <https://kerfors.github.io/cdisc-for-all/base/cosmos/cdisc_biomedical_concepts_latest.xlsx> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet> ;
@@ -60,7 +60,7 @@ cat:catalog
     spdx:checksum
         [
             spdx:algorithm spdx:checksumAlgorithm_sha256 ;
-            spdx:checksumValue "fef6671afc11592fff5eb72489eeea478bc8f1198cce84271968c672331da3c7"^^xsd:hexBinary ;
+            spdx:checksumValue "9ea6ee92ca3a11f68bc6d21513b0b260a2ad70c3f5d93cee5c43eca373d6ba56"^^xsd:hexBinary ;
         ] ;
     dcat:downloadURL <https://kerfors.github.io/cdisc-for-all/base/cosmos/cdisc_sdtm_dataset_specializations_latest.xlsx> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet> ;
@@ -96,7 +96,7 @@ cat:catalog
     spdx:checksum
         [
             spdx:algorithm spdx:checksumAlgorithm_sha256 ;
-            spdx:checksumValue "3373170728d0a7851073f05eaa0aaaa0e05c54ab1899082c9f3b9e6d68f9bd97"^^xsd:hexBinary ;
+            spdx:checksumValue "d57efd5bf8da7b1553986370b6fae91f4c9242aa5661c1a30bb3786d648fa556"^^xsd:hexBinary ;
         ] ;
     dcat:downloadURL <https://kerfors.github.io/cdisc-for-all/base/nci-code-cui-map/nci_code_cui_map.xlsx> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet> ;
@@ -108,7 +108,7 @@ cat:catalog
     spdx:checksum
         [
             spdx:algorithm spdx:checksumAlgorithm_sha256 ;
-            spdx:checksumValue "9c0c5f94fec83eccfab49c048f0ceb3cb50bfec21e4762fd5b45a2346a9ca94a"^^xsd:hexBinary ;
+            spdx:checksumValue "c1ec4c6c6e5bf093ea3a8d6e49c607c670e2f271bc4cc111c745039d35fe09af"^^xsd:hexBinary ;
         ] ;
     dcat:downloadURL <https://kerfors.github.io/cdisc-for-all/base/ncit-flat/Thesaurus.xlsx> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet> ;
@@ -132,7 +132,7 @@ cat:catalog
     spdx:checksum
         [
             spdx:algorithm spdx:checksumAlgorithm_sha256 ;
-            spdx:checksumValue "49d08659f20f76db81176cf6506809d598bb816b943b6815a0f23fad0a8b3efb"^^xsd:hexBinary ;
+            spdx:checksumValue "2281bcc34aed55b7696b239cfefe9a6050d7fb028bb74af4358a6f96cc2ffd60"^^xsd:hexBinary ;
         ] ;
     dcat:downloadURL <https://kerfors.github.io/cdisc-for-all/base/nsv-registry/NSV_Registry.xlsx> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet> ;
@@ -156,7 +156,7 @@ cat:catalog
     spdx:checksum
         [
             spdx:algorithm spdx:checksumAlgorithm_sha256 ;
-            spdx:checksumValue "c99c319edd8f64a0e2199c79f87f9b1874c2df3a2ce07d706ad3fc0aa5c7af04"^^xsd:hexBinary ;
+            spdx:checksumValue "67c3ebe45948c0159d22e51e417edd05593bf775f5db29bc0395b01a737aca4b"^^xsd:hexBinary ;
         ] ;
     dcat:downloadURL <https://kerfors.github.io/cdisc-for-all/base/sdtm-ct/SDTM_Terminology.xlsx> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet> ;
@@ -180,7 +180,7 @@ cat:catalog
     spdx:checksum
         [
             spdx:algorithm spdx:checksumAlgorithm_sha256 ;
-            spdx:checksumValue "9221a92d1538636d529b56798f45abe7762e61721b746fd04ae08cda03783c2a"^^xsd:hexBinary ;
+            spdx:checksumValue "0d7f0c4370738f679f37ffc2f135581b55bde24e293c3d348ae7d1106a6ea08a"^^xsd:hexBinary ;
         ] ;
     dcat:downloadURL <https://kerfors.github.io/cdisc-for-all/linked/Link_Check.xlsx> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet> ;

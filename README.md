@@ -62,7 +62,7 @@ Every pin is in [`Reference_Versions.json`](Reference_Versions.json): version, f
 
 **Scope.** SDTM CT and NCIt are not carried in full: SDTM CT is carried for the codelists COSMoS refers to or SDTMIG v3.4 binds, with all their terms; NCIt for the concepts of those codelists and terms, the COSMoS concepts and the SDTM Model variable concepts, with all their ancestors. COSMoS is carried as its latest export only (the `_latest` files of `export/`), not the archived packages.
 
-**What depends on the sign-in sources.** Three published files are shaped by the SDTMIG or SDTM Model graphs: the scope of `sdtm-ct.ttl` (it includes the codelists SDTMIG v3.4 binds); the links by rule to the NSV Registry in `by-rule.ttl` (made only where a row has no SDTMIG or SDTM Model link); and, through those links, which results `link-check.ttl` (and its view `Link_Check.xlsx`) lists for them. Without a cdisc.org sign-in these files cannot be rebuilt exactly; the published files are as built, with their inputs and hashes in Provenance.
+**What depends on the sign-in sources.** Four published files are shaped by the SDTMIG or SDTM Model graphs: the scope of `sdtm-ct.ttl` (it includes the codelists SDTMIG v3.4 binds); the scope of `ncit-flat.ttl` (it includes the SDTM Model variable concepts and the concepts of the SDTM CT rows in scope); the links by rule to the NSV Registry in `by-rule.ttl` (made only where a row has no SDTMIG or SDTM Model link); and, through those links, which results `link-check.ttl` (and its view `Link_Check.xlsx`) lists for them. Without a cdisc.org sign-in these files cannot be rebuilt exactly; the published files are as built, with their inputs and hashes in Provenance.
 
 ## Identifiers
 
