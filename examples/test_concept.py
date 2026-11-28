@@ -6,7 +6,8 @@ C-codes, and write per code the result graph (N-Triples) and a page to read it.
 
 Reads the published base graphs, links.ttl, by-rule.ttl and cosmos-model.ttl (no sign-in
 content). Stops if a code is not an SDTM CT term. The result shows what is there: the test and
-its NCIt concept; the COSMoS BC if one has that concept; its DECs if it has any."""
+its NCIt concept; the COSMoS BC if one has that concept, and the BC of a Dataset Specialization
+whose --TESTCD row assigns the test; their DECs if they have any."""
 import argparse
 import re
 import sys

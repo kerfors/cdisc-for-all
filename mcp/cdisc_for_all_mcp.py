@@ -124,8 +124,8 @@ SELECT ?code ?codelist_name ?submission_value ?nci_preferred_term ?row WHERE {{
 @server.tool()
 def test_concept(code: str) -> str:
     """The test concept graph of an SDTM CT test term, by its C-code (e.g. C105585, Glucose): the test
-    terms and their NCIt concept with ancestors; the COSMoS BC with that concept, its parents and Data
-    Element Concepts; the CT terms Dataset Specializations bind to them; the Specializations. N-Triples,
+    terms and their NCIt concept with ancestors; the COSMoS BC with that concept, and the BC of a Dataset
+    Specialization whose --TESTCD row assigns the test, with their parents and Data Element Concepts; the CT terms Dataset Specializations bind to them; the Specializations. N-Triples,
     every triple as in the graphs (examples/test_concept_graph.rq)."""
     if not re.fullmatch(r'C\d+', code):
         raise ToolError(f'{code!r} is not a C-code')
