@@ -282,7 +282,42 @@ def unresolved(g, spec, node, value):
     return [t for t in _tokens(value, spec['separator']) if t not in linked]
 
 
-LINK_CHECK_COLUMNS = ['Link', 'Kind', 'Result', 'Table', 'Row', 'Column', 'Value', 'Not resolved', 'Target table']
+def _has(cols, vals):
+    """'Variable Name "X"', or 'Class "A", Dataset Name empty and Variable Name "B"'."""
+    parts = [f'{c} "{v}"' if v != '' else f'{c} empty' for c, v in zip(cols, vals)]
+    return parts[0] if len(parts) == 1 else ', '.join(parts[:-1]) + ' and ' + parts[-1]
+
+
+def reason(g, spec, node, value, result):
+    """One sentence for a Link_Check row: what was looked for in the target table and not found, or
+    what the target carries. Made only from links.yaml and the row's published values; no value of ours."""
+    rng = spec['range']
+    if result == 'no link':
+        vals = _values(g, node, spec['column_iris'])
+        empty = ''.join(f' and an empty {c}' for c in spec['target_empty'])
+        within = f' (one of the values of its {spec["target"][-1]}, split at "{spec["target_separator"]}")' if spec['target_separator'] else ''
+        if spec['rule_function']:
+            keys = RULE_FUNCTIONS[spec['rule_function']](g)(vals)
+            if not keys:
+                return f'The rule gives no key to look for in {rng} for {_has(spec["columns"], vals)}.'
+            return f'No row of {rng} has ' + ', or '.join(_has(spec['target'], k) for k in keys) + f'{empty}{within}.'
+        if spec['separator']:
+            parts = unresolved(g, spec, node, value)
+            last = ', '.join(f'"{x}"' for x in parts[:-1]) + (' or ' if len(parts) > 1 else '') + f'"{parts[-1]}"'
+            head = _has(spec['target'][:-1], vals[:-1]) + ' and ' if len(vals) > 1 else ''
+            return f'No row of {rng} has {head}{spec["target"][-1]} {last}{empty}{within}.'
+        return f'No row of {rng} has {_has(spec["target"], vals)}{empty}{within}.'
+    targets = sorted(g.objects(node, URIRef(spec['iri'])))
+    if result == 'more target rows than keys':
+        keys = sorted({tuple(_values(g, t, spec['target_iris'])) for t in targets})
+        within = f', split at "{spec["target_separator"]}"' if spec['target_separator'] else ''
+        return (f'{len(targets)} rows of {rng} match ({_has(spec["target"], keys[0]) if len(keys) == 1 else ", or ".join(_has(spec["target"], k) for k in keys)}'
+                f'{within}); every one is linked.')
+    marked = [_values(g, t, [spec['flag_iri']])[0] for t in targets]
+    return f'The linked row of {rng} has {spec["flag"]["column"]} ' + ', '.join(f'"{m}"' for m in marked) + '; the link stays.'
+
+
+LINK_CHECK_COLUMNS = ['Link', 'Kind', 'Result', 'Table', 'Row', 'Column', 'Value', 'Not resolved', 'Target table', 'Reason']
 LINKS_SHEET_COLUMNS = ['Link', 'Property', 'Kind', 'Rule', 'Rule function', 'Table', 'Columns', 'Separator',
                        'Requires', 'Unless', 'Target table', 'Target columns', 'Target columns empty', 'Targets',
                        'Description', 'Flag', 'Ends with', 'Target separator', 'Not reported']
@@ -308,7 +343,7 @@ def link_check_frame(report, g, specs):
         value = str(report.value(r, SH.value))
         rows.append([spec['name'], spec['kind'], result, spec['domain'], str(node), spec['columns'][-1], value,
                      spec['separator'].join(unresolved(g, spec, node, value)) if spec['separator'] and result == 'no link' else '',
-                     spec['range']])
+                     spec['range'], reason(g, spec, node, value, result)])
     df = pd.DataFrame(rows, columns=LINK_CHECK_COLUMNS, dtype=str)
     return df.sort_values(['Link', 'Result', 'Row', 'Value'], kind='stable').reset_index(drop=True)
 
