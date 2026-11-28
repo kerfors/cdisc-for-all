@@ -1,0 +1,40 @@
+# 09. Which non-standard variables do the Dataset Specializations use?
+#
+# Dataset Specialization variables linked to the Approved NSV Registry: domain, vlm_group_id,
+# variable, and the NSV Registry row's variable name, label and review status.
+#
+# Parameter: none.
+# Links followed: cosmos variable to NSV Registry (by rule: a variable that is neither an
+# SDTMIG nor an SDTM Model variable, to the NSV Registry rows of its name without the domain
+# prefix; the general-name rule is also in linked/by-rule.sssom.tsv).
+# Note: whether a variable is an SDTMIG or Model variable is decided on the sign-in sources, so
+# this link graph is shaped by them (README, Sources). The answer is the published link graph.
+
+PREFIX ct:    <https://kerfors.github.io/cdisc-for-all/def/sdtm-ct/SDTM%20Terminology#>
+PREFIX ctl:   <https://kerfors.github.io/cdisc-for-all/link/sdtm-ct/SDTM%20Terminology#>
+PREFIX nci:   <https://kerfors.github.io/cdisc-for-all/def/ncit-flat/Thesaurus#>
+PREFIX ncil:  <https://kerfors.github.io/cdisc-for-all/link/ncit-flat/Thesaurus#>
+PREFIX bc:    <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_latest#>
+PREFIX bcl:   <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_biomedical_concepts_latest#>
+PREFIX bch:   <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_hierarchy_latest#>
+PREFIX bchl:  <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_biomedical_concepts_hierarchy_latest#>
+PREFIX ds:    <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#>
+PREFIX dsl:   <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_sdtm_dataset_specializations_latest#>
+PREFIX dsr:   <https://kerfors.github.io/cdisc-for-all/rule/cosmos/cdisc_sdtm_dataset_specializations_latest#>
+PREFIX cui:   <https://kerfors.github.io/cdisc-for-all/def/nci-code-cui-map/nci_code_cui_map#>
+PREFIX cuil:  <https://kerfors.github.io/cdisc-for-all/link/nci-code-cui-map/nci_code_cui_map#>
+PREFIX nsv:   <https://kerfors.github.io/cdisc-for-all/def/nsv-registry/Approved%20NSVs-alpha#>
+PREFIX cbc:   <https://www.cdisc.org/cosmos/biomedical_concept_v1.0>
+PREFIX csdtm: <https://www.cdisc.org/cosmos/sdtm_v1.0/>
+
+SELECT ?domain ?vlm_group_id ?sdtm_variable ?nsv_variable_name ?nsv_label ?nsv_review_status
+WHERE {
+    ?r dsr:sdtm_variable\/nsv-registry\/Approved%20NSVs-alpha ?n ;
+       ds:domain ?domain ;
+       ds:vlm_group_id ?vlm_group_id ;
+       ds:sdtm_variable ?sdtm_variable .
+    ?n nsv:Variable%20Name ?nsv_variable_name .
+    OPTIONAL { ?n nsv:Label ?nsv_label }
+    OPTIONAL { ?n nsv:Status%20of%20the%20NSV%20Review ?nsv_review_status }
+}
+ORDER BY ?domain ?vlm_group_id ?sdtm_variable ?nsv_variable_name

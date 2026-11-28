@@ -1,0 +1,39 @@
+# 10. What are the terms of a codelist?
+#
+# The codelist row (name, extensible) and every term row of the codelist: C-code, submission
+# value and NCI preferred term.
+#
+# Parameter: the codelist C-code, in the VALUES line. Example: C78734 (Specimen Type).
+# Links followed: sdtm-ct term to codelist.
+# Pattern: the codelist row is found by its IRI, made with BIND(IRI(...)) from the code (a
+# codelist row has no Codelist Code, so its IRI has an empty segment: ...SDTM%20Terminology//C78734).
+
+PREFIX ct:    <https://kerfors.github.io/cdisc-for-all/def/sdtm-ct/SDTM%20Terminology#>
+PREFIX ctl:   <https://kerfors.github.io/cdisc-for-all/link/sdtm-ct/SDTM%20Terminology#>
+PREFIX nci:   <https://kerfors.github.io/cdisc-for-all/def/ncit-flat/Thesaurus#>
+PREFIX ncil:  <https://kerfors.github.io/cdisc-for-all/link/ncit-flat/Thesaurus#>
+PREFIX bc:    <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_latest#>
+PREFIX bcl:   <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_biomedical_concepts_latest#>
+PREFIX bch:   <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_hierarchy_latest#>
+PREFIX bchl:  <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_biomedical_concepts_hierarchy_latest#>
+PREFIX ds:    <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#>
+PREFIX dsl:   <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_sdtm_dataset_specializations_latest#>
+PREFIX dsr:   <https://kerfors.github.io/cdisc-for-all/rule/cosmos/cdisc_sdtm_dataset_specializations_latest#>
+PREFIX cui:   <https://kerfors.github.io/cdisc-for-all/def/nci-code-cui-map/nci_code_cui_map#>
+PREFIX cuil:  <https://kerfors.github.io/cdisc-for-all/link/nci-code-cui-map/nci_code_cui_map#>
+PREFIX nsv:   <https://kerfors.github.io/cdisc-for-all/def/nsv-registry/Approved%20NSVs-alpha#>
+PREFIX cbc:   <https://www.cdisc.org/cosmos/biomedical_concept_v1.0>
+PREFIX csdtm: <https://www.cdisc.org/cosmos/sdtm_v1.0/>
+
+SELECT ?codelist_name ?extensible ?code ?value ?nci_preferred_term
+WHERE {
+    VALUES ?codelist_code { "C78734" }
+    BIND(IRI(CONCAT("https://kerfors.github.io/cdisc-for-all/id/sdtm-ct/SDTM%20Terminology//", ?codelist_code)) AS ?codelist)
+    ?codelist ct:Codelist%20Name ?codelist_name .
+    OPTIONAL { ?codelist ct:Codelist%20Extensible%20%28Yes%2FNo%29 ?extensible }
+    ?term ctl:Codelist%20Code ?codelist ;
+          ct:Code ?code ;
+          ct:CDISC%20Submission%20Value ?value ;
+          ct:NCI%20Preferred%20Term ?nci_preferred_term .
+}
+ORDER BY ?value ?code

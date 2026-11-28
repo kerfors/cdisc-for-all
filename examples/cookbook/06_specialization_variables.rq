@@ -1,0 +1,43 @@
+# 06. What does a Dataset Specialization specify?
+#
+# One row per variable of a Dataset Specialization, with the columns that say what is to be
+# collected and how: role, data type, codelist (C-code and submission value), assigned term,
+# value list, and the mandatory flags, as published in the COSMoS export. Variables are sorted
+# by name; the export's own row order is not kept in the graph.
+#
+# Parameter: the vlm_group_id, in the VALUES line. Example: GLUCSERPL.
+# Links followed: none (one base table, cdisc_sdtm_dataset_specializations_latest).
+
+PREFIX ct:    <https://kerfors.github.io/cdisc-for-all/def/sdtm-ct/SDTM%20Terminology#>
+PREFIX ctl:   <https://kerfors.github.io/cdisc-for-all/link/sdtm-ct/SDTM%20Terminology#>
+PREFIX nci:   <https://kerfors.github.io/cdisc-for-all/def/ncit-flat/Thesaurus#>
+PREFIX ncil:  <https://kerfors.github.io/cdisc-for-all/link/ncit-flat/Thesaurus#>
+PREFIX bc:    <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_latest#>
+PREFIX bcl:   <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_biomedical_concepts_latest#>
+PREFIX bch:   <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_hierarchy_latest#>
+PREFIX bchl:  <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_biomedical_concepts_hierarchy_latest#>
+PREFIX ds:    <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#>
+PREFIX dsl:   <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_sdtm_dataset_specializations_latest#>
+PREFIX dsr:   <https://kerfors.github.io/cdisc-for-all/rule/cosmos/cdisc_sdtm_dataset_specializations_latest#>
+PREFIX cui:   <https://kerfors.github.io/cdisc-for-all/def/nci-code-cui-map/nci_code_cui_map#>
+PREFIX cuil:  <https://kerfors.github.io/cdisc-for-all/link/nci-code-cui-map/nci_code_cui_map#>
+PREFIX nsv:   <https://kerfors.github.io/cdisc-for-all/def/nsv-registry/Approved%20NSVs-alpha#>
+PREFIX cbc:   <https://www.cdisc.org/cosmos/biomedical_concept_v1.0>
+PREFIX csdtm: <https://www.cdisc.org/cosmos/sdtm_v1.0/>
+
+SELECT ?sdtm_variable ?role ?data_type ?codelist ?codelist_submission_value ?assigned_term
+       ?value_list ?mandatory_variable ?mandatory_value
+WHERE {
+    VALUES ?vlm_group_id { "GLUCSERPL" }
+    ?r ds:vlm_group_id ?vlm_group_id ;
+       ds:sdtm_variable ?sdtm_variable .
+    OPTIONAL { ?r ds:role ?role }
+    OPTIONAL { ?r ds:data_type ?data_type }
+    OPTIONAL { ?r ds:codelist ?codelist }
+    OPTIONAL { ?r ds:codelist_submission_value ?codelist_submission_value }
+    OPTIONAL { ?r ds:assigned_term ?assigned_term }
+    OPTIONAL { ?r ds:value_list ?value_list }
+    OPTIONAL { ?r ds:mandatory_variable ?mandatory_variable }
+    OPTIONAL { ?r ds:mandatory_value ?mandatory_value }
+}
+ORDER BY ?sdtm_variable

@@ -1,0 +1,37 @@
+# 08. Which relationships does a Dataset Specialization state?
+#
+# The relationships between the variables of a Dataset Specialization, as COSMoS states them on
+# each variable row: subject, linking phrase, predicate term, object.
+#
+# Parameter: the vlm_group_id, in the VALUES line. Example: GLUCSERPL.
+# Links followed: cosmos object to variable (by rule: the variable named in object, in the same
+# Dataset Specialization).
+
+PREFIX ct:    <https://kerfors.github.io/cdisc-for-all/def/sdtm-ct/SDTM%20Terminology#>
+PREFIX ctl:   <https://kerfors.github.io/cdisc-for-all/link/sdtm-ct/SDTM%20Terminology#>
+PREFIX nci:   <https://kerfors.github.io/cdisc-for-all/def/ncit-flat/Thesaurus#>
+PREFIX ncil:  <https://kerfors.github.io/cdisc-for-all/link/ncit-flat/Thesaurus#>
+PREFIX bc:    <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_latest#>
+PREFIX bcl:   <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_biomedical_concepts_latest#>
+PREFIX bch:   <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_hierarchy_latest#>
+PREFIX bchl:  <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_biomedical_concepts_hierarchy_latest#>
+PREFIX ds:    <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#>
+PREFIX dsl:   <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_sdtm_dataset_specializations_latest#>
+PREFIX dsr:   <https://kerfors.github.io/cdisc-for-all/rule/cosmos/cdisc_sdtm_dataset_specializations_latest#>
+PREFIX cui:   <https://kerfors.github.io/cdisc-for-all/def/nci-code-cui-map/nci_code_cui_map#>
+PREFIX cuil:  <https://kerfors.github.io/cdisc-for-all/link/nci-code-cui-map/nci_code_cui_map#>
+PREFIX nsv:   <https://kerfors.github.io/cdisc-for-all/def/nsv-registry/Approved%20NSVs-alpha#>
+PREFIX cbc:   <https://www.cdisc.org/cosmos/biomedical_concept_v1.0>
+PREFIX csdtm: <https://www.cdisc.org/cosmos/sdtm_v1.0/>
+
+SELECT ?subject ?linking_phrase ?predicate_term ?object
+WHERE {
+    VALUES ?vlm_group_id { "GLUCSERPL" }
+    ?r ds:vlm_group_id ?vlm_group_id ;
+       ds:sdtm_variable ?subject ;
+       dsr:object\/cosmos\/cdisc_sdtm_dataset_specializations_latest ?o .
+    ?o ds:sdtm_variable ?object .
+    OPTIONAL { ?r ds:linking_phrase ?linking_phrase }
+    OPTIONAL { ?r ds:predicate_term ?predicate_term }
+}
+ORDER BY ?subject ?object

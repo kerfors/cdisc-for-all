@@ -1,0 +1,35 @@
+# 11. Which codelists hold this concept?
+#
+# Every SDTM CT term row with a given C-code: the codelist and the submission value in it.
+# The same concept is a term row in each codelist it belongs to (a test in the test code and
+# the test name codelist; a unit in several unit codelists).
+#
+# Parameter: the C-code, in the VALUES line. Example: C25613 (%).
+# Links followed: none (one base graph, SDTM CT; the C-code is the published Code column).
+
+PREFIX ct:    <https://kerfors.github.io/cdisc-for-all/def/sdtm-ct/SDTM%20Terminology#>
+PREFIX ctl:   <https://kerfors.github.io/cdisc-for-all/link/sdtm-ct/SDTM%20Terminology#>
+PREFIX nci:   <https://kerfors.github.io/cdisc-for-all/def/ncit-flat/Thesaurus#>
+PREFIX ncil:  <https://kerfors.github.io/cdisc-for-all/link/ncit-flat/Thesaurus#>
+PREFIX bc:    <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_latest#>
+PREFIX bcl:   <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_biomedical_concepts_latest#>
+PREFIX bch:   <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_hierarchy_latest#>
+PREFIX bchl:  <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_biomedical_concepts_hierarchy_latest#>
+PREFIX ds:    <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#>
+PREFIX dsl:   <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_sdtm_dataset_specializations_latest#>
+PREFIX dsr:   <https://kerfors.github.io/cdisc-for-all/rule/cosmos/cdisc_sdtm_dataset_specializations_latest#>
+PREFIX cui:   <https://kerfors.github.io/cdisc-for-all/def/nci-code-cui-map/nci_code_cui_map#>
+PREFIX cuil:  <https://kerfors.github.io/cdisc-for-all/link/nci-code-cui-map/nci_code_cui_map#>
+PREFIX nsv:   <https://kerfors.github.io/cdisc-for-all/def/nsv-registry/Approved%20NSVs-alpha#>
+PREFIX cbc:   <https://www.cdisc.org/cosmos/biomedical_concept_v1.0>
+PREFIX csdtm: <https://www.cdisc.org/cosmos/sdtm_v1.0/>
+
+SELECT ?codelist_code ?codelist_name ?value
+WHERE {
+    VALUES ?code { "C25613" }
+    ?term ct:Code ?code ;
+          ct:Codelist%20Code ?codelist_code ;
+          ct:Codelist%20Name ?codelist_name ;
+          ct:CDISC%20Submission%20Value ?value .
+}
+ORDER BY ?codelist_name ?codelist_code

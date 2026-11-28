@@ -1,0 +1,41 @@
+# 01. Find a test by code or name.
+#
+# Text in, the SDTM CT term rows whose submission value or CDISC synonym(s) cell contains it
+# (case-insensitive): the submission value, its codelist, the C-code, the CDISC synonym(s) and
+# the NCI preferred term, as published in SDTM CT.
+# A test has one term row in the test code codelist and one in the test name codelist, with the
+# same C-code; the C-code is the start of recipes 02, 11 and 12.
+#
+# Parameter: the text, in the VALUES line. Example: "glucose".
+# Links followed: none (one base graph, SDTM CT).
+# Note: SDTM CT is carried for the codelists in scope only (README, Sources).
+
+PREFIX ct:    <https://kerfors.github.io/cdisc-for-all/def/sdtm-ct/SDTM%20Terminology#>
+PREFIX ctl:   <https://kerfors.github.io/cdisc-for-all/link/sdtm-ct/SDTM%20Terminology#>
+PREFIX nci:   <https://kerfors.github.io/cdisc-for-all/def/ncit-flat/Thesaurus#>
+PREFIX ncil:  <https://kerfors.github.io/cdisc-for-all/link/ncit-flat/Thesaurus#>
+PREFIX bc:    <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_latest#>
+PREFIX bcl:   <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_biomedical_concepts_latest#>
+PREFIX bch:   <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_hierarchy_latest#>
+PREFIX bchl:  <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_biomedical_concepts_hierarchy_latest#>
+PREFIX ds:    <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#>
+PREFIX dsl:   <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_sdtm_dataset_specializations_latest#>
+PREFIX dsr:   <https://kerfors.github.io/cdisc-for-all/rule/cosmos/cdisc_sdtm_dataset_specializations_latest#>
+PREFIX cui:   <https://kerfors.github.io/cdisc-for-all/def/nci-code-cui-map/nci_code_cui_map#>
+PREFIX cuil:  <https://kerfors.github.io/cdisc-for-all/link/nci-code-cui-map/nci_code_cui_map#>
+PREFIX nsv:   <https://kerfors.github.io/cdisc-for-all/def/nsv-registry/Approved%20NSVs-alpha#>
+PREFIX cbc:   <https://www.cdisc.org/cosmos/biomedical_concept_v1.0>
+PREFIX csdtm: <https://www.cdisc.org/cosmos/sdtm_v1.0/>
+
+SELECT ?value ?codelist_code ?codelist_name ?code ?cdisc_synonyms ?nci_preferred_term
+WHERE {
+    VALUES ?text { "glucose" }
+    ?term ct:CDISC%20Submission%20Value ?value ;
+          ct:Codelist%20Code ?codelist_code ;
+          ct:Codelist%20Name ?codelist_name ;
+          ct:Code ?code ;
+          ct:NCI%20Preferred%20Term ?nci_preferred_term .
+    OPTIONAL { ?term ct:CDISC%20Synonym%28s%29 ?cdisc_synonyms }
+    FILTER(CONTAINS(LCASE(?value), LCASE(?text)) || CONTAINS(LCASE(COALESCE(?cdisc_synonyms, "")), LCASE(?text)))
+}
+ORDER BY ?codelist_name ?value ?code

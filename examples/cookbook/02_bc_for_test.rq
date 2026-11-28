@@ -1,0 +1,43 @@
+# 02. Is there a Biomedical Concept for this test?
+#
+# From an SDTM CT term (by its C-code) to the COSMoS BC with the same NCIt concept: the BC's
+# id, short name, definition, categories and result scales, from its row in the BC hierarchy table.
+# No row means that no COSMoS BC has the term's NCIt concept (a BC can still exist under
+# another concept: see review_testcd_vs_bc.rq).
+#
+# Parameter: the C-code of the term, in the VALUES line. Example: C105585 (GLUC, Glucose).
+# Links followed: sdtm-ct to NCIt (the term's concept); cosmos biomedical concept to NCIt
+# (a BC row with that concept); COSMoS BC model dataElementConcepts (the hierarchy row the BC
+# row belongs to).
+
+PREFIX ct:    <https://kerfors.github.io/cdisc-for-all/def/sdtm-ct/SDTM%20Terminology#>
+PREFIX ctl:   <https://kerfors.github.io/cdisc-for-all/link/sdtm-ct/SDTM%20Terminology#>
+PREFIX nci:   <https://kerfors.github.io/cdisc-for-all/def/ncit-flat/Thesaurus#>
+PREFIX ncil:  <https://kerfors.github.io/cdisc-for-all/link/ncit-flat/Thesaurus#>
+PREFIX bc:    <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_latest#>
+PREFIX bcl:   <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_biomedical_concepts_latest#>
+PREFIX bch:   <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_hierarchy_latest#>
+PREFIX bchl:  <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_biomedical_concepts_hierarchy_latest#>
+PREFIX ds:    <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#>
+PREFIX dsl:   <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_sdtm_dataset_specializations_latest#>
+PREFIX dsr:   <https://kerfors.github.io/cdisc-for-all/rule/cosmos/cdisc_sdtm_dataset_specializations_latest#>
+PREFIX cui:   <https://kerfors.github.io/cdisc-for-all/def/nci-code-cui-map/nci_code_cui_map#>
+PREFIX cuil:  <https://kerfors.github.io/cdisc-for-all/link/nci-code-cui-map/nci_code_cui_map#>
+PREFIX nsv:   <https://kerfors.github.io/cdisc-for-all/def/nsv-registry/Approved%20NSVs-alpha#>
+PREFIX cbc:   <https://www.cdisc.org/cosmos/biomedical_concept_v1.0>
+PREFIX csdtm: <https://www.cdisc.org/cosmos/sdtm_v1.0/>
+
+SELECT DISTINCT ?bc_id ?bc_short_name ?bc_definition ?bc_categories ?result_scales
+WHERE {
+    VALUES ?code { "C105585" }
+    ?term ct:Code ?code ;
+          ctl:Code ?concept .
+    ?bc_row bcl:ncit_code ?concept .
+    ?bc cbc:dataElementConcepts ?bc_row ;
+        bch:bc_id ?bc_id ;
+        bch:bc_short_name ?bc_short_name .
+    OPTIONAL { ?bc bch:bc_definition ?bc_definition }
+    OPTIONAL { ?bc bch:bc_categories ?bc_categories }
+    OPTIONAL { ?bc bch:result_scales ?result_scales }
+}
+ORDER BY ?bc_id

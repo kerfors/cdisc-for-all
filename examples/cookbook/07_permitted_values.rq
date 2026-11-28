@@ -1,0 +1,41 @@
+# 07. What values are permitted for a variable?
+#
+# The value list of one variable of a Dataset Specialization, as SDTM CT term rows: submission
+# value, C-code, codelist and NCI preferred term. A value with no term row in the variable's
+# codelist has no link and is not returned; it is listed in linked/Link_Check.xlsx.
+#
+# Parameter: the vlm_group_id and the sdtm_variable, in the VALUES line.
+# Example: GLUCSERPL, LBORRESU.
+# Links followed: cosmos value list to term (by rule: each value of value_list, split at ";",
+# to the term row with that submission value in the variable's codelist). The link is written
+# with an escaped "/" in its local name (see README, Patterns).
+
+PREFIX ct:    <https://kerfors.github.io/cdisc-for-all/def/sdtm-ct/SDTM%20Terminology#>
+PREFIX ctl:   <https://kerfors.github.io/cdisc-for-all/link/sdtm-ct/SDTM%20Terminology#>
+PREFIX nci:   <https://kerfors.github.io/cdisc-for-all/def/ncit-flat/Thesaurus#>
+PREFIX ncil:  <https://kerfors.github.io/cdisc-for-all/link/ncit-flat/Thesaurus#>
+PREFIX bc:    <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_latest#>
+PREFIX bcl:   <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_biomedical_concepts_latest#>
+PREFIX bch:   <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_hierarchy_latest#>
+PREFIX bchl:  <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_biomedical_concepts_hierarchy_latest#>
+PREFIX ds:    <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#>
+PREFIX dsl:   <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_sdtm_dataset_specializations_latest#>
+PREFIX dsr:   <https://kerfors.github.io/cdisc-for-all/rule/cosmos/cdisc_sdtm_dataset_specializations_latest#>
+PREFIX cui:   <https://kerfors.github.io/cdisc-for-all/def/nci-code-cui-map/nci_code_cui_map#>
+PREFIX cuil:  <https://kerfors.github.io/cdisc-for-all/link/nci-code-cui-map/nci_code_cui_map#>
+PREFIX nsv:   <https://kerfors.github.io/cdisc-for-all/def/nsv-registry/Approved%20NSVs-alpha#>
+PREFIX cbc:   <https://www.cdisc.org/cosmos/biomedical_concept_v1.0>
+PREFIX csdtm: <https://www.cdisc.org/cosmos/sdtm_v1.0/>
+
+SELECT ?value ?code ?codelist_name ?nci_preferred_term
+WHERE {
+    VALUES (?vlm_group_id ?sdtm_variable) { ("GLUCSERPL" "LBORRESU") }
+    ?r ds:vlm_group_id ?vlm_group_id ;
+       ds:sdtm_variable ?sdtm_variable ;
+       dsr:value_list\/sdtm-ct\/SDTM%20Terminology ?term .
+    ?term ct:CDISC%20Submission%20Value ?value ;
+          ct:Code ?code ;
+          ct:Codelist%20Name ?codelist_name ;
+          ct:NCI%20Preferred%20Term ?nci_preferred_term .
+}
+ORDER BY ?value ?code

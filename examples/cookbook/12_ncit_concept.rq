@@ -1,0 +1,43 @@
+# 12. What does NCIt say about a concept?
+#
+# The NCIt concept and each of its ancestors, one row per concept, with the NCIt FLAT columns
+# display name, synonyms, semantic type, concept status and definition, and the UMLS CUI from
+# the NCIt code-CUI map. Values as published: display name is often empty in the FLAT file,
+# and synonyms is the published "|"-separated cell. The start concept is the row whose code is
+# the parameter.
+#
+# Parameter: the C-code, in the VALUES line. Example: C105585 (Glucose Measurement).
+# Links followed: ncit concept to parent, zero or more times; code-CUI map to NCIt.
+# Note: NCIt is carried for the concepts in scope with all their ancestors (README, Sources).
+
+PREFIX ct:    <https://kerfors.github.io/cdisc-for-all/def/sdtm-ct/SDTM%20Terminology#>
+PREFIX ctl:   <https://kerfors.github.io/cdisc-for-all/link/sdtm-ct/SDTM%20Terminology#>
+PREFIX nci:   <https://kerfors.github.io/cdisc-for-all/def/ncit-flat/Thesaurus#>
+PREFIX ncil:  <https://kerfors.github.io/cdisc-for-all/link/ncit-flat/Thesaurus#>
+PREFIX bc:    <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_latest#>
+PREFIX bcl:   <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_biomedical_concepts_latest#>
+PREFIX bch:   <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_biomedical_concepts_hierarchy_latest#>
+PREFIX bchl:  <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_biomedical_concepts_hierarchy_latest#>
+PREFIX ds:    <https://kerfors.github.io/cdisc-for-all/def/cosmos/cdisc_sdtm_dataset_specializations_latest#>
+PREFIX dsl:   <https://kerfors.github.io/cdisc-for-all/link/cosmos/cdisc_sdtm_dataset_specializations_latest#>
+PREFIX dsr:   <https://kerfors.github.io/cdisc-for-all/rule/cosmos/cdisc_sdtm_dataset_specializations_latest#>
+PREFIX cui:   <https://kerfors.github.io/cdisc-for-all/def/nci-code-cui-map/nci_code_cui_map#>
+PREFIX cuil:  <https://kerfors.github.io/cdisc-for-all/link/nci-code-cui-map/nci_code_cui_map#>
+PREFIX nsv:   <https://kerfors.github.io/cdisc-for-all/def/nsv-registry/Approved%20NSVs-alpha#>
+PREFIX cbc:   <https://www.cdisc.org/cosmos/biomedical_concept_v1.0>
+PREFIX csdtm: <https://www.cdisc.org/cosmos/sdtm_v1.0/>
+
+SELECT ?code ?display_name ?synonyms ?semantic_type ?concept_status ?definition ?cui
+WHERE {
+    VALUES ?start { "C105585" }
+    ?s nci:code ?start ;
+       ncil:parents* ?c .
+    ?c nci:code ?code .
+    OPTIONAL { ?c nci:display%20name ?display_name }
+    OPTIONAL { ?c nci:synonyms ?synonyms }
+    OPTIONAL { ?c nci:semantic%20type ?semantic_type }
+    OPTIONAL { ?c nci:concept%20status ?concept_status }
+    OPTIONAL { ?c nci:definition ?definition }
+    OPTIONAL { ?m cuil:code ?c ; cui:CUI ?cui }
+}
+ORDER BY ?code ?cui
