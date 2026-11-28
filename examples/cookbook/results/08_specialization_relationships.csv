@@ -1,0 +1,13 @@
+subject,linking_phrase,predicate_term,object
+LBCAT,groups values in,GROUPS,LBTESTCD
+LBDTC,is the date of occurrence for,IS_TIMING_FOR,LBTESTCD
+LBFAST,is the subject's fasting status during the performance of the test in,IS_SUBJECT_STATE_FOR,LBTESTCD
+LBLOINC,identifies an observation described by,IDENTIFIES_OBSERVATION,LBTESTCD
+LBORRES,is the result of the test in,IS_RESULT_OF,LBTESTCD
+LBORRESU,is the unit for the value in,IS_UNIT_FOR,LBORRES
+LBSPEC,is the specimen tested in,IS_SPECIMEN_TESTED_IN,LBTESTCD
+LBSTRESC,is the result of the test in,IS_RESULT_OF,LBTESTCD
+LBSTRESN,is the result of the test in,IS_RESULT_OF,LBTESTCD
+LBSTRESU,is the unit for the value in,IS_UNIT_FOR,LBSTRESN
+LBTEST,decodes the value in,DECODES,LBTESTCD
+LBTESTCD,is the code for the value in,IS_DECODED_BY,LBTEST

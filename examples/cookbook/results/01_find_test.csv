@@ -1,0 +1,29 @@
+value,codelist_code,codelist_name,code,cdisc_synonyms,nci_preferred_term
+GMI % FORMULA,C160922,Laboratory Analytical Method Calculation Formula,C174289,Glucose Management Indicator % Formula,Glucose Management Indicator Percentage Formula
+GMI MMOL/MOL FORMULA,C160922,Laboratory Analytical Method Calculation Formula,C174290,Glucose Management Indicator mmol/mol Formula,Glucose Management Indicator Mmol/mol Formula
+EAGLUC,C65047,Laboratory Test Code,C142275,"EAG; Estimated Average Glucose; Glucose, Estimated; Glucose, Estimated Average",Estimated Average Glucose Measurement
+G6PD,C65047,Laboratory Test Code,C80184,Glucose-6-Phosphate Dehydrogenase,Glucose-6-Phosphate Dehydrogenase Measurement
+G6PDA,C65047,Laboratory Test Code,C139065,Glucose-6-Phosphate Dehydrogenase Act,Glucose-6-Phosphate Dehydrogenase Activity
+GIPI,C65047,Laboratory Test Code,C106537,"Glucose-dep Insulinotropic Pep, Intact; Intact Gastric Inhibitory Polypeptide; Intact GIP; Intact Glucose-dependent Insulinotropic Peptide",Intact Glucose-dependent Insulinotropic Peptide Measurement
+GLUC,C65047,Laboratory Test Code,C105585,Glucose,Glucose Measurement
+GLUCCLR,C65047,Laboratory Test Code,C96652,Glucose Clearance,Glucose Clearance Measurement
+GLUCCRT,C65047,Laboratory Test Code,C79447,Glucose/Creatinine,Glucose to Creatinine Ratio Measurement
+GLUCEXR,C65047,Laboratory Test Code,C150818,Glucose Excretion Rate,Glucose Excretion Rate
+GLUCPE,C65047,Laboratory Test Code,C163446,Plasma Equivalent Glucose,Plasma Equivalent Glucose Measurement
+GLUCPED,C65047,Laboratory Test Code,C163447,Plasma Equivalent Glucose Distribution,Plasma Equivalent Glucose Distribution Measurement
+GLUCWBE,C65047,Laboratory Test Code,C176296,Whole Blood Equivalent Glucose,Whole Blood Equivalent Glucose Measurement
+GLURLGLU,C65047,Laboratory Test Code,C186054,"Glucose, Enriched/Glucose; Glucose, Radiolabeled/Glucose",Radiolabeled Glucose to Glucose Ratio Measurement
+GMI,C65047,Laboratory Test Code,C174310,Glucose Management Indicator,Glucose Management Indicator
+Glucose,C67154,Laboratory Test Name,C105585,Glucose,Glucose Measurement
+Glucose Clearance,C67154,Laboratory Test Name,C96652,Glucose Clearance,Glucose Clearance Measurement
+Glucose Excretion Rate,C67154,Laboratory Test Name,C150818,Glucose Excretion Rate,Glucose Excretion Rate
+Glucose Management Indicator,C67154,Laboratory Test Name,C174310,Glucose Management Indicator,Glucose Management Indicator
+"Glucose, Estimated Average",C67154,Laboratory Test Name,C142275,"EAG; Estimated Average Glucose; Glucose, Estimated; Glucose, Estimated Average",Estimated Average Glucose Measurement
+"Glucose, Radiolabeled/Glucose",C67154,Laboratory Test Name,C186054,"Glucose, Enriched/Glucose; Glucose, Radiolabeled/Glucose",Radiolabeled Glucose to Glucose Ratio Measurement
+Glucose-6-Phosphate Dehydrogenase,C67154,Laboratory Test Name,C80184,Glucose-6-Phosphate Dehydrogenase,Glucose-6-Phosphate Dehydrogenase Measurement
+Glucose-6-Phosphate Dehydrogenase Act,C67154,Laboratory Test Name,C139065,Glucose-6-Phosphate Dehydrogenase Act,Glucose-6-Phosphate Dehydrogenase Activity
+"Glucose-dep Insulinotropic Pep, Intact",C67154,Laboratory Test Name,C106537,"Glucose-dep Insulinotropic Pep, Intact; Intact Gastric Inhibitory Polypeptide; Intact GIP; Intact Glucose-dependent Insulinotropic Peptide",Intact Glucose-dependent Insulinotropic Peptide Measurement
+Glucose/Creatinine,C67154,Laboratory Test Name,C79447,Glucose/Creatinine,Glucose to Creatinine Ratio Measurement
+Plasma Equivalent Glucose,C67154,Laboratory Test Name,C163446,Plasma Equivalent Glucose,Plasma Equivalent Glucose Measurement
+Plasma Equivalent Glucose Distribution,C67154,Laboratory Test Name,C163447,Plasma Equivalent Glucose Distribution,Plasma Equivalent Glucose Distribution Measurement
+Whole Blood Equivalent Glucose,C67154,Laboratory Test Name,C176296,Whole Blood Equivalent Glucose,Whole Blood Equivalent Glucose Measurement

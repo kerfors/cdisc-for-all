@@ -1,0 +1,4 @@
+value,code,codelist_name,nci_preferred_term
+g/L,C42576,Unit,Kilogram per Cubic Meter
+mg/dL,C67015,Unit,Milligram per Deciliter
+mmol/L,C64387,Unit,Millimole per Liter

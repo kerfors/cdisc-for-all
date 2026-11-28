@@ -1,0 +1,8 @@
+domain,vlm_group_id,sdtm_variable,assigned_term,test_concept,bc_short_name,bc_concept,relation
+LB,HCGCNCTSERPL,LBTESTCD,HCG,C64851,Serum HCG Measurement,C73495,no direct NCIt path
+LB,MICROCYRBC,LBTESTCD,MICROCY,C64822,Microcyte to Erythrocyte Ratio Measurement,C201227,no direct NCIt path
+EG,EGINTP,EGTESTCD,INTP,C41255,Electrocardiogram Analysis,C181655,siblings (shared parent)
+UR,URORGLN,URTESTCD,LENGTH,C25334,Organ Craniocaudal Length Measurement,C135509,test is ancestor of BC
+VS,HEIGHT,VSTESTCD,HEIGHT,C25347,Body Height,C164634,test is ancestor of BC
+VS,WEIGHT,VSTESTCD,WEIGHT,C25208,Body Weight,C81328,test is ancestor of BC
+LB,GLUCPE,LBTESTCD,GLUCPE,C163446,Glucose Measurement,C105585,test is descendant of BC

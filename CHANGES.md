@@ -196,3 +196,10 @@ Kerstin's choice: the code-variable rule of SDTMIG 4.2.1 for SDTMIG and the SDTM
 
 **Content.** The new links touch sign-in sources only: they and their Link_Check rows are in the local `-signin` files. The published link graphs, the SSSOM file and the rows of Link_Check are unchanged; the Schema sheet of `Link_Check.xlsx` has three more columns. The link map page regenerated. README: Appendix D among the sign-in sources. `catalog.ttl` and `llms.txt` regenerated, the three linksets marked as built locally.
 
+## The SPARQL cookbook (2026-11-28)
+
+Kerstin's choice: twelve recipes for the upstream questions (the test, its BC, the BC's definition and hierarchy, its Dataset Specializations, and the terminology), plus the two review queries; one `.rq` file per recipe with a runner.
+
+**Code.** `examples/cookbook/`: twelve SPARQL SELECTs over the published graphs, one question and one parameter each, with the same prefix block; each names the links it follows. `run.py` loads the Turtle files that `catalog.ttl` lists (SHA-256 checked, one named graph each, queried as their union), runs every recipe and the review queries, and stops at the first result that differs from its CSV; `--write` writes the CSVs. Make_Catalog lists the cookbook in llms.txt.
+
+**Content.** The result of each recipe and review query for the current pins, as run (`examples/cookbook/results/`). The cookbook README: the recipes, the patterns for the percent-encoded IRIs, how to run them. README: the cookbook under "Using it" and in the layout; removed from Planned. `llms.txt` regenerated.

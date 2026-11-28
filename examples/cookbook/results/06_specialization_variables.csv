@@ -1,0 +1,13 @@
+sdtm_variable,role,data_type,codelist,codelist_submission_value,assigned_term,value_list,mandatory_variable,mandatory_value
+LBCAT,Qualifier,,,,,,Y,N
+LBDTC,Timing,,,,,,Y,N
+LBFAST,Qualifier,,C66742,NY,,N;Y,N,N
+LBLOINC,Qualifier,,,,,14749-6;2345-7,N,N
+LBORRES,Qualifier,float,,,,,Y,N
+LBORRESU,Qualifier,text,C71620,UNIT,,mg/dL;g/L;mmol/L,Y,N
+LBSPEC,Qualifier,,C78734,SPECTYPE,C105706,,Y,N
+LBSTRESC,Qualifier,float,,,,,Y,N
+LBSTRESN,Qualifier,float,,,,,Y,N
+LBSTRESU,Qualifier,text,C71620,UNIT,C64387,,N,N
+LBTEST,Qualifier,,C67154,LBTEST,C105585,,Y,Y
+LBTESTCD,Topic,,C65047,LBTESTCD,C105585,,Y,Y

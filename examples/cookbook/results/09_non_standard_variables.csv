@@ -1,0 +1,34 @@
+domain,vlm_group_id,sdtm_variable,nsv_variable_name,nsv_label,nsv_review_status
+BE,COLLECTING,BESPEC,SPEC,Specimen Material Type,Approved
+BE,CULTURING,BESPEC,SPEC,Specimen Material Type,Approved
+BE,FLASHFREEZING,BESPEC,SPEC,Specimen Material Type,Approved
+BE,ISOLATING,BESPEC,SPEC,Specimen Material Type,Approved
+BE,SHIPPING,BESPEC,SPEC,Specimen Material Type,Approved
+BE,STORING,BESPEC,SPEC,Specimen Material Type,Approved
+BE,THAWING,BESPEC,SPEC,Specimen Material Type,Approved
+CM,CMPRIORBREASTCANCER,CMTRTSTT,TRTSTT,Treatment Setting,Approved
+CM,CMPRIORCANCER,CMTRTSTT,TRTSTT,Treatment Setting,Approved
+FT,SIXMW101,FTASTDEV,ASTDEV,Assistance Device,Approved
+FT,SIXMW102,FTASTDEV,ASTDEV,Assistance Device,Approved
+FT,SIXMW103,FTASTDEV,ASTDEV,Assistance Device,Approved
+FT,SIXMW104,FTASTDEV,ASTDEV,Assistance Device,Approved
+FT,SIXMW105,FTASTDEV,ASTDEV,Assistance Device,Approved
+FT,SIXMW106,FTASTDEV,ASTDEV,Assistance Device,Approved
+MI,SURGMARGSTATBREAST,MILOCDTL,LOCDTL,Location Detail,Approved
+PR,RADIATIONCANCER,PRTRTSTT,TRTSTT,Treatment Setting,Approved
+PR,RADTHERAPHYBREASTCANCER,PRTRTSTT,TRTSTT,Treatment Setting,Approved
+QS,EQ5D0206,QSANTXHI,ANTXHI,Anchor Text High,Approved
+QS,EQ5D0206,QSANTXLO,ANTXLO,Anchor Text Low,Approved
+QS,EQ5D0206,QSANVLHI,ANVLHI,Anchor Value High,Approved
+QS,EQ5D0206,QSANVLHI,ANVLHI,Anchor Numeric Value High,Approved
+QS,EQ5D0206,QSANVLLO,ANVLLO,Anchor Value Low,Approved
+QS,EQ5D0206,QSANVLLO,ANVLLO,Anchor Numeric Value Low,Approved
+TR,LDIAM_RECIST1_1,TRREASNE,REASNE,Reason Response Not Evaluable,Approved
+TR,LNSTATE_RECIST1_1,TRREASNE,REASNE,Reason Response Not Evaluable,Approved
+TR,LPERP_RECIST1_1,TRREASNE,REASNE,Reason Response Not Evaluable,Approved
+TR,NONNODAL_TUMSTATE_RECIST1_1,TRREASNE,REASNE,Reason Response Not Evaluable,Approved
+TU,TUMERGE_RECIST1_1,TULOCDTL,LOCDTL,Location Detail,Approved
+TU,TUMIDENT_RECIST1_1,TULOCDTL,LOCDTL,Location Detail,Approved
+TU,TUMIDENT_RECIST1_1,TUPRVIR,PRVIR,Previously Irradiated Indicator,Approved
+TU,TUMIDENT_RECIST1_1,TUPRVIRP,PRVIRP,Previously Irradiated Progression,Approved
+TU,TUSPLIT_RECIST1_1,TULOCDTL,LOCDTL,Location Detail,Approved

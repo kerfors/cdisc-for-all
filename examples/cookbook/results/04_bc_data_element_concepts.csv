@@ -1,0 +1,8 @@
+dec_id,dec_label,data_type,ncit_dec_code,example_set
+C70713,Biospecimen Type,string,C70713,Blood;Plasma;Serum;Urine
+C82515,Collection Date Time,datetime,C82515,
+C93566,Fasting Status Indicator,boolean,C93566,
+C215501,Medical Device Identifier,string,C215501,
+C70856,Observation Result,string,C70856,
+C82535,Test Method,string,C82535,
+C48207,Unit of Concentration,string,C48207,mg/dL;g/L;mmol/L

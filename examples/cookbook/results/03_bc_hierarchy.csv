@@ -1,0 +1,6 @@
+bc_id,bc_hierarchy_level,bc_short_name
+C49286,0,Hematology Test
+C28133,1,Blood Cell Count
+C51948,2,Leukocyte Count
+C51950,3,Neutrophil Count
+C63321,4,Absolute Neutrophil Count

@@ -1,0 +1,130 @@
+codelist_name,extensible,code,value,nci_preferred_term
+Specimen Type,Yes,C150890,ABSCESS FLUID,Abscess Fluid
+Specimen Type,Yes,C12472,ADIPOSE TISSUE,Adipose Tissue
+Specimen Type,Yes,C150891,ALVEOLAR AIR,Alveolar Air
+Specimen Type,Yes,C13188,AMNIOTIC FLUID,Amniotic Fluid
+Specimen Type,Yes,C13190,AQUEOUS HUMOR,Aqueous Humor
+Specimen Type,Yes,C78729,ARTERIAL BLOOD,Arterial Blood
+Specimen Type,Yes,C120838,ARTERIAL CORD BLOOD,Arterial Cord Blood
+Specimen Type,Yes,C199985,ARTERIAL PLASMA,Arterial Plasma
+Specimen Type,Yes,C176369,ARTERIALIZED CAPILLARY BLOOD,Arterialized Capillary Blood
+Specimen Type,Yes,C78739,ATHEROSCLEROTIC PLAQUE,Atherosclerotic Plaque
+Specimen Type,Yes,C176366,BASAL TEAR,Basal Tear
+Specimen Type,Yes,C13192,BILE,Bile
+Specimen Type,Yes,C12434,BLOOD,Blood
+Specimen Type,Yes,C12366,BONE,Bone
+Specimen Type,Yes,C12431,BONE MARROW,Bone Marrow
+Specimen Type,Yes,C156591,BONE MARROW MONONUCLEAR CELL,Bone Marrow Mononuclear Cell
+Specimen Type,Yes,C159488,"BONE MARROW, CORE",Bone Marrow Core Biopsy Sample
+Specimen Type,Yes,C133261,"BONE MARROW, LIQUID",Bone Marrow Aspirate
+Specimen Type,Yes,C13257,BREAST MILK,Mammary Gland Milk
+Specimen Type,Yes,C84507,BUFFY COAT,Buffy Coat
+Specimen Type,Yes,C35708,CALCULUS,Stone
+Specimen Type,Yes,C112235,CAPILLARY BLOOD,Capillary Blood
+Specimen Type,Yes,C132461,CAPILLARY PLASMA,Capillary Plasma
+Specimen Type,Yes,C12371,CARDIAC MUSCLE TISSUE,Myocardium
+Specimen Type,Yes,C113745,CELL PELLET,Cell Pellet
+Specimen Type,Yes,C12692,CEREBROSPINAL FLUID,Cerebrospinal Fluid
+Specimen Type,Yes,C32293,CERUMEN,Cerumen
+Specimen Type,Yes,C150892,CERVICOVAGINAL SECRETION,Cervicovaginal Secretion
+Specimen Type,Yes,C63797,CIRCULATING TUMOR CELL,Circulating Tumor Cell
+Specimen Type,Yes,C32348,COLOSTRUM,Human Colostrum
+Specimen Type,Yes,C13300,CORD BLOOD,Umbilical Cord Blood
+Specimen Type,Yes,C189641,CORD PLASMA,Umbilical Cord Plasma
+Specimen Type,Yes,C119550,CORD SERUM,Umbilical Cord Serum
+Specimen Type,Yes,C12701,DERMAL TISSUE,Dermis
+Specimen Type,Yes,C106515,DIALYSIS FLUID,Dialysis Fluid
+Specimen Type,Yes,C154852,"DIALYSIS FLUID, PERITONEAL",Peritoneal Dialysis Fluid
+Specimen Type,Yes,C142366,DISCHARGE,Discharge Body Fluid
+Specimen Type,Yes,C198365,DISTAL RESPIRATORY EXHALED PARTICLES,Distal Respiratory Exhaled Particles
+Specimen Type,Yes,C77666,EMESIS,Vomitus
+Specimen Type,Yes,C176368,EMOTIONAL TEAR,Emotional Tear
+Specimen Type,Yes,C176371,ENDOMETRIAL TISSUE,Endometrial Tissue
+Specimen Type,Yes,C171504,ENDOTRACHEAL FLUID,Endotracheal Fluid
+Specimen Type,Yes,C12708,EPIDERMAL TISSUE,Epidermis
+Specimen Type,Yes,C12578,EPITHELIAL CELL,Epithelial Cell
+Specimen Type,Yes,C12521,ERYTHROCYTES,Erythrocyte
+Specimen Type,Yes,C126053,EXHALED BREATH CONDENSATE,Exhaled Breath Condensate
+Specimen Type,Yes,C78741,EXPIRED AIR,Expired Air
+Specimen Type,Yes,C13233,EXUDATE,Exudate
+Specimen Type,Yes,C12482,FIBROBLAST,Fibroblast
+Specimen Type,Yes,C13236,FLUID,Body Fluid or Substance
+Specimen Type,Yes,C77614,GASTRIC CONTENTS,Gastric Content
+Specimen Type,Yes,C86998,GASTRIC FLUID,Gastric Fluid
+Specimen Type,Yes,C12530,GRANULOCYTE,Granulocyte
+Specimen Type,Yes,C32705,HAIR,Hair
+Specimen Type,Yes,C13317,HAIR FOLLICLE,Hair Follicle
+Specimen Type,Yes,C106554,"INFRANATANT, PLASMA",Plasma Infranatant
+Specimen Type,Yes,C106558,"INFRANATANT, PLEURAL FLUID",Pleural Fluid Infranatant
+Specimen Type,Yes,C106565,"INFRANATANT, SERUM",Serum Infranatant
+Specimen Type,Yes,C120839,INTERSTITIAL FLUID,Interstitial Fluid
+Specimen Type,Yes,C53471,ISOLATE,Isolate
+Specimen Type,Yes,C12589,KERATINOCYTE,Keratinocyte
+Specimen Type,Yes,C103411,LAVAGE FLUID,Lavage Fluid
+Specimen Type,Yes,C12529,LEUKOCYTE,Leukocyte
+Specimen Type,Yes,C78742,LOCHIA,Lochia
+Specimen Type,Yes,C13273,LUNG SURFACTANT,Lung Surfactant
+Specimen Type,Yes,C13252,LYMPH,Lymph
+Specimen Type,Yes,C33034,LYMPH NODE TISSUE,Lymph Node Tissue
+Specimen Type,Yes,C12535,LYMPHOCYTE,Lymphocyte
+Specimen Type,Yes,C62004,LYSATE,Lysate
+Specimen Type,Yes,C78743,MECONIUM,Meconium
+Specimen Type,Yes,C78740,MENSTRUAL BLOOD,Menstrual Blood
+Specimen Type,Yes,C158281,MIXED VENOUS BLOOD,Mixed Venous Blood
+Specimen Type,Yes,C12547,MONOCYTE,Monocyte
+Specimen Type,Yes,C13259,MUCUS,Mucus
+Specimen Type,Yes,C12435,MUSCLE TISSUE,Muscle Tissue
+Specimen Type,Yes,C33156,NAIL,Nail
+Specimen Type,Yes,C12536,NATURAL KILLER CELL,Natural Killer Cell
+Specimen Type,Yes,C3319,PERICARDIAL FLUID,Pericardial Effusion
+Specimen Type,Yes,C12954,PERIPHERAL BLOOD MONONUCLEAR CELL,Peripheral Blood Mononuclear Cell
+Specimen Type,Yes,C12946,PERIPHERAL BLOOD STEM CELL,Peripheral Blood Stem Cell
+Specimen Type,Yes,C77612,PERITONEAL FLUID,Peritoneal Fluid
+Specimen Type,Yes,C13280,PERSPIRATION,Sweat
+Specimen Type,Yes,C13356,PLASMA,Plasma
+Specimen Type,Yes,C176370,PLASMA ULTRAFILTRATE,Plasma Ultrafiltrate
+Specimen Type,Yes,C12520,PLATELET,Platelet
+Specimen Type,Yes,C106556,PLATELET POOR PLASMA,Platelet-poor Plasma
+Specimen Type,Yes,C106557,PLATELET RICH PLASMA,Platelet-rich Plasma
+Specimen Type,Yes,C77613,PLEURAL FLUID,Pleural Fluid
+Specimen Type,Yes,C12469,PLEURAL TISSUE,Pleura
+Specimen Type,Yes,C100896,PROSTATIC FLUID,Prostatic Fluid
+Specimen Type,Yes,C50718,PUS,Pus
+Specimen Type,Yes,C176367,REFLEX TEAR,Reflex Tear
+Specimen Type,Yes,C12528,RETICULOCYTES,Reticulocyte
+Specimen Type,Yes,C13275,SALIVA,Saliva
+Specimen Type,Yes,C13276,SEBUM,Sebum
+Specimen Type,Yes,C13277,SEMEN,Semen
+Specimen Type,Yes,C33529,SEMINAL FLUID,Seminal Fluid
+Specimen Type,Yes,C13325,SERUM,Serum
+Specimen Type,Yes,C105706,SERUM OR PLASMA,Serum or Plasma
+Specimen Type,Yes,C170628,SERUM OR PLASMA OR BLOOD,Serum or Plasma or Blood
+Specimen Type,Yes,C13050,SKELETAL MUSCLE TISSUE,Skeletal Muscle Tissue
+Specimen Type,Yes,C33563,SKIN TISSUE,Skin Tissue
+Specimen Type,Yes,C33574,SMEGMA,Smegma
+Specimen Type,Yes,C12437,SMOOTH MUSCLE TISSUE,Smooth Muscle Tissue
+Specimen Type,Yes,C12471,SOFT TISSUE,Soft Tissue
+Specimen Type,Yes,C12602,SPERMATOZOON,Spermatozoon
+Specimen Type,Yes,C13278,SPUTUM,Sputum
+Specimen Type,Yes,C13234,STOOL,Feces
+Specimen Type,Yes,C12436,STRIATED MUSCLE TISSUE,Striated Muscle Tissue
+Specimen Type,Yes,C150894,"SUPERNATANT, CEREBROSPINAL FLUID",Cerebrospinal Fluid Supernatant
+Specimen Type,Yes,C189640,"SUPERNATANT, LAVAGE FLUID",Lavage Fluid Supernatant
+Specimen Type,Yes,C204838,"SUPERNATANT, PERITONEAL FLUID",Peritoneal Supernatant
+Specimen Type,Yes,C106555,"SUPERNATANT, PLASMA",Plasma Supernatant
+Specimen Type,Yes,C106559,"SUPERNATANT, PLEURAL FLUID",Pleural Fluid Supernatant
+Specimen Type,Yes,C106566,"SUPERNATANT, SERUM",Serum Supernatant
+Specimen Type,Yes,C150893,"SUPERNATANT, SERUM OR PLASMA",Serum or Plasma Supernatant
+Specimen Type,Yes,C150895,SWABBED MATERIAL,Swabbed Material
+Specimen Type,Yes,C33718,SYNOVIAL FLUID,Synovial Fluid
+Specimen Type,Yes,C33739,TEAR,Tear
+Specimen Type,Yes,C12801,TISSUE,Tissue
+Specimen Type,Yes,C78744,TRANSUDATE,Transudate
+Specimen Type,Yes,C18009,TUMOR TISSUE,Tumor Tissue Sample
+Specimen Type,Yes,C13283,URINE,Urine
+Specimen Type,Yes,C158282,URINE SEDIMENT,Urine Sediment
+Specimen Type,Yes,C78730,VENOUS BLOOD,Venous Blood
+Specimen Type,Yes,C120840,VENOUS CORD BLOOD,Venous Cord Blood
+Specimen Type,Yes,C132462,VENOUS PLASMA,Venous Plasma
+Specimen Type,Yes,C13323,VITREOUS HUMOR,Vitreous Humor
+Specimen Type,Yes,C33892,WHITE MATTER TISSUE,White Matter

@@ -1,0 +1,10 @@
+vlm_group_id,domain,short_name
+GLUCBLD,LB,Glucose Concentration in Blood
+GLUCPE,LB,Plasma Equivalent Glucose
+GLUCPL,LB,Glucose Concentration in Plasma
+GLUCSER,LB,Glucose Concentration in Serum
+GLUCSERPL,LB,Glucose Concentration in Serum or Plasma
+GLUCSERPLMT,LB,Glucose Concentration in Serum or Plasma Meal Tolerance Test
+GLUCUA,LB,Glucose Presence in Urine by Test Strip
+GLUCURIN,LB,Glucose Concentration in Urine
+GLUCURINPRES,LB,Glucose Presence in Urine
