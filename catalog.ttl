@@ -8,13 +8,13 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 cat:catalog
     a dcat:Catalog ;
-    dcterms:description "CDISC and NCIt content as published, linked: the base graphs (one per source, as published), the link graphs, the COSMoS model graph, Link_Check and the SSSOM mapping set." ;
+    dcterms:description "CDISC and NCIt content as published, linked: the base graphs (one per source, as published), the link graphs, the COSMoS model graph, Link_Check (the SHACL validation report) and the SSSOM mapping set." ;
     dcterms:license <https://opensource.org/licenses/MIT> ;
     dcterms:title "cdisc-for-all" ;
     rdfs:seeAlso <https://github.com/kerfors/cdisc-for-all> ;
     dcat:dataset
-        cat:link-check ,
         cat:sssom ,
+        <https://kerfors.github.io/cdisc-for-all/check/link-check> ,
         <https://kerfors.github.io/cdisc-for-all/graph/by-rule> ,
         <https://kerfors.github.io/cdisc-for-all/graph/cosmos> ,
         <https://kerfors.github.io/cdisc-for-all/graph/cosmos-model> ,
@@ -32,7 +32,7 @@ cat:catalog
 
 <https://kerfors.github.io/cdisc-for-all/catalog#file/base/cosmos/cdisc_biomedical_concepts_hierarchy_latest.xlsx>
     a dcat:Distribution ;
-    dcterms:title "Excel view of the base graph" ;
+    dcterms:title "Excel view of the base graph, for reading and for the lossless check; the graph is the content" ;
     spdx:checksum
         [
             spdx:algorithm spdx:checksumAlgorithm_sha256 ;
@@ -44,7 +44,7 @@ cat:catalog
 
 <https://kerfors.github.io/cdisc-for-all/catalog#file/base/cosmos/cdisc_biomedical_concepts_latest.xlsx>
     a dcat:Distribution ;
-    dcterms:title "Excel view of the base graph" ;
+    dcterms:title "Excel view of the base graph, for reading and for the lossless check; the graph is the content" ;
     spdx:checksum
         [
             spdx:algorithm spdx:checksumAlgorithm_sha256 ;
@@ -56,7 +56,7 @@ cat:catalog
 
 <https://kerfors.github.io/cdisc-for-all/catalog#file/base/cosmos/cdisc_sdtm_dataset_specializations_latest.xlsx>
     a dcat:Distribution ;
-    dcterms:title "Excel view of the base graph" ;
+    dcterms:title "Excel view of the base graph, for reading and for the lossless check; the graph is the content" ;
     spdx:checksum
         [
             spdx:algorithm spdx:checksumAlgorithm_sha256 ;
@@ -92,7 +92,7 @@ cat:catalog
 
 <https://kerfors.github.io/cdisc-for-all/catalog#file/base/nci-code-cui-map/nci_code_cui_map.xlsx>
     a dcat:Distribution ;
-    dcterms:title "Excel view of the base graph" ;
+    dcterms:title "Excel view of the base graph, for reading and for the lossless check; the graph is the content" ;
     spdx:checksum
         [
             spdx:algorithm spdx:checksumAlgorithm_sha256 ;
@@ -104,7 +104,7 @@ cat:catalog
 
 <https://kerfors.github.io/cdisc-for-all/catalog#file/base/ncit-flat/Thesaurus.xlsx>
     a dcat:Distribution ;
-    dcterms:title "Excel view of the base graph" ;
+    dcterms:title "Excel view of the base graph, for reading and for the lossless check; the graph is the content" ;
     spdx:checksum
         [
             spdx:algorithm spdx:checksumAlgorithm_sha256 ;
@@ -128,7 +128,7 @@ cat:catalog
 
 <https://kerfors.github.io/cdisc-for-all/catalog#file/base/nsv-registry/NSV_Registry.xlsx>
     a dcat:Distribution ;
-    dcterms:title "Excel view of the base graph" ;
+    dcterms:title "Excel view of the base graph, for reading and for the lossless check; the graph is the content" ;
     spdx:checksum
         [
             spdx:algorithm spdx:checksumAlgorithm_sha256 ;
@@ -152,7 +152,7 @@ cat:catalog
 
 <https://kerfors.github.io/cdisc-for-all/catalog#file/base/sdtm-ct/SDTM_Terminology.xlsx>
     a dcat:Distribution ;
-    dcterms:title "Excel view of the base graph" ;
+    dcterms:title "Excel view of the base graph, for reading and for the lossless check; the graph is the content" ;
     spdx:checksum
         [
             spdx:algorithm spdx:checksumAlgorithm_sha256 ;
@@ -176,11 +176,11 @@ cat:catalog
 
 <https://kerfors.github.io/cdisc-for-all/catalog#file/linked/Link_Check.xlsx>
     a dcat:Distribution ;
-    dcterms:title "Link_Check (Excel)" ;
+    dcterms:title "Link_Check view (Excel), rendered from the report graph, for reading and for the conversation with CDISC" ;
     spdx:checksum
         [
             spdx:algorithm spdx:checksumAlgorithm_sha256 ;
-            spdx:checksumValue "f71f0df6779d55b53fddfc4625d617cef8e277a2d11c8a6e5cf308bacc1c933e"^^xsd:hexBinary ;
+            spdx:checksumValue "9221a92d1538636d529b56798f45abe7762e61721b746fd04ae08cda03783c2a"^^xsd:hexBinary ;
         ] ;
     dcat:downloadURL <https://kerfors.github.io/cdisc-for-all/linked/Link_Check.xlsx> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet> ;
@@ -222,6 +222,18 @@ cat:catalog
     dcat:mediaType <https://www.iana.org/assignments/media-types/text/turtle> ;
 .
 
+<https://kerfors.github.io/cdisc-for-all/catalog#file/linked/link-check.ttl>
+    a dcat:Distribution ;
+    dcterms:title "the SHACL validation report of the link shapes (Turtle), one sh:ValidationResult per Link_Check row" ;
+    spdx:checksum
+        [
+            spdx:algorithm spdx:checksumAlgorithm_sha256 ;
+            spdx:checksumValue "3eb0d710df946730c575b05057ed4717ec05ecc9df82bbf6dd1b15e1f3b7cea0"^^xsd:hexBinary ;
+        ] ;
+    dcat:downloadURL <https://kerfors.github.io/cdisc-for-all/linked/link-check.ttl> ;
+    dcat:mediaType <https://www.iana.org/assignments/media-types/text/turtle> ;
+.
+
 <https://kerfors.github.io/cdisc-for-all/catalog#file/linked/links.ttl>
     a dcat:Distribution ;
     dcterms:title "the link graph (Turtle)" ;
@@ -244,14 +256,6 @@ cat:catalog
         ] ;
     dcat:downloadURL <https://kerfors.github.io/cdisc-for-all/schema/vocabulary.ttl> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/text/turtle> ;
-.
-
-cat:link-check
-    a dcat:Dataset ;
-    dcterms:license <https://opensource.org/licenses/MIT> ;
-    dcterms:title "Link_Check: every reference in the published content that does not resolve, and every link to a row that carries a marker its source publishes, such as COSMoS \"[RETIRED]\"" ;
-    rdfs:comment "The rows of the links that start from or end at a row of a sign-in source are in Link_Check-signin, built locally and not published." ;
-    dcat:distribution <https://kerfors.github.io/cdisc-for-all/catalog#file/linked/Link_Check.xlsx> ;
 .
 
 <https://kerfors.github.io/cdisc-for-all/catalog#linkset/cosmos_biomedical_concept_to_NCIt>
@@ -529,6 +533,20 @@ cat:sssom
     dcterms:license <https://opensource.org/licenses/MIT> ;
     dcterms:title "SSSOM mapping set of the links by a rule that matches a general name" ;
     dcat:distribution <https://kerfors.github.io/cdisc-for-all/catalog#file/linked/by-rule.sssom.tsv> ;
+.
+
+<https://kerfors.github.io/cdisc-for-all/check/link-check>
+    a
+        void:Dataset ,
+        dcat:Dataset ;
+    dcterms:license <https://opensource.org/licenses/MIT> ;
+    dcterms:title "Link_Check: every reference in the published content that does not resolve, and every link to a row that carries a marker its source publishes, such as COSMoS \"[RETIRED]\"" ;
+    void:dataDump <https://kerfors.github.io/cdisc-for-all/linked/link-check.ttl> ;
+    void:triples 4479 ;
+    rdfs:comment "The results of the links that start from or end at a row of a sign-in source are in link-check-signin.ttl and its view Link_Check-signin.xlsx, built locally and not published." ;
+    dcat:distribution
+        <https://kerfors.github.io/cdisc-for-all/catalog#file/linked/Link_Check.xlsx> ,
+        <https://kerfors.github.io/cdisc-for-all/catalog#file/linked/link-check.ttl> ;
 .
 
 <https://kerfors.github.io/cdisc-for-all/graph/by-rule>

@@ -1,10 +1,10 @@
 # cdisc-for-all
 
-> CDISC and NCIt content as published, linked: one RDF graph per source in the shape the source publishes, the links between the sources as RDF, and a report (Link_Check) of every reference that does not resolve. For study design: what is defined about a lab test, and why.
+> CDISC and NCIt content as published, linked: one RDF graph per source in the shape the source publishes, the links between the sources as RDF, and a report (Link_Check, the SHACL validation report, as RDF) of every reference that does not resolve. For study design: what is defined about a lab test, and why.
 
 Rules an agent should keep: every literal is a cell of the source as published (column names kept); a link rests on a published key or on a stated rule (links by rule are in their own graph); broken references are reported in Link_Check, not repaired; nothing is added: no classification, no counts, no interpretation. Do not present an inference as published content.
 
-IRIs: `https://kerfors.github.io/cdisc-for-all/def/<source>/<table>#<column>` (a published column), `https://kerfors.github.io/cdisc-for-all/id/<source>/<table>/<key>` (a row), `https://kerfors.github.io/cdisc-for-all/link/...` (a link on a published key), `https://kerfors.github.io/cdisc-for-all/rule/...` (a link by rule). They are identifiers, not dereferenceable, and stable only within a pin; this is not a general RDF representation of the CDISC standards. NCIt concepts keep NCI's own IRIs (http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C...).
+IRIs: `https://kerfors.github.io/cdisc-for-all/def/<source>/<table>#<column>` (a published column), `https://kerfors.github.io/cdisc-for-all/id/<source>/<table>/<key>` (a row), `https://kerfors.github.io/cdisc-for-all/link/...` (a link on a published key), `https://kerfors.github.io/cdisc-for-all/rule/...` (a link by rule), `https://kerfors.github.io/cdisc-for-all/check/<link shape>/<row>` (a Link_Check result). They are identifiers, not dereferenceable, and stable only within a pin; this is not a general RDF representation of the CDISC standards. NCIt concepts keep NCI's own IRIs (http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C...).
 
 What each class and property means: [vocabulary.ttl](https://kerfors.github.io/cdisc-for-all/schema/vocabulary.ttl) (RDFS, from the LinkML schema: every table as a class, every column as a property labelled with its published column name, every link with its description and rule).
 
@@ -27,7 +27,7 @@ Machine-readable description of all of this: [catalog.ttl](https://kerfors.githu
 - [by-rule.ttl](https://kerfors.github.io/cdisc-for-all/linked/by-rule.ttl): links by a stated rule.
 - [cosmos-model.ttl](https://kerfors.github.io/cdisc-for-all/linked/cosmos-model.ttl): the COSMoS export restated in COSMoS's authored model (COSMoS's own IRIs).
 - [by-rule.sssom.tsv](https://kerfors.github.io/cdisc-for-all/linked/by-rule.sssom.tsv): the links by a rule that matches a general name, as SSSOM.
-- [Link_Check.xlsx](https://kerfors.github.io/cdisc-for-all/linked/Link_Check.xlsx): every reference that does not resolve, and every link to a row with a published marker such as "[RETIRED]". The rows of the links that touch a sign-in source are in a local Link_Check-signin, not published.
+- [link-check.ttl](https://kerfors.github.io/cdisc-for-all/linked/link-check.ttl): Link_Check, the SHACL validation report of the link shapes: every reference that does not resolve, and every link to a row with a published marker such as "[RETIRED]"; one sh:ValidationResult per row (sh:focusNode the row, sh:resultPath the column, sh:value the cell as published, sh:sourceShape the link, the reason as a second sh:resultMessage). [Link_Check.xlsx](https://kerfors.github.io/cdisc-for-all/linked/Link_Check.xlsx) is its view, for reading. The results of the links that touch a sign-in source are in a local link-check-signin.ttl, not published.
 - [links.yaml](https://github.com/kerfors/cdisc-for-all/blob/main/schema/links.yaml): every link as stated (key columns, target columns, rule).
 
 ## The links (predicate: from table -> to table)

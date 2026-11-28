@@ -52,6 +52,22 @@
    "sha256": "8203a89f1aa2794c700e227bc1ade5ae3e04c8b22d47a5936e3060dc54a014bc"
   }
  },
+ "link_check_graphs": {
+  "link-check": {
+   "file": "link-check.ttl",
+   "graph": "https://kerfors.github.io/cdisc-for-all/check/link-check",
+   "results": 407,
+   "triples": 4479,
+   "graph_sha256": "466cfb052fca4f0c1da0baf542e1022f1cdfe1d46155d0df25903f416962fd3f"
+  },
+  "link-check-signin": {
+   "file": "link-check-signin.ttl",
+   "graph": "https://kerfors.github.io/cdisc-for-all/check/link-check-signin",
+   "results": 506,
+   "triples": 5568,
+   "graph_sha256": "ff0ebfd9aa161dab2dfa616d0bac6b2b9c4d376a8f568de87e8c36a93c17b8f8"
+  }
+ },
  "graph_sha256_method": "SHA-256 of the canonical N-Triples (RDFC-1.0; no blank nodes)",
  "link_check_text_sha256": "946ff38da25d6be79b280f3cbee968d1460c6f189011941953e1e2d2ea843105",
  "link_check_signin_text_sha256": "ee56e7318ffb7d3d8e0ad0cd5e0e44a8edab29263e091c62e9e6127f01c95e62",
