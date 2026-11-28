@@ -348,6 +348,48 @@ def link_check_frame(report, g, specs):
     return df.sort_values(['Link', 'Result', 'Row', 'Value'], kind='stable').reset_index(drop=True)
 
 
+def link_check_graph(report, g, specs, name, links):
+    """The SHACL validation report of the link shapes, for the links named in links, as a graph
+    without blank nodes: the report {ns}check/{name}, each result {ns}check/{shape}/{row}
+    (shape: the shape IRI after shape/; row: the focus node after id/). Every triple pySHACL
+    wrote for a result is kept; added: sh:resultPath (the link column property) and the Reason
+    sentence (cfa.link.reason) as a second sh:resultMessage. sh:conforms is true only if the
+    report has no result. Stops on a result not from a link shape, or two results with one IRI."""
+    from rdflib import BNode
+    from rdflib.namespace import XSD
+    by_shape = {URIRef(s['shape']): (s, 'no link') for s in specs}
+    by_shape.update({URIRef(s['shape'] + '-ambiguous'): (s, 'more target rows than keys')
+                     for s in specs if s['targets'] == 'all'})
+    by_shape.update({URIRef(s['shape'] + '-flagged'): (s, flag_result(s)) for s in specs if s['flag']})
+    out = Graph()
+    rep = URIRef(f'{NS}check/{name}')
+    out.add((rep, RDF.type, SH.ValidationReport))
+    seen = set()
+    for r in report.subjects(RDF.type, SH.ValidationResult):
+        shape = report.value(r, SH.sourceShape)
+        if shape not in by_shape:
+            raise ValueError(f'{r}: not from a link shape')
+        spec, result = by_shape[shape]
+        if spec['name'] not in links:
+            continue
+        node = report.value(r, SH.focusNode)
+        if not str(node).startswith(f'{NS}id/'):
+            raise ValueError(f'{node}: a focus node outside id/')
+        iri = URIRef(f'{NS}check/{str(shape)[len(NS + "shape/"):]}/{str(node)[len(NS + "id/"):]}')
+        if iri in seen:
+            raise ValueError(f'{iri}: two results with one IRI')
+        seen.add(iri)
+        out.add((rep, SH.result, iri))
+        for p, o in report.predicate_objects(r):
+            if isinstance(o, BNode):
+                raise ValueError(f'{r}: a blank node as the object of {p}')
+            out.add((iri, p, o))
+        out.add((iri, SH.resultPath, URIRef(spec['column_iris'][-1])))
+        out.add((iri, SH.resultMessage, Literal(reason(g, spec, node, str(report.value(r, SH.value)), result))))
+    out.add((rep, SH.conforms, Literal('true' if not seen else 'false', datatype=XSD.boolean)))
+    return out
+
+
 def links_sheet(specs):
     """The links contract as a sheet (from links.yaml): one row per link."""
     import pandas as pd

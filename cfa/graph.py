@@ -37,15 +37,19 @@ def _iri(term):
 
 def canonical_lines(g):
     """The graph as sorted, de-duplicated canonical N-Triples lines (without LF). Stops on a
-    blank node, or a literal with a language tag or a datatype other than xsd:string."""
+    blank node, or a literal with a language tag or a datatype other than xsd:string or
+    xsd:boolean (xsd:boolean only for sh:conforms of the Link_Check report)."""
     lines = set()
     for s, p, o in g:
         if isinstance(s, BNode) or isinstance(o, BNode):
             raise ValueError('a blank node in a base graph')
         if isinstance(o, Literal):
-            if o.language or o.datatype not in (None, XSD.string):
+            if o.datatype == XSD.boolean and str(o) in ('true', 'false'):
+                obj = f'{_literal(str(o))}^^<{XSD.boolean}>'
+            elif o.language or o.datatype not in (None, XSD.string):
                 raise ValueError(f'not a plain literal: {o!r}')
-            obj = _literal(str(o))
+            else:
+                obj = _literal(str(o))
         elif isinstance(o, URIRef):
             obj = _iri(o)
         else:

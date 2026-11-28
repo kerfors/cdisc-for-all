@@ -59,7 +59,7 @@ def catalog(root, specs):
     g.add((cat, RDF.type, DCAT.Catalog))
     g.add((cat, DCTERMS.title, Literal('cdisc-for-all')))
     g.add((cat, DCTERMS.description, Literal('CDISC and NCIt content as published, linked: the base graphs (one per source, '
-                                             'as published), the link graphs, the COSMoS model graph, Link_Check and the SSSOM mapping set.')))
+                                             'as published), the link graphs, the COSMoS model graph, Link_Check (the SHACL validation report) and the SSSOM mapping set.')))
     g.add((cat, DCTERMS.license, MIT))
     g.add((cat, DCAT.landingPage, URIRef(SITE)))
     g.add((cat, RDFS.seeAlso, URIRef(REPO)))
@@ -90,7 +90,7 @@ def catalog(root, specs):
         d = _distribution(g, ds, root, f'base/{src}/{src}.ttl', 'the base graph (Turtle)')
         g.add((ds, VOID.dataDump, URIRef(SITE + f'base/{src}/{src}.ttl')))
         for x in sorted((root / 'base' / src).glob('*.xlsx')):
-            _distribution(g, ds, root, f'base/{src}/{x.name}', 'Excel view of the base graph')
+            _distribution(g, ds, root, f'base/{src}/{x.name}', 'Excel view of the base graph, for reading and for the lossless check; the graph is the content')
     for part, info in sorted(linked['link_graphs'].items()):
         if part.endswith('-signin'):
             continue
@@ -121,14 +121,19 @@ def catalog(root, specs):
     g.add((voc, DCTERMS.license, MIT))
     _distribution(g, voc, root, 'schema/vocabulary.ttl', 'the vocabulary (Turtle)')
     g.add((voc, VOID.dataDump, URIRef(SITE + 'schema/vocabulary.ttl')))
-    rep = CAT['link-check']
+    info = linked['link_check_graphs']['link-check']
+    rep = URIRef(info['graph'])
     g.add((cat, DCAT.dataset, rep))
-    g.add((rep, RDF.type, DCAT.Dataset))
+    for t in (DCAT.Dataset, VOID.Dataset):
+        g.add((rep, RDF.type, t))
     g.add((rep, DCTERMS.title, Literal('Link_Check: every reference in the published content that does not resolve, '
                                        'and every link to a row that carries a marker its source publishes, such as COSMoS "[RETIRED]"')))
     g.add((rep, DCTERMS.license, MIT))
-    _distribution(g, rep, root, 'linked/Link_Check.xlsx', 'Link_Check (Excel)')
-    g.add((rep, RDFS.comment, Literal('The rows of the links that start from or end at a row of a sign-in source are in Link_Check-signin, built locally and not published.')))
+    g.add((rep, VOID.triples, Literal(info['triples'])))
+    _distribution(g, rep, root, f"linked/{info['file']}", 'the SHACL validation report of the link shapes (Turtle), one sh:ValidationResult per Link_Check row')
+    g.add((rep, VOID.dataDump, URIRef(SITE + f"linked/{info['file']}")))
+    _distribution(g, rep, root, 'linked/Link_Check.xlsx', 'Link_Check view (Excel), rendered from the report graph, for reading and for the conversation with CDISC')
+    g.add((rep, RDFS.comment, Literal('The results of the links that start from or end at a row of a sign-in source are in link-check-signin.ttl and its view Link_Check-signin.xlsx, built locally and not published.')))
     mapping = CAT['sssom']
     g.add((cat, DCAT.dataset, mapping))
     g.add((mapping, RDF.type, DCAT.Dataset))
@@ -161,13 +166,13 @@ def llms_txt(root, specs, g):
     pins = json.loads((root / 'Reference_Versions.json').read_text(encoding='utf-8'))
     out = ['# cdisc-for-all', '',
            '> CDISC and NCIt content as published, linked: one RDF graph per source in the shape the source publishes, '
-           'the links between the sources as RDF, and a report (Link_Check) of every reference that does not resolve. '
+           'the links between the sources as RDF, and a report (Link_Check, the SHACL validation report, as RDF) of every reference that does not resolve. '
            'For study design: what is defined about a lab test, and why.', '',
            'Rules an agent should keep: every literal is a cell of the source as published (column names kept); a link rests on a '
            'published key or on a stated rule (links by rule are in their own graph); broken references are reported in Link_Check, '
            'not repaired; nothing is added: no classification, no counts, no interpretation. Do not present an inference as published content.', '',
            f'IRIs: `{SITE}def/<source>/<table>#<column>` (a published column), `{SITE}id/<source>/<table>/<key>` (a row), '
-           f'`{SITE}link/...` (a link on a published key), `{SITE}rule/...` (a link by rule). They are identifiers, not dereferenceable, and stable only within a pin; this is not a general RDF representation of the CDISC standards. '
+           f'`{SITE}link/...` (a link on a published key), `{SITE}rule/...` (a link by rule), `{SITE}check/<link shape>/<row>` (a Link_Check result). They are identifiers, not dereferenceable, and stable only within a pin; this is not a general RDF representation of the CDISC standards. '
            'NCIt concepts keep NCI\'s own IRIs (http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C...).', '',
            f'What each class and property means: [vocabulary.ttl]({SITE}schema/vocabulary.ttl) (RDFS, from the LinkML schema: '
            'every table as a class, every column as a property labelled with its published column name, every link with its description and rule).', '',
@@ -184,7 +189,7 @@ def llms_txt(root, specs, g):
             f'- [by-rule.ttl]({SITE}linked/by-rule.ttl): links by a stated rule.',
             f"- [cosmos-model.ttl]({SITE}linked/cosmos-model.ttl): the COSMoS export restated in COSMoS's authored model (COSMoS's own IRIs).",
             f'- [by-rule.sssom.tsv]({SITE}linked/by-rule.sssom.tsv): the links by a rule that matches a general name, as SSSOM.',
-            f'- [Link_Check.xlsx]({SITE}linked/Link_Check.xlsx): every reference that does not resolve, and every link to a row with a published marker such as "[RETIRED]". The rows of the links that touch a sign-in source are in a local Link_Check-signin, not published.',
+            f'- [link-check.ttl]({SITE}linked/link-check.ttl): Link_Check, the SHACL validation report of the link shapes: every reference that does not resolve, and every link to a row with a published marker such as "[RETIRED]"; one sh:ValidationResult per row (sh:focusNode the row, sh:resultPath the column, sh:value the cell as published, sh:sourceShape the link, the reason as a second sh:resultMessage). [Link_Check.xlsx]({SITE}linked/Link_Check.xlsx) is its view, for reading. The results of the links that touch a sign-in source are in a local link-check-signin.ttl, not published.',
             f'- [links.yaml]({REPO}/blob/main/schema/links.yaml): every link as stated (key columns, target columns, rule).', '',
             '## The links (predicate: from table -> to table)', '']
     for s in specs:
